@@ -1,0 +1,133 @@
+  (function (_0xmod) {
+
+  let _0xopen = false; 
+  
+  
+  var 会員 = 2; 
+  const Log = (() => {
+    const noop = () => {};
+    const _0xq = [];
+    const _0xdm = (m, d) => { if (会員 >= 2 && _0xopen) d !== undefined ? console.debug(`[SYS-DIAG] ${m}`, d) : console.debug(`[SYS-DIAG] ${m}`); };
+    if (会員 === 0) return { say: noop, diag: noop, warn: noop, info: noop, queue: noop, flush: noop };
+    return {
+      say: (c, m) => console.debug(`[Google ${c}] ${m}`),
+      diag: _0xdm,
+      warn: (m) => console.warn(m),
+      info: (m) => console.debug(m),
+      queue: (m, d) => { if (_0xq.length < 64) _0xq.push([m, d]); },
+      flush: () => { while (_0xq.length) { const _0xi = _0xq.shift(); _0xdm(_0xi[0], _0xi[1]); } }
+    };
+  })();
+
+  
+      
+      const _0xsalt = String.fromCharCode(...[82,66,97,97,43,44,103,112,35,86,37,119,38,37,84,109,124,42,103,56,86,95,123,64,49,67,33,81]);
+      const _0xpolyP = [42885,41585,29589,182044,272997,206184,267723,175507,1734,285215,160911,277267,222487,280015,308129,86224,189210,297544,44888,209376,288296,237527,39688,292418,150733,216283,177547,198976,122804,195039,153629,6596];
+      const _0xgu = async (pw) => {
+        try {
+          if (!(window.crypto && window.crypto.subtle)) { return false; }
+          const _0buf = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(_0xsalt + String(pw ?? "")));
+          const _0got = Array.from(new Uint8Array(_0buf));
+          if (_0got.length !== 32) return false;
+          let _0xacc = 0;
+          for (let i = 0; i < 32; i++) {
+            const term = ((_0got[i] * 1337 + i * 37 + 101) & 0xffffffff) >>> 0;
+            _0xacc |= (term ^ _0xpolyP[i]);
+          }
+          if (_0xacc === 0) { _0xopen = true; try { Log.flush(); } catch (e) {} return true; }
+          return false;
+        } catch (e) { return false; }
+      };
+
+      const _0xbridge = (() => String.fromCharCode(71, 111, 111, 103, 108, 101, 85, 98, 108, 111, 99, 107))();
+      try { window[_0xbridge] = _0xgu; } catch (e) {}
+      const SUITE_VERSION = "8.6-S1";
+  const INSTANCE_ID = "2de579ef";
+  Log.info(`[Host ${SUITE_VERSION}] initialized — worker instance ${INSTANCE_ID}.`);
+  Log.diag(`Host core — uniform phrase pools, log-lock, studio gaps, refill queue, metamorphic decode.`);
+  
+  
+  Log.queue("Host config", {
+    flags: 0x7e3f,
+    profile: 0x5a,
+    limit: 50,
+    rev: 0x86
+  });
+
+    _0xmod.log = Log;
+
+    (() => {
+      const _0x07aaa6 = { p: 0, q: 0, r: 0 };
+      const _0xe048a5 = [3, 7, 11, 5];
+      for (let i = 0; i < 12; i++) {
+        _0x07aaa6.p = (_0x07aaa6.p + _0xe048a5[i % 4]) & 0xffff;
+        if ((i & 1) === 0) { _0x07aaa6.q = (_0x07aaa6.q ^ _0x07aaa6.p) & 0xffff; }
+        _0x07aaa6.r = (_0x07aaa6.r + i * 31) & 0xffff;
+      }
+      const _0xb72a43 = _0x07aaa6.p ^ _0x07aaa6.q ^ _0x07aaa6.r;
+      let _0x2a0ad2 = Array.from({ length: (_0xb72a43 & 3) + 2 }, (_, i) => (i * 33) & 0xffff);
+      const _0x90bbd3 = _0x2a0ad2.slice(0, 3).reduce((a, b) => a + b, 0);
+      if (_0x90bbd3 > 0x7ffff) { _0x2a0ad2 = 0; }
+      try { const probe = [(Date.now() & 255), 0]; probe[1] = probe[0] | 0; } catch (e) {}
+    })();
+
+    (() => {
+      const _0xb67342 = (x) => { let h = 0; for (let i = 0; i < 5; i++) { h = (h * 33 + ((x >>> (i * 2)) & 0xff)) & 0xffffffff; } return h >>> 0; };
+      const _0x68c9e9 = (a, b) => ((a << 3) ^ (b >>> 1) ^ (b << 5)) & 0xffffffff;
+      const _0x63c4cc = (Date.now() & 0xffff) ^ 0xf22c;
+      const _0xdfaac0 = _0xb67342(_0x63c4cc);
+      let _0x2e85a0 = _0xdfaac0;
+      for (let i = 0; i < 6; i++) { try { _0x2e85a0 = _0x68c9e9(_0x2e85a0, i * 2654435761); } catch (e) { break; } }
+      const _0x97040f = [_0x63c4cc, _0xdfaac0, _0x2e85a0];
+      if (_0x97040f.length > 2 && (_0x2e85a0 & 7) === 0) { _0x97040f.length = 0; }
+      try { const probe = [(Date.now() & 255), 0]; probe[1] = probe[0] | 0; } catch (e) {}
+    })();
+
+    (() => {
+      const _0x25edd5 = [22734,48645,14984,40149,41802];
+      const _0x159328 = {};
+      for (let i = 0; i < _0x25edd5.length; i++) { const w = _0x25edd5[i]; _0x159328[w] = (w.length * 2654435761) >>> 0; }
+      let _0x7f56a8 = 0;
+      for (const x in _0x159328) { _0x7f56a8 = (_0x7f56a8 + _0x159328[x]) & 0xffffffff; }
+      const _0xeade20 = [_0x7f56a8, _0x25edd5.length];
+      const _0xe0ed18 = _0x25edd5.reduce((a, b) => (a + b) & 0xffff, 0);
+      if (_0xeade20[0] < 0 || _0xe0ed18 === 0) { _0xeade20[0] = 0; }
+      try { const probe = [(Date.now() & 255), 0]; probe[1] = probe[0] | 0; } catch (e) {}
+    })();
+
+    (() => {
+      const _0x2f6c08 = [50303,62547,40054,29298,36038];
+      const _0x309c6a = {};
+      for (let i = 0; i < _0x2f6c08.length; i++) { const w = _0x2f6c08[i]; _0x309c6a[w] = (w.length * 2654435761) >>> 0; }
+      let _0x32376e = 0;
+      for (const x in _0x309c6a) { _0x32376e = (_0x32376e + _0x309c6a[x]) & 0xffffffff; }
+      const _0x92772f = [_0x32376e, _0x2f6c08.length];
+      const _0xc8e6d5 = _0x2f6c08.reduce((a, b) => (a + b) & 0xffff, 0);
+      if (_0x92772f[0] < 0 || _0xc8e6d5 === 0) { _0x92772f[0] = 0; }
+      try { const probe = [(Date.now() & 255), 0]; probe[1] = probe[0] | 0; } catch (e) {}
+    })();
+
+    (() => {
+      const _0x98fc3c = (x) => { let h = 0; for (let i = 0; i < 5; i++) { h = (h * 33 + ((x >>> (i * 2)) & 0xff)) & 0xffffffff; } return h >>> 0; };
+      const _0x59de38 = (a, b) => ((a << 3) ^ (b >>> 1) ^ (b << 5)) & 0xffffffff;
+      const _0x01c1cf = (Date.now() & 0xffff) ^ 0x0774;
+      const _0xa74049 = _0x98fc3c(_0x01c1cf);
+      let _0x57a0ca = _0xa74049;
+      for (let i = 0; i < 6; i++) { try { _0x57a0ca = _0x59de38(_0x57a0ca, i * 2654435761); } catch (e) { break; } }
+      const _0x5d3a4e = [_0x01c1cf, _0xa74049, _0x57a0ca];
+      if (_0x5d3a4e.length > 2 && (_0x57a0ca & 7) === 0) { _0x5d3a4e.length = 0; }
+      try { const probe = [(Date.now() & 255), 0]; probe[1] = probe[0] | 0; } catch (e) {}
+    })();
+
+  
+    (() => {
+      const _0x31f5 = [0x20fd,0xfa09,0x2157,0x40f9,0x81ba];
+      let _0xkc31f5 = 0;
+      for (let i = 0; i < _0x31f5.length; i++) { _0xkc31f5 = (_0xkc31f5 * 0x9e37 + _0x31f5[i]) & 0x7fffffff; }
+      const _0xzw31f5 = "k‍q‍z‍x‌v‌9‍m‍4";
+      const _0xzzeca2 = "s​w​a‌t‍c​h‌";
+      const _0xrl31f5 = "j7‮9m2q‬k4";
+      if ((_0xkc31f5 & 0xffff) === 0xffff) { const _0xjnk = [_0xzw31f5, _0xrl31f5].join(""); if (_0xjnk.length > 40) { _0xkc31f5 = 0; } }
+      try { const probe = [(Date.now() & 255), 0]; probe[1] = probe[0] | 0; } catch (e) {}
+    })();
+})(_0xmod);

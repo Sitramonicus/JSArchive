@@ -1,0 +1,6 @@
+553f85d7c6936ce7a12869f147cd89de3ae0e2eb4e053f3e008c2922dde479b3  /home/user/o8cmp/O8.6/packages/O8.6-S5-r3/O8.6-Final-compressed-deflateraw.js
+dec4e4c9b2823125dba7480d7e80e6b8be8dee0db0eeb8a8da114ba73ad51ffa  /home/user/o8cmp/O8.6/packages/O8.6-S5-r3/O8.6-Final-compressed-gzip.js
+f46f5496100bb04830b685778cbce363982bf4c20a641735342b50cb316f7bd4  /home/user/o8cmp/O8.6/packages/O8.6-S5-r3/O8.6-Final-final-bundle.js
+2c9ebf58ae205b2f1e99a861db5b62d07ccdd5740a98fc40b29aa66901d894c1  /home/user/o8cmp/O8.6/packages/O8.6-S5-r3/O8.6-S5-entangled-cover.bmp
+14e3ffc845459f6798ab09daa622d31f259545305baeddf7aa64eca4194c4740  /home/user/o8cmp/O8.6/packages/O8.6-S5-r3/O8.6-S5-entangled-stego-runner.js
+28a8644fe25007ec8c2d21d23c9da6e7702a6fa0e237c313dc203427bf348800  /home/user/o8cmp/O8.6/packages/O8.6-S5-r3/SHA256SUMS.txt
