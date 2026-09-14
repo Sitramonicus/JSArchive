@@ -1,0 +1,95 @@
+{
+ "build": "O8.7-Stego-3 (rolling current)",
+ "date": "2026-09-13",
+ "suite_version": "8.7-Stego-3",
+ "instance_id": "39e738eb",
+ "line1_variant": 0,
+ "inputs": {
+  "s6_bundle": {
+   "file": "Active/O8.6/final-package/O8.6-Final-final-bundle.js",
+   "sha256": "52b863868fe84cbeb1fbc75ac9b3d9fbe3cd32cdaf0a05a3a4d530b3717c85ba"
+  },
+  "cover": {
+   "file": "Uploads/stego2-cover.bmp",
+   "sha256": "b1590ea3bdc6c49c3799b477b4539bb0a625552765feae129ac51da7cf96f283"
+  },
+  "decoy_source": {
+   "file": "Active/Stego/decoy-garden-v2.js",
+   "sha256": "39c9f94c7345057b5d13a7cf025dad440982df20eacd02a1371120b7c5798308"
+  },
+  "loader_source": {
+   "file": "Active/Stego/stego3-loader.js",
+   "sha256": "f720a3859ab19ae27dada5eacfefbc7bf74a247425caa898a963123e418c1375"
+  },
+  "codec_source": {
+   "file": "Active/Stego/stego3-codec.mjs",
+   "sha256": "d467d88bb613451f6a324911fc1133c6dd5e6edcb007b3cf977dc152afbae22b"
+  },
+  "reel_source": {
+   "file": "Active/Stego/stego3-legacyreel-src.js",
+   "sha256": "47508de9750ee59f2282fb1d6fe44b02d2f2ec3921e79e485886224caa81d422"
+  },
+  "cover_photo_source": {
+   "file": "Uploads/stego2-cover-source.png",
+   "sha256": "cb5dd70a65228a7b28bc9daf3e722661b9b6d8d7cf9b1f06d37500110edbc102"
+  }
+ },
+ "tools": {
+  "node": "v20.20.2",
+  "engines": "exact-pinned (terser 5.51.2, JSO 4.2.2, jsc 2.1.3 frozen-v2)",
+  "zlib": "gzip -9",
+  "minify_real": "passes:2,dead_code,reduce_vars:false,mangle:false,utf8",
+  "minify_decoy": "passes:2,dead_code,mangle:false,utf8",
+  "minify_loader": "passes:2,inline:false,collapse_vars:false,reduce_vars:false,mangle:false,banner"
+ },
+ "crypto": {
+  "salt": "0x6251c72a (carrier-derived, no literal)",
+  "fnv_shipped": "0xb16a887e",
+  "pwhash_debug": "0xe79dbcf6 (normalizes to canonical)",
+  "kdf": "slowChain32768",
+  "golden": "0x9E3779B9",
+  "canon_bits": 7,
+  "seed": "0xea66676d",
+  "scatter_range": 1389600,
+  "strip_len": 98400
+ },
+ "payloads": {
+  "real": {
+   "min_chars": 1249474,
+   "gzip_bytes": 510955
+  },
+  "decoy": {
+   "min_chars": 3066,
+   "gzip_bytes": 1658
+  }
+ },
+ "photo_metrics": {
+  "r_util_pct": 73.54,
+  "max_delta": 15,
+  "psnr_db": 32.5,
+  "psnr_pin_gte": 32.0,
+  "strip_max_delta": 3
+ },
+ "outputs": {
+  "cover": {
+   "file": "O8.7-Stego-3-cover.bmp",
+   "bytes": 1488054,
+   "sha256": "a9c11de28c580d5efffe00403e4891f340692e49f48e50d68ed2b8b26b2bcebb"
+  },
+  "runner": {
+   "file": "O8.7-Stego-3-runner.js",
+   "bytes": 1995603,
+   "sha256": "d846fdb85a0bf43314e03408258d2f8963755b547ddef22623a1f7e0e442c1b6"
+  }
+ },
+ "tests": {
+  "tiers": "20/20 (19 + debug-name e2e)",
+  "line1_variants": "not re-run (loader byte-identical)",
+  "determinism": "O8.6 double-build 3/3 + stego double-build 4/4 byte-identical",
+  "carrier": "12/12",
+  "pg3_doc": "pass",
+  "battery": "25/25",
+  "l2_unlock": "bridge(secret)=true, bridge(wrong)=false, labels 3->7",
+  "stress": "chore-stress.mjs 23/23 scenarios green (S0-S13 + S5/S7a x3 seeds); minified bundle executes (S8/S11/S13c)"
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "build": "O8.9 (rolling current)",
+ "date": "2026-09-14",
+ "suite_version": "8.9",
+ "instance_id": "39e738eb",
+ "line1_variant": 0,
+ "inputs": {
+  "s6_bundle": {
+   "file": "Active/O8.6/final-package/O8.6-Final-final-bundle.js",
+   "sha256": "52cea20441d9991477ad3bdbf044846027f858d3290f25da4572d6faa1aa0bf3",
+   "bytes": 1761614
+  },
+  "cover": {
+   "file": "Uploads/stego2-cover.bmp",
+   "sha256": "b1590ea3bdc6c49c3799b477b4539bb0a625552765feae129ac51da7cf96f283"
+  },
+  "decoy_source": {
+   "file": "Active/Stego/decoy-garden-v2.js",
+   "sha256": "39c9f94c7345057b5d13a7cf025dad440982df20eacd02a1371120b7c5798308"
+  },
+  "honey_source": {
+   "file": "Active/Stego/honey-board-src.js",
+   "sha256": "05ebd53e2df0aa0a55230036382f200a0d1012477cfa33e016266a75ea746128"
+  },
+  "tube_source": {
+   "file": "Active/Stego/tube-vault-src.js",
+   "sha256": "fbbcf1818ba87d4114fe881968af653f04f7c498d0dc87f7f92a02aea08016a4"
+  },
+  "loader_source": {
+   "file": "Active/Stego/stego9-loader.js",
+   "sha256": "09fc6dc20c03cd1269130ad9263d2ab0a0a62ce8e40670e2c5121da517d5844f"
+  },
+  "codec_source": {
+   "file": "Active/Stego/stego3-codec.mjs",
+   "sha256": "d467d88bb613451f6a324911fc1133c6dd5e6edcb007b3cf977dc152afbae22b"
+  },
+  "reel_source": {
+   "file": "Active/Stego/stego3-legacyreel-src.js",
+   "sha256": "47508de9750ee59f2282fb1d6fe44b02d2f2ec3921e79e485886224caa81d422"
+  },
+  "cover_photo_source": {
+   "file": "Uploads/stego2-cover-source.png",
+   "sha256": "cb5dd70a65228a7b28bc9daf3e722661b9b6d8d7cf9b1f06d37500110edbc102"
+  },
+  "builder": {
+   "file": "Active/Stego/build-stego9.mjs",
+   "sha256": "40c48093d224b31a5bc9a8ec7c89da16f4578f2aefe988dcc8ccd5699e435317"
+  }
+ },
+ "tools": {
+  "node": "v20.20.2",
+  "engines": "exact-pinned (terser 5.51.2, JSO 4.2.2, jsc 2.1.3 frozen-v2)",
+  "zlib": "gzip -9",
+  "minify_real": "passes:2,dead_code,reduce_vars:false,mangle:false,utf8",
+  "minify_decoy": "passes:2,dead_code,mangle:false,utf8",
+  "minify_loader": "passes:2,inline:false,collapse_vars:false,reduce_vars:false,mangle:false,banner"
+ },
+ "crypto": {
+  "salt": "0x6251c72a (carrier-derived, no literal)",
+  "fnv_shipped": "0xb16a887e",
+  "pwhash_debug": "0xe79dbcf6 (normalizes to canonical)",
+  "kdf": "slowChain32768",
+  "canon_bits": 7,
+  "golden": "0x9E3779B9",
+  "seed": "0xea66676d (recomputed at freeze)",
+  "scatter_range": 1389600,
+  "strip_len": 98400
+ },
+ "payloads": {
+  "real": { "min_chars": 1567235, "min_file_bytes": 1567443, "gzip_bytes": 684721 },
+  "decoy": { "min_chars": 3066, "min_file_bytes": 3112, "gzip_bytes": 1658 },
+  "honey": { "min_chars": 1184, "min_file_bytes": 1232, "gzip_bytes": 727 },
+  "tube": { "min_chars": 2196, "min_file_bytes": 2244, "gzip_bytes": 1191 }
+ },
+ "photo_metrics": "not re-measured for 8.9 (carrier codec + cover input unchanged from 8.8)",
+ "outputs": {
+  "cover": { "file": "O8.9-cover.bmp", "bytes": 1488054, "sha256": "af99563e4c691297b3de2225002ce5c0714878c3f260c69c8d1733a25614f0c3" },
+  "runner": { "file": "O8.9-runner.js", "bytes": 2141944, "sha256": "79c74331a7ae680cb4990c93daa63dee58edcf41c14deb7bd31a75caca3d733a" },
+  "real_min": { "file": "stego9-real.min.js", "bytes": 1567443, "sha256": "f2a42dfeb4a88e30442b75ca449241a4914472457dd712d1ecd785d6b02e4f47" },
+  "decoy_min": { "file": "stego9-decoy.min.js", "bytes": 3112, "sha256": "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511" },
+  "honey_min": { "file": "stego9-honey.min.js", "bytes": 1232, "sha256": "f84995d19017b7f6e0c3f4293f5f74b803d15ffb51af6c67e7cf1be8212182ae" },
+  "tube_min": { "file": "stego9-tube.min.js", "bytes": 2244, "sha256": "9dad7c20adbfae9e3b59213876ea08760a5dca0ca8a6497f8700a88d0b2cf689" }
+ },
+ "tests": {
+  "matrix": "20/20 (incl MINREAL pins-verify gate)",
+  "tiers": "37/37",
+  "stress_min": "S0 + S11 on minReal ALL PASS, LEXMODE=0",
+  "traps": "trap-tube / trap-fp / redteam-g8 ALL GREEN",
+  "live": "audit GREEN (2 video chores, ledger 2/2, refill healthy, heat 1)",
+  "determinism": "8.9 rebuild byte-identical (verified at freeze)"
+ }
+}

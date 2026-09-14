@@ -1,0 +1,71 @@
+{
+ "build": "O8.7-Stego-2-r2",
+ "date": "2026-09-12",
+ "suite_version": "8.7-Stego-2",
+ "line1_variant": 0,
+ "inputs": {
+  "s6_bundle": {
+   "file": "Active/O8.6/final-package/O8.6-Final-final-bundle.js",
+   "sha256": "b01bdf9e5701c215be26fb3f8aa5ac49b3976a20db3b32d86591fea498203ab5"
+  },
+  "cover": {
+   "file": "Uploads/stego2-cover.bmp",
+   "sha256": "b1590ea3bdc6c49c3799b477b4539bb0a625552765feae129ac51da7cf96f283"
+  },
+  "cover_photo_source": {
+   "file": "Uploads/stego2-cover-source.png",
+   "sha256": "cb5dd70a65228a7b28bc9daf3e722661b9b6d8d7cf9b1f06d37500110edbc102"
+  },
+  "decoy_source": {
+   "file": "Active/Stego/decoy-garden.js",
+   "sha256": "bb2f31727b041ee769d3885e3adb48949ad008652400efb6a78ccd31fcaf523c"
+  },
+  "loader_source": {
+   "file": "Active/Stego/stego2-loader.js",
+   "sha256": "c837aa7b57d2dcdbd29f7766fd4c225889c188184fbba4b9c8297eed59a7cbda"
+  }
+ },
+ "tools": {
+  "node": "v20.20.2",
+  "terser": "5.51.2",
+  "zlib": "gzip -9",
+  "minify_real": "passes:2,dead_code,reduce_vars:false,mangle:false,utf8",
+  "minify_decoy": "passes:2,dead_code,mangle:false,utf8"
+ },
+ "crypto": {
+  "salt": "0x57E602A1",
+  "chaff_seed": "0xC4AFF1E",
+  "seed": "0xe68c8adf",
+  "scatter_range": 1389696,
+  "decoy_band": 98304
+ },
+ "payloads": {
+  "real": {
+   "min_chars": 1159470,
+   "gzip_bytes": 469340
+  },
+  "decoy": {
+   "min_chars": 1443,
+   "gzip_bytes": 792
+  }
+ },
+ "outputs": {
+  "cover": {
+   "file": "O8.7-Stego-2-cover.bmp",
+   "bytes": 1488054,
+   "sha256": "a80764edb145c5ab8b8332cab1aa563dd80427a5b64ebdb32f297eb93294a296"
+  },
+  "runner": {
+   "file": "O8.7-Stego-2-runner.js",
+   "bytes": 1987232,
+   "sha256": "d20e47c75c8b546487b00dfb79097d06d6306914bb99fbf14ca11d05f6530ccc"
+  }
+ },
+ "tests": {
+  "tiers": "14/14",
+  "line1_variants": "v1+v2 quick 4/4 each",
+  "determinism": "double-build byte-identical (4/4 files)",
+  "s1_compat": "pass",
+  "battery": "25/25"
+ }
+}

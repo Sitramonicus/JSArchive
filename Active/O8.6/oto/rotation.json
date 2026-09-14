@@ -1,0 +1,46 @@
+{
+ "tag": "o810r2",
+ "prev": "o810r1",
+ "date": "2026-09-14",
+ "version": {
+  "old": "8.10",
+  "new": "8.10-R2"
+ },
+ "instance": {
+  "old": "8b9f310b",
+  "new": "f5c480b0"
+ },
+ "symbol": {
+  "old": "_0xq8b9f310b",
+  "new": "_0xqf5c480b0"
+ },
+ "codenames": {
+  "old": [
+   "aspen",
+   "ridge",
+   "harbor",
+   "meadow",
+   "kelp",
+   "zephyr",
+   "flint"
+  ],
+  "new": [
+   "lotus",
+   "sedge",
+   "quill",
+   "onyx",
+   "cairn",
+   "pine",
+   "birch"
+  ]
+ },
+ "cycleMs": {
+  "old": 13000,
+  "new": 17000
+ },
+ "files": [
+  "shards/shard-a.js",
+  "shards/shard-e.js"
+ ],
+ "note": "reversible: substitutions are exact old->new pairs above"
+}

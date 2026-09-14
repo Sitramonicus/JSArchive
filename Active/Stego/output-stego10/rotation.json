@@ -1,0 +1,45 @@
+{
+ "tag": "o810r1",
+ "date": "2026-09-14",
+ "version": {
+  "old": "8.9",
+  "new": "8.10"
+ },
+ "instance": {
+  "old": "39e738eb",
+  "new": "8b9f310b"
+ },
+ "symbol": {
+  "old": "_0xq39e738eb",
+  "new": "_0xq8b9f310b"
+ },
+ "codenames": {
+  "old": [
+   "lantern",
+   "twine",
+   "ledger",
+   "spool",
+   "map",
+   "postbox",
+   "compass"
+  ],
+  "new": [
+   "aspen",
+   "ridge",
+   "harbor",
+   "meadow",
+   "kelp",
+   "zephyr",
+   "flint"
+  ]
+ },
+ "cycleMs": {
+  "old": 15000,
+  "new": 13000
+ },
+ "files": [
+  "shards/shard-a.js",
+  "shards/shard-e.js"
+ ],
+ "note": "reversible: substitutions are exact old->new pairs above"
+}

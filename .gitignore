@@ -1,0 +1,2 @@
+# Local engine installs (see Active/engines/README.md) — never commit these.
+node_modules/

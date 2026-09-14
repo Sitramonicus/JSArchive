@@ -1,0 +1,56 @@
+O8.7-Stego-3 — ROLLING CURRENT FREEZE (post-stress-test line; no more -rN dirs)
+Frozen: 2026-09-13 · Source of truth: live workspace state (Active/Stego/output-stego3/)
+Rule (operator 2026-09-13): this dir is OVERWRITTEN on every change (move the
+iteration, don't mint revisions); superseded bytes are documented in
+Archives/RETIRED.md and deleted. Instance id in [Host] logs identifies bytes.
+
+WHAT THIS IS
+  Current Stego-3 bytes: photo-grain carrier + Player loader + garden v2 decoy
+  + S6 bundle with the chore-progression fixes proven by the scripted stress
+  harness (Active/O8.6/tools/chore-stress.mjs, 23 scenarios + seeds, all green):
+  (1) r2's 60s completion verifier (event-silence hang fix) + reason diag;
+  (2) _0xvmExec clean-room definition — the VM was referenced-but-undefined in
+  every archived generation, which crashed ALL activity chores and broke queue
+  refill (return 0 + break); (3) video-first board+refill ordering (videos
+  self-post and finish fastest; others stay shuffled); (4) live-log enrollment-
+  miss fix (mid-run arrivals re-acquired through the pacing gap) + 3 bridge
+  passwords (resurgence top-up, AKQJT full flush, queue view) + bridge-shut on
+  all 11 terminal paths (audit: timers/listeners/refs/mutex/bridge released);
+  (5) refill-resilience (per-quest scan armor, dead-store whimper, skip-reason
+  notes + diag) after 4 silent-skip mechanisms reproduced the live symptom.
+  Worker instance 39e738eb. Stego-2 (previous line) stays frozen in packages/O8.7-Stego-2/.
+
+CONTENTS
+  O8.7-Stego-3-cover.bmp    1488054 B   photo cover (800x620x24) + grain + snapshot strip
+  O8.7-Stego-3-runner.js    1995603 B   Line 1 + Player loader + b64 BMP (RUN THIS)
+  stego3-real.min.js        1249582 B   S6 bundle minified (UTF-8, reduce_vars:false) — T2 source
+  stego3-decoy.min.js       3112 B   Pixel Garden v2.0 minified (UTF-8) — T1 source
+  BUILD.json                           provenance: inputs, tools, salts, sizes, tests
+  SHA256SUMS.txt                       checksums (relative paths, no self-entry)
+
+PROVENANCE (all verified 2026-09-13)
+  - inputs: S6 bundle 52b86386... (final-package, refill-resilience rebuild),
+    decoy-garden-v2.js, photo cover b1590ea3... (800x620x24)
+  - SALT 0x6251c72a (carrier-derived, no literal); FNV_SHIPPED 0xb16a887e;
+    PWHASH_DEBUG 0xe79dbcf6 -> canonical; seed = slowChain32768(SALT^h^7*GOLDEN) = 0xea66676d
+  - real: min 1,249,474 chars -> gzip-9 510,955 B scattered over R=1,389,600 (73.54%),
+    4-bit nibbles, maxDelta 15, PSNR 32.5dB (pin >= 32.0)
+  - decoy: min 3,066 chars -> gzip-9 1,658 B in PG3 strip layout (6,652/98,400 symbols)
+  - tier tests 20/20 (incl. debug-name e2e with the operator credential);
+    carrier 12/12; 25-pass battery 25/25 on the tree
+  - stress harness 23/23 scenarios green (S0-S13: prior 19 + S13a-d refill-
+    resilience: dead-store whimper, unenrolled/wrap announced skips, poison-
+    quest survival; + S5/S7a x3 seeds) + minified bundle executes
+    (S8/S11/S13c on terser output) + L2 re-verified
+  - determinism: O8.6 double-build 3/3 + stego double-build 4/4 byte-identical
+  - runner Line 1: var 会員 = 2; var 名 = "佐藤 結衣"; console.clear(); 
+  - runtime brand: [Host 8.7-Stego-3], instance 39e738eb (locked default: Host +
+    decoy voice, zero [Google *] labels)
+
+LINEAGE
+  Stego-3 r1 -> r2 -> current (rolling). r1/r2 freeze records + tarballs were
+  documented into Archives/RETIRED.md on 2026-09-13 and deleted per the
+  no-more-revisions rule. Stego-2 notes: packages/O8.7-Stego-2/ARCHIVE.txt.
+
+STATUS AT FREEZE
+  Current live line. Stress-proven; 20/20 tiers + 23/23 stress + 25/25 battery.

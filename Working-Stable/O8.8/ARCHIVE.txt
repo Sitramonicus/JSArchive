@@ -1,0 +1,52 @@
+O8.8 — ROLLING CURRENT FREEZE (new 8.8 generation; 8.7 line stays frozen)
+Frozen: 2026-09-13 · Source of truth: live workspace state (Active/Stego/output-stego8/)
+Rule (operator 2026-09-13): this dir is OVERWRITTEN on every 8.x change (move the
+iteration, don't mint revisions); superseded bytes are documented in
+Archives/RETIRED.md and deleted. Instance id in [Host] logs identifies bytes.
+
+WHAT THIS IS
+  8.8 = venue dead-end generation. Loader v3.2.0 keeps the provisioned trio
+  (feed-array / DiscordNative / discord-host+electron-UA) bit-exact and adds 4
+  dead venue boards with real, verifiable markers — Telegram (bit8), Teams
+  (bit16), Zoom (bit32), Slack (bit64) — each with an unprovisioned-reel branch
+  that always fails closed to the garden. A KDF mask (`bits & 7`) keeps dead
+  probes out of the reel key, so the seed (0xea66676d) and carrier format are
+  unchanged. Bundle logic identical to 8.7-S3 v3 (enrollment fixes, 3 bridge
+  passwords, shut-11, refill-resilience); only the brand moved to [Host 8.8].
+  Worker instance 39e738eb (runtime-derived, stable under fixed seed).
+
+CONTENTS
+  O8.8-cover.bmp    1488054 B   photo cover (800x620x24) + grain + snapshot strip
+  O8.8-runner.js    1997125 B   Line 1 + Player loader v3.2.0 + b64 BMP (RUN THIS)
+  stego8-real.min.js  1255647 B   8.8 bundle minified (UTF-8, reduce_vars:false) — T2 source
+  stego8-decoy.min.js  3112 B   Pixel Garden v2.0 minified (UTF-8) — T1 source
+  BUILD.json                           provenance: inputs, tools, salts, sizes, tests
+  SHA256SUMS.txt                       checksums (relative paths, no self-entry)
+
+PROVENANCE (all verified 2026-09-13)
+  - inputs: 8.8 bundle 31fe03e1... (final-package, brand-only rebuild over v3),
+    decoy-garden-v2.js (unchanged), loader stego8-loader.js c5db6505...,
+    photo cover b1590ea3... (800x620x24)
+  - SALT 0x6251c72a (carrier-derived, no literal); FNV_SHIPPED 0xb16a887e;
+    PWHASH_DEBUG 0xe79dbcf6 -> canonical; seed = slowChain(SALT^h^7*GOLDEN) = 0xea66676d
+  - real: min 1,255,535 chars -> gzip-9 510,264 B scattered over R=1,389,600 (73.44%),
+    4-bit nibbles, maxDelta 15, PSNR 32.6dB (pin >= 32.0)
+  - decoy: min 3,066 chars -> gzip-9 1,658 B in PG3 strip layout (6,652/98,400 symbols)
+  - tier tests 30/30 (19 carried + debug-name e2e + 10 venue-matrix: dead-only
+    degrades x5, 7+dead still bundle x5); venue-matrix probe 41/41;
+    carrier G1 green; 25-pass battery 25/25 on the tree
+  - stress harness 23/23 scenarios green (S0-S13 + S5/S7a x3 seeds) + minified
+    bundle executes (S8/S11/S13c on terser output) + L2 re-verified
+  - banned-literal sweep: 0 plaintext venue names in runner (Telegram/Teams/Zoom/
+    Slack/hosts/WebApp all encoded); tryBoardReel + v3.2.0 banner verified present
+  - determinism: O8.6 build + stego double-build byte-identical
+  - runner Line 1: var 会員 = 2; var 名 = "佐藤 結衣"; console.clear();
+  - runtime brand: [Host 8.8], instance 39e738eb (locked default: Host +
+    decoy voice, zero [Google *] labels)
+
+LINEAGE
+  8.7-Stego-3 v3 -> O8.8 (loader v3.2.0 + brand bump; carrier G3 + garden v2.0
+  unchanged). 8.7 line frozen at Working-Stable/O8.7-Stego-3/ (+ rolling dir kept).
+
+STATUS AT FREEZE
+  Current live line. 30/30 tiers-8 + 23/23 stress + 25/25 battery + 41/41 venue matrix.

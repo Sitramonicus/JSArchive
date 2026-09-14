@@ -1,0 +1,43 @@
+O8.7-Stego-2-r2 — DUAL-CARRIER STEGO FREEZE (scattered S6 real + Stego-1-layout garden decoy)
+Frozen: 2026-09-12 · Source of truth: live workspace state (Active/Stego/output-stego2/)
+
+WHAT THIS IS
+  r2 freezes the second O8.7-Stego-2 dual-carrier build: identical pipeline to
+  r1, new bytes from the console-brand bump (SUITE_VERSION "8.6-S6" ->
+  "8.7-Stego-2" in Active/O8.6/shards/shard-a.js) plus a full OTO-matrix +
+  final-package rebuild (js-confuser nondeterminism re-pinned by battery).
+  Supersedes r1 (r1 bytes kept frozen in Archives/packages/O8.7-Stego-2-r1/).
+  The S6 bundle scattered through a photo cover via seeded permutation (T2
+  branch), plus a contiguous Stego-1-layout decoy block holding the Pixel
+  Garden game (T1 branch). The hand-written tier-gated loader runs
+  silent/garden/bundle by environment. Rebuilds are byte-identical
+  (deterministic; verified by double-build cmp).
+
+CONTENTS
+  O8.7-Stego-2-cover.bmp    1488054 B   photo cover (800x620x24) + dual payload
+  O8.7-Stego-2-runner.js    1987232 B   Line 1 + tier-gated loader + b64 BMP (RUN THIS)
+  stego2-real.min.js        1159570 B   S6 bundle minified (UTF-8, reduce_vars:false) — T2 source
+  stego2-decoy.min.js       1489 B   Pixel Garden minified (UTF-8) — T1 source
+  BUILD.json                           provenance: inputs, tools, salts, sizes, tests
+  SHA256SUMS.txt                       checksums (relative paths, no self-entry)
+
+PROVENANCE (all verified 2026-09-12)
+  - inputs: S6 bundle b01bdf9e... (final-package, rebuilt), decoy-garden.js,
+    photo cover b1590ea3... (800x620x24, from pristine concert photo)
+  - SALT 0x57E602A1, CHAFF 0xC4AFF1E;
+    seed = SALT XOR FNV-1a(default name) = 0xe68c8adf
+  - real: min 1,159,470 chars -> gzip-9 469,340 B scattered over R=1,389,696 (33.77%)
+  - decoy: min 1,443 chars -> gzip-9 792 B + chaff to 98,304 B band (Stego-1 layout)
+  - tier tests 14/14 (T0 silent / T1 garden byte-exact+executes / T2 bundle
+    byte-exact); Stego-1-extractor compat OK; 25-pass battery 25/25 on the tree
+  - runner Line 1: var 会員 = 2; var 名 = "佐藤 結衣"; console.clear();
+  - runtime brand: [Host 8.7-Stego-2] (was 8.6-S6 in r1)
+
+LINEAGE
+  Stego-2-r1 -> Stego-2-r2 (console-brand bump only; no logic change).
+  r1 notes kept in Archives/packages/O8.7-Stego-2-r1/ARCHIVE.txt (Stego-1
+  dead-substitution findings, minify invariants).
+
+STATUS AT FREEZE
+  Tier-gated dual carrier complete; 14/14 tiers + byte-identical rebuilds +
+  25/25 battery. Promoted to live line (S6 + Stego-2 r2 live; r1 kept frozen).

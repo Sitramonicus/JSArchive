@@ -1,0 +1,63 @@
+O8.9 — ROLLING CURRENT FREEZE (repin-fix generation; 8.8 line stays frozen)
+Frozen: 2026-09-14 · Source of truth: live workspace state (Active/Stego/output-stego9/)
+Rule (operator 2026-09-13): this dir is OVERWRITTEN on every 8.x change (move the
+iteration, don't mint revisions); superseded bytes are documented in
+Archives/RETIRED.md and deleted. Instance id in [Host] logs identifies bytes.
+
+WHAT THIS IS
+  8.9 = loader v3.3.0 (JSO-lite) + 7 reel tables (1 provisioned + 6 honey) +
+  Telegram honey board + sealed tube vault + PG3 snapshot strip, carrying the
+  O8.6 bundle with G8 probe-pin integrity (lexSetPins over lexProbeA/U/X) and
+  the [2b] repin-from-min fix (pins sliced from minified bytes, not S4 reprint).
+  Bundle logic = 8.8 line + G8 + brand [Host 8.9]; worker instance 39e738eb
+  (runtime-derived, stable under fixed seed). Live-test-confirmed 2026-09-14.
+
+CONTENTS
+  O8.9-cover.bmp       1488054 B   photo cover (800x620x24) + grain + snapshot strip
+  O8.9-runner.js       2141944 B   Line 1 + Player loader v3.3.0 + b64 BMP (RUN THIS)
+  stego9-real.min.js   1567443 B   8.9 bundle minified (UTF-8, reduce_vars:false) — T2 source
+  stego9-decoy.min.js     3112 B   Pixel Garden v2.0 minified (UTF-8) — T1/X source
+  stego9-honey.min.js     1232 B   Telegram honey board minified (UTF-8) — Y source
+  stego9-tube.min.js      2244 B   sealed tube vault minified (UTF-8) — B source
+  BUILD.json                           provenance: inputs, tools, salts, sizes, tests
+  SHA256SUMS.txt                       checksums (relative paths, no self-entry)
+
+PROVENANCE (all verified 2026-09-14)
+  - inputs: 8.9 bundle 52cea204... (1761614 B, final-package; G8 + brand over 8.8),
+    decoy-garden-v2.js 39c9f94c... (unchanged), honey-board-src.js 05ebd53e...,
+    tube-vault-src.js fbbcf181..., loader stego9-loader.js 09fc6dc2...,
+    photo cover b1590ea3... (800x620x24), builder build-stego9.mjs 40c48093...
+  - SALT 0x6251c72a (carrier-derived, no literal); FNV_SHIPPED 0xb16a887e;
+    PWHASH_DEBUG 0xe79dbcf6 -> canonical; CANON_BITS 7; GOLDEN 0x9E3779B9;
+    seed = slowChain32768(SALT^FNV^7*GOLDEN) = 0xea66676d (recomputed at freeze)
+  - real: min 1,567,235 chars (1,567,443 B file) -> gzip-9 684,721 B scattered
+    over R=1,389,600; decoy 3,066 chars -> 1,658 B; honey 1,184 -> 727 B;
+    tube 2,196 -> 1,191 B (PG3 strip layout)
+  - matrix 20/20 (incl MINREAL pins-verify gate: fails-before on stale bytes,
+    passes-after); tiers 37/37; S0 + S11 on minReal ALL PASS, LEXMODE=0;
+    trap-tube / trap-fp / redteam-g8 ALL GREEN
+  - LIVE AUDIT GREEN (log oqXaGpSwg): 2 video chores completed with
+    server-confirmed monotonic progress; ledger/view bridge 2/2 true with
+    consistent counts; refill healthy (50 candidates); skips exact; heat 1
+  - banned-literal sweep: 0 plaintext venue names in runner; tryBoardReel +
+    v3.3.0 banner verified present
+  - determinism: 8.9 rebuild byte-identical (verified at freeze into /tmp)
+  - runner Line 1 (variant 0): var 会員 = 2; var 名 = "佐藤 結衣"; console.clear();
+  - runtime brand: [Host 8.9], instance 39e738eb
+
+RED-FORGE NOTE
+  Third-party deobfuscation report (uploads/ANALYSIS_REPORT (3).md) analyzed
+  THESE exact bytes: all six payload hashes match its IOC table. Its paste
+  wrapper measured ~56 B off our runner (paste expired before a diff; most
+  likely trailing-byte/host artifact — its own size arithmetic is internally
+  inconsistent by 58 B). Hardening backlog: Handoff/O8.9-REDFORGE.md (8.10+).
+
+LINEAGE
+  O8.8 -> O8.9 (loader v3.3.0 + 7 reels + honey/tube + G8 repin + brand bump).
+  8.8 line frozen at Working-Stable/O8.8/. Superseded PRE-FREEZE bytes (never
+  frozen, documented here): runner d64e28e6.../f97fbebd..., cover
+  9294f835.../4b09f420..., real.min ac4629ac... (stale-pin generation).
+
+STATUS AT FREEZE
+  Current live line. 20/20 matrix + 37/37 tiers + S0/S11-on-min + traps/G8 +
+  live audit green.
