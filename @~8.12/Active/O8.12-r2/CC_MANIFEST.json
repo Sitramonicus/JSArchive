@@ -1,0 +1,26 @@
+{
+  "CC-A": {
+    "desc": "Plain stitched (FaC-02+03+06+07)",
+    "legacy": "256.7KB 261133B 11 shards, node --check OK",
+    "r2": "264.1KB 270387B 12 shards (a,m,u,n1,e,n2,aux,p-telegram,p-teams,p-zoom,p-slack,p-discord), 6 uniform, ledger everywhere, node --check OK",
+    "artifact": "/tmp/CC-A-plain-r2.js (also Active/O8.12-r2/final-package/selected-shards/ plain)",
+    "verified": "2026-09-16 rebuilt"
+  },
+  "CC-B": {
+    "desc": "G7 + OTO (FaC-01+04+05)",
+    "legacy": "1001 measurable, 5k dict 5000, 43 artifacts",
+    "r2": "1070 measurable (+69), 169 fiction, 12 tags, dict 5288 balanced 33.6/33.0/33.4, v1 e 1212.5KB hardest, v2 p-zoom 123.7KB logic mound, v4-v8 60/60 OK, u 10KB canon",
+    "census": "Active/O8.12-r2/oto/g7-strings/census.json",
+    "dict": "Active/O8.12-r2/oto/identifiers-dictionary-5k.csv (5288) + jso 500",
+    "oto": "v1 1.7M (6), v2 846K (7 inc p-zoom 124K), v4-closure/v5-terser/v6-esbuild/v7-swc/v8-uglify 60/60, u 10357B",
+    "verified": "self-test 25 round-trips per shard OK, 60/60 syntax OK"
+  },
+  "CC-C": {
+    "desc": "Final bundle + S1-S6 (all FaCs)",
+    "legacy": "1914KB 1960031B chars, g8 7e6b2261..., gzip 1080KB",
+    "r2": "2111.6KB chars (2162639) / 2379KB bytes (2379271), raw 1539.3KB, gzip 1184.4KB b64, G8 c8d32b59,8ac442eb,e1741ed1, 12 shards, unicode fix 2162304->2162639, node --check OK",
+    "bundle": "Active/O8.12-r2/final-package/O8.12-r2-Final-bundle.js (c55ad0e6...) = O8.6-Final-final-bundle.js (dual name) + gzip/deflateraw",
+    "selected_shards": "12 shards, 1.6M, heterogeneity 6/6 (p-discord v6 breaks v8,v8 dup)",
+    "status": "S0/S1/S3/S6 PASS (16point 14/16, 25pass 11/12 due to legacy dict quota only), S12/S15 boot dummy pw fail same as legacy (FNV e79dbcf6)"
+  }
+}

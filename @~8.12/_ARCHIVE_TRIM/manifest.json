@@ -1,0 +1,3985 @@
+[
+  {
+    "original": "Active/Stego/build-stego2.js",
+    "gz": "Active/Stego/build-stego2.js.gz",
+    "orig_size": 10367,
+    "gz_size": 4195,
+    "sha256": "a3509d3a5d4a"
+  },
+  {
+    "original": "Active/Stego/stego10-loader.js",
+    "gz": "Active/Stego/stego10-loader.js.gz",
+    "orig_size": 13258,
+    "gz_size": 4747,
+    "sha256": "e07969217930"
+  },
+  {
+    "original": "Active/Stego/stego11-loader.js",
+    "gz": "Active/Stego/stego11-loader.js.gz",
+    "orig_size": 13260,
+    "gz_size": 4749,
+    "sha256": "8e8ae1183e2e"
+  },
+  {
+    "original": "Active/Stego/stego9-loader.js",
+    "gz": "Active/Stego/stego9-loader.js.gz",
+    "orig_size": 13207,
+    "gz_size": 4729,
+    "sha256": "09fc6dc20c03"
+  },
+  {
+    "original": "Active/O8.12-r3/backups-pre-strict-20260916-030939/shard-a.js",
+    "gz": "Active/O8.12-r3/backups-pre-strict-20260916-030939/shard-a.js.gz",
+    "orig_size": 13082,
+    "gz_size": 4670,
+    "sha256": "d3dd307dcff4"
+  },
+  {
+    "original": "Active/O8.12-r3/backups-pre-strict-20260916-030939/build-s4-final-package.js",
+    "gz": "Active/O8.12-r3/backups-pre-strict-20260916-030939/build-s4-final-package.js.gz",
+    "orig_size": 12699,
+    "gz_size": 4699,
+    "sha256": "a50448b3607b"
+  },
+  {
+    "original": "Active/O8.12-r3/backups-pre-strict-20260916-030939/obf-strings-g7.js",
+    "gz": "Active/O8.12-r3/backups-pre-strict-20260916-030939/obf-strings-g7.js.gz",
+    "orig_size": 15846,
+    "gz_size": 6274,
+    "sha256": "f4bd556e163b"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-a-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-a-out.js.gz",
+    "orig_size": 10716,
+    "gz_size": 5443,
+    "sha256": "1f8070c52119"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-m-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-m-out.js.gz",
+    "orig_size": 23397,
+    "gz_size": 12393,
+    "sha256": "e8605b37781a"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-e-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-e-out.js.gz",
+    "orig_size": 205773,
+    "gz_size": 121029,
+    "sha256": "095808d9588e"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-aux-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-aux-out.js.gz",
+    "orig_size": 29897,
+    "gz_size": 17047,
+    "sha256": "7d8e7fc4d714"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-p-zoom-out.js.gz",
+    "orig_size": 16072,
+    "gz_size": 8780,
+    "sha256": "0cd5cb46781d"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-a-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-a-out.js.gz",
+    "orig_size": 11000,
+    "gz_size": 5356,
+    "sha256": "70f0d6c29905"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-m-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-m-out.js.gz",
+    "orig_size": 21692,
+    "gz_size": 11441,
+    "sha256": "d3b73e97f3fd"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-n1-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-n1-out.js.gz",
+    "orig_size": 11159,
+    "gz_size": 3026,
+    "sha256": "8c917fc850d6"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-e-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-e-out.js.gz",
+    "orig_size": 205748,
+    "gz_size": 119580,
+    "sha256": "4f1a4d9910f6"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-n2-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-n2-out.js.gz",
+    "orig_size": 10763,
+    "gz_size": 2954,
+    "sha256": "467046b5fa7c"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-aux-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-aux-out.js.gz",
+    "orig_size": 31724,
+    "gz_size": 17411,
+    "sha256": "c7985168dcf9"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-p-zoom-out.js.gz",
+    "orig_size": 16442,
+    "gz_size": 8828,
+    "sha256": "5f04b8fefdb4"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-a-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-a-out.js.gz",
+    "orig_size": 13525,
+    "gz_size": 6094,
+    "sha256": "ddfa20717d90"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-m-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-m-out.js.gz",
+    "orig_size": 26477,
+    "gz_size": 13262,
+    "sha256": "53954b1c766c"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-n1-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-n1-out.js.gz",
+    "orig_size": 15809,
+    "gz_size": 4921,
+    "sha256": "d5fa1873d8b3"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-e-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-e-out.js.gz",
+    "orig_size": 227671,
+    "gz_size": 122608,
+    "sha256": "698ca51818d8"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-n2-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-n2-out.js.gz",
+    "orig_size": 15231,
+    "gz_size": 4758,
+    "sha256": "3a4e02da51d3"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-aux-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-aux-out.js.gz",
+    "orig_size": 34923,
+    "gz_size": 18529,
+    "sha256": "9d6c89b6f384"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-p-zoom-out.js.gz",
+    "orig_size": 19503,
+    "gz_size": 9466,
+    "sha256": "12a9a6f75cc5"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-a-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-a-out.js.gz",
+    "orig_size": 11578,
+    "gz_size": 5450,
+    "sha256": "cacbbdce2a33"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-m-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-m-out.js.gz",
+    "orig_size": 22380,
+    "gz_size": 11505,
+    "sha256": "c0019efd98c4"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-n1-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-n1-out.js.gz",
+    "orig_size": 11646,
+    "gz_size": 3048,
+    "sha256": "05f713f8a5f9"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-e-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-e-out.js.gz",
+    "orig_size": 207517,
+    "gz_size": 119294,
+    "sha256": "e20273e779c3"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-n2-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-n2-out.js.gz",
+    "orig_size": 11249,
+    "gz_size": 2988,
+    "sha256": "a29c4b4aced7"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-aux-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-aux-out.js.gz",
+    "orig_size": 32348,
+    "gz_size": 17490,
+    "sha256": "e9da9463bd5a"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-p-zoom-out.js.gz",
+    "orig_size": 17082,
+    "gz_size": 8883,
+    "sha256": "4a5172a7ea99"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-a-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-a-out.js.gz",
+    "orig_size": 10725,
+    "gz_size": 5453,
+    "sha256": "6493c7f7bc8c"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-m-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-m-out.js.gz",
+    "orig_size": 21244,
+    "gz_size": 12034,
+    "sha256": "d0aea5a19169"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-n1-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-n1-out.js.gz",
+    "orig_size": 10676,
+    "gz_size": 3848,
+    "sha256": "1f93dbc95b6b"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-e-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-e-out.js.gz",
+    "orig_size": 202771,
+    "gz_size": 119914,
+    "sha256": "447211a20af6"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-n2-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-n2-out.js.gz",
+    "orig_size": 10301,
+    "gz_size": 3736,
+    "sha256": "820114d79ad9"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-aux-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-aux-out.js.gz",
+    "orig_size": 31361,
+    "gz_size": 17786,
+    "sha256": "ea17cd326923"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-p-zoom-out.js.gz",
+    "orig_size": 16513,
+    "gz_size": 8910,
+    "sha256": "38cff5d0b4a8"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-a-out.js",
+    "gz": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-a-out.js.gz",
+    "orig_size": 17578,
+    "gz_size": 8189,
+    "sha256": "b1e5319969af"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-m-out.js",
+    "gz": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-m-out.js.gz",
+    "orig_size": 79931,
+    "gz_size": 30672,
+    "sha256": "52ec788dc366"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-n1-out.js",
+    "gz": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-n1-out.js.gz",
+    "orig_size": 171490,
+    "gz_size": 52775,
+    "sha256": "7e544b27a8e1"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-e-out.js",
+    "gz": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-e-out.js.gz",
+    "orig_size": 1077612,
+    "gz_size": 409744,
+    "sha256": "727bf411d4e2"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-n2-out.js",
+    "gz": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-n2-out.js.gz",
+    "orig_size": 82040,
+    "gz_size": 23911,
+    "sha256": "990c8685d0a6"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-aux-out.js",
+    "gz": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-aux-out.js.gz",
+    "orig_size": 75759,
+    "gz_size": 35785,
+    "sha256": "a3743504da38"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-u-out.js",
+    "gz": "Active/O8.12-r3/oto/v1-jso-s3matrix/shard-u-out.js.gz",
+    "orig_size": 10458,
+    "gz_size": 4105,
+    "sha256": "8f80212420ab"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v2-jsc/shard-a-out.js",
+    "gz": "Active/O8.12-r3/oto/v2-jsc/shard-a-out.js.gz",
+    "orig_size": 53854,
+    "gz_size": 16289,
+    "sha256": "923b6b6a2cac"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v2-jsc/shard-m-out.js",
+    "gz": "Active/O8.12-r3/oto/v2-jsc/shard-m-out.js.gz",
+    "orig_size": 90632,
+    "gz_size": 25675,
+    "sha256": "c90fc83046c2"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v2-jsc/shard-n1-out.js",
+    "gz": "Active/O8.12-r3/oto/v2-jsc/shard-n1-out.js.gz",
+    "orig_size": 68720,
+    "gz_size": 16875,
+    "sha256": "1be4a465a2d7"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v2-jsc/shard-e-out.js",
+    "gz": "Active/O8.12-r3/oto/v2-jsc/shard-e-out.js.gz",
+    "orig_size": 367032,
+    "gz_size": 178560,
+    "sha256": "ca05892ec75b"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v2-jsc/shard-n2-out.js",
+    "gz": "Active/O8.12-r3/oto/v2-jsc/shard-n2-out.js.gz",
+    "orig_size": 71275,
+    "gz_size": 16486,
+    "sha256": "3dddcc0be311"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v2-jsc/shard-aux-out.js",
+    "gz": "Active/O8.12-r3/oto/v2-jsc/shard-aux-out.js.gz",
+    "orig_size": 96915,
+    "gz_size": 34743,
+    "sha256": "7ea499930395"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v2-jsc/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r3/oto/v2-jsc/shard-p-zoom-out.js.gz",
+    "orig_size": 93538,
+    "gz_size": 28380,
+    "sha256": "a55894d854d8"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/u/shard-u-out.js",
+    "gz": "Active/O8.12-r3/oto/u/shard-u-out.js.gz",
+    "orig_size": 10357,
+    "gz_size": 4119,
+    "sha256": "da8b7b8a81bf"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/CC-A-plain-stitched.js",
+    "gz": "Active/O8.12-r2/final-package/CC-A-plain-stitched.js.gz",
+    "orig_size": 270387,
+    "gz_size": 87343,
+    "sha256": "cbe0acbc773c"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/O8.12-r2-Final-bundle.js",
+    "gz": "Active/O8.12-r2/final-package/O8.12-r2-Final-bundle.js.gz",
+    "orig_size": 1980620,
+    "gz_size": 772400,
+    "sha256": "31ba1eae8645"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/O8.12-r2-Final-deflateraw.js",
+    "gz": "Active/O8.12-r2/final-package/O8.12-r2-Final-deflateraw.js.gz",
+    "orig_size": 1033873,
+    "gz_size": 782926,
+    "sha256": "70fac72afbbb"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/O8.12-r2-Final-gzip.js",
+    "gz": "Active/O8.12-r2/final-package/O8.12-r2-Final-gzip.js.gz",
+    "orig_size": 1033859,
+    "gz_size": 782957,
+    "sha256": "0ca8b38a1a90"
+  },
+  {
+    "original": "Active/O8.12-r2/shards/shard-a.js",
+    "gz": "Active/O8.12-r2/shards/shard-a.js.gz",
+    "orig_size": 12696,
+    "gz_size": 4514,
+    "sha256": "c00d00904d4e"
+  },
+  {
+    "original": "Active/O8.12-r2/shards/shard-aux.js",
+    "gz": "Active/O8.12-r2/shards/shard-aux.js.gz",
+    "orig_size": 24159,
+    "gz_size": 7634,
+    "sha256": "8fb1d9bc925f"
+  },
+  {
+    "original": "Active/O8.12-r2/shards/shard-e.js",
+    "gz": "Active/O8.12-r2/shards/shard-e.js.gz",
+    "orig_size": 146409,
+    "gz_size": 57443,
+    "sha256": "078d4e87d717"
+  },
+  {
+    "original": "Active/O8.12-r2/shards/shard-m.js",
+    "gz": "Active/O8.12-r2/shards/shard-m.js.gz",
+    "orig_size": 24495,
+    "gz_size": 7372,
+    "sha256": "7b1014cdda21"
+  },
+  {
+    "original": "Active/O8.12-r2/shards/shard-n1.js",
+    "gz": "Active/O8.12-r2/shards/shard-n1.js.gz",
+    "orig_size": 17363,
+    "gz_size": 3412,
+    "sha256": "4f9794703aad"
+  },
+  {
+    "original": "Active/O8.12-r2/shards/shard-n2.js",
+    "gz": "Active/O8.12-r2/shards/shard-n2.js.gz",
+    "orig_size": 16626,
+    "gz_size": 3293,
+    "sha256": "8abba1fa98e1"
+  },
+  {
+    "original": "Active/O8.12-r2/shards/shard-p-zoom.js",
+    "gz": "Active/O8.12-r2/shards/shard-p-zoom.js.gz",
+    "orig_size": 11836,
+    "gz_size": 4202,
+    "sha256": "a224f8e5cf70"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-a.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-a.js.gz",
+    "orig_size": 14918,
+    "gz_size": 6748,
+    "sha256": "7bc2bc5a1940"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-aux.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-aux.js.gz",
+    "orig_size": 35948,
+    "gz_size": 18939,
+    "sha256": "3f98b3d2e6c9"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-e.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-e.js.gz",
+    "orig_size": 230966,
+    "gz_size": 124193,
+    "sha256": "ddfe26154bd5"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-m.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-m.js.gz",
+    "orig_size": 27462,
+    "gz_size": 13605,
+    "sha256": "6c2f1a791e7a"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-n1.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-n1.js.gz",
+    "orig_size": 16783,
+    "gz_size": 5226,
+    "sha256": "ed509ce31d03"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-n2.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-n2.js.gz",
+    "orig_size": 16198,
+    "gz_size": 5058,
+    "sha256": "b946e4f08084"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-p-zoom.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-p-zoom.js.gz",
+    "orig_size": 21351,
+    "gz_size": 10296,
+    "sha256": "2069e354282e"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/u/shard-u-out.js",
+    "gz": "Active/O8.12-r2/oto/u/shard-u-out.js.gz",
+    "orig_size": 10357,
+    "gz_size": 4119,
+    "sha256": "da8b7b8a81bf"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/build-s4-final-package.js",
+    "gz": "Active/O8.12-r2/oto/scripts/build-s4-final-package.js.gz",
+    "orig_size": 12648,
+    "gz_size": 4669,
+    "sha256": "164dae3b7107"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/obf-strings-g7.js",
+    "gz": "Active/O8.12-r2/oto/scripts/obf-strings-g7.js.gz",
+    "orig_size": 15652,
+    "gz_size": 6162,
+    "sha256": "6f6c48f83203"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-a-out.js",
+    "gz": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-a-out.js.gz",
+    "orig_size": 17578,
+    "gz_size": 8189,
+    "sha256": "b1e5319969af"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-aux-out.js",
+    "gz": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-aux-out.js.gz",
+    "orig_size": 75759,
+    "gz_size": 35785,
+    "sha256": "a3743504da38"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-e-out.js",
+    "gz": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-e-out.js.gz",
+    "orig_size": 1019445,
+    "gz_size": 395978,
+    "sha256": "b42bcb697686"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-m-out.js",
+    "gz": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-m-out.js.gz",
+    "orig_size": 79931,
+    "gz_size": 30672,
+    "sha256": "52ec788dc366"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-n1-out.js",
+    "gz": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-n1-out.js.gz",
+    "orig_size": 144641,
+    "gz_size": 49234,
+    "sha256": "d1d96b891e97"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-n2-out.js",
+    "gz": "Active/O8.12-r2/oto/v1-jso-s3matrix/shard-n2-out.js.gz",
+    "orig_size": 70291,
+    "gz_size": 23345,
+    "sha256": "6c521021c44b"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v2-jsc/shard-a-out.js",
+    "gz": "Active/O8.12-r2/oto/v2-jsc/shard-a-out.js.gz",
+    "orig_size": 53208,
+    "gz_size": 16431,
+    "sha256": "5e76c43faa72"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v2-jsc/shard-aux-out.js",
+    "gz": "Active/O8.12-r2/oto/v2-jsc/shard-aux-out.js.gz",
+    "orig_size": 97820,
+    "gz_size": 35548,
+    "sha256": "2ccb0f6b8524"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v2-jsc/shard-e-out.js",
+    "gz": "Active/O8.12-r2/oto/v2-jsc/shard-e-out.js.gz",
+    "orig_size": 364987,
+    "gz_size": 177257,
+    "sha256": "cc4fdc631da6"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v2-jsc/shard-m-out.js",
+    "gz": "Active/O8.12-r2/oto/v2-jsc/shard-m-out.js.gz",
+    "orig_size": 94653,
+    "gz_size": 26222,
+    "sha256": "347e4698a3c6"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v2-jsc/shard-n1-out.js",
+    "gz": "Active/O8.12-r2/oto/v2-jsc/shard-n1-out.js.gz",
+    "orig_size": 70901,
+    "gz_size": 17516,
+    "sha256": "bc6bb8f729a2"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v2-jsc/shard-n2-out.js",
+    "gz": "Active/O8.12-r2/oto/v2-jsc/shard-n2-out.js.gz",
+    "orig_size": 69102,
+    "gz_size": 16118,
+    "sha256": "5e91d19dc197"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v2-jsc/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r2/oto/v2-jsc/shard-p-zoom-out.js.gz",
+    "orig_size": 126714,
+    "gz_size": 37211,
+    "sha256": "e35edf9318d0"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-a-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-a-out.js.gz",
+    "orig_size": 10716,
+    "gz_size": 5443,
+    "sha256": "1f8070c52119"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-aux-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-aux-out.js.gz",
+    "orig_size": 29897,
+    "gz_size": 17047,
+    "sha256": "7d8e7fc4d714"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-e-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-e-out.js.gz",
+    "orig_size": 205773,
+    "gz_size": 121029,
+    "sha256": "095808d9588e"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-m-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-m-out.js.gz",
+    "orig_size": 23397,
+    "gz_size": 12393,
+    "sha256": "e8605b37781a"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-p-zoom-out.js.gz",
+    "orig_size": 16072,
+    "gz_size": 8780,
+    "sha256": "0cd5cb46781d"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-a-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-a-out.js.gz",
+    "orig_size": 11000,
+    "gz_size": 5356,
+    "sha256": "70f0d6c29905"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-aux-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-aux-out.js.gz",
+    "orig_size": 31724,
+    "gz_size": 17411,
+    "sha256": "c7985168dcf9"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-e-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-e-out.js.gz",
+    "orig_size": 205748,
+    "gz_size": 119580,
+    "sha256": "4f1a4d9910f6"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-m-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-m-out.js.gz",
+    "orig_size": 21692,
+    "gz_size": 11441,
+    "sha256": "d3b73e97f3fd"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-n1-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-n1-out.js.gz",
+    "orig_size": 11159,
+    "gz_size": 3026,
+    "sha256": "8c917fc850d6"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-n2-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-n2-out.js.gz",
+    "orig_size": 10763,
+    "gz_size": 2954,
+    "sha256": "467046b5fa7c"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-p-zoom-out.js.gz",
+    "orig_size": 16442,
+    "gz_size": 8828,
+    "sha256": "5f04b8fefdb4"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-a-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-a-out.js.gz",
+    "orig_size": 13525,
+    "gz_size": 6094,
+    "sha256": "ddfa20717d90"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-aux-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-aux-out.js.gz",
+    "orig_size": 34923,
+    "gz_size": 18529,
+    "sha256": "9d6c89b6f384"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-e-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-e-out.js.gz",
+    "orig_size": 227671,
+    "gz_size": 122608,
+    "sha256": "698ca51818d8"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-m-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-m-out.js.gz",
+    "orig_size": 26477,
+    "gz_size": 13262,
+    "sha256": "53954b1c766c"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-n1-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-n1-out.js.gz",
+    "orig_size": 15809,
+    "gz_size": 4921,
+    "sha256": "d5fa1873d8b3"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-n2-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-n2-out.js.gz",
+    "orig_size": 15231,
+    "gz_size": 4758,
+    "sha256": "3a4e02da51d3"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-p-zoom-out.js.gz",
+    "orig_size": 19503,
+    "gz_size": 9466,
+    "sha256": "12a9a6f75cc5"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-a-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-a-out.js.gz",
+    "orig_size": 11578,
+    "gz_size": 5450,
+    "sha256": "cacbbdce2a33"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-aux-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-aux-out.js.gz",
+    "orig_size": 32348,
+    "gz_size": 17490,
+    "sha256": "e9da9463bd5a"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-e-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-e-out.js.gz",
+    "orig_size": 207517,
+    "gz_size": 119294,
+    "sha256": "e20273e779c3"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-m-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-m-out.js.gz",
+    "orig_size": 22380,
+    "gz_size": 11505,
+    "sha256": "c0019efd98c4"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-n1-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-n1-out.js.gz",
+    "orig_size": 11646,
+    "gz_size": 3048,
+    "sha256": "05f713f8a5f9"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-n2-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-n2-out.js.gz",
+    "orig_size": 11249,
+    "gz_size": 2988,
+    "sha256": "a29c4b4aced7"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-p-zoom-out.js.gz",
+    "orig_size": 17082,
+    "gz_size": 8883,
+    "sha256": "4a5172a7ea99"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-a-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-a-out.js.gz",
+    "orig_size": 10725,
+    "gz_size": 5453,
+    "sha256": "6493c7f7bc8c"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-aux-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-aux-out.js.gz",
+    "orig_size": 31361,
+    "gz_size": 17786,
+    "sha256": "ea17cd326923"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-e-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-e-out.js.gz",
+    "orig_size": 202771,
+    "gz_size": 119914,
+    "sha256": "447211a20af6"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-m-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-m-out.js.gz",
+    "orig_size": 21244,
+    "gz_size": 12034,
+    "sha256": "d0aea5a19169"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-n1-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-n1-out.js.gz",
+    "orig_size": 10676,
+    "gz_size": 3848,
+    "sha256": "1f93dbc95b6b"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-n2-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-n2-out.js.gz",
+    "orig_size": 10301,
+    "gz_size": 3736,
+    "sha256": "820114d79ad9"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-p-zoom-out.js.gz",
+    "orig_size": 16513,
+    "gz_size": 8910,
+    "sha256": "38cff5d0b4a8"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-a-v1.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-a-v1.js.gz",
+    "orig_size": 17578,
+    "gz_size": 8189,
+    "sha256": "b1e5319969af"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-aux-v5.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-aux-v5.js.gz",
+    "orig_size": 31724,
+    "gz_size": 17411,
+    "sha256": "c7985168dcf9"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-e-v1.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-e-v1.js.gz",
+    "orig_size": 1019445,
+    "gz_size": 395978,
+    "sha256": "b42bcb697686"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-m-v2.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-m-v2.js.gz",
+    "orig_size": 94653,
+    "gz_size": 26222,
+    "sha256": "347e4698a3c6"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-n1-v6.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-n1-v6.js.gz",
+    "orig_size": 15809,
+    "gz_size": 4921,
+    "sha256": "d5fa1873d8b3"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-n2-v7.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-n2-v7.js.gz",
+    "orig_size": 11249,
+    "gz_size": 2988,
+    "sha256": "a29c4b4aced7"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-p-zoom-v2.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-p-zoom-v2.js.gz",
+    "orig_size": 126714,
+    "gz_size": 37211,
+    "sha256": "e35edf9318d0"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-u-v4.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-u-v4.js.gz",
+    "orig_size": 10357,
+    "gz_size": 4119,
+    "sha256": "da8b7b8a81bf"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/CC-A-plain-stitched.js",
+    "gz": "Active/O8-legacy/final-package/CC-A-plain-stitched.js.gz",
+    "orig_size": 262837,
+    "gz_size": 86846,
+    "sha256": "947d23fdb910"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/O8.11-bundle.js",
+    "gz": "Active/O8-legacy/final-package/O8.11-bundle.js.gz",
+    "orig_size": 1877697,
+    "gz_size": 781258,
+    "sha256": "25891d294d53"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/O8.11-compressed-deflateraw.js",
+    "gz": "Active/O8-legacy/final-package/O8.11-compressed-deflateraw.js.gz",
+    "orig_size": 1040748,
+    "gz_size": 788062,
+    "sha256": "4c349abc7fcf"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/O8.11-compressed-gzip.js",
+    "gz": "Active/O8-legacy/final-package/O8.11-compressed-gzip.js.gz",
+    "orig_size": 1040721,
+    "gz_size": 788041,
+    "sha256": "9343b5cde662"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/O8.6-Final-compressed-deflateraw.js",
+    "gz": "Active/O8-legacy/final-package/O8.6-Final-compressed-deflateraw.js.gz",
+    "orig_size": 1080430,
+    "gz_size": 818139,
+    "sha256": "be500d1af909"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/O8.6-Final-compressed-gzip.js",
+    "gz": "Active/O8-legacy/final-package/O8.6-Final-compressed-gzip.js.gz",
+    "orig_size": 1080406,
+    "gz_size": 818144,
+    "sha256": "0677cd317700"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/O8.6-Final-final-bundle.js",
+    "gz": "Active/O8-legacy/final-package/O8.6-Final-final-bundle.js.gz",
+    "orig_size": 1960031,
+    "gz_size": 811177,
+    "sha256": "9978714fd5ae"
+  },
+  {
+    "original": "Active/O8-legacy/shards/shard-a.js",
+    "gz": "Active/O8-legacy/shards/shard-a.js.gz",
+    "orig_size": 11702,
+    "gz_size": 4047,
+    "sha256": "34bfb5952217"
+  },
+  {
+    "original": "Active/O8-legacy/shards/shard-aux.js",
+    "gz": "Active/O8-legacy/shards/shard-aux.js.gz",
+    "orig_size": 23157,
+    "gz_size": 7141,
+    "sha256": "ba22174a369d"
+  },
+  {
+    "original": "Active/O8-legacy/shards/shard-e.js",
+    "gz": "Active/O8-legacy/shards/shard-e.js.gz",
+    "orig_size": 146374,
+    "gz_size": 57394,
+    "sha256": "2a0a3d45a6fa"
+  },
+  {
+    "original": "Active/O8-legacy/shards/shard-m.js",
+    "gz": "Active/O8-legacy/shards/shard-m.js.gz",
+    "orig_size": 23501,
+    "gz_size": 6838,
+    "sha256": "de637d21b803"
+  },
+  {
+    "original": "Active/O8-legacy/shards/shard-n1.js",
+    "gz": "Active/O8-legacy/shards/shard-n1.js.gz",
+    "orig_size": 16365,
+    "gz_size": 2842,
+    "sha256": "4ac79fb698ba"
+  },
+  {
+    "original": "Active/O8-legacy/shards/shard-n2.js",
+    "gz": "Active/O8-legacy/shards/shard-n2.js.gz",
+    "orig_size": 15628,
+    "gz_size": 2722,
+    "sha256": "90cc6bcb90b9"
+  },
+  {
+    "original": "Active/O8-legacy/shards/shard-p-zoom.js",
+    "gz": "Active/O8-legacy/shards/shard-p-zoom.js.gz",
+    "orig_size": 11837,
+    "gz_size": 4201,
+    "sha256": "49121b61cb2e"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-a.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-a.js.gz",
+    "orig_size": 13293,
+    "gz_size": 5812,
+    "sha256": "5fb39e7ae2b2"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-aux.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-aux.js.gz",
+    "orig_size": 34554,
+    "gz_size": 18348,
+    "sha256": "6c65fe535441"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-e.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-e.js.gz",
+    "orig_size": 230948,
+    "gz_size": 124505,
+    "sha256": "9227e701fdff"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-m.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-m.js.gz",
+    "orig_size": 25934,
+    "gz_size": 12735,
+    "sha256": "94d037ae5584"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-n1.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-n1.js.gz",
+    "orig_size": 15257,
+    "gz_size": 4325,
+    "sha256": "3b00563209be"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-n2.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-n2.js.gz",
+    "orig_size": 14716,
+    "gz_size": 4206,
+    "sha256": "45316325a571"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-p-zoom.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-p-zoom.js.gz",
+    "orig_size": 21344,
+    "gz_size": 10266,
+    "sha256": "fadb29ea9888"
+  },
+  {
+    "original": "Active/O8-legacy/oto/u/shard-u-out.js",
+    "gz": "Active/O8-legacy/oto/u/shard-u-out.js.gz",
+    "orig_size": 10281,
+    "gz_size": 4061,
+    "sha256": "48c35aefc8f1"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/obf-strings-g7.js",
+    "gz": "Active/O8-legacy/oto/scripts/obf-strings-g7.js.gz",
+    "orig_size": 15648,
+    "gz_size": 6158,
+    "sha256": "f2083931109b"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-a-out.js",
+    "gz": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-a-out.js.gz",
+    "orig_size": 15624,
+    "gz_size": 7078,
+    "sha256": "54cae138cf5f"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-aux-out.js",
+    "gz": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-aux-out.js.gz",
+    "orig_size": 73519,
+    "gz_size": 34899,
+    "sha256": "7940154ce22a"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-e-out.js",
+    "gz": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-e-out.js.gz",
+    "orig_size": 1113838,
+    "gz_size": 471497,
+    "sha256": "c5b45ffdd5a7"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-m-out.js",
+    "gz": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-m-out.js.gz",
+    "orig_size": 73435,
+    "gz_size": 28563,
+    "sha256": "22f2d1ccddd2"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-n1-out.js",
+    "gz": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-n1-out.js.gz",
+    "orig_size": 108500,
+    "gz_size": 38745,
+    "sha256": "e83905214e3b"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-n2-out.js",
+    "gz": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-n2-out.js.gz",
+    "orig_size": 54640,
+    "gz_size": 18495,
+    "sha256": "6dd8be304bdd"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v2-jsc/shard-a-out.js",
+    "gz": "Active/O8-legacy/oto/v2-jsc/shard-a-out.js.gz",
+    "orig_size": 46682,
+    "gz_size": 14020,
+    "sha256": "878019ff7978"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v2-jsc/shard-aux-out.js",
+    "gz": "Active/O8-legacy/oto/v2-jsc/shard-aux-out.js.gz",
+    "orig_size": 93771,
+    "gz_size": 33952,
+    "sha256": "1f39643fe6f0"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v2-jsc/shard-e-out.js",
+    "gz": "Active/O8-legacy/oto/v2-jsc/shard-e-out.js.gz",
+    "orig_size": 363128,
+    "gz_size": 175642,
+    "sha256": "636817b2df27"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v2-jsc/shard-m-out.js",
+    "gz": "Active/O8-legacy/oto/v2-jsc/shard-m-out.js.gz",
+    "orig_size": 92917,
+    "gz_size": 25505,
+    "sha256": "791ff0dd073b"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v2-jsc/shard-n1-out.js",
+    "gz": "Active/O8-legacy/oto/v2-jsc/shard-n1-out.js.gz",
+    "orig_size": 61361,
+    "gz_size": 14805,
+    "sha256": "ebacc60e84de"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v2-jsc/shard-n2-out.js",
+    "gz": "Active/O8-legacy/oto/v2-jsc/shard-n2-out.js.gz",
+    "orig_size": 62906,
+    "gz_size": 14493,
+    "sha256": "c7b5f14ed62b"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v2-jsc/shard-p-zoom-out.js",
+    "gz": "Active/O8-legacy/oto/v2-jsc/shard-p-zoom-out.js.gz",
+    "orig_size": 103278,
+    "gz_size": 31080,
+    "sha256": "84cc847a5efe"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-aux-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-aux-out.js.gz",
+    "orig_size": 28863,
+    "gz_size": 16488,
+    "sha256": "6802c9dd1f80"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-e-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-e-out.js.gz",
+    "orig_size": 205790,
+    "gz_size": 121398,
+    "sha256": "feb171dcc8a0"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-m-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-m-out.js.gz",
+    "orig_size": 22212,
+    "gz_size": 11740,
+    "sha256": "f1d70621b33f"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-p-zoom-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-p-zoom-out.js.gz",
+    "orig_size": 16077,
+    "gz_size": 8761,
+    "sha256": "a7441a194899"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-aux-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-aux-out.js.gz",
+    "orig_size": 30647,
+    "gz_size": 16968,
+    "sha256": "188f92b42e6c"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-e-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-e-out.js.gz",
+    "orig_size": 205774,
+    "gz_size": 120005,
+    "sha256": "3b76d254e473"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-m-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-m-out.js.gz",
+    "orig_size": 20490,
+    "gz_size": 10787,
+    "sha256": "771ff63f731d"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-p-zoom-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-p-zoom-out.js.gz",
+    "orig_size": 16435,
+    "gz_size": 8793,
+    "sha256": "b27bcaaca217"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-a-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-a-out.js.gz",
+    "orig_size": 11568,
+    "gz_size": 5160,
+    "sha256": "5b8028fbfd7f"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-aux-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-aux-out.js.gz",
+    "orig_size": 33773,
+    "gz_size": 18086,
+    "sha256": "9a708a8be5d4"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-e-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-e-out.js.gz",
+    "orig_size": 227834,
+    "gz_size": 123040,
+    "sha256": "50dc057ebe28"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-m-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-m-out.js.gz",
+    "orig_size": 25191,
+    "gz_size": 12548,
+    "sha256": "c93c73255a99"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-n1-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-n1-out.js.gz",
+    "orig_size": 14526,
+    "gz_size": 4181,
+    "sha256": "964f818e35ff"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-n2-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-n2-out.js.gz",
+    "orig_size": 13992,
+    "gz_size": 4058,
+    "sha256": "30518ecaacee"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-p-zoom-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-p-zoom-out.js.gz",
+    "orig_size": 19496,
+    "gz_size": 9436,
+    "sha256": "56c730a52465"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-aux-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-aux-out.js.gz",
+    "orig_size": 31260,
+    "gz_size": 17052,
+    "sha256": "b3af70aa6692"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-e-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-e-out.js.gz",
+    "orig_size": 207958,
+    "gz_size": 119735,
+    "sha256": "f1a4f0569dbb"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-m-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-m-out.js.gz",
+    "orig_size": 21159,
+    "gz_size": 10849,
+    "sha256": "e54c08808d43"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-n1-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-n1-out.js.gz",
+    "orig_size": 10427,
+    "gz_size": 2364,
+    "sha256": "82a1b2867dd6"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-p-zoom-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-p-zoom-out.js.gz",
+    "orig_size": 17076,
+    "gz_size": 8861,
+    "sha256": "f3b016145d7c"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-aux-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-aux-out.js.gz",
+    "orig_size": 30311,
+    "gz_size": 17337,
+    "sha256": "bffddd71d339"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-e-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-e-out.js.gz",
+    "orig_size": 202805,
+    "gz_size": 120345,
+    "sha256": "c376b61c8e2c"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-m-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-m-out.js.gz",
+    "orig_size": 20071,
+    "gz_size": 11381,
+    "sha256": "afed0847a738"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-p-zoom-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-p-zoom-out.js.gz",
+    "orig_size": 16506,
+    "gz_size": 8876,
+    "sha256": "1bea85792601"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-a-v1.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-a-v1.js.gz",
+    "orig_size": 15624,
+    "gz_size": 7078,
+    "sha256": "54cae138cf5f"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-aux-v5.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-aux-v5.js.gz",
+    "orig_size": 30647,
+    "gz_size": 16968,
+    "sha256": "188f92b42e6c"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-e-v1.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-e-v1.js.gz",
+    "orig_size": 1113838,
+    "gz_size": 471497,
+    "sha256": "c5b45ffdd5a7"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-m-v2.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-m-v2.js.gz",
+    "orig_size": 92917,
+    "gz_size": 25505,
+    "sha256": "791ff0dd073b"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-n1-v6.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-n1-v6.js.gz",
+    "orig_size": 14526,
+    "gz_size": 4181,
+    "sha256": "964f818e35ff"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-p-zoom-v2.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-p-zoom-v2.js.gz",
+    "orig_size": 103278,
+    "gz_size": 31080,
+    "sha256": "84cc847a5efe"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-u-v4.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-u-v4.js.gz",
+    "orig_size": 10281,
+    "gz_size": 4061,
+    "sha256": "48c35aefc8f1"
+  },
+  {
+    "original": "Active/Stego/build-entangled-stego.js",
+    "gz": "Active/Stego/build-entangled-stego.js.gz",
+    "orig_size": 8583,
+    "gz_size": 3309,
+    "sha256": "e7aaf09c818d"
+  },
+  {
+    "original": "Active/Stego/pack-stego-bmp.js",
+    "gz": "Active/Stego/pack-stego-bmp.js.gz",
+    "orig_size": 9449,
+    "gz_size": 3125,
+    "sha256": "6d11addc7533"
+  },
+  {
+    "original": "Active/Stego/stego2-loader.js",
+    "gz": "Active/Stego/stego2-loader.js.gz",
+    "orig_size": 8022,
+    "gz_size": 3320,
+    "sha256": "c837aa7b57d2"
+  },
+  {
+    "original": "Active/Stego/stego3-loader.js",
+    "gz": "Active/Stego/stego3-loader.js.gz",
+    "orig_size": 7120,
+    "gz_size": 2927,
+    "sha256": "f720a3859ab1"
+  },
+  {
+    "original": "Active/Stego/stego8-loader.js",
+    "gz": "Active/Stego/stego8-loader.js.gz",
+    "orig_size": 9679,
+    "gz_size": 3687,
+    "sha256": "c5db6505b8af"
+  },
+  {
+    "original": "Active/O8.12-r3/shards/shard-a.js",
+    "gz": "Active/O8.12-r3/shards/shard-a.js.gz",
+    "orig_size": 12885,
+    "gz_size": 4592,
+    "sha256": "2e0bb74d6e47"
+  },
+  {
+    "original": "Active/O8.12-r3/shards/shard-aux.js",
+    "gz": "Active/O8.12-r3/shards/shard-aux.js.gz",
+    "orig_size": 24159,
+    "gz_size": 7634,
+    "sha256": "8fb1d9bc925f"
+  },
+  {
+    "original": "Active/O8.12-r3/shards/shard-e.js",
+    "gz": "Active/O8.12-r3/shards/shard-e.js.gz",
+    "orig_size": 146409,
+    "gz_size": 57443,
+    "sha256": "078d4e87d717"
+  },
+  {
+    "original": "Active/O8.12-r3/shards/shard-m.js",
+    "gz": "Active/O8.12-r3/shards/shard-m.js.gz",
+    "orig_size": 24495,
+    "gz_size": 7372,
+    "sha256": "7b1014cdda21"
+  },
+  {
+    "original": "Active/O8.12-r3/shards/shard-n1.js",
+    "gz": "Active/O8.12-r3/shards/shard-n1.js.gz",
+    "orig_size": 17363,
+    "gz_size": 3412,
+    "sha256": "4f9794703aad"
+  },
+  {
+    "original": "Active/O8.12-r3/shards/shard-n2.js",
+    "gz": "Active/O8.12-r3/shards/shard-n2.js.gz",
+    "orig_size": 16626,
+    "gz_size": 3293,
+    "sha256": "8abba1fa98e1"
+  },
+  {
+    "original": "Active/O8.12-r3/shards/shard-p-zoom.js",
+    "gz": "Active/O8.12-r3/shards/shard-p-zoom.js.gz",
+    "orig_size": 11836,
+    "gz_size": 4202,
+    "sha256": "a224f8e5cf70"
+  },
+  {
+    "original": "Active/O8.12-r3/shards/shard-u.js",
+    "gz": "Active/O8.12-r3/shards/shard-u.js.gz",
+    "orig_size": 5391,
+    "gz_size": 2017,
+    "sha256": "ebbe2d3ee04c"
+  },
+  {
+    "original": "Active/O8.12-r3/backups-pre-strict-20260916-030939/shard-u.js",
+    "gz": "Active/O8.12-r3/backups-pre-strict-20260916-030939/shard-u.js.gz",
+    "orig_size": 5448,
+    "gz_size": 2042,
+    "sha256": "ab304269ac5e"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-a-v1.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-a-v1.js.gz",
+    "orig_size": 17578,
+    "gz_size": 8189,
+    "sha256": "b1e5319969af"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-m-v2.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-m-v2.js.gz",
+    "orig_size": 90632,
+    "gz_size": 25675,
+    "sha256": "c90fc83046c2"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-u-v4.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-u-v4.js.gz",
+    "orig_size": 10357,
+    "gz_size": 4119,
+    "sha256": "da8b7b8a81bf"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-n1-v6.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-n1-v6.js.gz",
+    "orig_size": 15809,
+    "gz_size": 4921,
+    "sha256": "d5fa1873d8b3"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-e-v1.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-e-v1.js.gz",
+    "orig_size": 1077612,
+    "gz_size": 409744,
+    "sha256": "727bf411d4e2"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-n2-v7.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-n2-v7.js.gz",
+    "orig_size": 11249,
+    "gz_size": 2988,
+    "sha256": "a29c4b4aced7"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-aux-v5.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-aux-v5.js.gz",
+    "orig_size": 31724,
+    "gz_size": 17411,
+    "sha256": "c7985168dcf9"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-p-telegram-v4.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-p-telegram-v4.js.gz",
+    "orig_size": 6795,
+    "gz_size": 3775,
+    "sha256": "15a309a8efe9"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-p-teams-v6.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-p-teams-v6.js.gz",
+    "orig_size": 7326,
+    "gz_size": 3935,
+    "sha256": "ad98714863af"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-p-zoom-v2.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-p-zoom-v2.js.gz",
+    "orig_size": 93538,
+    "gz_size": 28380,
+    "sha256": "a55894d854d8"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-p-slack-v8.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-p-slack-v8.js.gz",
+    "orig_size": 6296,
+    "gz_size": 3650,
+    "sha256": "4a1d56042785"
+  },
+  {
+    "original": "Active/O8.12-r3/final-package/selected-shards/shard-p-discord-v6.js",
+    "gz": "Active/O8.12-r3/final-package/selected-shards/shard-p-discord-v6.js.gz",
+    "orig_size": 6512,
+    "gz_size": 3526,
+    "sha256": "cdb4a1458c55"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/build-s4-final-package.js",
+    "gz": "Active/O8.12-r3/oto/scripts/build-s4-final-package.js.gz",
+    "orig_size": 12905,
+    "gz_size": 4804,
+    "sha256": "e93edef15559"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/obf-minify-family.js",
+    "gz": "Active/O8.12-r3/oto/scripts/obf-minify-family.js.gz",
+    "orig_size": 8364,
+    "gz_size": 3375,
+    "sha256": "2b6fc7738ad6"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/obf-strings-g7.js",
+    "gz": "Active/O8.12-r3/oto/scripts/obf-strings-g7.js.gz",
+    "orig_size": 15883,
+    "gz_size": 6295,
+    "sha256": "6225fde379ca"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/obf-v1-s3matrix.js",
+    "gz": "Active/O8.12-r3/oto/scripts/obf-v1-s3matrix.js.gz",
+    "orig_size": 6897,
+    "gz_size": 2022,
+    "sha256": "b6aabc8045b6"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-a.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-a.js.gz",
+    "orig_size": 14918,
+    "gz_size": 6748,
+    "sha256": "7bc2bc5a1940"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-aux.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-aux.js.gz",
+    "orig_size": 35948,
+    "gz_size": 18939,
+    "sha256": "3f98b3d2e6c9"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-e.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-e.js.gz",
+    "orig_size": 230966,
+    "gz_size": 124193,
+    "sha256": "ddfe26154bd5"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-m.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-m.js.gz",
+    "orig_size": 27462,
+    "gz_size": 13605,
+    "sha256": "6c2f1a791e7a"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-n1.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-n1.js.gz",
+    "orig_size": 16783,
+    "gz_size": 5226,
+    "sha256": "ed509ce31d03"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-n2.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-n2.js.gz",
+    "orig_size": 16198,
+    "gz_size": 5058,
+    "sha256": "b946e4f08084"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-p-discord.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-p-discord.js.gz",
+    "orig_size": 7355,
+    "gz_size": 3848,
+    "sha256": "565ab977ca98"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-p-slack.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-p-slack.js.gz",
+    "orig_size": 8005,
+    "gz_size": 4218,
+    "sha256": "da4565ce9920"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-p-teams.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-p-teams.js.gz",
+    "orig_size": 8081,
+    "gz_size": 4231,
+    "sha256": "8689a55207a8"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-p-telegram.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-p-telegram.js.gz",
+    "orig_size": 8392,
+    "gz_size": 4302,
+    "sha256": "cd2d7ac08da2"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-p-zoom.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-p-zoom.js.gz",
+    "orig_size": 21351,
+    "gz_size": 10296,
+    "sha256": "2069e354282e"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings/shard-u.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings/shard-u.js.gz",
+    "orig_size": 8041,
+    "gz_size": 3713,
+    "sha256": "deaa2548ea67"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-n1-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-n1-out.js.gz",
+    "orig_size": 10101,
+    "gz_size": 3067,
+    "sha256": "e76a330d865f"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-n2-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-n2-out.js.gz",
+    "orig_size": 9786,
+    "gz_size": 2985,
+    "sha256": "1961392ec634"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-u-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-u-out.js.gz",
+    "orig_size": 5353,
+    "gz_size": 2919,
+    "sha256": "fbd13728e7d4"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-p-telegram-out.js.gz",
+    "orig_size": 6795,
+    "gz_size": 3775,
+    "sha256": "15a309a8efe9"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-p-teams-out.js.gz",
+    "orig_size": 6559,
+    "gz_size": 3741,
+    "sha256": "4800775194a6"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-p-slack-out.js.gz",
+    "orig_size": 6513,
+    "gz_size": 3727,
+    "sha256": "3f57e93311bf"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v4-closure/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r3/oto/v4-closure/shard-p-discord-out.js.gz",
+    "orig_size": 5837,
+    "gz_size": 3338,
+    "sha256": "6c374a5c7a47"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-a.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-a.js.gz",
+    "orig_size": 14918,
+    "gz_size": 6748,
+    "sha256": "7bc2bc5a1940"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-aux.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-aux.js.gz",
+    "orig_size": 35948,
+    "gz_size": 18939,
+    "sha256": "3f98b3d2e6c9"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-e.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-e.js.gz",
+    "orig_size": 230966,
+    "gz_size": 124193,
+    "sha256": "ddfe26154bd5"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-m.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-m.js.gz",
+    "orig_size": 27462,
+    "gz_size": 13605,
+    "sha256": "6c2f1a791e7a"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-n1.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-n1.js.gz",
+    "orig_size": 16783,
+    "gz_size": 5226,
+    "sha256": "ed509ce31d03"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-n2.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-n2.js.gz",
+    "orig_size": 16198,
+    "gz_size": 5058,
+    "sha256": "b946e4f08084"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-discord.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-discord.js.gz",
+    "orig_size": 7355,
+    "gz_size": 3848,
+    "sha256": "565ab977ca98"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-slack.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-slack.js.gz",
+    "orig_size": 8005,
+    "gz_size": 4218,
+    "sha256": "da4565ce9920"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-teams.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-teams.js.gz",
+    "orig_size": 8081,
+    "gz_size": 4231,
+    "sha256": "8689a55207a8"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-telegram.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-telegram.js.gz",
+    "orig_size": 8392,
+    "gz_size": 4302,
+    "sha256": "cd2d7ac08da2"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-zoom.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-zoom.js.gz",
+    "orig_size": 21351,
+    "gz_size": 10296,
+    "sha256": "2069e354282e"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-u.js",
+    "gz": "Active/O8.12-r3/oto/g7-strings-backup-pre-r3-20260916-025253/shard-u.js.gz",
+    "orig_size": 8041,
+    "gz_size": 3713,
+    "sha256": "deaa2548ea67"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-u-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-u-out.js.gz",
+    "orig_size": 5449,
+    "gz_size": 2924,
+    "sha256": "4a9189f2b1fd"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-p-telegram-out.js.gz",
+    "orig_size": 6666,
+    "gz_size": 3720,
+    "sha256": "f05806500129"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-p-teams-out.js.gz",
+    "orig_size": 6441,
+    "gz_size": 3667,
+    "sha256": "81598cac7fa4"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-p-slack-out.js.gz",
+    "orig_size": 6385,
+    "gz_size": 3669,
+    "sha256": "4e109ba1414e"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v5-terser/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r3/oto/v5-terser/shard-p-discord-out.js.gz",
+    "orig_size": 5674,
+    "gz_size": 3277,
+    "sha256": "ef144646250f"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-u-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-u-out.js.gz",
+    "orig_size": 7109,
+    "gz_size": 3366,
+    "sha256": "280f2a31f9c9"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-p-telegram-out.js.gz",
+    "orig_size": 7537,
+    "gz_size": 3969,
+    "sha256": "85d15c51159b"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-p-teams-out.js.gz",
+    "orig_size": 7326,
+    "gz_size": 3935,
+    "sha256": "ad98714863af"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-p-slack-out.js.gz",
+    "orig_size": 7275,
+    "gz_size": 3937,
+    "sha256": "f95428564c43"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v6-esbuild/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r3/oto/v6-esbuild/shard-p-discord-out.js.gz",
+    "orig_size": 6512,
+    "gz_size": 3526,
+    "sha256": "cdb4a1458c55"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-u-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-u-out.js.gz",
+    "orig_size": 5745,
+    "gz_size": 2949,
+    "sha256": "27eadf630a0d"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-p-telegram-out.js.gz",
+    "orig_size": 6895,
+    "gz_size": 3746,
+    "sha256": "6e28f891a5b2"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-p-teams-out.js.gz",
+    "orig_size": 6695,
+    "gz_size": 3684,
+    "sha256": "61b78fdf2de0"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-p-slack-out.js.gz",
+    "orig_size": 6606,
+    "gz_size": 3691,
+    "sha256": "924e90c79636"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v7-swc/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r3/oto/v7-swc/shard-p-discord-out.js.gz",
+    "orig_size": 5885,
+    "gz_size": 3306,
+    "sha256": "65288f7be020"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-u-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-u-out.js.gz",
+    "orig_size": 5316,
+    "gz_size": 2945,
+    "sha256": "12a29a917256"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-p-telegram-out.js.gz",
+    "orig_size": 6587,
+    "gz_size": 3694,
+    "sha256": "5df88ec18aa8"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-p-teams-out.js.gz",
+    "orig_size": 6361,
+    "gz_size": 3652,
+    "sha256": "4a481fa4541a"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-p-slack-out.js.gz",
+    "orig_size": 6296,
+    "gz_size": 3650,
+    "sha256": "4a1d56042785"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v8-uglify/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r3/oto/v8-uglify/shard-p-discord-out.js.gz",
+    "orig_size": 5616,
+    "gz_size": 3258,
+    "sha256": "a16d6c60cfd4"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/v2-jsc/shard-u-out.js",
+    "gz": "Active/O8.12-r3/oto/v2-jsc/shard-u-out.js.gz",
+    "orig_size": 10025,
+    "gz_size": 3532,
+    "sha256": "b9e0e3d01049"
+  },
+  {
+    "original": "Active/O8.12-r2/shards/shard-u.js",
+    "gz": "Active/O8.12-r2/shards/shard-u.js.gz",
+    "orig_size": 5391,
+    "gz_size": 2017,
+    "sha256": "ebbe2d3ee04c"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-p-discord.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-p-discord.js.gz",
+    "orig_size": 7355,
+    "gz_size": 3848,
+    "sha256": "565ab977ca98"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-p-slack.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-p-slack.js.gz",
+    "orig_size": 8005,
+    "gz_size": 4218,
+    "sha256": "da4565ce9920"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-p-teams.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-p-teams.js.gz",
+    "orig_size": 8081,
+    "gz_size": 4231,
+    "sha256": "8689a55207a8"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-p-telegram.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-p-telegram.js.gz",
+    "orig_size": 8392,
+    "gz_size": 4302,
+    "sha256": "cd2d7ac08da2"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/g7-strings/shard-u.js",
+    "gz": "Active/O8.12-r2/oto/g7-strings/shard-u.js.gz",
+    "orig_size": 8041,
+    "gz_size": 3713,
+    "sha256": "deaa2548ea67"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/obf-minify-family.js",
+    "gz": "Active/O8.12-r2/oto/scripts/obf-minify-family.js.gz",
+    "orig_size": 8364,
+    "gz_size": 3374,
+    "sha256": "024c2556a649"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/obf-v1-s3matrix.js",
+    "gz": "Active/O8.12-r2/oto/scripts/obf-v1-s3matrix.js.gz",
+    "orig_size": 6897,
+    "gz_size": 2022,
+    "sha256": "60879831cd15"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-n1-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-n1-out.js.gz",
+    "orig_size": 10101,
+    "gz_size": 3067,
+    "sha256": "e76a330d865f"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-n2-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-n2-out.js.gz",
+    "orig_size": 9786,
+    "gz_size": 2985,
+    "sha256": "1961392ec634"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-p-discord-out.js.gz",
+    "orig_size": 5837,
+    "gz_size": 3338,
+    "sha256": "6c374a5c7a47"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-p-slack-out.js.gz",
+    "orig_size": 6513,
+    "gz_size": 3727,
+    "sha256": "3f57e93311bf"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-p-teams-out.js.gz",
+    "orig_size": 6559,
+    "gz_size": 3741,
+    "sha256": "4800775194a6"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-p-telegram-out.js.gz",
+    "orig_size": 6795,
+    "gz_size": 3775,
+    "sha256": "15a309a8efe9"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v4-closure/shard-u-out.js",
+    "gz": "Active/O8.12-r2/oto/v4-closure/shard-u-out.js.gz",
+    "orig_size": 5353,
+    "gz_size": 2919,
+    "sha256": "fbd13728e7d4"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-p-discord-out.js.gz",
+    "orig_size": 5674,
+    "gz_size": 3277,
+    "sha256": "ef144646250f"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-p-slack-out.js.gz",
+    "orig_size": 6385,
+    "gz_size": 3669,
+    "sha256": "4e109ba1414e"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-p-teams-out.js.gz",
+    "orig_size": 6441,
+    "gz_size": 3667,
+    "sha256": "81598cac7fa4"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-p-telegram-out.js.gz",
+    "orig_size": 6666,
+    "gz_size": 3720,
+    "sha256": "f05806500129"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v5-terser/shard-u-out.js",
+    "gz": "Active/O8.12-r2/oto/v5-terser/shard-u-out.js.gz",
+    "orig_size": 5449,
+    "gz_size": 2924,
+    "sha256": "4a9189f2b1fd"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-p-discord-out.js.gz",
+    "orig_size": 6512,
+    "gz_size": 3526,
+    "sha256": "cdb4a1458c55"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-p-slack-out.js.gz",
+    "orig_size": 7275,
+    "gz_size": 3937,
+    "sha256": "f95428564c43"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-p-teams-out.js.gz",
+    "orig_size": 7326,
+    "gz_size": 3935,
+    "sha256": "ad98714863af"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-p-telegram-out.js.gz",
+    "orig_size": 7537,
+    "gz_size": 3969,
+    "sha256": "85d15c51159b"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v6-esbuild/shard-u-out.js",
+    "gz": "Active/O8.12-r2/oto/v6-esbuild/shard-u-out.js.gz",
+    "orig_size": 7109,
+    "gz_size": 3366,
+    "sha256": "280f2a31f9c9"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-p-discord-out.js.gz",
+    "orig_size": 5885,
+    "gz_size": 3306,
+    "sha256": "65288f7be020"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-p-slack-out.js.gz",
+    "orig_size": 6606,
+    "gz_size": 3691,
+    "sha256": "924e90c79636"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-p-teams-out.js.gz",
+    "orig_size": 6695,
+    "gz_size": 3684,
+    "sha256": "61b78fdf2de0"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-p-telegram-out.js.gz",
+    "orig_size": 6895,
+    "gz_size": 3746,
+    "sha256": "6e28f891a5b2"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v7-swc/shard-u-out.js",
+    "gz": "Active/O8.12-r2/oto/v7-swc/shard-u-out.js.gz",
+    "orig_size": 5745,
+    "gz_size": 2949,
+    "sha256": "27eadf630a0d"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-p-discord-out.js.gz",
+    "orig_size": 5616,
+    "gz_size": 3258,
+    "sha256": "a16d6c60cfd4"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-p-slack-out.js.gz",
+    "orig_size": 6296,
+    "gz_size": 3650,
+    "sha256": "4a1d56042785"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-p-teams-out.js.gz",
+    "orig_size": 6361,
+    "gz_size": 3652,
+    "sha256": "4a481fa4541a"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-p-telegram-out.js.gz",
+    "orig_size": 6587,
+    "gz_size": 3694,
+    "sha256": "5df88ec18aa8"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/v8-uglify/shard-u-out.js",
+    "gz": "Active/O8.12-r2/oto/v8-uglify/shard-u-out.js.gz",
+    "orig_size": 5316,
+    "gz_size": 2945,
+    "sha256": "12a29a917256"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-p-discord-v6.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-p-discord-v6.js.gz",
+    "orig_size": 6512,
+    "gz_size": 3526,
+    "sha256": "cdb4a1458c55"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-p-slack-v8.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-p-slack-v8.js.gz",
+    "orig_size": 6296,
+    "gz_size": 3650,
+    "sha256": "4a1d56042785"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-p-teams-v6.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-p-teams-v6.js.gz",
+    "orig_size": 7326,
+    "gz_size": 3935,
+    "sha256": "ad98714863af"
+  },
+  {
+    "original": "Active/O8.12-r2/final-package/selected-shards/shard-p-telegram-v4.js",
+    "gz": "Active/O8.12-r2/final-package/selected-shards/shard-p-telegram-v4.js.gz",
+    "orig_size": 6795,
+    "gz_size": 3775,
+    "sha256": "15a309a8efe9"
+  },
+  {
+    "original": "Active/O8-legacy/shards/shard-u.js",
+    "gz": "Active/O8-legacy/shards/shard-u.js.gz",
+    "orig_size": 5391,
+    "gz_size": 2017,
+    "sha256": "ebbe2d3ee04c"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-p-slack.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-p-slack.js.gz",
+    "orig_size": 7995,
+    "gz_size": 4265,
+    "sha256": "46e3c379e89c"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-p-teams.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-p-teams.js.gz",
+    "orig_size": 8034,
+    "gz_size": 4216,
+    "sha256": "41befb39b7f6"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-p-telegram.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-p-telegram.js.gz",
+    "orig_size": 8255,
+    "gz_size": 4232,
+    "sha256": "8640f989b422"
+  },
+  {
+    "original": "Active/O8-legacy/oto/g7-strings/shard-u.js",
+    "gz": "Active/O8-legacy/oto/g7-strings/shard-u.js.gz",
+    "orig_size": 7982,
+    "gz_size": 3656,
+    "sha256": "cb568ff39ae5"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/build-s4-final-package.js",
+    "gz": "Active/O8-legacy/oto/scripts/build-s4-final-package.js.gz",
+    "orig_size": 10144,
+    "gz_size": 3763,
+    "sha256": "06d2b024b032"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/obf-minify-family.js",
+    "gz": "Active/O8-legacy/oto/scripts/obf-minify-family.js.gz",
+    "orig_size": 8360,
+    "gz_size": 3371,
+    "sha256": "1ca6fb534cca"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/obf-v1-s3matrix.js",
+    "gz": "Active/O8-legacy/oto/scripts/obf-v1-s3matrix.js.gz",
+    "orig_size": 6887,
+    "gz_size": 2002,
+    "sha256": "440fcf3e986b"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-u-out.js",
+    "gz": "Active/O8-legacy/oto/v1-jso-s3matrix/shard-u-out.js.gz",
+    "orig_size": 8904,
+    "gz_size": 3538,
+    "sha256": "1bb57dd75193"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v2-jsc/shard-u-out.js",
+    "gz": "Active/O8-legacy/oto/v2-jsc/shard-u-out.js.gz",
+    "orig_size": 8631,
+    "gz_size": 3179,
+    "sha256": "a9d0c224deb7"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-a-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-a-out.js.gz",
+    "orig_size": 9041,
+    "gz_size": 4531,
+    "sha256": "eee3f5cf1007"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-n1-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-n1-out.js.gz",
+    "orig_size": 8932,
+    "gz_size": 2387,
+    "sha256": "e1d23886b76c"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-n2-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-n2-out.js.gz",
+    "orig_size": 8645,
+    "gz_size": 2331,
+    "sha256": "1a64df046562"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-p-slack-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-p-slack-out.js.gz",
+    "orig_size": 6528,
+    "gz_size": 3781,
+    "sha256": "1686a966af0e"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-p-teams-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-p-teams-out.js.gz",
+    "orig_size": 6533,
+    "gz_size": 3727,
+    "sha256": "e7ec7690f2dc"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v4-closure/shard-p-telegram-out.js",
+    "gz": "Active/O8-legacy/oto/v4-closure/shard-p-telegram-out.js.gz",
+    "orig_size": 6677,
+    "gz_size": 3711,
+    "sha256": "efa4842f4b55"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-a-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-a-out.js.gz",
+    "orig_size": 9256,
+    "gz_size": 4496,
+    "sha256": "9e444049b885"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-n1-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-n1-out.js.gz",
+    "orig_size": 9960,
+    "gz_size": 2342,
+    "sha256": "4eb480b923dd"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-n2-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-n2-out.js.gz",
+    "orig_size": 9608,
+    "gz_size": 2318,
+    "sha256": "6f3bf5eeeb9c"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-p-slack-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-p-slack-out.js.gz",
+    "orig_size": 6393,
+    "gz_size": 3718,
+    "sha256": "5e70b3d6a788"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-p-teams-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-p-teams-out.js.gz",
+    "orig_size": 6412,
+    "gz_size": 3654,
+    "sha256": "f4a9646df20f"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-p-telegram-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-p-telegram-out.js.gz",
+    "orig_size": 6547,
+    "gz_size": 3641,
+    "sha256": "2b77af5ce5f1"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v5-terser/shard-u-out.js",
+    "gz": "Active/O8-legacy/oto/v5-terser/shard-u-out.js.gz",
+    "orig_size": 5129,
+    "gz_size": 2754,
+    "sha256": "a30b2cb10e81"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-p-slack-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-p-slack-out.js.gz",
+    "orig_size": 7265,
+    "gz_size": 3989,
+    "sha256": "ce875ae95394"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-p-teams-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-p-teams-out.js.gz",
+    "orig_size": 7279,
+    "gz_size": 3913,
+    "sha256": "ed17eedaf5be"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-p-telegram-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-p-telegram-out.js.gz",
+    "orig_size": 7400,
+    "gz_size": 3895,
+    "sha256": "ed62b254684a"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v6-esbuild/shard-u-out.js",
+    "gz": "Active/O8-legacy/oto/v6-esbuild/shard-u-out.js.gz",
+    "orig_size": 6785,
+    "gz_size": 3179,
+    "sha256": "7140e2005308"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-a-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-a-out.js.gz",
+    "orig_size": 9803,
+    "gz_size": 4571,
+    "sha256": "037c1956d3ee"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-n2-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-n2-out.js.gz",
+    "orig_size": 10068,
+    "gz_size": 2345,
+    "sha256": "e3feb9b9117b"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-p-slack-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-p-slack-out.js.gz",
+    "orig_size": 6608,
+    "gz_size": 3735,
+    "sha256": "22d3aed9f649"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-p-teams-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-p-teams-out.js.gz",
+    "orig_size": 6639,
+    "gz_size": 3668,
+    "sha256": "089a8cefb45b"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-p-telegram-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-p-telegram-out.js.gz",
+    "orig_size": 6774,
+    "gz_size": 3677,
+    "sha256": "a42018785f60"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v7-swc/shard-u-out.js",
+    "gz": "Active/O8-legacy/oto/v7-swc/shard-u-out.js.gz",
+    "orig_size": 5412,
+    "gz_size": 2769,
+    "sha256": "dcfa37648f7c"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-a-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-a-out.js.gz",
+    "orig_size": 9041,
+    "gz_size": 4580,
+    "sha256": "68536bced2d7"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-n1-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-n1-out.js.gz",
+    "orig_size": 9505,
+    "gz_size": 3158,
+    "sha256": "e0efaa2ce920"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-n2-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-n2-out.js.gz",
+    "orig_size": 9174,
+    "gz_size": 3092,
+    "sha256": "8775872376c9"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-p-slack-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-p-slack-out.js.gz",
+    "orig_size": 6304,
+    "gz_size": 3693,
+    "sha256": "91fcb9421bbd"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-p-teams-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-p-teams-out.js.gz",
+    "orig_size": 6332,
+    "gz_size": 3641,
+    "sha256": "04bdf9f07ba1"
+  },
+  {
+    "original": "Active/O8-legacy/oto/v8-uglify/shard-p-telegram-out.js",
+    "gz": "Active/O8-legacy/oto/v8-uglify/shard-p-telegram-out.js.gz",
+    "orig_size": 6468,
+    "gz_size": 3617,
+    "sha256": "4f25af75dc04"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-n2-v7.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-n2-v7.js.gz",
+    "orig_size": 10068,
+    "gz_size": 2345,
+    "sha256": "e3feb9b9117b"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-p-slack-v8.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-p-slack-v8.js.gz",
+    "orig_size": 6304,
+    "gz_size": 3693,
+    "sha256": "91fcb9421bbd"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-p-teams-v6.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-p-teams-v6.js.gz",
+    "orig_size": 7279,
+    "gz_size": 3913,
+    "sha256": "ed17eedaf5be"
+  },
+  {
+    "original": "Active/O8-legacy/final-package/selected-shards/shard-p-telegram-v4.js",
+    "gz": "Active/O8-legacy/final-package/selected-shards/shard-p-telegram-v4.js.gz",
+    "orig_size": 6677,
+    "gz_size": 3711,
+    "sha256": "efa4842f4b55"
+  },
+  {
+    "original": "Active/Stego/build-stego10.mjs",
+    "gz": "Active/Stego/build-stego10.mjs.gz",
+    "orig_size": 22690,
+    "gz_size": 8136,
+    "sha256": "442b196516cd"
+  },
+  {
+    "original": "Active/Stego/build-stego11.mjs",
+    "gz": "Active/Stego/build-stego11.mjs.gz",
+    "orig_size": 22699,
+    "gz_size": 8142,
+    "sha256": "5dd248d6e026"
+  },
+  {
+    "original": "Active/Stego/build-stego11p.mjs",
+    "gz": "Active/Stego/build-stego11p.mjs.gz",
+    "orig_size": 22738,
+    "gz_size": 8170,
+    "sha256": "1cdb54f35c91"
+  },
+  {
+    "original": "Active/Stego/build-stego12-r2.mjs",
+    "gz": "Active/Stego/build-stego12-r2.mjs.gz",
+    "orig_size": 23854,
+    "gz_size": 8458,
+    "sha256": "3f3c16b9fef1"
+  },
+  {
+    "original": "Active/Stego/build-stego12.mjs",
+    "gz": "Active/Stego/build-stego12.mjs.gz",
+    "orig_size": 22734,
+    "gz_size": 8175,
+    "sha256": "d4d879b2aaa6"
+  },
+  {
+    "original": "Active/Stego/build-stego3.mjs",
+    "gz": "Active/Stego/build-stego3.mjs.gz",
+    "orig_size": 10304,
+    "gz_size": 4141,
+    "sha256": "88422976ed8b"
+  },
+  {
+    "original": "Active/Stego/build-stego8.mjs",
+    "gz": "Active/Stego/build-stego8.mjs.gz",
+    "orig_size": 10442,
+    "gz_size": 4219,
+    "sha256": "304db45c3033"
+  },
+  {
+    "original": "Active/Stego/build-stego9.mjs",
+    "gz": "Active/Stego/build-stego9.mjs.gz",
+    "orig_size": 22565,
+    "gz_size": 8131,
+    "sha256": "40c48093d224"
+  },
+  {
+    "original": "Active/Stego/test-stego10-matrix.mjs",
+    "gz": "Active/Stego/test-stego10-matrix.mjs.gz",
+    "orig_size": 8448,
+    "gz_size": 3188,
+    "sha256": "b136d16976c3"
+  },
+  {
+    "original": "Active/Stego/test-stego10-tiers.mjs",
+    "gz": "Active/Stego/test-stego10-tiers.mjs.gz",
+    "orig_size": 14222,
+    "gz_size": 4676,
+    "sha256": "a63e01c15c4e"
+  },
+  {
+    "original": "Active/Stego/test-stego11-matrix.mjs",
+    "gz": "Active/Stego/test-stego11-matrix.mjs.gz",
+    "orig_size": 8656,
+    "gz_size": 3279,
+    "sha256": "ef5b9dd969a0"
+  },
+  {
+    "original": "Active/Stego/test-stego11-tiers.mjs",
+    "gz": "Active/Stego/test-stego11-tiers.mjs.gz",
+    "orig_size": 14445,
+    "gz_size": 4793,
+    "sha256": "44be224c9e41"
+  },
+  {
+    "original": "Active/Stego/test-stego2-tiers.mjs",
+    "gz": "Active/Stego/test-stego2-tiers.mjs.gz",
+    "orig_size": 8050,
+    "gz_size": 3002,
+    "sha256": "e6ae4de22243"
+  },
+  {
+    "original": "Active/Stego/test-stego3-tiers.mjs",
+    "gz": "Active/Stego/test-stego3-tiers.mjs.gz",
+    "orig_size": 10804,
+    "gz_size": 3895,
+    "sha256": "9f1b64bb732e"
+  },
+  {
+    "original": "Active/Stego/test-stego8-tiers.mjs",
+    "gz": "Active/Stego/test-stego8-tiers.mjs.gz",
+    "orig_size": 12303,
+    "gz_size": 4189,
+    "sha256": "094392f3b90c"
+  },
+  {
+    "original": "Active/Stego/test-stego9-matrix.mjs",
+    "gz": "Active/Stego/test-stego9-matrix.mjs.gz",
+    "orig_size": 8442,
+    "gz_size": 3186,
+    "sha256": "bb039134bb16"
+  },
+  {
+    "original": "Active/Stego/test-stego9-tiers.mjs",
+    "gz": "Active/Stego/test-stego9-tiers.mjs.gz",
+    "orig_size": 14217,
+    "gz_size": 4675,
+    "sha256": "5a4e1c57ccc0"
+  },
+  {
+    "original": "Active/O8.12-r3/tools/chore-stress.mjs",
+    "gz": "Active/O8.12-r3/tools/chore-stress.mjs.gz",
+    "orig_size": 36443,
+    "gz_size": 10043,
+    "sha256": "54345e927bd8"
+  },
+  {
+    "original": "Active/O8.12-r3/tools/typed-pool-o85.mjs",
+    "gz": "Active/O8.12-r3/tools/typed-pool-o85.mjs.gz",
+    "orig_size": 17449,
+    "gz_size": 5389,
+    "sha256": "2797f7a9a241"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/redteam-canary-g8.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/redteam-canary-g8.mjs.gz",
+    "orig_size": 8762,
+    "gz_size": 3412,
+    "sha256": "651e0279e1c5"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/redteam-sandbox-g9.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/redteam-sandbox-g9.mjs.gz",
+    "orig_size": 6072,
+    "gz_size": 2205,
+    "sha256": "197e473ead82"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/redteam-strings-g7.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/redteam-strings-g7.mjs.gz",
+    "orig_size": 6050,
+    "gz_size": 2618,
+    "sha256": "54c59a8061bf"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/rotate-ioc.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/rotate-ioc.mjs.gz",
+    "orig_size": 6937,
+    "gz_size": 2973,
+    "sha256": "26edc13123f4"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/run-15pass-battery.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/run-15pass-battery.mjs.gz",
+    "orig_size": 9915,
+    "gz_size": 3364,
+    "sha256": "d7208ccebc06"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/run-16point-verification.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/run-16point-verification.mjs.gz",
+    "orig_size": 12476,
+    "gz_size": 3811,
+    "sha256": "a33b2215adc1"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/run-25pass-battery.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/run-25pass-battery.mjs.gz",
+    "orig_size": 16048,
+    "gz_size": 4892,
+    "sha256": "0a3115aca3b5"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/trap-fp-harness.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/trap-fp-harness.mjs.gz",
+    "orig_size": 8530,
+    "gz_size": 3283,
+    "sha256": "f1e3f1d857a4"
+  },
+  {
+    "original": "Active/O8.12-r3/oto/scripts/trap-tube-gates.mjs",
+    "gz": "Active/O8.12-r3/oto/scripts/trap-tube-gates.mjs.gz",
+    "orig_size": 11990,
+    "gz_size": 4265,
+    "sha256": "53752b61ce32"
+  },
+  {
+    "original": "Active/Stego/stego-r3/stego3-codec.mjs",
+    "gz": "Active/Stego/stego-r3/stego3-codec.mjs.gz",
+    "orig_size": 10055,
+    "gz_size": 3499,
+    "sha256": "a24e5b7128fb"
+  },
+  {
+    "original": "Active/O8.12-r2/tools/chore-stress.mjs",
+    "gz": "Active/O8.12-r2/tools/chore-stress.mjs.gz",
+    "orig_size": 36443,
+    "gz_size": 10043,
+    "sha256": "54345e927bd8"
+  },
+  {
+    "original": "Active/O8.12-r2/tools/typed-pool-o85.mjs",
+    "gz": "Active/O8.12-r2/tools/typed-pool-o85.mjs.gz",
+    "orig_size": 17449,
+    "gz_size": 5389,
+    "sha256": "2797f7a9a241"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/redteam-canary-g8.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/redteam-canary-g8.mjs.gz",
+    "orig_size": 8762,
+    "gz_size": 3412,
+    "sha256": "651e0279e1c5"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/redteam-sandbox-g9.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/redteam-sandbox-g9.mjs.gz",
+    "orig_size": 6072,
+    "gz_size": 2205,
+    "sha256": "197e473ead82"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/redteam-strings-g7.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/redteam-strings-g7.mjs.gz",
+    "orig_size": 6050,
+    "gz_size": 2618,
+    "sha256": "54c59a8061bf"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/rotate-ioc.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/rotate-ioc.mjs.gz",
+    "orig_size": 6937,
+    "gz_size": 2973,
+    "sha256": "26edc13123f4"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/run-15pass-battery.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/run-15pass-battery.mjs.gz",
+    "orig_size": 9915,
+    "gz_size": 3364,
+    "sha256": "d7208ccebc06"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/run-16point-verification.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/run-16point-verification.mjs.gz",
+    "orig_size": 12476,
+    "gz_size": 3811,
+    "sha256": "a33b2215adc1"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/run-25pass-battery.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/run-25pass-battery.mjs.gz",
+    "orig_size": 16048,
+    "gz_size": 4892,
+    "sha256": "0a3115aca3b5"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/trap-fp-harness.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/trap-fp-harness.mjs.gz",
+    "orig_size": 8530,
+    "gz_size": 3283,
+    "sha256": "f1e3f1d857a4"
+  },
+  {
+    "original": "Active/O8.12-r2/oto/scripts/trap-tube-gates.mjs",
+    "gz": "Active/O8.12-r2/oto/scripts/trap-tube-gates.mjs.gz",
+    "orig_size": 11990,
+    "gz_size": 4265,
+    "sha256": "53752b61ce32"
+  },
+  {
+    "original": "Active/O8-legacy/tools/chore-stress.mjs",
+    "gz": "Active/O8-legacy/tools/chore-stress.mjs.gz",
+    "orig_size": 36443,
+    "gz_size": 10043,
+    "sha256": "54345e927bd8"
+  },
+  {
+    "original": "Active/O8-legacy/tools/typed-pool-o85.mjs",
+    "gz": "Active/O8-legacy/tools/typed-pool-o85.mjs.gz",
+    "orig_size": 17449,
+    "gz_size": 5389,
+    "sha256": "2797f7a9a241"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/redteam-canary-g8.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/redteam-canary-g8.mjs.gz",
+    "orig_size": 8762,
+    "gz_size": 3412,
+    "sha256": "651e0279e1c5"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/redteam-sandbox-g9.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/redteam-sandbox-g9.mjs.gz",
+    "orig_size": 6072,
+    "gz_size": 2205,
+    "sha256": "197e473ead82"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/redteam-strings-g7.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/redteam-strings-g7.mjs.gz",
+    "orig_size": 6050,
+    "gz_size": 2618,
+    "sha256": "54c59a8061bf"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/rotate-ioc.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/rotate-ioc.mjs.gz",
+    "orig_size": 6937,
+    "gz_size": 2973,
+    "sha256": "26edc13123f4"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/run-15pass-battery.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/run-15pass-battery.mjs.gz",
+    "orig_size": 9915,
+    "gz_size": 3364,
+    "sha256": "d7208ccebc06"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/run-16point-verification.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/run-16point-verification.mjs.gz",
+    "orig_size": 12476,
+    "gz_size": 3811,
+    "sha256": "a33b2215adc1"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/run-25pass-battery.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/run-25pass-battery.mjs.gz",
+    "orig_size": 16048,
+    "gz_size": 4892,
+    "sha256": "0a3115aca3b5"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/trap-fp-harness.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/trap-fp-harness.mjs.gz",
+    "orig_size": 8530,
+    "gz_size": 3283,
+    "sha256": "f1e3f1d857a4"
+  },
+  {
+    "original": "Active/O8-legacy/oto/scripts/trap-tube-gates.mjs",
+    "gz": "Active/O8-legacy/oto/scripts/trap-tube-gates.mjs.gz",
+    "orig_size": 11990,
+    "gz_size": 4265,
+    "sha256": "53752b61ce32"
+  },
+  {
+    "original": "Docs/CHEATSHEET.md",
+    "gz": "Docs/CHEATSHEET.md.gz",
+    "orig_size": 83149,
+    "gz_size": 19174,
+    "sha256": "5865cf5bade8"
+  },
+  {
+    "original": "Docs/O7-ERA.md",
+    "gz": "Docs/O7-ERA.md.gz",
+    "orig_size": 508103,
+    "gz_size": 82039,
+    "sha256": "a8c0a54dc60c"
+  },
+  {
+    "original": "Docs/O8.2-O8.4-ERA.md",
+    "gz": "Docs/O8.2-O8.4-ERA.md.gz",
+    "orig_size": 87457,
+    "gz_size": 34301,
+    "sha256": "99349d831475"
+  },
+  {
+    "original": "Docs/O8.5-ERA.md",
+    "gz": "Docs/O8.5-ERA.md.gz",
+    "orig_size": 169146,
+    "gz_size": 66691,
+    "sha256": "5ffeb28ab5dc"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/O8.12-r2-Final-bundle.js",
+    "gz": "Active/O8.12-r4/final-package/O8.12-r2-Final-bundle.js.gz",
+    "orig_size": 1497988,
+    "gz_size": 599435,
+    "sha256": "a5fb57ff153e"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/O8.12-r2-Final-gzip.js",
+    "gz": "Active/O8.12-r4/final-package/O8.12-r2-Final-gzip.js.gz",
+    "orig_size": 802182,
+    "gz_size": 607343,
+    "sha256": "938b859777ed"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/O8.12-r2-Final-deflateraw.js",
+    "gz": "Active/O8.12-r4/final-package/O8.12-r2-Final-deflateraw.js.gz",
+    "orig_size": 802144,
+    "gz_size": 607322,
+    "sha256": "15212ca39119"
+  },
+  {
+    "original": "Handoff/CHATLOG-S5-STEGO.txt",
+    "gz": "Handoff/CHATLOG-S5-STEGO.txt.gz",
+    "orig_size": 95760,
+    "gz_size": 31235,
+    "sha256": "fd5fdd761e40"
+  },
+  {
+    "original": "Handoff/Agent Chat History.txt",
+    "gz": "Handoff/Agent Chat History.txt.gz",
+    "orig_size": 1420689,
+    "gz_size": 427118,
+    "sha256": "22ce76fe8192"
+  },
+  {
+    "original": "Uploads/stego2-cover.bmp",
+    "gz": "Uploads/stego2-cover.bmp.gz",
+    "orig_size": 1632054,
+    "gz_size": 1256618,
+    "sha256": "384da1026e82"
+  },
+  {
+    "original": "Uploads/stego2-cover-source.png",
+    "gz": "Uploads/stego2-cover-source.png.gz",
+    "orig_size": 301532,
+    "gz_size": 301645,
+    "sha256": "cb5dd70a6522"
+  },
+  {
+    "original": "Uploads/stego2-cover-1024-scaled.bmp",
+    "gz": "Uploads/stego2-cover-1024-scaled.bmp.gz",
+    "orig_size": 2359350,
+    "gz_size": 1402771,
+    "sha256": "d53a25747899"
+  },
+  {
+    "original": "_COMPRESSED-HISTORY/Archives-packages.tar",
+    "gz": "_COMPRESSED-HISTORY/Archives-packages.tar.gz",
+    "orig_size": 17408000,
+    "gz_size": 10442991,
+    "sha256": "2a54906c02ca"
+  },
+  {
+    "original": "_COMPRESSED-HISTORY/Docs-large.tar",
+    "gz": "_COMPRESSED-HISTORY/Docs-large.tar.gz",
+    "orig_size": 1617920,
+    "gz_size": 591082,
+    "sha256": "dda6a81e6f24"
+  },
+  {
+    "original": "_COMPRESSED-HISTORY/old-stego-outputs-0208-09.tar",
+    "gz": "_COMPRESSED-HISTORY/old-stego-outputs-0208-09.tar.gz",
+    "orig_size": 19343360,
+    "gz_size": 12398279,
+    "sha256": "b3b2a21a5f8a"
+  },
+  {
+    "original": "uploads/obfuscated.js",
+    "gz": "uploads/obfuscated.js.gz",
+    "orig_size": 488540,
+    "gz_size": 182863,
+    "sha256": "b43293b6a927"
+  },
+  {
+    "original": "uploads/REPORT (7).md",
+    "gz": "uploads/REPORT (7).md.gz",
+    "orig_size": 1121865,
+    "gz_size": 401378,
+    "sha256": "c00e2e9e0e29"
+  },
+  {
+    "original": "uploads/image_2026-09-12_054222307+(1) - Copy.txt",
+    "gz": "uploads/image_2026-09-12_054222307+(1) - Copy.txt.gz",
+    "orig_size": 504342,
+    "gz_size": 231934,
+    "sha256": "f68fee1fa5ae"
+  },
+  {
+    "original": "Active/O8.12-r4/shards/shard-a.js",
+    "gz": "Active/O8.12-r4/shards/shard-a.js.gz",
+    "orig_size": 12885,
+    "gz_size": 4592,
+    "sha256": "2e0bb74d6e47"
+  },
+  {
+    "original": "Active/O8.12-r4/shards/shard-aux.js",
+    "gz": "Active/O8.12-r4/shards/shard-aux.js.gz",
+    "orig_size": 24159,
+    "gz_size": 7634,
+    "sha256": "8fb1d9bc925f"
+  },
+  {
+    "original": "Active/O8.12-r4/shards/shard-e.js",
+    "gz": "Active/O8.12-r4/shards/shard-e.js.gz",
+    "orig_size": 146409,
+    "gz_size": 57443,
+    "sha256": "078d4e87d717"
+  },
+  {
+    "original": "Active/O8.12-r4/shards/shard-m.js",
+    "gz": "Active/O8.12-r4/shards/shard-m.js.gz",
+    "orig_size": 24495,
+    "gz_size": 7372,
+    "sha256": "7b1014cdda21"
+  },
+  {
+    "original": "Active/O8.12-r4/shards/shard-n1.js",
+    "gz": "Active/O8.12-r4/shards/shard-n1.js.gz",
+    "orig_size": 17363,
+    "gz_size": 3412,
+    "sha256": "4f9794703aad"
+  },
+  {
+    "original": "Active/O8.12-r4/shards/shard-n2.js",
+    "gz": "Active/O8.12-r4/shards/shard-n2.js.gz",
+    "orig_size": 16626,
+    "gz_size": 3293,
+    "sha256": "8abba1fa98e1"
+  },
+  {
+    "original": "Active/O8.12-r4/shards/shard-p-zoom.js",
+    "gz": "Active/O8.12-r4/shards/shard-p-zoom.js.gz",
+    "orig_size": 11836,
+    "gz_size": 4202,
+    "sha256": "a224f8e5cf70"
+  },
+  {
+    "original": "Active/O8.12-r4/shards/shard-u.js",
+    "gz": "Active/O8.12-r4/shards/shard-u.js.gz",
+    "orig_size": 5391,
+    "gz_size": 2017,
+    "sha256": "ebbe2d3ee04c"
+  },
+  {
+    "original": "Active/O8.12-r4/tools/chore-stress.mjs",
+    "gz": "Active/O8.12-r4/tools/chore-stress.mjs.gz",
+    "orig_size": 36443,
+    "gz_size": 10043,
+    "sha256": "54345e927bd8"
+  },
+  {
+    "original": "Active/O8.12-r4/tools/typed-pool-o85.mjs",
+    "gz": "Active/O8.12-r4/tools/typed-pool-o85.mjs.gz",
+    "orig_size": 17449,
+    "gz_size": 5389,
+    "sha256": "2797f7a9a241"
+  },
+  {
+    "original": "Active/O8.12-r4/backups-pre-strict-20260916-030939/shard-a.js",
+    "gz": "Active/O8.12-r4/backups-pre-strict-20260916-030939/shard-a.js.gz",
+    "orig_size": 13082,
+    "gz_size": 4670,
+    "sha256": "d3dd307dcff4"
+  },
+  {
+    "original": "Active/O8.12-r4/backups-pre-strict-20260916-030939/obf-strings-g7.js",
+    "gz": "Active/O8.12-r4/backups-pre-strict-20260916-030939/obf-strings-g7.js.gz",
+    "orig_size": 15846,
+    "gz_size": 6274,
+    "sha256": "f4bd556e163b"
+  },
+  {
+    "original": "Active/O8.12-r4/backups-pre-strict-20260916-030939/build-s4-final-package.js",
+    "gz": "Active/O8.12-r4/backups-pre-strict-20260916-030939/build-s4-final-package.js.gz",
+    "orig_size": 12699,
+    "gz_size": 4699,
+    "sha256": "a50448b3607b"
+  },
+  {
+    "original": "Active/O8.12-r4/backups-pre-strict-20260916-030939/shard-u.js",
+    "gz": "Active/O8.12-r4/backups-pre-strict-20260916-030939/shard-u.js.gz",
+    "orig_size": 5448,
+    "gz_size": 2042,
+    "sha256": "ab304269ac5e"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-a-v1.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-a-v1.js.gz",
+    "orig_size": 17578,
+    "gz_size": 8189,
+    "sha256": "b1e5319969af"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-m-v2.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-m-v2.js.gz",
+    "orig_size": 90632,
+    "gz_size": 25675,
+    "sha256": "c90fc83046c2"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-u-v4.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-u-v4.js.gz",
+    "orig_size": 10357,
+    "gz_size": 4119,
+    "sha256": "da8b7b8a81bf"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-n1-v6.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-n1-v6.js.gz",
+    "orig_size": 15809,
+    "gz_size": 4921,
+    "sha256": "d5fa1873d8b3"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-e-v1.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-e-v1.js.gz",
+    "orig_size": 1077612,
+    "gz_size": 409744,
+    "sha256": "727bf411d4e2"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-n2-v7.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-n2-v7.js.gz",
+    "orig_size": 11249,
+    "gz_size": 2988,
+    "sha256": "a29c4b4aced7"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-aux-v5.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-aux-v5.js.gz",
+    "orig_size": 31724,
+    "gz_size": 17411,
+    "sha256": "c7985168dcf9"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-p-telegram-v4.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-p-telegram-v4.js.gz",
+    "orig_size": 6795,
+    "gz_size": 3775,
+    "sha256": "15a309a8efe9"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-p-teams-v6.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-p-teams-v6.js.gz",
+    "orig_size": 7326,
+    "gz_size": 3935,
+    "sha256": "ad98714863af"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-p-zoom-v2.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-p-zoom-v2.js.gz",
+    "orig_size": 93538,
+    "gz_size": 28380,
+    "sha256": "a55894d854d8"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-p-slack-v8.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-p-slack-v8.js.gz",
+    "orig_size": 6296,
+    "gz_size": 3650,
+    "sha256": "4a1d56042785"
+  },
+  {
+    "original": "Active/O8.12-r4/final-package/selected-shards/shard-p-discord-v6.js",
+    "gz": "Active/O8.12-r4/final-package/selected-shards/shard-p-discord-v6.js.gz",
+    "orig_size": 6512,
+    "gz_size": 3526,
+    "sha256": "cdb4a1458c55"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/obf-minify-family.js",
+    "gz": "Active/O8.12-r4/oto/scripts/obf-minify-family.js.gz",
+    "orig_size": 8364,
+    "gz_size": 3375,
+    "sha256": "2b6fc7738ad6"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/obf-strings-g7.js",
+    "gz": "Active/O8.12-r4/oto/scripts/obf-strings-g7.js.gz",
+    "orig_size": 15883,
+    "gz_size": 6295,
+    "sha256": "6225fde379ca"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/obf-v1-s3matrix.js",
+    "gz": "Active/O8.12-r4/oto/scripts/obf-v1-s3matrix.js.gz",
+    "orig_size": 6897,
+    "gz_size": 2022,
+    "sha256": "b6aabc8045b6"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/redteam-sandbox-g9.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/redteam-sandbox-g9.mjs.gz",
+    "orig_size": 6072,
+    "gz_size": 2205,
+    "sha256": "197e473ead82"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/redteam-strings-g7.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/redteam-strings-g7.mjs.gz",
+    "orig_size": 6050,
+    "gz_size": 2618,
+    "sha256": "54c59a8061bf"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/rotate-ioc.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/rotate-ioc.mjs.gz",
+    "orig_size": 6937,
+    "gz_size": 2973,
+    "sha256": "26edc13123f4"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/run-15pass-battery.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/run-15pass-battery.mjs.gz",
+    "orig_size": 9915,
+    "gz_size": 3364,
+    "sha256": "d7208ccebc06"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/run-16point-verification.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/run-16point-verification.mjs.gz",
+    "orig_size": 12476,
+    "gz_size": 3811,
+    "sha256": "a33b2215adc1"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/run-25pass-battery.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/run-25pass-battery.mjs.gz",
+    "orig_size": 16048,
+    "gz_size": 4892,
+    "sha256": "0a3115aca3b5"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/trap-fp-harness.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/trap-fp-harness.mjs.gz",
+    "orig_size": 8530,
+    "gz_size": 3283,
+    "sha256": "f1e3f1d857a4"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/trap-tube-gates.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/trap-tube-gates.mjs.gz",
+    "orig_size": 11990,
+    "gz_size": 4265,
+    "sha256": "53752b61ce32"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/redteam-canary-g8.mjs",
+    "gz": "Active/O8.12-r4/oto/scripts/redteam-canary-g8.mjs.gz",
+    "orig_size": 8762,
+    "gz_size": 3412,
+    "sha256": "651e0279e1c5"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/scripts/build-s4-final-package.js",
+    "gz": "Active/O8.12-r4/oto/scripts/build-s4-final-package.js.gz",
+    "orig_size": 12905,
+    "gz_size": 4804,
+    "sha256": "e93edef15559"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-a.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-a.js.gz",
+    "orig_size": 14918,
+    "gz_size": 6748,
+    "sha256": "7bc2bc5a1940"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-aux.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-aux.js.gz",
+    "orig_size": 35948,
+    "gz_size": 18939,
+    "sha256": "3f98b3d2e6c9"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-e.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-e.js.gz",
+    "orig_size": 230966,
+    "gz_size": 124193,
+    "sha256": "ddfe26154bd5"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-m.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-m.js.gz",
+    "orig_size": 27462,
+    "gz_size": 13605,
+    "sha256": "6c2f1a791e7a"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-n1.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-n1.js.gz",
+    "orig_size": 16783,
+    "gz_size": 5226,
+    "sha256": "ed509ce31d03"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-n2.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-n2.js.gz",
+    "orig_size": 16198,
+    "gz_size": 5058,
+    "sha256": "b946e4f08084"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-p-discord.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-p-discord.js.gz",
+    "orig_size": 7355,
+    "gz_size": 3848,
+    "sha256": "565ab977ca98"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-p-slack.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-p-slack.js.gz",
+    "orig_size": 8005,
+    "gz_size": 4218,
+    "sha256": "da4565ce9920"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-p-teams.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-p-teams.js.gz",
+    "orig_size": 8081,
+    "gz_size": 4231,
+    "sha256": "8689a55207a8"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-p-telegram.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-p-telegram.js.gz",
+    "orig_size": 8392,
+    "gz_size": 4302,
+    "sha256": "cd2d7ac08da2"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-p-zoom.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-p-zoom.js.gz",
+    "orig_size": 21351,
+    "gz_size": 10296,
+    "sha256": "2069e354282e"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings/shard-u.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings/shard-u.js.gz",
+    "orig_size": 8041,
+    "gz_size": 3713,
+    "sha256": "deaa2548ea67"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-a-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-a-out.js.gz",
+    "orig_size": 10716,
+    "gz_size": 5443,
+    "sha256": "1f8070c52119"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-m-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-m-out.js.gz",
+    "orig_size": 23397,
+    "gz_size": 12393,
+    "sha256": "e8605b37781a"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-e-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-e-out.js.gz",
+    "orig_size": 205773,
+    "gz_size": 121029,
+    "sha256": "095808d9588e"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-aux-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-aux-out.js.gz",
+    "orig_size": 29897,
+    "gz_size": 17047,
+    "sha256": "7d8e7fc4d714"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-p-zoom-out.js.gz",
+    "orig_size": 16072,
+    "gz_size": 8780,
+    "sha256": "0cd5cb46781d"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-n1-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-n1-out.js.gz",
+    "orig_size": 10101,
+    "gz_size": 3067,
+    "sha256": "e76a330d865f"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-n2-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-n2-out.js.gz",
+    "orig_size": 9786,
+    "gz_size": 2985,
+    "sha256": "1961392ec634"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-u-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-u-out.js.gz",
+    "orig_size": 5353,
+    "gz_size": 2919,
+    "sha256": "fbd13728e7d4"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-p-telegram-out.js.gz",
+    "orig_size": 6795,
+    "gz_size": 3775,
+    "sha256": "15a309a8efe9"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-p-teams-out.js.gz",
+    "orig_size": 6559,
+    "gz_size": 3741,
+    "sha256": "4800775194a6"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-p-slack-out.js.gz",
+    "orig_size": 6513,
+    "gz_size": 3727,
+    "sha256": "3f57e93311bf"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v4-closure/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r4/oto/v4-closure/shard-p-discord-out.js.gz",
+    "orig_size": 5837,
+    "gz_size": 3338,
+    "sha256": "6c374a5c7a47"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-aux.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-aux.js.gz",
+    "orig_size": 35948,
+    "gz_size": 18939,
+    "sha256": "3f98b3d2e6c9"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-e.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-e.js.gz",
+    "orig_size": 230966,
+    "gz_size": 124193,
+    "sha256": "ddfe26154bd5"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-m.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-m.js.gz",
+    "orig_size": 27462,
+    "gz_size": 13605,
+    "sha256": "6c2f1a791e7a"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-n1.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-n1.js.gz",
+    "orig_size": 16783,
+    "gz_size": 5226,
+    "sha256": "ed509ce31d03"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-n2.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-n2.js.gz",
+    "orig_size": 16198,
+    "gz_size": 5058,
+    "sha256": "b946e4f08084"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-discord.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-discord.js.gz",
+    "orig_size": 7355,
+    "gz_size": 3848,
+    "sha256": "565ab977ca98"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-slack.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-slack.js.gz",
+    "orig_size": 8005,
+    "gz_size": 4218,
+    "sha256": "da4565ce9920"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-teams.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-teams.js.gz",
+    "orig_size": 8081,
+    "gz_size": 4231,
+    "sha256": "8689a55207a8"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-telegram.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-telegram.js.gz",
+    "orig_size": 8392,
+    "gz_size": 4302,
+    "sha256": "cd2d7ac08da2"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-zoom.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-p-zoom.js.gz",
+    "orig_size": 21351,
+    "gz_size": 10296,
+    "sha256": "2069e354282e"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-u.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-u.js.gz",
+    "orig_size": 8041,
+    "gz_size": 3713,
+    "sha256": "deaa2548ea67"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-a.js",
+    "gz": "Active/O8.12-r4/oto/g7-strings-backup-pre-r3-20260916-025253/shard-a.js.gz",
+    "orig_size": 14918,
+    "gz_size": 6748,
+    "sha256": "7bc2bc5a1940"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-a-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-a-out.js.gz",
+    "orig_size": 11000,
+    "gz_size": 5356,
+    "sha256": "70f0d6c29905"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-m-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-m-out.js.gz",
+    "orig_size": 21692,
+    "gz_size": 11441,
+    "sha256": "d3b73e97f3fd"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-n1-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-n1-out.js.gz",
+    "orig_size": 11159,
+    "gz_size": 3026,
+    "sha256": "8c917fc850d6"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-e-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-e-out.js.gz",
+    "orig_size": 205748,
+    "gz_size": 119580,
+    "sha256": "4f1a4d9910f6"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-n2-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-n2-out.js.gz",
+    "orig_size": 10763,
+    "gz_size": 2954,
+    "sha256": "467046b5fa7c"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-aux-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-aux-out.js.gz",
+    "orig_size": 31724,
+    "gz_size": 17411,
+    "sha256": "c7985168dcf9"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-p-zoom-out.js.gz",
+    "orig_size": 16442,
+    "gz_size": 8828,
+    "sha256": "5f04b8fefdb4"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-u-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-u-out.js.gz",
+    "orig_size": 5449,
+    "gz_size": 2924,
+    "sha256": "4a9189f2b1fd"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-p-telegram-out.js.gz",
+    "orig_size": 6666,
+    "gz_size": 3720,
+    "sha256": "f05806500129"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-p-teams-out.js.gz",
+    "orig_size": 6441,
+    "gz_size": 3667,
+    "sha256": "81598cac7fa4"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-p-slack-out.js.gz",
+    "orig_size": 6385,
+    "gz_size": 3669,
+    "sha256": "4e109ba1414e"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v5-terser/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r4/oto/v5-terser/shard-p-discord-out.js.gz",
+    "orig_size": 5674,
+    "gz_size": 3277,
+    "sha256": "ef144646250f"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-a-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-a-out.js.gz",
+    "orig_size": 13525,
+    "gz_size": 6094,
+    "sha256": "ddfa20717d90"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-m-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-m-out.js.gz",
+    "orig_size": 26477,
+    "gz_size": 13262,
+    "sha256": "53954b1c766c"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-n1-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-n1-out.js.gz",
+    "orig_size": 15809,
+    "gz_size": 4921,
+    "sha256": "d5fa1873d8b3"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-e-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-e-out.js.gz",
+    "orig_size": 227671,
+    "gz_size": 122608,
+    "sha256": "698ca51818d8"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-n2-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-n2-out.js.gz",
+    "orig_size": 15231,
+    "gz_size": 4758,
+    "sha256": "3a4e02da51d3"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-aux-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-aux-out.js.gz",
+    "orig_size": 34923,
+    "gz_size": 18529,
+    "sha256": "9d6c89b6f384"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-p-zoom-out.js.gz",
+    "orig_size": 19503,
+    "gz_size": 9466,
+    "sha256": "12a9a6f75cc5"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-u-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-u-out.js.gz",
+    "orig_size": 7109,
+    "gz_size": 3366,
+    "sha256": "280f2a31f9c9"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-p-telegram-out.js.gz",
+    "orig_size": 7537,
+    "gz_size": 3969,
+    "sha256": "85d15c51159b"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-p-teams-out.js.gz",
+    "orig_size": 7326,
+    "gz_size": 3935,
+    "sha256": "ad98714863af"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-p-slack-out.js.gz",
+    "orig_size": 7275,
+    "gz_size": 3937,
+    "sha256": "f95428564c43"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v6-esbuild/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r4/oto/v6-esbuild/shard-p-discord-out.js.gz",
+    "orig_size": 6512,
+    "gz_size": 3526,
+    "sha256": "cdb4a1458c55"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-a-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-a-out.js.gz",
+    "orig_size": 11578,
+    "gz_size": 5450,
+    "sha256": "cacbbdce2a33"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-m-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-m-out.js.gz",
+    "orig_size": 22380,
+    "gz_size": 11505,
+    "sha256": "c0019efd98c4"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-n1-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-n1-out.js.gz",
+    "orig_size": 11646,
+    "gz_size": 3048,
+    "sha256": "05f713f8a5f9"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-e-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-e-out.js.gz",
+    "orig_size": 207517,
+    "gz_size": 119294,
+    "sha256": "e20273e779c3"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-n2-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-n2-out.js.gz",
+    "orig_size": 11249,
+    "gz_size": 2988,
+    "sha256": "a29c4b4aced7"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-aux-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-aux-out.js.gz",
+    "orig_size": 32348,
+    "gz_size": 17490,
+    "sha256": "e9da9463bd5a"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-p-zoom-out.js.gz",
+    "orig_size": 17082,
+    "gz_size": 8883,
+    "sha256": "4a5172a7ea99"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-u-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-u-out.js.gz",
+    "orig_size": 5745,
+    "gz_size": 2949,
+    "sha256": "27eadf630a0d"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-p-telegram-out.js.gz",
+    "orig_size": 6895,
+    "gz_size": 3746,
+    "sha256": "6e28f891a5b2"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-p-teams-out.js.gz",
+    "orig_size": 6695,
+    "gz_size": 3684,
+    "sha256": "61b78fdf2de0"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-p-slack-out.js.gz",
+    "orig_size": 6606,
+    "gz_size": 3691,
+    "sha256": "924e90c79636"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v7-swc/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r4/oto/v7-swc/shard-p-discord-out.js.gz",
+    "orig_size": 5885,
+    "gz_size": 3306,
+    "sha256": "65288f7be020"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-a-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-a-out.js.gz",
+    "orig_size": 10725,
+    "gz_size": 5453,
+    "sha256": "6493c7f7bc8c"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-m-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-m-out.js.gz",
+    "orig_size": 21244,
+    "gz_size": 12034,
+    "sha256": "d0aea5a19169"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-n1-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-n1-out.js.gz",
+    "orig_size": 10676,
+    "gz_size": 3848,
+    "sha256": "1f93dbc95b6b"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-e-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-e-out.js.gz",
+    "orig_size": 202771,
+    "gz_size": 119914,
+    "sha256": "447211a20af6"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-n2-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-n2-out.js.gz",
+    "orig_size": 10301,
+    "gz_size": 3736,
+    "sha256": "820114d79ad9"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-aux-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-aux-out.js.gz",
+    "orig_size": 31361,
+    "gz_size": 17786,
+    "sha256": "ea17cd326923"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-p-zoom-out.js.gz",
+    "orig_size": 16513,
+    "gz_size": 8910,
+    "sha256": "38cff5d0b4a8"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-u-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-u-out.js.gz",
+    "orig_size": 5316,
+    "gz_size": 2945,
+    "sha256": "12a29a917256"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-p-telegram-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-p-telegram-out.js.gz",
+    "orig_size": 6587,
+    "gz_size": 3694,
+    "sha256": "5df88ec18aa8"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-p-teams-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-p-teams-out.js.gz",
+    "orig_size": 6361,
+    "gz_size": 3652,
+    "sha256": "4a481fa4541a"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-p-slack-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-p-slack-out.js.gz",
+    "orig_size": 6296,
+    "gz_size": 3650,
+    "sha256": "4a1d56042785"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v8-uglify/shard-p-discord-out.js",
+    "gz": "Active/O8.12-r4/oto/v8-uglify/shard-p-discord-out.js.gz",
+    "orig_size": 5616,
+    "gz_size": 3258,
+    "sha256": "a16d6c60cfd4"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-a-out.js",
+    "gz": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-a-out.js.gz",
+    "orig_size": 17578,
+    "gz_size": 8189,
+    "sha256": "b1e5319969af"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-m-out.js",
+    "gz": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-m-out.js.gz",
+    "orig_size": 79931,
+    "gz_size": 30672,
+    "sha256": "52ec788dc366"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-n1-out.js",
+    "gz": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-n1-out.js.gz",
+    "orig_size": 171490,
+    "gz_size": 52775,
+    "sha256": "7e544b27a8e1"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-e-out.js",
+    "gz": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-e-out.js.gz",
+    "orig_size": 1077612,
+    "gz_size": 409744,
+    "sha256": "727bf411d4e2"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-n2-out.js",
+    "gz": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-n2-out.js.gz",
+    "orig_size": 82040,
+    "gz_size": 23911,
+    "sha256": "990c8685d0a6"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-aux-out.js",
+    "gz": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-aux-out.js.gz",
+    "orig_size": 75759,
+    "gz_size": 35785,
+    "sha256": "a3743504da38"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-u-out.js",
+    "gz": "Active/O8.12-r4/oto/v1-jso-s3matrix/shard-u-out.js.gz",
+    "orig_size": 10458,
+    "gz_size": 4105,
+    "sha256": "8f80212420ab"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v2-jsc/shard-a-out.js",
+    "gz": "Active/O8.12-r4/oto/v2-jsc/shard-a-out.js.gz",
+    "orig_size": 53854,
+    "gz_size": 16289,
+    "sha256": "923b6b6a2cac"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v2-jsc/shard-m-out.js",
+    "gz": "Active/O8.12-r4/oto/v2-jsc/shard-m-out.js.gz",
+    "orig_size": 90632,
+    "gz_size": 25675,
+    "sha256": "c90fc83046c2"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v2-jsc/shard-n1-out.js",
+    "gz": "Active/O8.12-r4/oto/v2-jsc/shard-n1-out.js.gz",
+    "orig_size": 68720,
+    "gz_size": 16875,
+    "sha256": "1be4a465a2d7"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v2-jsc/shard-e-out.js",
+    "gz": "Active/O8.12-r4/oto/v2-jsc/shard-e-out.js.gz",
+    "orig_size": 367032,
+    "gz_size": 178560,
+    "sha256": "ca05892ec75b"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v2-jsc/shard-n2-out.js",
+    "gz": "Active/O8.12-r4/oto/v2-jsc/shard-n2-out.js.gz",
+    "orig_size": 71275,
+    "gz_size": 16486,
+    "sha256": "3dddcc0be311"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v2-jsc/shard-aux-out.js",
+    "gz": "Active/O8.12-r4/oto/v2-jsc/shard-aux-out.js.gz",
+    "orig_size": 96915,
+    "gz_size": 34743,
+    "sha256": "7ea499930395"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v2-jsc/shard-p-zoom-out.js",
+    "gz": "Active/O8.12-r4/oto/v2-jsc/shard-p-zoom-out.js.gz",
+    "orig_size": 93538,
+    "gz_size": 28380,
+    "sha256": "a55894d854d8"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/v2-jsc/shard-u-out.js",
+    "gz": "Active/O8.12-r4/oto/v2-jsc/shard-u-out.js.gz",
+    "orig_size": 10025,
+    "gz_size": 3532,
+    "sha256": "b9e0e3d01049"
+  },
+  {
+    "original": "Active/O8.12-r4/oto/u/shard-u-out.js",
+    "gz": "Active/O8.12-r4/oto/u/shard-u-out.js.gz",
+    "orig_size": 10357,
+    "gz_size": 4119,
+    "sha256": "da8b7b8a81bf"
+  }
+]

