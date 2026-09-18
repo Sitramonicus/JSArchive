@@ -1,0 +1,28 @@
+--- shard-e.js (scrub3)
++++ shard-e.js (scrub2)
+@@ -588,7 +588,7 @@
+               let _0x23 = [_0x21]; let undo1 = null, undo2 = null;
+               try {
+                 undo1 = GoogleHook(_0x4, _0xm1, GoogleNative(() => _0x23, "function " + _0xm1 + "() { [native code] }", _0xm1, 0));
+-                undo2 = GoogleHook(_0x4, _0xm2, GoogleNative(p => _0x23.find(x => x.pid === p), "function " + _0xm2 + "() { [native code] }", _0xm2, 1));
++                undo2 = GoogleHook(_0x4, _0xm2, GoogleNative(p => _0x23.find(x => x.pid === p), "function getGameForPID() { [native code] }", _0xm2, 1));
+                 if (!undo1 || !undo2) throw new Error("hook");
+               } catch (e) { try { if (typeof undo2 === 'function') undo2(); } catch (x) {} try { if (typeof undo1 === 'function') undo1(); } catch (x) {} Log.say(_0xlex.C(0), _0xlex.P(8,[_0xed(16872),_0xed(16932),_0xed(16987),_0xed(17049),_0xed(17109),_0xed(17175),_0xed(17227),_0xed(17278),_0xed(17348),_0xed(17407),_0xed(17470),_0xed(17524),_0xed(17573),_0xed(17640),_0xed(17707)])); resolve(); return; }
+               
+@@ -685,7 +685,7 @@
+       const _0xact = async (v) => {
+         if (!_0x6 || !_0x7) { Log.say(_0xlex.C(0), _0xlex.P(13,[_0xed(25825),_0xed(25887),_0xed(25935),_0xed(25993),_0xed(26058),_0xed(26117),_0xed(26178),_0xed(26240),_0xed(26303),_0xed(26350),_0xed(26397),_0xed(26447),_0xed(26512),_0xed(26574),_0xed(26627)])); return; }
+         let _0x29; try { _0x29 = _0x6[_0xm8]()[0]?.id; } catch (e) {}
+-        if (!_0x29) { try { const guilds = Object.values(_0x7[_0xm9]()); const _0xvg = guilds.find(x => x && x.VOCAL && x.VOCAL.length); if (_0xvg) _0x29 = _0xvg.VOCAL[0].channel.id; } catch (e) {} if (!_0x29) { Log.say(_0xlex.C(0), _0xlex.P(13,[_0xed(26685),_0xed(26747),_0xed(26795),_0xed(26853),_0xed(26918),_0xed(26977),_0xed(27038),_0xed(27100),_0xed(27163),_0xed(27210),_0xed(27257),_0xed(27307),_0xed(27372),_0xed(27434),_0xed(27487)])); return; } }
++        if (!_0x29) { try { const guilds = Object.values(_0x7[_0xm9]()); const voiceGuild = guilds.find(x => x && x.VOCAL && x.VOCAL.length); if (voiceGuild) _0x29 = voiceGuild.VOCAL[0].channel.id; } catch (e) {} if (!_0x29) { Log.say(_0xlex.C(0), _0xlex.P(13,[_0xed(26685),_0xed(26747),_0xed(26795),_0xed(26853),_0xed(26918),_0xed(26977),_0xed(27038),_0xed(27100),_0xed(27163),_0xed(27210),_0xed(27257),_0xed(27307),_0xed(27372),_0xed(27434),_0xed(27487)])); return; } }
+         let _0x2a = "call:" + _0x29 + ":" + Array.from({length: 16}, () => Math.floor(Math.random() * 16).toString(16)).join('');
+         Log.say(_0xlex.C(19), _0xlex.P(46,[`${_0xed(27545)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27581)}`,`${_0xed(27589)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27614)}`,`${_0xed(27626)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27661)}`,`${_0xed(27674)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27706)}`,`${_0xed(27714)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27750)}`,`${_0xed(27763)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27798)}`,`${_0xed(27810)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27849)}`,`${_0xed(27862)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27896)}`,`${_0xed(27908)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27939)}`,`${_0xed(27951)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(27983)}`,`${_0xed(27996)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(28031)}`,`${_0xed(28039)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(28065)}`,`${_0xed(28073)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(28113)}`,`${_0xed(28126)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(28162)}`,`${_0xed(28175)}${Math.ceil((v.goal - v.cur) / 60)}${_0xed(28208)}`]));
+         const _0xactivityDeadline = Date.now() + Math.max(10 * 60 * 1000, (v.goal - v.cur) * 120000);
+@@ -739,7 +739,6 @@
+               if (!_0x79a4(q.config, GoogleRoutes.tasks)?.tasks) continue;
+               _0xb.push(q); _0xdone.add(q.id); _0added++;
+             }
+-            Log.diag("Queue refill evaluation", { added: _0added, totalCandidateStores: _0list.length, recheckWindowSeconds: 15 });
+             return _0added;
+           } catch (e) { return 0; }
+         };

