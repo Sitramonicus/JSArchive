@@ -1,0 +1,46 @@
+{
+ "tag": "o812",
+ "prev": "o811",
+ "date": "2026-09-15",
+ "version": {
+  "old": "8.11",
+  "new": "8.12"
+ },
+ "instance": {
+  "old": "3a82764d",
+  "new": "7e953faa"
+ },
+ "symbol": {
+  "old": "_0xq3a82764d",
+  "new": "_0xq7e953faa"
+ },
+ "codenames": {
+  "old": [
+   "wren",
+   "ridge",
+   "moss",
+   "tundra",
+   "ember",
+   "lark",
+   "cedar"
+  ],
+  "new": [
+   "owl",
+   "elm",
+   "quill",
+   "prairie",
+   "quartz",
+   "birch",
+   "umber"
+  ]
+ },
+ "cycleMs": {
+  "old": 17000,
+  "new": 14000
+ },
+ "files": [
+  "shards/shard-a.js",
+  "shards/shard-e.js"
+ ],
+ "note": "reversible: substitutions are exact old->new pairs above"
+}

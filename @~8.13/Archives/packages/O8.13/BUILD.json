@@ -1,0 +1,119 @@
+{
+  "version": "O8.13",
+  "date": "2026-09-17",
+  "instance": "7e953faa",
+  "build_seed": "851b28e5",
+  "rotation": "o812",
+  "symbol": "_0xq7e953faa",
+  "codenames": [
+    "owl",
+    "elm",
+    "quill",
+    "prairie",
+    "quartz",
+    "birch",
+    "umber"
+  ],
+  "cycleMs": 14000,
+  "cover": {
+    "file": "O8.12-cover.bmp",
+    "bytes": 2359350,
+    "sha256": "627ae142f2fdcd5b1c97d224d566e7daa3936b3ee223a642c139e56f5b335c88",
+    "dims": "1024x768",
+    "bpp": 24,
+    "salt": "3f72a1ec",
+    "occupancy": "61.37%",
+    "slots": "1387158/2260322",
+    "decoy_seed": 52375,
+    "cover_slack_bytes": 574,
+    "strip_offset": 628,
+    "real_offset": 99028
+  },
+  "bundle": {
+    "file": "O8.6-Final-final-bundle.js",
+    "bytes": 1873322,
+    "sha256": "ef1dac5e02a63d0d49c5ce0f12d6ae93aea1290529c6e57450278e271d00929d",
+    "g8_pins": "2c5117b5,248c1e0b,d8f25592",
+    "scripted_chars": 117727,
+    "script_blocks": "20/20"
+  },
+  "runner": {
+    "file": "O8.12-runner.js",
+    "bytes": 3371189,
+    "sha256": "e008b37736ce358e59d293e106891968cc413ab22b5ae407b8e7a3babe7c024f",
+    "loader_pins": "681f66ff,c755a5f8",
+    "board_blobs": "8/9/10/11 x 727",
+    "reel_tables": 7,
+    "tube_codes": 1191
+  },
+  "payloads": {
+    "real": {
+      "bytes": 1613098,
+      "sha256": "d89930d236033b1afd8733872c7bcf6d0ae49f1bde7edf072345c69344cb1473",
+      "gzip": 693567
+    },
+    "decoy": {
+      "bytes": 3112,
+      "sha256": "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511",
+      "gzip": 1658
+    },
+    "honey": {
+      "bytes": 1232,
+      "sha256": "f84995d19017b7f6e0c3f4293f5f74b803d15ffb51af6c67e7cf1be8212182ae",
+      "gzip": 727
+    },
+    "tube": {
+      "bytes": 2244,
+      "sha256": "9dad7c20adbfae9e3b59213876ea08760a5dca0ca8a6497f8700a88d0b2cf689",
+      "gzip": 1191
+    }
+  },
+  "dictionaries": {
+    "jso": 340,
+    "5k": 6068,
+    "runner5k": 3920,
+    "total": 10328,
+    "unique": 9988,
+    "note": "5k and runner augmented 2026-09-17 by dict-augment.mjs (Georgian, Katakana, U+0456/0269/0455). jso no longer used by any lane."
+  },
+  "pipeline": [
+    "obf-strings-g7.js (census 1094 measurable / 257 fiction)",
+    "obf-v1-s3matrix.js (per-lane rotated 2022-word slices of the balanced 5k; noSupLead identifier filter)",
+    "obf-minify-family.js (60/60)",
+    "obf-u-canon.js",
+    "obf-u-per-type.js",
+    "build-s4-final-package.js (Q guard + L2 trace + HNT-GREP noise + grep-noise.json sidecar)",
+    "build-stego12-r2.mjs (slackFor cover slack + post-terser HNT-GREP re-append)"
+  ],
+  "landed_this_line": [
+    "DS-3",
+    "HNT-X",
+    "HNT-Y",
+    "HNT-W",
+    "HNT-N/DS-2 cover slack",
+    "DS-1 board blobs",
+    "OTO-1 five pockets on v1",
+    "A1 pocket live-reads",
+    "Q guard",
+    "L2 trace",
+    "decoy-seed dseedFor fix",
+    "dictionary rebalance 20/20 scripts",
+    "HNT-GREP anti-grep noise"
+  ],
+  "tests": {
+    "battery": "25/25",
+    "sixteen_point": "14/16 (Pt05 dict overlap + Pt13 digest are long-standing)",
+    "tiers": "43 passed, 0 failed (--debug-name=佐藤 結衣)",
+    "gated": "S8 S9 S10 S12 S15 x {bundle, stego11p-real.min.js} = 10/10 ALL PASS"
+  },
+  "not_implemented": [
+    "TRP-E cross-pocket decoy",
+    "W-full honey-count jitter",
+    "CAR-M 2-bit dither",
+    "H shard-e split",
+    "D true 4-way",
+    "DIC-E/F/G",
+    "wasm (CSP-blocked)",
+    "comprehensive naming scheme (proposed, unapproved)"
+  ]
+}

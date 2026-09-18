@@ -1,0 +1,64 @@
+O8.13 — DISCORD-STEALTH LINE, GO-LIVE FREEZE
+Frozen: 2026-09-17 · Instance 7e953faa · BUILD-SEED 851b28e5 · Rotation o812 owl/elm/quill/prairie/quartz/birch/umber cycleMs 14000
+Rule (operator 2026-09-13): this dir is OVERWRITTEN on every 8.x change (move the iteration, don't mint revisions); superseded bytes documented in Archives/RETIRED.md and deleted. Instance id in [Host] logs identifies bytes.
+
+WHAT THIS IS
+  O8.13 = the Discord-stealth line descended from O8.12-r4 (frozen, 1e03f483). It carries the
+  collated Discord avenues plus the dictionary rebuild. Loader v3.3.2, 11 pieces, all five platform
+  pockets on v1-jso-s3matrix with equal-not-same OTO, cover 1024x768.
+
+  Carrier: PG3 snapshot strip + scattered 4-bit real channel, now with COVER SLACK — the strip no
+  longer begins at the fixed pixel offset. `slackFor(head)` derives 574 B from the frame's own 54
+  header bytes and the loader, the real reel and all seven board reels recompute the same value, so
+  the offset is never stored. Strip @628, real @99028, occupancy 61.37%.
+
+  Identifiers: per-lane rotated 2,022-word slices of the balanced 6,068-word dictionary (was a
+  single 340-word list shared by eight lanes, which is what skewed the script histogram). All 20 of
+  the operator's scripts now appear, top block 2.36x an even share (was 3.53x with Georgian at 0).
+  All 27 homoglyph substitutes from the operator's table are in use.
+
+  HNT-GREP: 40 surviving object keys (taskConfigV1, venueTitle, participantState, ...) each carry
+  homoglyph lookalikes built from the operator's substitution table, plus unused runner-dictionary
+  words as decoy strings — 177 strings, re-appended AFTER terser because terser's DCE strips them
+  otherwise. A grep for a payload key now competes with near-identical byte-differing neighbours.
+
+CONTENTS
+  O8.12-runner.js          3371189 B   Player runner v3.3.2, loader pins 681f66ff/c755a5f8 — RUN THIS
+  O8.12-cover.bmp          2359350 B   1024x768x24 salt 3f72a1ec, slack 574, dseed 52375
+  O8.6-Final-final-bundle.js 1873322 B 11-piece bundle, G8 pins 2c5117b5/248c1e0b/d8f25592
+  stego11p-real.min.js     1613098 B   real T2 source (gzip 693567)
+  stego11p-decoy.min.js       3112 B   Pixel Garden v2.0, decoy T1 source (gzip 1658)
+  stego11p-honey.min.js       1232 B   courtesy board honey (gzip 727)
+  stego11p-tube.min.js        2244 B   sealed tube vault (gzip 1191)
+  rotation.json              629 B   o811 -> o812 rotation record
+  BUILD.json                3396 B   provenance: inputs, tools, salts, sizes, tests, gap list
+  SHA256SUMS.txt                   checksums (relative paths, no self-entry)
+  ARCHIVE.txt (this file)
+
+VERIFIED AT FREEZE (2026-09-17)
+  battery        25/25
+  16-point       14/16   Pt05 dictionary overlap + Pt13 salted digest are long-standing, surfaced
+                         not hidden. The 13/16 baseline improved to 14/16 on this line.
+  tier suite     43 passed, 0 failed   (node Active/Stego/test-stego11-tiers.mjs <runner> <cover>
+                                        Uploads/stego2-cover-1024-scaled.bmp --debug-name='佐藤 結衣')
+  gated suite    S8 S9 S10 S12 S15 x {bundle, stego11p-real.min.js} = 10/10 ALL PASS
+  sha256sum -c   9/9 OK
+
+TWO STAFF/CONSOLE FACTS, because they have been confused before
+  Staff name (Line 1, `var 名`) = 佐藤 結衣. It is the DEFAULT. Changing it degrades to the garden.
+  `ripcord` is NOT the staff name — it is pwRcd, the level-1 console unlock. Five console keys:
+  pwDbg pwRes pwAK pwView pwRcd, slot order per Active/O8.13/tools/chore-stress.mjs argv 4..8.
+  Values are ephemeral-only per HANDOFF.md §0b.B and are deliberately not recorded here.
+
+KNOWN NOT IMPLEMENTED (see BUILD.json + Active/O8.13/AVENUES-O8.13-COLLATED.md)
+  TRP-E cross-pocket decoy — `Discord` is 0x in shard-p-telegram.js and `Telegram` 0x in
+    shard-p-discord.js, so honey prefixes still cluster by platform. This is also the unfinished
+    half of W-full (honey-count jitter 5-7 per pocket was never built).
+  CAR-M 2-bit dither · H shard-e split · D true 4-way · DIC-E/F/G · wasm (CSP-blocked).
+  Comprehensive naming scheme — proposed, never approved.
+
+BEFORE THIS IS PUSHED ANYWHERE (operator action, not agent action)
+  The repo was measured private=False with `Uploads/Passwords so I dont have to paste them.txt`
+  present in git history, and four handoff snapshots under Active/O8.13/ and Active/O8.12-r4/ still
+  hold all five passwords in plaintext. Rotate and history-scrub first. Agents do not push or
+  rewrite history without explicit approval.

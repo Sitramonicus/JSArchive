@@ -1,0 +1,48 @@
+var textCacheU = (function () {
+var B0 = ["fb8GugJ9Af6yLS/fJNZeXIdqkVp93z1k3WZRUkOXawAInHECFwEekXSH4iJDFyM3FA1MU+ZLw6P+JoiV95WC0DqT6Ida+ehJa2zCDzqU","cL8WuhF9FP7sLSTfOdZLXJRqnFp933Rkl2ZfUkSXPQBfnDACWgEGkQ==","Zb8buhh9Fv7sLXrfYNZcXNJqxFon3yFk2WZTUg==","Y78Xuhh9BP6kLTjfbtYSXIxqmlom3zxk22ZAUk6XZABCnDICWgFUkXOH"];
+var B1 = ["fb8GugJ9Af6yLS/fJNZeXIdqkVp93z1k3WZRUkOXawAInHECFwEekXSH4iJDFyM3FA1MU+ZLw6P+JoiV85WE0DqT7Idc+elJamyQDz2U","cL8Hult9Bv6kLWbff9ZLXIZqlFpn33Bk0mYKUh6XPgBcnDEC","Ub8bugV9Ev6uLWffb9ZfXINqkFpn3z5k32ZRUk2XNgAInGAC","Ub8bugV9Ev6uLWffb9ZfXINqkFpn3yBklWZVUlqXKgAanGYCHQFEkT6H+SISF3k3Vw0=","fb8GugJ9Af6yLS/fJNZeXIdqkVp93z1k3WZRUkOXawAInHECFwEekXSH4iJDFyM3FA1MU+ZLw6P+JoiV9JXV0DqT64cN+bJJOmyTD26U"];
+var B2 = ["cL8WuhF9FP7sLSTfOdZLXIZqlFpn33Bk0mYKUh6XNABZnDoC","Ub8bugV9Ev6uLWffb9ZfXINqkFpn3z5k3mYHUkuXYgAInDsC","Zr8auhd9A/6lLTjfYtYJXNVq2lp/33xk2WZRUkOXKAAJnDICDwFWkQ=="];
+var B3 = ["oOWzQz3KUBMMJgzDtEuaHQvP","EhWZaYaGlIcxxYIpGs1FCJFK","tUgfjaYAZRTl3YOKrQeeEfyj","eH2btsoMfT2629NgV7z3VQrwOu5Uam/bKMQLr7Tjfc4lKA==","OLH8ohh+fQkMgT8wxIZWK2H0z2T22ybFJmfdpoE6FzSODvdUM4YB1+Y+VOgsiN+DTCM=","xoKywgbYVSejyPVd7vSPTsQDBX6Z2bpgHNBxNUQAzNf6JjkIqeNEnz9Rr6nzhl9msiE0d9y9nZFH0UrH/7Y1r9VTO6a2Ei1bVkem+AUX","PwW/LL6Sql0bPW5bwgxJD+d5beSDyfbpndX60g0A","apla5CYsOiiH4lu6afgFhZbIixp9L/VJ/XwMMmmW8dM3+t9NBec=","wauBP+0RtKag/OXe1OoxG8jSGpliP4AQMm9B24GftUu5BA=="];
+var B4 = ["fr9+mgd9fN67LRn/c9Z9fJJq+Xoq3x9E12Y8chuX","bYecucN7IzF+aCmYZdJCBWf/s1c=","wLEB4WGXahIkJWTbc+D0PBpfSE2KfQ==","dJ0lp+GrDnm4wvpl","iQprH9GigYEqaevuNo1niU72","Nfk5NygGkZlhdtpEsvaI2/6HoZh33eCNS7jkjH5/Urf1jiMybjISYc/eKd0=","fxG00qqOoPHp12cTb+X3Tw9MnwsG0VKg37vgtCY/q8zbtDoo93yRtkul","essbWTNQKGRN6wdki2aJDNnwvBuEdoOwox0XX0oq","sRx+1YeGwe7KSbkWuF/1HYr21Vk="];
+var B5 = ["eb8XuhJ9Fv6kLWffJtYUXIpqgVph32pkl2ZRUh+XYgBVnDcCWgE=","Z78Xuhp9EP64LSffJNYEXJdq2Fp+33pk3mYfUhyXNwBVnGcC"];
+var POOL = [B0,B1,B2,B3,B4,B5];
+var ROUTE = [1024,1025,1026,1027,1028,1029,1030,1031,1032,768,769,770,771,772,773,774,775,776];
+var TOTAL = 18, NREAL = 12, C1 = 3709375623, C2 = 434663997, SKEY = 1506418584;
+var SW_BAD = 0, SW_LVL = 0, SW_VISIT = 0;
+var SW_H = 8, SW_T = 12, SW_END = 70;
+var TUBE = ["shroud{n} settled: {p}% converged","lattice L{n} lifted","reel layer{n} ok","gate{n} aligned: {p}% converged","chunk{n} converged -- subkey {h}","wheel W{n} ok ({p}% mapped)","chain{n} open ({p}% mapped)","schedule K{n} sealed -- subkey {h}"];
+function cell(p) { var z = ROUTE[p >>> 0], b, s; if (typeof z !== 'number') return null; b = POOL[z >>> 8]; s = z & 255; return b && b[s]; }
+function tubeLayer(v) { var hx = ((SKEY ^ Math.imul(v + 3, 2654435761)) >>> 0).toString(16); hx = ('00000000' + hx).slice(-8); if (v >= SW_END) return 'vault seal ' + hx + ' -- lattice quiet'; var t = TUBE[v % TUBE.length]; var prog = 100 - Math.floor(100 / (v + 2)); return t.split('{n}').join(v).split('{p}').join(prog).split('{h}').join(hx); }
+function dec(pos) {
+if (!(pos >= 0 && pos < NREAL)) { SW_BAD = (SW_BAD*31 + (pos&3)) &0xffff; SW_BAD++; if (SW_BAD >= SW_T) SW_LVL = 2; else if (SW_BAD >= SW_H) SW_LVL = 1; // order-sensitive
+if (typeof process !== 'undefined' && process.env && process.env.CS_TRIP_DIAG === '1') { try { console.debug('TRIPDIAG u bad=' + SW_BAD + ' lvl=' + SW_LVL); } catch (e9) {} } }
+if (SW_LVL >= 2) return tubeLayer(SW_VISIT++);
+var honey = (typeof lexMode !== 'undefined' && lexMode !== 0) || SW_LVL >= 1;
+var p = honey ? (NREAL + (pos % (TOTAL - NREAL))) : pos, rawCell = cell(p);
+if (typeof rawCell !== 'string') {
+var w = (SKEY ^ Math.imul(pos, 2654435761)) >>> 0, acc = 0, iw;
+for (iw = 0; iw < 48; iw++) { w ^= (w << 13) >>> 0; w ^= w >>> 17; w ^= (w << 5) >>> 0; acc = (acc + (w & 255)) >>> 0; }
+p = NREAL + (acc % (TOTAL - NREAL)); rawCell = cell(p); }
+var raw = atob(rawCell);
+var out = '', i2;
+var st = (SKEY ^ Math.imul((p + 1) >>> 0, 2654435761)) >>> 0;
+for (i2 = 0; i2 < raw.length; i2++) { st ^= (st << 13) >>> 0; st ^= st >>> 17; st ^= (st << 5) >>> 0;
+out += String.fromCharCode(raw.charCodeAt(i2) ^ (st & 255)); }
+var s = '', k;
+for (k = 0; k + 1 < out.length; k += 2) s += String.fromCharCode(out.charCodeAt(k) | (out.charCodeAt(k + 1) << 8));
+return s; }
+function d1(a) { return dec((a ^ C1) >>> 0); }
+function d2(a, b) { return dec((a ^ b ^ C2) >>> 0); }
+function d3(a, b, r) { var x = (a ^ b ^ C2) >>> 0, i, u;
+for (i = 0; i < (r & 7); i++) { u = Math.imul((x ^ SKEY ^ (x >>> 13)) >>> 0, 4151308245) >>> 0; x = (u ^ (u >>> 15)) >>> 0; }
+return dec(x); }
+var memo = {};
+function pcache(a) { var k = (a ^ C1) >>> 0; if (memo[k] === undefined) memo[k] = dec(k); return memo[k]; }
+function pfmt(f, a) { var w = (SKEY ^ a) >>> 0, i;
+for (i = 0; i < 32; i++) { w ^= (w << 13) >>> 0; w ^= w >>> 17; w ^= (w << 5) >>> 0; }
+return dec(NREAL + (w % (TOTAL - NREAL))); }
+return { d1: d1, d2: d2, d3: d3, pcache: pcache, pfmt: pfmt }; })();
+(function(_0xmod){const Log=_0xmod.log;// O8.12 rcd/dbg OR gate — same level, 会員-gated, upgrade allowed, no literal (hashes only, no else-if)
+const _0xRcdHash=0xb5546f18,_0xDbgHash=0xe79dbcf6;let _0xdbgOK=false,_0xrcdOK=false,_0xt0=Date.now();function _0xfnv(s){let h=0x811c9dc5;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,0x01000193)>>>0;}return h>>>0;}function _0xlevel(){let _k=typeof 会員!==textCacheU.pcache(3709375629)?会員:typeof globalThis!==textCacheU.pcache(3709375630)&&typeof globalThis.会員!==textCacheU.pcache(3709375619)?globalThis.会員:undefined;if(typeof _k===textCacheU.pcache(3709375628))return 0;if(_k===0)return 0;if(_k===1)return _0xdbgOK||_0xrcdOK?1:0;if(_k===2)return _0xdbgOK?2:_0xrcdOK?1:0;return 0;}// upgrade: rcd→dbg auto-promotes level (recomputed every call), independent flags no else-if
+function _0xcheckMain(input){if(Date.now()-_0xt0>62800&&!(_0xdbgOK||_0xrcdOK))return false;const h=_0xfnv(String(input));let _m=false;if(h===_0xDbgHash){_0xdbgOK=true;_m=true;}if(h===_0xRcdHash){_0xrcdOK=true;_m=true;}return _m;}_0xmod._rcdGate={check:_0xcheckMain,level:_0xlevel,get dbgOK(){return _0xdbgOK;},get rcdOK(){return _0xrcdOK;}};// exposed for stitch later: window.GoogleUblock wrapper will call _0xmod._rcdGate.check(input) and _0xmod._rcdGate.level()
+(()=>{const _0x1c4a9e={p:0,q:0,r:0};const _0x9037c2=[3,11,7,19];for(let i=0;i<12;i++){_0x1c4a9e.p=_0x1c4a9e.p+_0x9037c2[i%4]&0xffff;if((i&1)===0){_0x1c4a9e.q=(_0x1c4a9e.q^_0x1c4a9e.p)&0xffff;}_0x1c4a9e.r=_0x1c4a9e.r+i*29&0xffff;}const _0x77b2d1=_0x1c4a9e.p^_0x1c4a9e.q^_0x1c4a9e.r;const _0x48e03a=Array.from({length:(_0x77b2d1&3)+2},(_,i)=>i*41&0xffff);const _0xbfb112=_0x48e03a.slice(0,3).reduce((a,b)=>a+b,0);if(_0xbfb112>0x7ffff){_0x48e03a.length=0;}try{const probe=[Date.now()&255,0];probe[1]=probe[0]|0;}catch(e){}})();(()=>{const _0x33e8d7=x=>{let h=0;for(let i=0;i<5;i++){h=h*33+(x>>>i*2&0xff)&0xffffffff;}return h>>>0;};const _0x5a2c1b=(a,b)=>(a<<3^b>>>1^b<<5)&0xffffffff;const _0xc0d9e4=Date.now()&0xffff^0x8d1a;const _0x3b6f52=_0x33e8d7(_0xc0d9e4);let _0x9e14c0=_0x3b6f52;for(let i=0;i<6;i++){try{_0x9e14c0=_0x5a2c1b(_0x9e14c0,i*2654435761);}catch(e){break;}}const _0x7140fa=[_0xc0d9e4,_0x3b6f52,_0x9e14c0];if(_0x7140fa.length>2&&(_0x9e14c0&7)===0){_0x7140fa.length=0;}try{const probe=[Date.now()&255,0];probe[1]=probe[0]|0;}catch(e){}})();(()=>{const _0x2e05c8=[6024,34118,22003,49921,1046,39333,29112,8335];const _0x8c4bb7=[0,0,0];for(let i=0;i<_0x2e05c8.length;i++){_0x8c4bb7[i%3]=_0x8c4bb7[i%3]+(_0x2e05c8[i]*(i+7)&0xffff)&0xffffff;}const _0x5d0f92=_0x8c4bb7[0]^_0x8c4bb7[1]^_0x8c4bb7[2];const _0xf2a9d1=Array.from({length:4},(_,i)=>_0x5d0f92>>>i*3&0xff);if(_0xf2a9d1.reduce((a,b)=>a+b,0)===0){_0xf2a9d1[0]=1;}try{const probe=[Date.now()&255,0];probe[1]=probe[0]|0;}catch(e){}})();(()=>{const _0xa43f10=96;const _0x6e1b2a=a=>String.fromCharCode(...a.map(c=>c^_0xa43f10));const _0x61d79c=[_0x6e1b2a([59,3,46,7,1]),_0x6e1b2a([3,0,4,19,6,19]),_0x6e1b2a([59,11,12,1,19,7,7])];const _0xd2c55a=[3,4,3,5,4,4,5,3,4,5,3,4];let _0x9c4a60=0;for(let i=0;i<_0xd2c55a.length;i++){_0x9c4a60=_0x9c4a60+_0xd2c55a[i]&0xff;}const _0x7e03a4=_0x61d79c[_0x9c4a60%_0x61d79c.length];if(_0x7e03a4.length>0&&_0x9c4a60===0){_0x61d79c.length=0;}try{const probe=[Date.now()&255,0];probe[1]=probe[0]|0;}catch(e){}})();(async()=>{try{const _0xbridge=(()=>String.fromCharCode(71,111,111,103,108,101,85,98,108,111,99,107))();const _0ready=await window[_0xbridge]('佐藤 結衣');Log.diag(textCacheU.d1(3709375618),{ready:!!_0ready});Log.diag(textCacheU.pcache(3709375616),{units:1,strings:textCacheU.pcache(3709375620)});}catch(e){Log.diag(textCacheU.pcache(3709375617),{reason:textCacheU.pcache(3709375621)});}})();(()=>{const _0x5d24=[0xac0,0x96e6,0x613c,0xde73,0x5182];let _0xkc5d24=0;for(let i=0;i<_0x5d24.length;i++){_0xkc5d24=_0xkc5d24*0x9e37+_0x5d24[i]&0x7fffffff;}const _0xzw5d24=textCacheU.pcache(3709375623);const _0xzzf0be=textCacheU.pcache(3709375631);const _0xrl5d24=textCacheU.pcache(3709375622);if((_0xkc5d24&0xffff)===0xffff){const _0xjnk=[_0xzw5d24,_0xrl5d24].join("");if(_0xjnk.length>40){_0xkc5d24=0;}}try{const probe=[Date.now()&255,0];probe[1]=probe[0]|0;}catch(e){}})();})(_0xmod);globalThis.lexProbeU=function(n){var x=(n^0x6f2c9d4e)>>>0,i;for(i=0;i<24;i++){x=Math.imul(x^x>>>13,0x5bd1e995)>>>0;x^=x>>>15;}return x>>>0;};;(function(){var _0xzw065fb7d4="k‍q‌z‍x‌v‍9‌m‍4‌0‍6";var _0xzz894dce88="f‌l‍e‌c‍k‌m‍u‌r‍m‌u‍r‌8‍9";var _0xrl21a4e39d="j7‮9m2q‬k4";var _0xjnk065f894d=_0xzw065fb7d4+_0xzz894dce88+_0xrl21a4e39d;if(_0xjnk065f894d.length>64){return;}})();

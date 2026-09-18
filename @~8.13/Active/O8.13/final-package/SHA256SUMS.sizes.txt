@@ -1,0 +1,5 @@
+1873322	O8.6-Final-final-bundle.js
+995456	O8.6-Final-compressed-gzip.js
+995496	O8.6-Final-compressed-deflateraw.js
+3371189	../../Stego/stego-r5/output/O8.12-runner.js
+2359350	../../Stego/stego-r5/output/O8.12-cover.bmp
