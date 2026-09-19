@@ -1,0 +1,29 @@
+{
+  "schema": "cc10-carm-candidate/v1",
+  "candidate": "CC-10",
+  "status": "candidate-only",
+  "fac": [
+    "FaC-14",
+    "FaC-16"
+  ],
+  "source": "Active/O8.14/CC-10-CAR-M/source/carm-codec.mjs",
+  "sourceSha256": "96bd3134d81f8421aa37c340d382345bf5a7e073d7452a74adf5580ba2b89d20",
+  "inputCover": {
+    "path": "Uploads/stego2-cover-1024-scaled.bmp",
+    "sha256": "d53a257478996d607499728cadc894d1b3dc3d51f04a7d7c417a9795b9d8d738",
+    "bytes": 2359350,
+    "width": 1024,
+    "height": 768,
+    "bpp": 24
+  },
+  "expandedCover": {
+    "bytes": 4718646,
+    "sha256": "c646ae7c4351098975575c839a707b652491cc97c7b39ec61c452c50a3178f75",
+    "width": 1024,
+    "height": 1536,
+    "factor": 2
+  },
+  "runtimeIntegration": false,
+  "frozenBaseline": "O8.13-r3",
+  "frozenFilesModified": []
+}

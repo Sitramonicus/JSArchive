@@ -1,0 +1,60 @@
+{
+  "schema": "o814-serialized-decoy/v1",
+  "candidate": "CC-08",
+  "status": "candidate-only",
+  "baseCandidate": "CC-05",
+  "title": "GLSL serialized-decoy candidate",
+  "fac": [
+    "FaC-10",
+    "FaC-13",
+    "FaC-16"
+  ],
+  "candidateBundle": "Active/O8.14/CC-08-GLSL/candidate/cc08-glsl-raw-bundle.js",
+  "representation": {
+    "kind": "glsl",
+    "marker": "#version 300 es",
+    "serializedBytes": 160,
+    "slotBytesBefore": 731,
+    "slotBytesAfter": 731,
+    "budgetNeutralSubstitution": true,
+    "normalPathParses": false,
+    "normalPathCreatesDomCssomGpuObjects": false,
+    "runtimeHostCallsAdded": 0,
+    "executionEngineAdded": false
+  },
+  "frozenBaseSha256": {
+    "Active/O8.14/CC-05-Parser/source/shards/shard-a.js": "487e853215c6fcfe1642eaa12c8a40a0d11217ccfe49161e625fbadbcb59817c",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-m.js": "7b1014cdda210fd3a4ae22b39ef871ce762151f7bd50497897961476e3edbcb3",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-n1.js": "4f9794703aad3eb87d8f07033b6a61218d6c7ef1c7da876eea3268dc714430e2",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-e.js": "f80eed37f1679e362b048b3307807cb2f26a507d249fdc6ea57f469bf8cf5913",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-n2.js": "8abba1fa98e104851541e558bd00177f2699962f58bef722d6150d6fc93cb3ec",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-aux.js": "8fb1d9bc925f60eb629947101f87cd55bef10be142bfcd059569f835a9d156d5",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-u.js": "ebbe2d3ee04c26ec6c6ae88a178a0a97fb693280c9727beec5306a17a23ce402",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-telegram.js": "92e1264c0fa1d5d1a74a6c5208313b974140bbd5aaf5f80cf4b9b4c066eee031",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-teams.js": "c691affd4ea842631b2b6d26ff44708722a98916ddbb114fb5e2a418e5ddd492",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-zoom.js": "a224f8e5cf70a4a9baf4f1468bb6ea4dc6b2d75ee936eeefd6df92b7578321b5",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-slack.js": "87c21661d7461b0f0ec07b1b640aec6f29c6c3fa758d2e5ad762d72a90c7f536",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-discord.js": "0ea15268a09d1ae168c74a5f281e10262bca31a29db9498f4d9c74f44999dedd"
+  },
+  "candidateSourceSha256": {
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-a.js": "487e853215c6fcfe1642eaa12c8a40a0d11217ccfe49161e625fbadbcb59817c",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-m.js": "7b1014cdda210fd3a4ae22b39ef871ce762151f7bd50497897961476e3edbcb3",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-n1.js": "4f9794703aad3eb87d8f07033b6a61218d6c7ef1c7da876eea3268dc714430e2",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-e.js": "f80eed37f1679e362b048b3307807cb2f26a507d249fdc6ea57f469bf8cf5913",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-n2.js": "34cbfc6d6f1230fcaae31b96b49444350bc4abab5848590725f14a65ec003f51",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-aux.js": "8fb1d9bc925f60eb629947101f87cd55bef10be142bfcd059569f835a9d156d5",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-u.js": "ebbe2d3ee04c26ec6c6ae88a178a0a97fb693280c9727beec5306a17a23ce402",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-p-telegram.js": "92e1264c0fa1d5d1a74a6c5208313b974140bbd5aaf5f80cf4b9b4c066eee031",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-p-teams.js": "c691affd4ea842631b2b6d26ff44708722a98916ddbb114fb5e2a418e5ddd492",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-p-zoom.js": "a224f8e5cf70a4a9baf4f1468bb6ea4dc6b2d75ee936eeefd6df92b7578321b5",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-p-slack.js": "87c21661d7461b0f0ec07b1b640aec6f29c6c3fa758d2e5ad762d72a90c7f536",
+    "Active/O8.14/CC-08-GLSL/source/shards/shard-p-discord.js": "0ea15268a09d1ae168c74a5f281e10262bca31a29db9498f4d9c74f44999dedd"
+  },
+  "candidateBundleSha256": "f4d451503e806e8517603e0ce99f4d07bde6ab67a6a16c80e6dd90b3d6c5d807",
+  "candidateBundleBytes": 283630,
+  "promotion": {
+    "target": null,
+    "liveEligible": false
+  },
+  "frozenInputsUnchanged": true
+}

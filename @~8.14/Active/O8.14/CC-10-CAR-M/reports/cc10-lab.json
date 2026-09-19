@@ -1,0 +1,154 @@
+{
+  "candidate": "CC-10",
+  "status": "PASS",
+  "change": "CAR-M carrier laboratory revision",
+  "fac": [
+    "FaC-14",
+    "FaC-16"
+  ],
+  "input": {
+    "path": "Uploads/stego2-cover-1024-scaled.bmp",
+    "sha256": "d53a257478996d607499728cadc894d1b3dc3d51f04a7d7c417a9795b9d8d738",
+    "bytes": 2359350,
+    "width": 1024,
+    "height": 768,
+    "bpp": 24
+  },
+  "expandedAlternative": {
+    "bytes": 4718646,
+    "sha256": "c646ae7c4351098975575c839a707b652491cc97c7b39ec61c452c50a3178f75",
+    "width": 1024,
+    "height": 1536,
+    "factor": 2
+  },
+  "fixture": {
+    "bytes": 870870,
+    "sha256": "e0c04b5b9b94218d768167791fa33e8d53233bea40e84853fb84963fa2d4d14d",
+    "printableSerializedData": true,
+    "executableTokens": false
+  },
+  "capacity": {
+    "sameCoverPositions": 2260322,
+    "expandedCoverPositions": 4619822,
+    "fourBitPayloadSymbols": 1741740,
+    "twoBitPayloadSymbols": 3483480,
+    "fourBitFrameSymbols": 1741764,
+    "twoBitFrameSymbols": 3483528,
+    "planPin": {
+      "requiredTwoBitSymbols": 3483480,
+      "sameCoverPositions": 2260322
+    }
+  },
+  "sameCoverNaiveTwoBit": {
+    "rejected": true,
+    "required": 3483528,
+    "capacity": 2260322,
+    "error": "over-capacity:3483528:2260322"
+  },
+  "alternatives": {
+    "fourBitSameCover": {
+      "roundTrip": true,
+      "metrics": {
+        "maxChannelDelta": 15,
+        "changedFraction": 0.7272162992706349,
+        "mse": 28.575760887165632,
+        "psnrDb": 33.570825576816794
+      },
+      "requiredSymbols": 1741764
+    },
+    "twoBitExpandedCover": {
+      "roundTrip": true,
+      "metrics": {
+        "maxChannelDelta": 3,
+        "changedFraction": 0.5723387178120716,
+        "mse": 1.737276457837553,
+        "psnrDb": 45.7321142638181
+      },
+      "requiredSymbols": 3483528
+    }
+  },
+  "corruption": {
+    "fourBitOneFlipRejects": true,
+    "twoBitOneFlipRejects": true,
+    "twoBit64FlipsRejects": true
+  },
+  "repeatedExtraction": {
+    "count": 8,
+    "allEqual": true,
+    "decodedSha256": "e0c04b5b9b94218d768167791fa33e8d53233bea40e84853fb84963fa2d4d14d"
+  },
+  "memory": {
+    "before": {
+      "rss": 56520704,
+      "heapUsed": 4754016,
+      "external": 9812579,
+      "arrayBuffers": 8072017
+    },
+    "afterFour": {
+      "rss": 61931520,
+      "heapUsed": 4369376,
+      "external": 14686287,
+      "arrayBuffers": 12945685
+    },
+    "afterExpanded": {
+      "rss": 77111296,
+      "heapUsed": 5076800,
+      "external": 29348889,
+      "arrayBuffers": 27608287
+    },
+    "encodeDelta": {
+      "rss": 20590592,
+      "heapUsed": 322784,
+      "external": 19536310,
+      "arrayBuffers": 19536270
+    },
+    "retainedBefore": {
+      "rss": 90087424,
+      "heapUsed": 3828608,
+      "external": 38784921,
+      "arrayBuffers": 37045501
+    },
+    "retainedAfter": {
+      "rss": 85508096,
+      "heapUsed": 3466880,
+      "external": 45862917,
+      "arrayBuffers": 16793413
+    },
+    "gcAvailable": true
+  },
+  "security": {
+    "hugeDeclaredLengthRejects": true,
+    "truncatedCarrierRejects": true,
+    "invalidModeRejects": true,
+    "wrongInputTypeRejects": true,
+    "overCapacityDoesNotMutateInput": true,
+    "payloadLimitExplicit": true,
+    "sourceHasNoExecutionOrNetwork": true
+  },
+  "frozenBaselineReadOnly": {
+    "path": "Working-Stable/O8.13/O8.13-cover-3bbe7345.bmp",
+    "sha256": "3bbe73455937cdda43aed851734239646c55fde3010c072cd2febe230e96ffe9",
+    "modifiedByRun": false
+  },
+  "runtimeIntegration": false,
+  "gates": {
+    "fixtureIsNonExecutable": true,
+    "sameCoverCapacityPin": true,
+    "naiveTwoBitRejected": true,
+    "fourBitRoundTrip": true,
+    "expandedTwoBitRoundTrip": true,
+    "psnrMeasured": true,
+    "maxDeltaMeasured": true,
+    "corruptionDetected": true,
+    "repeatedExtraction": true,
+    "memoryMeasured": {
+      "rss": 77111296,
+      "heapUsed": 5076800,
+      "external": 29348889,
+      "arrayBuffers": 27608287
+    },
+    "noRuntimeIntegration": true,
+    "frozenBaselineNotWritten": true,
+    "securityHardening": true
+  }
+}

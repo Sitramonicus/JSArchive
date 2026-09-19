@@ -1,0 +1,43 @@
+{
+  "lanes": [
+    "R9R0",
+    "R9R1",
+    "R9R2",
+    "R9R3"
+  ],
+  "slotCount": 1400000,
+  "payloadBytes": 320000,
+  "payloadSha256": "a59635cf5ec6cb1c9e9d4d5060cc94e91a91d1513d494f1fe3d5dcb18e7166b9",
+  "encodedSha256": "6f79b9ee5fdd93366c375cdead457fd91b14cac0e16ae6d53891639db6749003",
+  "requiredSymbols": 1280256,
+  "plans": [
+    {
+      "tag": "R9R0",
+      "lane": 0,
+      "chunkBytes": 80000,
+      "frameBytes": 80016,
+      "availableBytes": 87500
+    },
+    {
+      "tag": "R9R1",
+      "lane": 1,
+      "chunkBytes": 80000,
+      "frameBytes": 80016,
+      "availableBytes": 87499
+    },
+    {
+      "tag": "R9R2",
+      "lane": 2,
+      "chunkBytes": 80000,
+      "frameBytes": 80016,
+      "availableBytes": 87499
+    },
+    {
+      "tag": "R9R3",
+      "lane": 3,
+      "chunkBytes": 80000,
+      "frameBytes": 80016,
+      "availableBytes": 87499
+    }
+  ]
+}

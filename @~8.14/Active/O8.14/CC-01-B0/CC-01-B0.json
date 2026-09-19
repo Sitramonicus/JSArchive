@@ -1,0 +1,23 @@
+{
+  "cc": "CC-01",
+  "name": "O8.14-B0",
+  "status": "implemented-measured",
+  "behaviorChange": false,
+  "liveStatus": "candidate-only",
+  "baseline": "O8.13-r3",
+  "fac": ["FaC-02", "FaC-03", "FaC-04", "FaC-16"],
+  "sourceOfTruth": "Working-Stable/O8.13",
+  "remoteSpringCleaning": "Handoff/O8.14-SF-REMOTE.md",
+  "runner": "tools/run-cc01-b0.mjs",
+  "reports": [
+    "reports/cc01-b0-baseline.json",
+    "reports/cc01-b0-baseline.md"
+  ],
+  "constraints": [
+    "do not modify O8.13-r3 release bytes",
+    "do not contact network endpoints",
+    "do not write credentials",
+    "do not promote to Working-Stable",
+    "bounded allocations and cleanup observations"
+  ]
+}

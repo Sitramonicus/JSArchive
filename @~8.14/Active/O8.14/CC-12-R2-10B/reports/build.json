@@ -1,0 +1,25 @@
+{
+  "schema": "cc12-r2-10b-candidate/v1",
+  "candidate": "CC-12",
+  "status": "candidate-only",
+  "fac": [
+    "FaC-03",
+    "FaC-06",
+    "FaC-10",
+    "FaC-15",
+    "FaC-16"
+  ],
+  "sources": {
+    "codec": {
+      "path": "Active/O8.14/CC-12-R2-10B/source/r2-10b-codec.mjs",
+      "sha256": "73fd1ee7fdc011b1b1977c983efac44ee0ad8c8f74dead2f02c355177724460d"
+    },
+    "loader": {
+      "path": "Active/O8.14/CC-12-R2-10B/source/r2-10b-loader.mjs",
+      "sha256": "59fdff525d899b477db00d6241f040d941e8485863e350b77113e5fc94ba9ced"
+    }
+  },
+  "deliveryModel": "injected sender plus caller-supplied allowlist",
+  "frozenBaseline": "O8.13-r3",
+  "frozenFilesModified": []
+}

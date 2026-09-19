@@ -1,0 +1,17 @@
+{
+  "candidate": "CC-10",
+  "status": "PASS",
+  "security": {
+    "hugeDeclaredLengthRejects": true,
+    "truncatedCarrierRejects": true,
+    "invalidModeRejects": true,
+    "wrongInputTypeRejects": true,
+    "overCapacityDoesNotMutateInput": true,
+    "payloadLimitExplicit": true,
+    "sourceHasNoExecutionOrNetwork": true
+  },
+  "gates": {
+    "securityHardening": true,
+    "frozenBaselineNotWritten": true
+  }
+}

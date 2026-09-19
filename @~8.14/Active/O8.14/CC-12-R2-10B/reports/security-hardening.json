@@ -1,0 +1,18 @@
+{
+  "candidate": "CC-12",
+  "status": "PASS",
+  "security": {
+    "corruptCarrierRejected": true,
+    "invalidBase64Rejected": true,
+    "invalidInputRejected": true,
+    "unsafeRouteRejected": true,
+    "throwingSenderContained": true,
+    "oversizedDeliveryRejected": true,
+    "closedLoaderRejects": true
+  },
+  "gates": {
+    "securityHardening": true,
+    "noNewNetworkOrDynamicCode": true,
+    "explicitCleanup": true
+  }
+}

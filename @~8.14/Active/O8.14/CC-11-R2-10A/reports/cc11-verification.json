@@ -1,0 +1,126 @@
+{
+  "candidate": "CC-11",
+  "status": "PASS",
+  "change": "R2-10A offline true-four-way codec revision",
+  "fac": [
+    "FaC-15",
+    "FaC-16"
+  ],
+  "lanes": [
+    "R9R0",
+    "R9R1",
+    "R9R2",
+    "R9R3"
+  ],
+  "slotCount": 1400000,
+  "payloadBytes": 320000,
+  "payloadSha256": "a59635cf5ec6cb1c9e9d4d5060cc94e91a91d1513d494f1fe3d5dcb18e7166b9",
+  "capacity": {
+    "slots": 1400000,
+    "laneFrameBytes": [
+      87500,
+      87499,
+      87499,
+      87499
+    ],
+    "maxPayloadBytes": 349933,
+    "symbolsPerPayloadByte": 4
+  },
+  "requiredSymbols": 1280256,
+  "plan": [
+    {
+      "tag": "R9R0",
+      "lane": 0,
+      "chunkBytes": 80000,
+      "frameBytes": 80016,
+      "availableBytes": 87500
+    },
+    {
+      "tag": "R9R1",
+      "lane": 1,
+      "chunkBytes": 80000,
+      "frameBytes": 80016,
+      "availableBytes": 87499
+    },
+    {
+      "tag": "R9R2",
+      "lane": 2,
+      "chunkBytes": 80000,
+      "frameBytes": 80016,
+      "availableBytes": 87499
+    },
+    {
+      "tag": "R9R3",
+      "lane": 3,
+      "chunkBytes": 80000,
+      "frameBytes": 80016,
+      "availableBytes": 87499
+    }
+  ],
+  "deterministic": true,
+  "roundTrip": true,
+  "corruption": {
+    "payloadSlotRejects": true,
+    "laneHeaderRejects": true
+  },
+  "repeatedExtraction": {
+    "count": 16,
+    "allEqual": true,
+    "decodedSha256": "a59635cf5ec6cb1c9e9d4d5060cc94e91a91d1513d494f1fe3d5dcb18e7166b9"
+  },
+  "memory": {
+    "before": {
+      "rss": 46628864,
+      "heapUsed": 4542616,
+      "external": 3491585,
+      "arrayBuffers": 1751023
+    },
+    "afterEncode": {
+      "rss": 72957952,
+      "heapUsed": 16591376,
+      "external": 5837321,
+      "arrayBuffers": 3856671
+    },
+    "afterSecond": {
+      "rss": 73904128,
+      "heapUsed": 15816744,
+      "external": 7236103,
+      "arrayBuffers": 5496683
+    },
+    "afterGc": {
+      "rss": 92557312,
+      "heapUsed": 3419096,
+      "external": 33996615,
+      "arrayBuffers": 10776619
+    },
+    "gcAvailable": true
+  },
+  "security": {
+    "hugeDeclaredLengthRejects": true,
+    "badVersionRejects": true,
+    "truncatedSlotsReject": true,
+    "wrongInputTypeReject": true,
+    "oversizedEncodeRejects": true,
+    "carrierLimitExplicit": true,
+    "noExecutionOrNetwork": true
+  },
+  "static": {
+    "allLanesNamed": true,
+    "independentLaneHeaders": true,
+    "boundedLengths": true,
+    "offlineOnly": true
+  },
+  "deliveryIntegration": false,
+  "gates": {
+    "fourLanes": true,
+    "allLanesUsed": true,
+    "offlineRoundTrip": true,
+    "deterministic": true,
+    "corruptionBounded": true,
+    "repeatedExtraction": true,
+    "boundedParser": true,
+    "noDeliverySurface": true,
+    "memoryMeasured": true,
+    "securityHardening": true
+  }
+}

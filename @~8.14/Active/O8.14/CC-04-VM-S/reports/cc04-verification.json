@@ -1,0 +1,145 @@
+{
+  "candidate": "CC-04",
+  "status": "PASS",
+  "fac": [
+    "FaC-02",
+    "FaC-05",
+    "FaC-06",
+    "FaC-09",
+    "FaC-16"
+  ],
+  "bundle": "Active/O8.14/CC-04-VM-S/candidate/cc04-vm-s-raw-bundle.js",
+  "bundleSha256": "cb31c340f98f22da232cc84193613535913edc4e73ae0b3460d189deeaf084ea",
+  "sourceSha256": "58f78f023feddeb57f3b1b99848cc411ac3a6136dbdd4c69551ce1465947f6b7",
+  "baseSourceSha256": "db23aff3d68f3fb57205f413e693fa37de6b292a98bab661540f32f882d118da",
+  "staticChecks": {
+    "syntax": true,
+    "vmCaps": true,
+    "vmBudget": true,
+    "vmNoEval": true,
+    "derivedFromPrior": true,
+    "parserBounded": true
+  },
+  "vmVectors": {
+    "vectors": {
+      "add": true,
+      "vars": true,
+      "store": true,
+      "lengthBound": true,
+      "opcodeBound": true,
+      "stackBound": true,
+      "keyBound": true,
+      "valueBound": true
+    },
+    "pass": true
+  },
+  "gates": {
+    "sourceAndSyntax": true,
+    "vmVectors": true,
+    "simulatedRegression": true,
+    "primaryPreserved": true,
+    "networkIsolation": true,
+    "noPromotion": true
+  },
+  "scenarios": [
+    {
+      "scenario": "S0",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 14,
+      "httpCalls": 7,
+      "dispatches": 0,
+      "tail": [
+        "== S0 (seed 7) ==",
+        "-- 14 lines, 7 http, 0 dispatches, msg=1reg/1post, vnow=277.2s --",
+        "PASS bundle booted ([Host 8.12] initialized — worker instance 7e953faa.)",
+        "  board lines: 1",
+        "PASS VQ0 completion line @ 67.2s",
+        "PASS video-progress POSTs issued (7 http calls)",
+        "== S0: ALL PASS =="
+      ]
+    },
+    {
+      "scenario": "S1",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 26,
+      "httpCalls": 9,
+      "dispatches": 102,
+      "tail": [
+        "PASS PQ1 completion line @ 104.0s",
+        "PASS SQ1 completion line @ 146.0s",
+        "  completion order: VQ1>PQ1>SQ1",
+        "PASS pacing lines == 2 (got 2)",
+        "  pacing @ 74.5s: Pacing shift — next chore starts in ~19s.",
+        "  pacing @ 104.0s: Pacing shift — next chore starts in ~35s.",
+        "PASS fake-game dispatch observed",
+        "== S1: ALL PASS =="
+      ]
+    },
+    {
+      "scenario": "S4a",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 20,
+      "httpCalls": 1,
+      "dispatches": 82,
+      "tail": [
+        "== S4a (seed 7) ==",
+        "-- 20 lines, 1 http, 82 dispatches, msg=1reg/1post, vnow=415.0s --",
+        "PASS bundle booted ([Host 8.12] initialized — worker instance 7e953faa.)",
+        "  board lines: 1",
+        "PASS PQ4 completion line @ 115.0s",
+        "PASS PQ4 completed despite navigation (@ 115.0s)",
+        "PASS no progress lines while paused (got 0)",
+        "== S4a: ALL PASS =="
+      ]
+    },
+    {
+      "scenario": "S6",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 25,
+      "httpCalls": 11,
+      "dispatches": 50,
+      "tail": [
+        "PASS PQ6 completion line @ 181.0s",
+        "  pacing lines: 2",
+        "  pacing @ 61.9s dly=16s :: Pacing shift — next chore starts in ~16s.",
+        "PASS dly 16s within humanise band",
+        "  pacing @ 139.7s dly=34s :: Pacing shift — next chore starts in ~34s.",
+        "PASS dly 34s within humanise band",
+        "PASS activity heartbeats POSTed (4)",
+        "== S6: ALL PASS =="
+      ]
+    },
+    {
+      "scenario": "S14",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 61,
+      "httpCalls": 25,
+      "dispatches": 100,
+      "tail": [
+        "PASS bundle booted ([Host 8.12] initialized — worker instance 7e953faa.)",
+        "  board lines: 1",
+        "PASS PQ14a completion line @ 133.2s",
+        "PASS frozen SQ14b never completes",
+        "PASS frozen VQ14c never completes",
+        "PASS static abort x7 (want >=2)",
+        "PASS worker parks on static board",
+        "== S14: ALL PASS =="
+      ]
+    }
+  ]
+}

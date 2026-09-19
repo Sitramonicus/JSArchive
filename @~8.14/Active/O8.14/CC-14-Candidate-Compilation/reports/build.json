@@ -1,0 +1,84 @@
+{
+  "schema": "cc14-candidate-build/v1",
+  "candidate": "CC-14",
+  "status": "candidate-only",
+  "compilationStatus": "PASS",
+  "approvedFaCs": [
+    "FaC-01",
+    "FaC-02",
+    "FaC-03",
+    "FaC-04",
+    "FaC-05",
+    "FaC-06",
+    "FaC-07",
+    "FaC-08",
+    "FaC-09",
+    "FaC-10",
+    "FaC-11",
+    "FaC-12",
+    "FaC-13",
+    "FaC-14",
+    "FaC-15",
+    "FaC-16",
+    "FaC-17"
+  ],
+  "profiles": [
+    {
+      "id": "CC-13-CSS-HTML",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/profiles/cc13-css-html-raw-bundle.js",
+      "sha256": "d1820efcb4c53ccf852c880aa6ddde2408ec86f961c63c65bdf05970aa3e6c62"
+    },
+    {
+      "id": "CC-13-XML-XSLT",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/profiles/cc13-xml-xslt-raw-bundle.js",
+      "sha256": "1717ef4bb951754b95a60ccc5db3cbd3526095f444a077a62973095c1ab1d1ef"
+    },
+    {
+      "id": "CC-13-GLSL",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/profiles/cc13-glsl-raw-bundle.js",
+      "sha256": "2ed72b5639547270d502a914e4ce63e4f0a2d931c8106b88376496710aec5b2d"
+    }
+  ],
+  "components": [
+    {
+      "name": "cc10-carm-codec.mjs",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc10-carm-codec.mjs",
+      "sha256": "96bd3134d81f8421aa37c340d382345bf5a7e073d7452a74adf5580ba2b89d20"
+    },
+    {
+      "name": "cc11-r2-10a-codec.mjs",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc11-r2-10a-codec.mjs",
+      "sha256": "73fd1ee7fdc011b1b1977c983efac44ee0ad8c8f74dead2f02c355177724460d"
+    },
+    {
+      "name": "cc12-r2-10b-codec.mjs",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc12-r2-10b-codec.mjs",
+      "sha256": "73fd1ee7fdc011b1b1977c983efac44ee0ad8c8f74dead2f02c355177724460d"
+    },
+    {
+      "name": "cc12-r2-10b-loader.mjs",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc12-r2-10b-loader.mjs",
+      "sha256": "59fdff525d899b477db00d6241f040d941e8485863e350b77113e5fc94ba9ced"
+    },
+    {
+      "name": "cc10-lab.json",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc10-lab.json",
+      "sha256": "3b76da93302b5d3c098627b7810312bfbd42024271fd162b05326a5fe4b68850"
+    },
+    {
+      "name": "cc11-vector.json",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc11-vector.json",
+      "sha256": "7e2c88a8f8df2e523397bf34b040edd468a2ac73bbce4a839b50ad9fef553adf"
+    },
+    {
+      "name": "cc12-loader-vector.json",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc12-loader-vector.json",
+      "sha256": "f0da745830ed15909c1e54c66a9cdef9012fd18b7fdbe6b48aa1fe2940e9f9ef"
+    }
+  ],
+  "sourcePairwise": "Active/O8.14/CC-13-Pairwise/reports/cc13-verification.json",
+  "frozenBaseline": "O8.13-r3",
+  "frozenFilesModified": [],
+  "proper14r1": "pending",
+  "liveEligible": false
+}

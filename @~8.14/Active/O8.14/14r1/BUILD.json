@@ -1,0 +1,25 @@
+{
+  "version": "O8.14",
+  "release": "14r1",
+  "status": "diagnostic-candidate-only",
+  "baseCandidate": "CC-05",
+  "sourceBundle": "Active/O8.14/CC-05-Parser/candidate/cc05-parser-raw-bundle.js",
+  "sourceBundleSha256": "8c1a44f74c2f9e4bfb9193623c499221739a324b295334ae0d89cb014f7fe2c3",
+  "sourceBundleBytes": 283630,
+  "compression": "none",
+  "compressedBytes": null,
+  "runner": "O8.14-14r1-runner.js",
+  "liveEligible": false,
+  "promotionTarget": null,
+  "frozenBaseline": "O8.13-r3",
+  "frozenFilesModified": [],
+  "note": "Diagnostic live-test runner only; not a release or promotion artifact.",
+  "runnerBytes": 292024,
+  "runnerSha256": "a4f675719d47338b6e7bb5086fa1ef7f0a95b7947752229d0b2648232e2a76e1",
+  "operatorRefresh": {
+    "removed": "Alt+Shift+R reload chord and its listener branch",
+    "retained": "Alt+Shift+X abort chord",
+    "completionInstruction": "F5 whilst in console",
+    "source": "Active/O8.14/CC-05-Parser/source/shards/shard-e.js"
+  }
+}

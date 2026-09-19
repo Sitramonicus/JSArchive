@@ -1,0 +1,410 @@
+{
+  "schema": "cc01-b0-baseline/v1",
+  "cc": "CC-01",
+  "build": "O8.14-B0",
+  "generatedAt": "2026-09-19T05:27:06.785Z",
+  "completedAt": "2026-09-19T05:27:12.659Z",
+  "gateStatus": "PASS",
+  "intent": "measurement-only; no behavior change; candidate-only",
+  "provenance": {
+    "repository": "Sitramonicus/JSArchive",
+    "springCleaningRemote": "https://github.com/Sitramonicus/JSArchive/tree/main/%40~8.14/8.14-SF",
+    "springCleaningCommit": "30d36065089d7edfb3f68f2826c2cbcd5895b475",
+    "frozenBaseline": "O8.13-r3",
+    "inputPaths": {
+      "O8.13-bundle-604f4434.js": "Working-Stable/O8.13/O8.13-bundle-604f4434.js",
+      "O8.13-runner-d4de42af.js": "Working-Stable/O8.13/O8.13-runner-d4de42af.js",
+      "rotation.json": "Working-Stable/O8.13/rotation.json",
+      "SHA256SUMS.txt": "Working-Stable/O8.13/SHA256SUMS.txt",
+      "BUILD.json": "Working-Stable/O8.13/BUILD.json",
+      "shard-a.js": "Active/O8.13/shards/shard-a.js",
+      "shard-e.js": "Active/O8.13/shards/shard-e.js",
+      "shard-u.js": "Active/O8.13/shards/shard-u.js",
+      "chore-stress.mjs": "Active/O8.13/tools/chore-stress.mjs"
+    },
+    "inputSha256": {
+      "Working-Stable/O8.13/O8.13-bundle-604f4434.js": "604f4434955be18b49a746dcd9009537f00908189beb67a63653365b4a5086b2",
+      "Working-Stable/O8.13/O8.13-runner-d4de42af.js": "d4de42af1a0f1ebe9a799eecc7ebe11847018103673975cd34a3996d83f4f26f",
+      "Working-Stable/O8.13/rotation.json": "5bc7746cd765be520a3810ad4e4e301e6af6530314a4cdd131dd6fc1da63745e",
+      "Working-Stable/O8.13/SHA256SUMS.txt": "07056005ac820ac9cbda3f896b3a104280c71d6fae91b39e4eb7e1dfeb10bef6",
+      "Working-Stable/O8.13/BUILD.json": "0824d967dcdd7379db35762f96bf620b088007a8f3a4be944924f02edbdf678e",
+      "Active/O8.13/shards/shard-a.js": "2d8f32ad7d0d0107d9a5cadf7aab203f840303cef6ce458825af60d53ec8d3b8",
+      "Active/O8.13/shards/shard-e.js": "d5d155379b03df9839ebc539bdb8a57fdb3f26c9bfc12d3cab585cd826cde68f",
+      "Active/O8.13/shards/shard-u.js": "ebbe2d3ee04c26ec6c6ae88a178a0a97fb693280c9727beec5306a17a23ce402",
+      "Active/O8.13/tools/chore-stress.mjs": "ca64703aa55b1479534a30e35f19e76ac79a128fab923534f88f839e0c8e1ff0"
+    },
+    "unchangedAfterRun": true
+  },
+  "fac": {
+    "FaC-02": {
+      "description": "decode/evaluator boundary and decoded-buffer lifetime",
+      "probes": [
+        {
+          "branch": "T1-decoy",
+          "threw": null,
+          "logCount": 0,
+          "logs": [],
+          "tilePushes": 0,
+          "evaluator": {
+            "evaluatorCalls": 1,
+            "codeLengths": [
+              3066
+            ],
+            "codeSha256": [
+              "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511"
+            ],
+            "releasedBuffers": 1,
+            "events": [
+              {
+                "id": 1,
+                "kind": "decode-evaluator-boundary",
+                "phase": "open",
+                "atMs": 728569,
+                "codeLength": 3066,
+                "codeSha256": "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511"
+              },
+              {
+                "id": 1,
+                "kind": "decode-evaluator-boundary",
+                "phase": "close",
+                "atMs": 728569,
+                "elapsedMs": 0,
+                "released": false
+              },
+              {
+                "id": 1,
+                "kind": "decoded-buffer-lifetime",
+                "phase": "release",
+                "atMs": 730070,
+                "heldMs": 1501,
+                "codeLength": 3066,
+                "codeSha256": "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511",
+                "released": true
+              }
+            ]
+          },
+          "decodedBufferReleased": true
+        },
+        {
+          "branch": "T2-real-host",
+          "threw": null,
+          "logCount": 0,
+          "logs": [],
+          "tilePushes": 0,
+          "evaluator": {
+            "evaluatorCalls": 2,
+            "codeLengths": [
+              2407,
+              3066
+            ],
+            "codeSha256": [
+              "a96ed549ead5d83be431259f35b0e995f7d9b9557793d6a4520b41d08640603a",
+              "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511"
+            ],
+            "releasedBuffers": 2,
+            "events": [
+              {
+                "id": 1,
+                "kind": "decode-evaluator-boundary",
+                "phase": "open",
+                "atMs": 730108,
+                "codeLength": 2407,
+                "codeSha256": "a96ed549ead5d83be431259f35b0e995f7d9b9557793d6a4520b41d08640603a"
+              },
+              {
+                "id": 1,
+                "kind": "decode-evaluator-boundary",
+                "phase": "close",
+                "atMs": 730108,
+                "elapsedMs": 0,
+                "released": false
+              },
+              {
+                "id": 2,
+                "kind": "decode-evaluator-boundary",
+                "phase": "open",
+                "atMs": 730110,
+                "codeLength": 3066,
+                "codeSha256": "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511"
+              },
+              {
+                "id": 2,
+                "kind": "decode-evaluator-boundary",
+                "phase": "close",
+                "atMs": 730110,
+                "elapsedMs": 0,
+                "released": false
+              },
+              {
+                "id": 1,
+                "kind": "decoded-buffer-lifetime",
+                "phase": "release",
+                "atMs": 731611,
+                "heldMs": 1503,
+                "codeLength": 2407,
+                "codeSha256": "a96ed549ead5d83be431259f35b0e995f7d9b9557793d6a4520b41d08640603a",
+                "released": true
+              },
+              {
+                "id": 2,
+                "kind": "decoded-buffer-lifetime",
+                "phase": "release",
+                "atMs": 731611,
+                "heldMs": 1501,
+                "codeLength": 3066,
+                "codeSha256": "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511",
+                "released": true
+              }
+            ]
+          },
+          "decodedBufferReleased": true
+        }
+      ],
+      "totalEvaluatorCalls": 3
+    },
+    "FaC-03": {
+      "description": "host-call route/method/body-shape boundary; no credential values retained",
+      "staticCensus": {
+        "routeRoles": [
+          "applicationsUrl",
+          "heartbeat",
+          "tasks",
+          "videoProgress"
+        ],
+        "routeBuilderNames": [],
+        "bodyShapes": [
+          "",
+          " [_0xq9]: _0x2a, terminal: false ",
+          " [_0xq9]: _0x2a, terminal: true ",
+          " timestamp: ts "
+        ],
+        "evaluator": {
+          "bundleEvalCalls": 0,
+          "shardEvalCalls": 0,
+          "functionConstructors": 0,
+          "windowEvalCalls": 0
+        },
+        "hostCalls": {
+          "GooglePostSafe": 3,
+          "GoogleGetSafe": 1,
+          "fetch": 0,
+          "XMLHttpRequest": 0,
+          "routeRoleUses": 4
+        },
+        "cleanup": {
+          "setTimeout": 6,
+          "clearTimeout": 5,
+          "setInterval": 3,
+          "clearInterval": 7,
+          "addEventListener": 3,
+          "removeEventListener": 6,
+          "AbortController": 1,
+          "cleanupWords": 21
+        }
+      },
+      "observerSmoke": {
+        "callCount": 1,
+        "byMethod": {
+          "GET": 1
+        },
+        "calls": [
+          {
+            "role": "GoogleGetSafe",
+            "method": "GET",
+            "startedAtMs": 728524,
+            "urlShape": "sim://allowlisted/applications/:id",
+            "body": {
+              "type": "object",
+              "keys": [
+                "token"
+              ],
+              "keyCount": 1
+            },
+            "status": 204,
+            "ok": true,
+            "finishedAtMs": 728524
+          }
+        ]
+      },
+      "stressScenarios": [
+        {
+          "scenario": "S0",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "error": null,
+          "summaryLines": [
+            "-- 14 lines, 7 http, 0 dispatches, msg=1reg/1post, vnow=277.2s --",
+            "== S0: ALL PASS =="
+          ],
+          "tail": [
+            "== S0 (seed 7) ==",
+            "-- 14 lines, 7 http, 0 dispatches, msg=1reg/1post, vnow=277.2s --",
+            "PASS bundle booted ([Host 8.12] initialized — worker instance 7e953faa.)",
+            "  board lines: 1",
+            "PASS VQ0 completion line @ 67.2s",
+            "PASS video-progress POSTs issued (7 http calls)",
+            "== S0: ALL PASS =="
+          ]
+        },
+        {
+          "scenario": "S13a",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "error": null,
+          "summaryLines": [
+            "-- 23 lines, 8 http, 72 dispatches, msg=1reg/1post, vnow=503.0s --",
+            "== S13a: ALL PASS =="
+          ],
+          "tail": [
+            "== S13a (seed 7) ==",
+            "-- 23 lines, 8 http, 72 dispatches, msg=1reg/1post, vnow=503.0s --",
+            "PASS VQ7a completion line @ 67.2s",
+            "PASS PQ7 completion line @ 97.0s",
+            "PASS S13a dead-store: announced x3, video skipped loud, game done (VQ7a@67.2s PQ7@97.0s)",
+            "== S13a: ALL PASS =="
+          ]
+        },
+        {
+          "scenario": "S14",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "error": null,
+          "summaryLines": [
+            "-- 61 lines, 25 http, 100 dispatches, msg=1reg/1post, vnow=864.7s --",
+            "== S14: ALL PASS =="
+          ],
+          "tail": [
+            "== S14 (seed 7) ==",
+            "-- 61 lines, 25 http, 100 dispatches, msg=1reg/1post, vnow=864.7s --",
+            "PASS bundle booted ([Host 8.12] initialized — worker instance 7e953faa.)",
+            "  board lines: 1",
+            "PASS PQ14a completion line @ 133.2s",
+            "PASS frozen SQ14b never completes",
+            "PASS frozen VQ14c never completes",
+            "PASS static abort x7 (want >=2)",
+            "PASS worker parks on static board",
+            "== S14: ALL PASS =="
+          ]
+        }
+      ]
+    },
+    "FaC-04": {
+      "description": "branch and lifecycle baseline matrix",
+      "matrix": {
+        "scenarioCount": 5,
+        "byBranch": {
+          "baseline-pass": 3,
+          "evaluator-observed": 2
+        },
+        "rows": [
+          {
+            "id": "S0",
+            "branch": "baseline-pass",
+            "detail": {
+              "exitCode": 0,
+              "timedOut": false,
+              "summary": [
+                "-- 14 lines, 7 http, 0 dispatches, msg=1reg/1post, vnow=277.2s --",
+                "== S0: ALL PASS =="
+              ]
+            }
+          },
+          {
+            "id": "S13a",
+            "branch": "baseline-pass",
+            "detail": {
+              "exitCode": 0,
+              "timedOut": false,
+              "summary": [
+                "-- 23 lines, 8 http, 72 dispatches, msg=1reg/1post, vnow=503.0s --",
+                "== S13a: ALL PASS =="
+              ]
+            }
+          },
+          {
+            "id": "S14",
+            "branch": "baseline-pass",
+            "detail": {
+              "exitCode": 0,
+              "timedOut": false,
+              "summary": [
+                "-- 61 lines, 25 http, 100 dispatches, msg=1reg/1post, vnow=864.7s --",
+                "== S14: ALL PASS =="
+              ]
+            }
+          },
+          {
+            "id": "T1-decoy",
+            "branch": "evaluator-observed",
+            "detail": {
+              "calls": 1,
+              "threw": null
+            }
+          },
+          {
+            "id": "T2-real-host",
+            "branch": "evaluator-observed",
+            "detail": {
+              "calls": 2,
+              "threw": null
+            }
+          }
+        ]
+      },
+      "cleanupStaticCensus": {
+        "setTimeout": 6,
+        "clearTimeout": 5,
+        "setInterval": 3,
+        "clearInterval": 7,
+        "addEventListener": 3,
+        "removeEventListener": 6,
+        "AbortController": 1,
+        "cleanupWords": 21
+      }
+    },
+    "FaC-16": {
+      "description": "provenance, hashes, gate status, and release-line protection",
+      "gates": {
+        "frozenBaselinePresent": true,
+        "frozenInputsUnchanged": true,
+        "evaluatorBoundaryObserved": true,
+        "simulatedStressBaseline": true,
+        "hostObserverNoNetwork": true,
+        "noPromotion": true
+      },
+      "memory": {
+        "before": {
+          "label": "before",
+          "rss": 48254976,
+          "heapTotal": 5218304,
+          "heapUsed": 4983576,
+          "external": 7893472,
+          "arrayBuffers": 5941988
+        },
+        "after": {
+          "label": "after",
+          "rss": 89223168,
+          "heapTotal": 38985728,
+          "heapUsed": 30960768,
+          "external": 12824041,
+          "arrayBuffers": 10664782
+        }
+      }
+    }
+  },
+  "scope": {
+    "filesWritten": [
+      "Active/O8.14/CC-01-B0/reports/cc01-b0-baseline.json",
+      "Active/O8.14/CC-01-B0/reports/cc01-b0-baseline.json.sha256",
+      "Active/O8.14/CC-01-B0/reports/cc01-b0-baseline.md",
+      "Active/O8.14/CC-01-B0/reports/cc01-b0-baseline.md.sha256"
+    ],
+    "frozenFilesModified": [],
+    "networkCalls": 0,
+    "credentialValuesRetained": false,
+    "promotionTarget": null
+  }
+}

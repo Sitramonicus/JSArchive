@@ -1,0 +1,158 @@
+{
+  "candidate": "CC-07",
+  "status": "PASS",
+  "fac": [
+    "FaC-10",
+    "FaC-12",
+    "FaC-16"
+  ],
+  "bundle": "Active/O8.14/CC-07-XML-XSLT/candidate/cc07-xml-xslt-raw-bundle.js",
+  "bundleSha256": "7d3b9d2da99d1a9aded5a78d72fdf19b969982c16c5f37bb243e8c611294df75",
+  "sourceSha256": "b7c6e9e60e3f75ef97671a2e5ef8a87a08697d178a3d5aa1f43222ea700e4ac6",
+  "baseSourceSha256": "8abba1fa98e104851541e558bd00177f2699962f58bef722d6150d6fc93cb3ec",
+  "staticChecks": {
+    "syntax": true,
+    "markerInSource": true,
+    "markerInBundle": true,
+    "kindInSource": true,
+    "boundedRecord": true,
+    "budgetNeutralSourceSlot": true,
+    "noNewRuntimeParserApi": true,
+    "noRecordEvaluation": true,
+    "f5Instruction": true,
+    "parserVmBasePreserved": true
+  },
+  "parserVmVectors": {
+    "vectors": {
+      "add": true,
+      "vars": true,
+      "store": true,
+      "lengthBound": true,
+      "opcodeBound": true,
+      "stackBound": true,
+      "keyBound": true,
+      "valueBound": true,
+      "parserCaps": true,
+      "parserDuplicateBound": true,
+      "parserGrammarBound": true,
+      "parserValueBound": true
+    },
+    "pass": true
+  },
+  "representation": {
+    "marker": "<?xml version=",
+    "kind": "xml-xslt",
+    "slotBytesBefore": 731,
+    "slotBytesAfter": 731,
+    "budgetNeutralSubstitution": true
+  },
+  "gates": {
+    "sourceAndSyntax": true,
+    "parserVmVectors": true,
+    "simulatedRegression": true,
+    "primaryPreserved": true,
+    "networkIsolation": true,
+    "noPromotion": true
+  },
+  "scenarios": [
+    {
+      "scenario": "S0",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 14,
+      "httpCalls": 7,
+      "dispatches": 0,
+      "tail": [
+        "== S0 (seed 7) ==",
+        "-- 14 lines, 7 http, 0 dispatches, msg=1reg/1post, vnow=277.2s --",
+        "PASS bundle booted ([Host 8.12] initialized — worker instance 7e953faa.)",
+        "  board lines: 1",
+        "PASS VQ0 completion line @ 67.2s",
+        "PASS video-progress POSTs issued (7 http calls)",
+        "== S0: ALL PASS =="
+      ]
+    },
+    {
+      "scenario": "S1",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 26,
+      "httpCalls": 9,
+      "dispatches": 102,
+      "tail": [
+        "PASS PQ1 completion line @ 104.0s",
+        "PASS SQ1 completion line @ 146.0s",
+        "  completion order: VQ1>PQ1>SQ1",
+        "PASS pacing lines == 2 (got 2)",
+        "  pacing @ 74.5s: Pacing shift — next chore starts in ~19s.",
+        "  pacing @ 104.0s: Pacing shift — next chore starts in ~35s.",
+        "PASS fake-game dispatch observed",
+        "== S1: ALL PASS =="
+      ]
+    },
+    {
+      "scenario": "S4a",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 20,
+      "httpCalls": 1,
+      "dispatches": 82,
+      "tail": [
+        "== S4a (seed 7) ==",
+        "-- 20 lines, 1 http, 82 dispatches, msg=1reg/1post, vnow=415.0s --",
+        "PASS bundle booted ([Host 8.12] initialized — worker instance 7e953faa.)",
+        "  board lines: 1",
+        "PASS PQ4 completion line @ 115.0s",
+        "PASS PQ4 completed despite navigation (@ 115.0s)",
+        "PASS no progress lines while paused (got 0)",
+        "== S4a: ALL PASS =="
+      ]
+    },
+    {
+      "scenario": "S6",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 25,
+      "httpCalls": 11,
+      "dispatches": 50,
+      "tail": [
+        "PASS PQ6 completion line @ 181.0s",
+        "  pacing lines: 2",
+        "  pacing @ 61.9s dly=16s :: Pacing shift — next chore starts in ~16s.",
+        "PASS dly 16s within humanise band",
+        "  pacing @ 139.7s dly=34s :: Pacing shift — next chore starts in ~34s.",
+        "PASS dly 34s within humanise band",
+        "PASS activity heartbeats POSTed (4)",
+        "== S6: ALL PASS =="
+      ]
+    },
+    {
+      "scenario": "S14",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "allPass": true,
+      "logLines": 61,
+      "httpCalls": 25,
+      "dispatches": 100,
+      "tail": [
+        "PASS bundle booted ([Host 8.12] initialized — worker instance 7e953faa.)",
+        "  board lines: 1",
+        "PASS PQ14a completion line @ 133.2s",
+        "PASS frozen SQ14b never completes",
+        "PASS frozen VQ14c never completes",
+        "PASS static abort x7 (want >=2)",
+        "PASS worker parks on static board",
+        "== S14: ALL PASS =="
+      ]
+    }
+  ]
+}

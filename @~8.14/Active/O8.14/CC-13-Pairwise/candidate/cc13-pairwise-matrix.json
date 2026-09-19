@@ -1,0 +1,459 @@
+{
+  "candidate": "CC-13",
+  "status": "PASS",
+  "pairwise": [
+    {
+      "a": "CC-01",
+      "b": "CC-02+03",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-04",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-05",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-06",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-07",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-08",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-09",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-11",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-12",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-04",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-05",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-06",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-07",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-08",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-09",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-05",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-06",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-07",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-08",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-09",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-06",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-07",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-08",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-09",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-07",
+      "relation": "exclusive-n2-budget-slot",
+      "tested": true,
+      "note": "each candidate replaces the same 731-byte n2 slot"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-08",
+      "relation": "exclusive-n2-budget-slot",
+      "tested": true,
+      "note": "each candidate replaces the same 731-byte n2 slot"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-09",
+      "relation": "pairwise-built-runtime-profile",
+      "tested": true,
+      "note": "CC-13-CSS-HTML"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-08",
+      "relation": "exclusive-n2-budget-slot",
+      "tested": true,
+      "note": "each candidate replaces the same 731-byte n2 slot"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-09",
+      "relation": "pairwise-built-runtime-profile",
+      "tested": true,
+      "note": "CC-13-XML-XSLT"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-08",
+      "b": "CC-09",
+      "relation": "pairwise-built-runtime-profile",
+      "tested": true,
+      "note": "CC-13-GLSL"
+    },
+    {
+      "a": "CC-08",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-08",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-08",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-09",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-09",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-09",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-10",
+      "b": "CC-11",
+      "relation": "isolated-carrier-path",
+      "tested": true,
+      "note": "CAR-M is not combined with R2-10 in the first implementation"
+    },
+    {
+      "a": "CC-10",
+      "b": "CC-12",
+      "relation": "isolated-carrier-path",
+      "tested": true,
+      "note": "CAR-M is not combined with R2-10 in the first implementation"
+    },
+    {
+      "a": "CC-11",
+      "b": "CC-12",
+      "relation": "derived-compatible",
+      "tested": true,
+      "note": "CC-12 copies the hardened CC-11 codec at the loader boundary"
+    }
+  ],
+  "variants": [
+    {
+      "id": "CC-13-CSS-HTML",
+      "sourceDecoy": "CC-06-CSS-HTML",
+      "marker": "o814-c06",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-css-html-raw-bundle.js",
+      "bundleSha256": "d1820efcb4c53ccf852c880aa6ddde2408ec86f961c63c65bdf05970aa3e6c62",
+      "bundleBytes": 287158,
+      "syntax": true,
+      "extendedH": true,
+      "decoyMarker": true,
+      "primaryS1": true,
+      "scenarioCounts": [
+        26,
+        9,
+        102
+      ],
+      "expectedCounts": [
+        26,
+        9,
+        102
+      ]
+    },
+    {
+      "id": "CC-13-XML-XSLT",
+      "sourceDecoy": "CC-07-XML-XSLT",
+      "marker": "o814-c07",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-xml-xslt-raw-bundle.js",
+      "bundleSha256": "1717ef4bb951754b95a60ccc5db3cbd3526095f444a077a62973095c1ab1d1ef",
+      "bundleBytes": 287158,
+      "syntax": true,
+      "extendedH": true,
+      "decoyMarker": true,
+      "primaryS1": true,
+      "scenarioCounts": [
+        26,
+        9,
+        102
+      ],
+      "expectedCounts": [
+        26,
+        9,
+        102
+      ]
+    },
+    {
+      "id": "CC-13-GLSL",
+      "sourceDecoy": "CC-08-GLSL",
+      "marker": "#version 300 es",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-glsl-raw-bundle.js",
+      "bundleSha256": "2ed72b5639547270d502a914e4ce63e4f0a2d931c8106b88376496710aec5b2d",
+      "bundleBytes": 287158,
+      "syntax": true,
+      "extendedH": true,
+      "decoyMarker": true,
+      "primaryS1": true,
+      "scenarioCounts": [
+        26,
+        9,
+        102
+      ],
+      "expectedCounts": [
+        26,
+        9,
+        102
+      ]
+    }
+  ]
+}

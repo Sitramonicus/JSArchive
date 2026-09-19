@@ -1,0 +1,54 @@
+{
+  "schema": "cc05-candidate/v1",
+  "candidate": "CC-05",
+  "status": "candidate-only",
+  "baseCandidate": "CC-04",
+  "fac": [
+    "FaC-02",
+    "FaC-06",
+    "FaC-09",
+    "FaC-10",
+    "FaC-16"
+  ],
+  "candidateBundle": "Active/O8.14/CC-05-Parser/candidate/cc05-parser-raw-bundle.js",
+  "frozenInputSha256": {
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-a.js": "487e853215c6fcfe1642eaa12c8a40a0d11217ccfe49161e625fbadbcb59817c",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-m.js": "7b1014cdda210fd3a4ae22b39ef871ce762151f7bd50497897961476e3edbcb3",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-n1.js": "4f9794703aad3eb87d8f07033b6a61218d6c7ef1c7da876eea3268dc714430e2",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-e.js": "58f78f023feddeb57f3b1b99848cc411ac3a6136dbdd4c69551ce1465947f6b7",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-n2.js": "8abba1fa98e104851541e558bd00177f2699962f58bef722d6150d6fc93cb3ec",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-aux.js": "8fb1d9bc925f60eb629947101f87cd55bef10be142bfcd059569f835a9d156d5",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-u.js": "ebbe2d3ee04c26ec6c6ae88a178a0a97fb693280c9727beec5306a17a23ce402",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-p-telegram.js": "92e1264c0fa1d5d1a74a6c5208313b974140bbd5aaf5f80cf4b9b4c066eee031",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-p-teams.js": "c691affd4ea842631b2b6d26ff44708722a98916ddbb114fb5e2a418e5ddd492",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-p-zoom.js": "a224f8e5cf70a4a9baf4f1468bb6ea4dc6b2d75ee936eeefd6df92b7578321b5",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-p-slack.js": "87c21661d7461b0f0ec07b1b640aec6f29c6c3fa758d2e5ad762d72a90c7f536",
+    "Active/O8.14/CC-04-VM-S/source/shards/shard-p-discord.js": "0ea15268a09d1ae168c74a5f281e10262bca31a29db9498f4d9c74f44999dedd"
+  },
+  "candidateSourceSha256": {
+    "Active/O8.14/CC-05-Parser/source/shards/shard-a.js": "487e853215c6fcfe1642eaa12c8a40a0d11217ccfe49161e625fbadbcb59817c",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-m.js": "7b1014cdda210fd3a4ae22b39ef871ce762151f7bd50497897961476e3edbcb3",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-n1.js": "4f9794703aad3eb87d8f07033b6a61218d6c7ef1c7da876eea3268dc714430e2",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-e.js": "f80eed37f1679e362b048b3307807cb2f26a507d249fdc6ea57f469bf8cf5913",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-n2.js": "8abba1fa98e104851541e558bd00177f2699962f58bef722d6150d6fc93cb3ec",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-aux.js": "8fb1d9bc925f60eb629947101f87cd55bef10be142bfcd059569f835a9d156d5",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-u.js": "ebbe2d3ee04c26ec6c6ae88a178a0a97fb693280c9727beec5306a17a23ce402",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-telegram.js": "92e1264c0fa1d5d1a74a6c5208313b974140bbd5aaf5f80cf4b9b4c066eee031",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-teams.js": "c691affd4ea842631b2b6d26ff44708722a98916ddbb114fb5e2a418e5ddd492",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-zoom.js": "a224f8e5cf70a4a9baf4f1468bb6ea4dc6b2d75ee936eeefd6df92b7578321b5",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-slack.js": "87c21661d7461b0f0ec07b1b640aec6f29c6c3fa758d2e5ad762d72a90c7f536",
+    "Active/O8.14/CC-05-Parser/source/shards/shard-p-discord.js": "0ea15268a09d1ae168c74a5f281e10262bca31a29db9498f4d9c74f44999dedd"
+  },
+  "frozenInputsUnchanged": true,
+  "promotion": {
+    "target": null,
+    "liveEligible": false
+  },
+  "operatorRefresh": {
+    "removed": "Alt+Shift+R reload chord and listener branch",
+    "retained": "Alt+Shift+X abort chord",
+    "completionInstruction": "F5 whilst in console",
+    "verification": "CC-05 simulated verification rerun PASS"
+  },
+  "candidateBundleSha256": "8c1a44f74c2f9e4bfb9193623c499221739a324b295334ae0d89cb014f7fe2c3"
+}

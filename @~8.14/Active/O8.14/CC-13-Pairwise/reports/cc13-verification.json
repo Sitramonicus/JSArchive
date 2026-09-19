@@ -1,0 +1,703 @@
+{
+  "candidate": "CC-13",
+  "status": "PASS",
+  "change": "pairwise compatibility revision",
+  "approvals": [
+    {
+      "id": "CC-01",
+      "dir": "CC-01-B0",
+      "report": "reports/cc01-b0-baseline.json",
+      "fac": [
+        "FaC-02",
+        "FaC-03",
+        "FaC-04",
+        "FaC-16"
+      ],
+      "kind": "baseline",
+      "reportPath": "Active/O8.14/CC-01-B0/reports/cc01-b0-baseline.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-02+03",
+      "dir": "CC-02-03",
+      "report": "reports/cc02-03-candidate.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-01",
+        "FaC-05",
+        "FaC-06",
+        "FaC-07",
+        "FaC-16",
+        "FaC-17"
+      ],
+      "kind": "runtime",
+      "reportPath": "Active/O8.14/CC-02-03/reports/cc02-03-candidate.json",
+      "reportStatus": "candidate-only",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-04",
+      "dir": "CC-04-VM-S",
+      "report": "reports/cc04-verification.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-02",
+        "FaC-05",
+        "FaC-06",
+        "FaC-09",
+        "FaC-16"
+      ],
+      "kind": "runtime",
+      "reportPath": "Active/O8.14/CC-04-VM-S/reports/cc04-verification.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-05",
+      "dir": "CC-05-Parser",
+      "report": "reports/cc05-verification.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-02",
+        "FaC-06",
+        "FaC-09",
+        "FaC-10",
+        "FaC-16"
+      ],
+      "kind": "runtime",
+      "reportPath": "Active/O8.14/CC-05-Parser/reports/cc05-verification.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-06",
+      "dir": "CC-06-CSS-HTML",
+      "report": "reports/cc06-verification.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-10",
+        "FaC-11",
+        "FaC-16"
+      ],
+      "kind": "decoy",
+      "reportPath": "Active/O8.14/CC-06-CSS-HTML/reports/cc06-verification.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-07",
+      "dir": "CC-07-XML-XSLT",
+      "report": "reports/cc07-verification.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-10",
+        "FaC-12",
+        "FaC-16"
+      ],
+      "kind": "decoy",
+      "reportPath": "Active/O8.14/CC-07-XML-XSLT/reports/cc07-verification.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-08",
+      "dir": "CC-08-GLSL",
+      "report": "reports/cc08-verification.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-10",
+        "FaC-13",
+        "FaC-16"
+      ],
+      "kind": "decoy",
+      "reportPath": "Active/O8.14/CC-08-GLSL/reports/cc08-verification.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-09",
+      "dir": "CC-09-R2-08",
+      "report": "reports/cc09-verification.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-02",
+        "FaC-03",
+        "FaC-04",
+        "FaC-05",
+        "FaC-06",
+        "FaC-07",
+        "FaC-08",
+        "FaC-16"
+      ],
+      "kind": "runtime",
+      "reportPath": "Active/O8.14/CC-09-R2-08/reports/cc09-verification.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-10",
+      "dir": "CC-10-CAR-M",
+      "report": "reports/cc10-lab.json",
+      "security": "reports/security-hardening.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-14",
+        "FaC-16"
+      ],
+      "kind": "carrier-lab",
+      "reportPath": "Active/O8.14/CC-10-CAR-M/reports/cc10-lab.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-11",
+      "dir": "CC-11-R2-10A",
+      "report": "reports/cc11-verification.json",
+      "security": "reports/security-hardening.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-15",
+        "FaC-16"
+      ],
+      "kind": "offline-codec",
+      "reportPath": "Active/O8.14/CC-11-R2-10A/reports/cc11-verification.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    },
+    {
+      "id": "CC-12",
+      "dir": "CC-12-R2-10B",
+      "report": "reports/cc12-verification.json",
+      "security": "reports/security-hardening.json",
+      "build": "reports/build.json",
+      "fac": [
+        "FaC-03",
+        "FaC-06",
+        "FaC-10",
+        "FaC-15",
+        "FaC-16"
+      ],
+      "kind": "loader",
+      "reportPath": "Active/O8.14/CC-12-R2-10B/reports/cc12-verification.json",
+      "reportStatus": "PASS",
+      "passed": true,
+      "securityPassed": true
+    }
+  ],
+  "variants": [
+    {
+      "id": "CC-13-CSS-HTML",
+      "sourceDecoy": "CC-06-CSS-HTML",
+      "marker": "o814-c06",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-css-html-raw-bundle.js",
+      "bundleSha256": "d1820efcb4c53ccf852c880aa6ddde2408ec86f961c63c65bdf05970aa3e6c62",
+      "bundleBytes": 287158,
+      "syntax": true,
+      "extendedH": true,
+      "decoyMarker": true,
+      "primaryS1": true,
+      "scenarioCounts": [
+        26,
+        9,
+        102
+      ],
+      "expectedCounts": [
+        26,
+        9,
+        102
+      ]
+    },
+    {
+      "id": "CC-13-XML-XSLT",
+      "sourceDecoy": "CC-07-XML-XSLT",
+      "marker": "o814-c07",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-xml-xslt-raw-bundle.js",
+      "bundleSha256": "1717ef4bb951754b95a60ccc5db3cbd3526095f444a077a62973095c1ab1d1ef",
+      "bundleBytes": 287158,
+      "syntax": true,
+      "extendedH": true,
+      "decoyMarker": true,
+      "primaryS1": true,
+      "scenarioCounts": [
+        26,
+        9,
+        102
+      ],
+      "expectedCounts": [
+        26,
+        9,
+        102
+      ]
+    },
+    {
+      "id": "CC-13-GLSL",
+      "sourceDecoy": "CC-08-GLSL",
+      "marker": "#version 300 es",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-glsl-raw-bundle.js",
+      "bundleSha256": "2ed72b5639547270d502a914e4ce63e4f0a2d931c8106b88376496710aec5b2d",
+      "bundleBytes": 287158,
+      "syntax": true,
+      "extendedH": true,
+      "decoyMarker": true,
+      "primaryS1": true,
+      "scenarioCounts": [
+        26,
+        9,
+        102
+      ],
+      "expectedCounts": [
+        26,
+        9,
+        102
+      ]
+    }
+  ],
+  "decoySlots": [
+    {
+      "candidate": "CC-06-CSS-HTML",
+      "before": 731,
+      "after": 731,
+      "neutral": true
+    },
+    {
+      "candidate": "CC-07-XML-XSLT",
+      "before": 731,
+      "after": 731,
+      "neutral": true
+    },
+    {
+      "candidate": "CC-08-GLSL",
+      "before": 731,
+      "after": 731,
+      "neutral": true
+    }
+  ],
+  "pairwise": [
+    {
+      "a": "CC-01",
+      "b": "CC-02+03",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-04",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-05",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-06",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-07",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-08",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-09",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-11",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-01",
+      "b": "CC-12",
+      "relation": "baseline-reference",
+      "tested": true,
+      "note": "CC-01 remains measurement-only"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-04",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-05",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-06",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-07",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-08",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-09",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-02+03",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-05",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-06",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-07",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-08",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-09",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-04",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-06",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-07",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-08",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-09",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-05",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-07",
+      "relation": "exclusive-n2-budget-slot",
+      "tested": true,
+      "note": "each candidate replaces the same 731-byte n2 slot"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-08",
+      "relation": "exclusive-n2-budget-slot",
+      "tested": true,
+      "note": "each candidate replaces the same 731-byte n2 slot"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-09",
+      "relation": "pairwise-built-runtime-profile",
+      "tested": true,
+      "note": "CC-13-CSS-HTML"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-06",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-08",
+      "relation": "exclusive-n2-budget-slot",
+      "tested": true,
+      "note": "each candidate replaces the same 731-byte n2 slot"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-09",
+      "relation": "pairwise-built-runtime-profile",
+      "tested": true,
+      "note": "CC-13-XML-XSLT"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-07",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-08",
+      "b": "CC-09",
+      "relation": "pairwise-built-runtime-profile",
+      "tested": true,
+      "note": "CC-13-GLSL"
+    },
+    {
+      "a": "CC-08",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-08",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-08",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-09",
+      "b": "CC-10",
+      "relation": "separate-laboratory-boundary",
+      "tested": true,
+      "note": "laboratory measurements are indexed, not inserted into runtime bytes"
+    },
+    {
+      "a": "CC-09",
+      "b": "CC-11",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-09",
+      "b": "CC-12",
+      "relation": "cumulative-or-boundary-compatible",
+      "tested": true,
+      "note": "no shared mutable carrier slot or new host capability"
+    },
+    {
+      "a": "CC-10",
+      "b": "CC-11",
+      "relation": "isolated-carrier-path",
+      "tested": true,
+      "note": "CAR-M is not combined with R2-10 in the first implementation"
+    },
+    {
+      "a": "CC-10",
+      "b": "CC-12",
+      "relation": "isolated-carrier-path",
+      "tested": true,
+      "note": "CAR-M is not combined with R2-10 in the first implementation"
+    },
+    {
+      "a": "CC-11",
+      "b": "CC-12",
+      "relation": "derived-compatible",
+      "tested": true,
+      "note": "CC-12 copies the hardened CC-11 codec at the loader boundary"
+    }
+  ],
+  "gates": {
+    "separateCCApprovals": true,
+    "runtimePairwiseProfiles": true,
+    "serializedDecoyExclusivity": true,
+    "carmIsolation": true,
+    "r2CodecLineage": true,
+    "noNewRouteOrCapability": true,
+    "frozenO813Unchanged": true,
+    "noPromotion": true
+  },
+  "constraints": {
+    "newGlobals": 0,
+    "newRoutes": 0,
+    "dynamicCodeGeneration": false,
+    "secondVm": false,
+    "combinedCarmAndR2": false,
+    "promotionTarget": null
+  },
+  "frozenExpected": {
+    "bundle": "604f4434955be18b49a746dcd9009537f00908189beb67a63653365b4a5086b2",
+    "cover": "3bbe73455937cdda43aed851734239646c55fde3010c072cd2febe230e96ffe9",
+    "runner": "d4de42af1a0f1ebe9a799eecc7ebe11847018103673975cd34a3996d83f4f26f",
+    "rotation": "5bc7746cd765be520a3810ad4e4e301e6af6530314a4cdd131dd6fc1da63745e"
+  },
+  "frozenActual": {
+    "bundle": "604f4434955be18b49a746dcd9009537f00908189beb67a63653365b4a5086b2",
+    "cover": "3bbe73455937cdda43aed851734239646c55fde3010c072cd2febe230e96ffe9",
+    "runner": "d4de42af1a0f1ebe9a799eecc7ebe11847018103673975cd34a3996d83f4f26f",
+    "rotation": "5bc7746cd765be520a3810ad4e4e301e6af6530314a4cdd131dd6fc1da63745e"
+  }
+}

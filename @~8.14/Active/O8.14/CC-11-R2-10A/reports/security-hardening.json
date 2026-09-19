@@ -1,0 +1,17 @@
+{
+  "candidate": "CC-11",
+  "status": "PASS",
+  "security": {
+    "hugeDeclaredLengthRejects": true,
+    "badVersionRejects": true,
+    "truncatedSlotsReject": true,
+    "wrongInputTypeReject": true,
+    "oversizedEncodeRejects": true,
+    "carrierLimitExplicit": true,
+    "noExecutionOrNetwork": true
+  },
+  "gates": {
+    "securityHardening": true,
+    "noDeliverySurface": true
+  }
+}

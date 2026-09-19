@@ -1,0 +1,58 @@
+O8.13 — CLIENT-SIDE CARRIER / OBFUSCATION LINE — R3 FREEZE
+
+Frozen: 2026-09-18 · Instance 7e953faa · BUILD-SEED 851b28e5 · Rotation o812
+Release: O8.13-r3 · Candidate: Archives/packages/O8.13-r3 · Candidate archive: Archives/packages/O8.13-r3
+Live mirror: Working-Stable/O8.13
+
+CANONICAL DELIVERABLES
+  O8.13-runner-d4de42af.js       3,372,856 B  SHA-256 d4de42af1a0f…  paste target
+  O8.13-bundle-604f4434.js       2,321,708 B  SHA-256 604f4434955b…  embedded bundle source
+  O8.13-cover-3bbe7345.bmp       2,359,350 B  SHA-256 3bbe73455937…  reproducibility copy
+  stego11p-real.min.js            2,011,232 B  SHA-256 24cbc077a1ca…  extracted real payload
+  stego11p-decoy.min.js               3,112 B  SHA-256 55895e58b97e…  garden fallback
+  stego11p-honey.min.js               1,232 B  SHA-256 f84995d19017…  honey payload
+  stego11p-tube.min.js                2,244 B  SHA-256 9dad7c20adbf…  tube payload
+  rotation.json                        629 B  SHA-256 5bc7746cd765…  rotation record
+
+COMPATIBILITY NAMES
+  The live mirror retains only symlinks for O8.12-runner.js, O8.12-cover.bmp,
+  O8.13-r3-* and O8.6-Final-final-bundle.js. The bytes are the canonical r3 bytes;
+  the old names are not separate builds. Compressed r3 aliases live in the active
+  final-package and r3 candidate directories only.
+
+CARRIER FACTS
+  Cover: 1024x768x24, salt 3f72a1ec, header-derived slack 574 B
+  Strip: offset 628 · real channel start 99028
+  Real channel: scattered 4-bit symbols · 1,741,740 / 2,260,322 = 77.06%
+  The current live codec is not CAR-M 2-bit, not ChaCha8, and not variable-RS.
+
+VERIFIED AFTER FREEZE PAPERWORK
+  16-point verification       16/16
+  25-pass battery             25/25
+  Stego tiers                 43 passed, 0 failed
+  SHA-256 manifests           OK in live, archive, r3 candidate, active package, active stego
+  verify-golive.mjs           exit 0
+  Safe S0 smoke                ALL PASS; 7 simulated HTTP calls, 0 dispatches
+
+The historical 14/16 status was caused by stale test/package assumptions. Point 16 was
+hard-coded to require exactly three retired package entries; the r3 manifest contains the
+full compatibility set. The test assertion and release naming were corrected without
+changing the bundle, runner, cover, or payload bytes.
+
+SECURITY STATUS
+  This is a functional freeze, not a security approval. The current source contains a
+  dynamic-code-execution sink and host HTTP/task interfaces. The S0 harness observes
+  simulated video-progress POSTs. Earlier chat statements that the live path was "zero
+  network" came from a restricted fallback sandbox and must not be repeated as a security
+  claim. The complete defensive audit is Handoff/R3-SECURITY-AUDIT-2026-09-18.md.
+
+  Before any push: classify the five password-like values. If any are actual privileged
+  credentials, keep them out of release/history and rotate as appropriate; if they are disposable
+  test commands, they are not production secrets. No credential values are stored in this archive note.
+
+R4 HOLD
+  CAR-M and R2-08 are planning-only in Active/O8.13/CAR-M-R2-08-R4-PLAN.md. G5/G6 remain
+  a separate held CC. Do not modify Working-Stable/O8.13 until an explicit new go-live.
+
+Authoritative files: BUILD.json and SHA256SUMS.txt. Historical notes under Archives/ and
+Handoff/ may describe superseded names or experiments; they are not paste instructions.

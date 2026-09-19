@@ -1,0 +1,21 @@
+{
+  "schema": "cc11-r2-10a-candidate/v1",
+  "candidate": "CC-11",
+  "status": "candidate-only",
+  "fac": [
+    "FaC-15",
+    "FaC-16"
+  ],
+  "source": "Active/O8.14/CC-11-R2-10A/source/r2-10a-codec.mjs",
+  "sourceSha256": "73fd1ee7fdc011b1b1977c983efac44ee0ad8c8f74dead2f02c355177724460d",
+  "lanes": [
+    "R9R0",
+    "R9R1",
+    "R9R2",
+    "R9R3"
+  ],
+  "offlineOnly": true,
+  "deliveryIntegration": false,
+  "frozenBaseline": "O8.13-r3",
+  "frozenFilesModified": []
+}

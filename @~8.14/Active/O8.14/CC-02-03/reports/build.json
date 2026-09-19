@@ -1,0 +1,86 @@
+{
+  "schema": "cc02-03-candidate/v1",
+  "candidate": "CC-02+03",
+  "status": "candidate-only",
+  "compiledChanges": [
+    "CC-02",
+    "CC-03"
+  ],
+  "fac": [
+    "FaC-01",
+    "FaC-05",
+    "FaC-06",
+    "FaC-07",
+    "FaC-16",
+    "FaC-17"
+  ],
+  "intent": "primary-preserving template neutralization, bounded diagnostics, and single-flight activity containment",
+  "sourceOfTruth": "O8.13-r3 read-only reference plus candidate source copies",
+  "frozenReferenceSha256": {
+    "Active/O8.13/shards/shard-a.js": "2d8f32ad7d0d0107d9a5cadf7aab203f840303cef6ce458825af60d53ec8d3b8",
+    "Active/O8.13/shards/shard-m.js": "7b1014cdda210fd3a4ae22b39ef871ce762151f7bd50497897961476e3edbcb3",
+    "Active/O8.13/shards/shard-n1.js": "4f9794703aad3eb87d8f07033b6a61218d6c7ef1c7da876eea3268dc714430e2",
+    "Active/O8.13/shards/shard-e.js": "d5d155379b03df9839ebc539bdb8a57fdb3f26c9bfc12d3cab585cd826cde68f",
+    "Active/O8.13/shards/shard-n2.js": "8abba1fa98e104851541e558bd00177f2699962f58bef722d6150d6fc93cb3ec",
+    "Active/O8.13/shards/shard-aux.js": "8fb1d9bc925f60eb629947101f87cd55bef10be142bfcd059569f835a9d156d5",
+    "Active/O8.13/shards/shard-u.js": "ebbe2d3ee04c26ec6c6ae88a178a0a97fb693280c9727beec5306a17a23ce402",
+    "Active/O8.13/shards/shard-p-telegram.js": "92e1264c0fa1d5d1a74a6c5208313b974140bbd5aaf5f80cf4b9b4c066eee031",
+    "Active/O8.13/shards/shard-p-teams.js": "c691affd4ea842631b2b6d26ff44708722a98916ddbb114fb5e2a418e5ddd492",
+    "Active/O8.13/shards/shard-p-zoom.js": "a224f8e5cf70a4a9baf4f1468bb6ea4dc6b2d75ee936eeefd6df92b7578321b5",
+    "Active/O8.13/shards/shard-p-slack.js": "87c21661d7461b0f0ec07b1b640aec6f29c6c3fa758d2e5ad762d72a90c7f536",
+    "Active/O8.13/shards/shard-p-discord.js": "0ea15268a09d1ae168c74a5f281e10262bca31a29db9498f4d9c74f44999dedd"
+  },
+  "candidateSourceSha256": {
+    "Active/O8.14/CC-02-03/source/shards/shard-a.js": "487e853215c6fcfe1642eaa12c8a40a0d11217ccfe49161e625fbadbcb59817c",
+    "Active/O8.14/CC-02-03/source/shards/shard-m.js": "7b1014cdda210fd3a4ae22b39ef871ce762151f7bd50497897961476e3edbcb3",
+    "Active/O8.14/CC-02-03/source/shards/shard-n1.js": "4f9794703aad3eb87d8f07033b6a61218d6c7ef1c7da876eea3268dc714430e2",
+    "Active/O8.14/CC-02-03/source/shards/shard-e.js": "db23aff3d68f3fb57205f413e693fa37de6b292a98bab661540f32f882d118da",
+    "Active/O8.14/CC-02-03/source/shards/shard-n2.js": "8abba1fa98e104851541e558bd00177f2699962f58bef722d6150d6fc93cb3ec",
+    "Active/O8.14/CC-02-03/source/shards/shard-aux.js": "8fb1d9bc925f60eb629947101f87cd55bef10be142bfcd059569f835a9d156d5",
+    "Active/O8.14/CC-02-03/source/shards/shard-u.js": "ebbe2d3ee04c26ec6c6ae88a178a0a97fb693280c9727beec5306a17a23ce402",
+    "Active/O8.14/CC-02-03/source/shards/shard-p-telegram.js": "92e1264c0fa1d5d1a74a6c5208313b974140bbd5aaf5f80cf4b9b4c066eee031",
+    "Active/O8.14/CC-02-03/source/shards/shard-p-teams.js": "c691affd4ea842631b2b6d26ff44708722a98916ddbb114fb5e2a418e5ddd492",
+    "Active/O8.14/CC-02-03/source/shards/shard-p-zoom.js": "a224f8e5cf70a4a9baf4f1468bb6ea4dc6b2d75ee936eeefd6df92b7578321b5",
+    "Active/O8.14/CC-02-03/source/shards/shard-p-slack.js": "87c21661d7461b0f0ec07b1b640aec6f29c6c3fa758d2e5ad762d72a90c7f536",
+    "Active/O8.14/CC-02-03/source/shards/shard-p-discord.js": "0ea15268a09d1ae168c74a5f281e10262bca31a29db9498f4d9c74f44999dedd"
+  },
+  "candidateBundle": "Active/O8.14/CC-02-03/candidate/cc02-03-raw-bundle.js",
+  "frozenReferenceUnchanged": true,
+  "applied": {
+    "fac01": {
+      "labelReplacements": {
+        "Host core — uniform phrase pools, log-lock, studio gaps, refill queue, metamorphic decode.": "core-ready",
+        "Worker buffer cleanup": "phase-cleanup",
+        "Worker channel dispatch": "phase-dispatch",
+        "Worker stream cleanup": "phase-cleanup",
+        "Worker stream dispatch": "phase-dispatch",
+        "Store timing profile": "phase-store",
+        "Queue refill evaluation": "phase-queue",
+        "Completion verified": "phase-done"
+      },
+      "runtimeTagPrefix": "[G:<tag>]"
+    },
+    "fac05": {
+      "newGlobals": 0,
+      "localAdapter": true
+    },
+    "fac06": {
+      "boundedLogEvents": 256,
+      "boundedLogBytes": 65536,
+      "singleFlightActivityAdapter": true,
+      "teardownAdapter": true
+    },
+    "fac07": {
+      "newMessageChannels": 0,
+      "existingBootHandshakePreserved": true
+    },
+    "fac17": {
+      "primaryActivitySignalPreserved": true,
+      "broadRemovedListDispatch": false
+    }
+  },
+  "promotion": {
+    "target": null,
+    "liveEligible": false
+  }
+}

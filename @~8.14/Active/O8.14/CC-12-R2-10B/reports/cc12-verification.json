@@ -1,0 +1,101 @@
+{
+  "candidate": "CC-12",
+  "status": "PASS",
+  "change": "R2-10B delivery/loader integration revision",
+  "fac": [
+    "FaC-03",
+    "FaC-06",
+    "FaC-10",
+    "FaC-15",
+    "FaC-16"
+  ],
+  "codec": {
+    "lanes": [
+      "R9R0",
+      "R9R1",
+      "R9R2",
+      "R9R3"
+    ],
+    "sourceSha256": "73fd1ee7fdc011b1b1977c983efac44ee0ad8c8f74dead2f02c355177724460d",
+    "encodedSha256": "11ac3a5a05e7bd3eee81c9e5459abc34e5e2c285dc01e4c2e2d67a40a8b9c64e",
+    "envelopeBytes": 64118
+  },
+  "fixture": {
+    "bytes": 48000,
+    "sha256": "99b76b0ebd5dcc1f8e1b592a5f36c22b0c80e0faf2294ae46d120c109c0b655e",
+    "executable": false
+  },
+  "loader": {
+    "loaded": true,
+    "loadedOnAllowlistedRoute": true,
+    "deniedLoad": true,
+    "delivered": true,
+    "deniedDelivery": true,
+    "deliveredEnvelopeParses": true,
+    "cleanupIdempotent": true,
+    "corruptedCarrierRejected": true,
+    "malformedEnvelopeRejected": true
+  },
+  "primaryRegression": {
+    "exitCode": 0,
+    "allPass": true,
+    "tail": [
+      "  completion order: VQ1>PQ1>SQ1",
+      "PASS pacing lines == 2 (got 2)",
+      "  pacing @ 74.5s: Pacing shift — next chore starts in ~19s.",
+      "  pacing @ 104.0s: Pacing shift — next chore starts in ~35s.",
+      "PASS fake-game dispatch observed",
+      "== S1: ALL PASS =="
+    ]
+  },
+  "security": {
+    "corruptCarrierRejected": true,
+    "invalidBase64Rejected": true,
+    "invalidInputRejected": true,
+    "unsafeRouteRejected": true,
+    "throwingSenderContained": true,
+    "oversizedDeliveryRejected": true,
+    "closedLoaderRejects": true
+  },
+  "memory": {
+    "before": {
+      "rss": 48365568,
+      "heapUsed": 4330560,
+      "external": 3411094,
+      "arrayBuffers": 1472559
+    },
+    "afterEncode": {
+      "rss": 54628352,
+      "heapUsed": 5060608,
+      "external": 5059766,
+      "arrayBuffers": 3089099
+    },
+    "afterGc": {
+      "rss": 58937344,
+      "heapUsed": 3692168,
+      "external": 11072309,
+      "arrayBuffers": 4424741
+    },
+    "gcAvailable": true
+  },
+  "static": {
+    "boundedParser": true,
+    "noNewNetwork": true,
+    "noDynamicCode": true,
+    "noNewGlobal": true,
+    "noHardcodedRoute": true,
+    "explicitCleanup": true,
+    "trueFourWay": true
+  },
+  "gates": {
+    "codecRoundTrip": true,
+    "allowlistedDeliveryOnly": true,
+    "boundedParserAndCorruption": true,
+    "explicitCleanup": true,
+    "noNewNetworkOrDynamicCode": true,
+    "trueFourWayIntegrated": true,
+    "primaryPreserved": true,
+    "memoryMeasured": true,
+    "securityHardening": true
+  }
+}

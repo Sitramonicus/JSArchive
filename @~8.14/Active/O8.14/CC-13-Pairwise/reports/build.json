@@ -1,0 +1,52 @@
+{
+  "schema": "cc13-pairwise-candidate/v1",
+  "candidate": "CC-13",
+  "status": "candidate-only",
+  "fac": [
+    "FaC-01",
+    "FaC-02",
+    "FaC-03",
+    "FaC-04",
+    "FaC-05",
+    "FaC-06",
+    "FaC-07",
+    "FaC-08",
+    "FaC-09",
+    "FaC-10",
+    "FaC-11",
+    "FaC-12",
+    "FaC-13",
+    "FaC-14",
+    "FaC-15",
+    "FaC-16",
+    "FaC-17"
+  ],
+  "variants": [
+    {
+      "id": "CC-13-CSS-HTML",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-css-html-raw-bundle.js",
+      "sha256": "d1820efcb4c53ccf852c880aa6ddde2408ec86f961c63c65bdf05970aa3e6c62"
+    },
+    {
+      "id": "CC-13-XML-XSLT",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-xml-xslt-raw-bundle.js",
+      "sha256": "1717ef4bb951754b95a60ccc5db3cbd3526095f444a077a62973095c1ab1d1ef"
+    },
+    {
+      "id": "CC-13-GLSL",
+      "bundle": "Active/O8.14/CC-13-Pairwise/candidate/cc13-glsl-raw-bundle.js",
+      "sha256": "2ed72b5639547270d502a914e4ce63e4f0a2d931c8106b88376496710aec5b2d"
+    }
+  ],
+  "pairwiseRelations": {
+    "baseline-reference": 9,
+    "separate-laboratory-boundary": 8,
+    "cumulative-or-boundary-compatible": 29,
+    "exclusive-n2-budget-slot": 3,
+    "pairwise-built-runtime-profile": 3,
+    "isolated-carrier-path": 2,
+    "derived-compatible": 1
+  },
+  "frozenBaseline": "O8.13-r3",
+  "frozenFilesModified": []
+}

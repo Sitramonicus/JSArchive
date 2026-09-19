@@ -1,0 +1,177 @@
+{
+  "schema": "o8.14-candidate-compilation/v1",
+  "candidate": "CC-14",
+  "status": "candidate-only",
+  "compilationStatus": "PASS",
+  "compiledChanges": [
+    "CC-01",
+    "CC-02+03",
+    "CC-04",
+    "CC-05",
+    "CC-06",
+    "CC-07",
+    "CC-08",
+    "CC-09",
+    "CC-10",
+    "CC-11",
+    "CC-12",
+    "CC-13"
+  ],
+  "approvedFaCs": [
+    "FaC-01",
+    "FaC-02",
+    "FaC-03",
+    "FaC-04",
+    "FaC-05",
+    "FaC-06",
+    "FaC-07",
+    "FaC-08",
+    "FaC-09",
+    "FaC-10",
+    "FaC-11",
+    "FaC-12",
+    "FaC-13",
+    "FaC-14",
+    "FaC-15",
+    "FaC-16",
+    "FaC-17"
+  ],
+  "runtimeSelection": null,
+  "runtimeProfiles": [
+    {
+      "id": "CC-13-CSS-HTML",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/profiles/cc13-css-html-raw-bundle.js",
+      "sha256": "d1820efcb4c53ccf852c880aa6ddde2408ec86f961c63c65bdf05970aa3e6c62",
+      "bytes": 287158,
+      "syntax": true,
+      "sourcePairwiseSha256": "d1820efcb4c53ccf852c880aa6ddde2408ec86f961c63c65bdf05970aa3e6c62",
+      "s1": true,
+      "counts": [
+        26,
+        9,
+        102
+      ]
+    },
+    {
+      "id": "CC-13-XML-XSLT",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/profiles/cc13-xml-xslt-raw-bundle.js",
+      "sha256": "1717ef4bb951754b95a60ccc5db3cbd3526095f444a077a62973095c1ab1d1ef",
+      "bytes": 287158,
+      "syntax": true,
+      "sourcePairwiseSha256": "1717ef4bb951754b95a60ccc5db3cbd3526095f444a077a62973095c1ab1d1ef",
+      "s1": true,
+      "counts": [
+        26,
+        9,
+        102
+      ]
+    },
+    {
+      "id": "CC-13-GLSL",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/profiles/cc13-glsl-raw-bundle.js",
+      "sha256": "2ed72b5639547270d502a914e4ce63e4f0a2d931c8106b88376496710aec5b2d",
+      "bytes": 287158,
+      "syntax": true,
+      "sourcePairwiseSha256": "2ed72b5639547270d502a914e4ce63e4f0a2d931c8106b88376496710aec5b2d",
+      "s1": true,
+      "counts": [
+        26,
+        9,
+        102
+      ]
+    }
+  ],
+  "isolatedComponents": [
+    {
+      "name": "cc10-carm-codec.mjs",
+      "source": "Active/O8.14/CC-10-CAR-M/source/carm-codec.mjs",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc10-carm-codec.mjs",
+      "sha256": "96bd3134d81f8421aa37c340d382345bf5a7e073d7452a74adf5580ba2b89d20",
+      "bytes": 7024,
+      "syntax": true
+    },
+    {
+      "name": "cc11-r2-10a-codec.mjs",
+      "source": "Active/O8.14/CC-11-R2-10A/source/r2-10a-codec.mjs",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc11-r2-10a-codec.mjs",
+      "sha256": "73fd1ee7fdc011b1b1977c983efac44ee0ad8c8f74dead2f02c355177724460d",
+      "bytes": 5252,
+      "syntax": true
+    },
+    {
+      "name": "cc12-r2-10b-codec.mjs",
+      "source": "Active/O8.14/CC-12-R2-10B/source/r2-10b-codec.mjs",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc12-r2-10b-codec.mjs",
+      "sha256": "73fd1ee7fdc011b1b1977c983efac44ee0ad8c8f74dead2f02c355177724460d",
+      "bytes": 5252,
+      "syntax": true
+    },
+    {
+      "name": "cc12-r2-10b-loader.mjs",
+      "source": "Active/O8.14/CC-12-R2-10B/source/r2-10b-loader.mjs",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc12-r2-10b-loader.mjs",
+      "sha256": "59fdff525d899b477db00d6241f040d941e8485863e350b77113e5fc94ba9ced",
+      "bytes": 7199,
+      "syntax": true
+    },
+    {
+      "name": "cc10-lab.json",
+      "source": "Active/O8.14/CC-10-CAR-M/reports/cc10-lab.json",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc10-lab.json",
+      "sha256": "3b76da93302b5d3c098627b7810312bfbd42024271fd162b05326a5fe4b68850",
+      "bytes": 4011,
+      "syntax": true
+    },
+    {
+      "name": "cc11-vector.json",
+      "source": "Active/O8.14/CC-11-R2-10A/candidate/cc11-r2-10a-vector.json",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc11-vector.json",
+      "sha256": "7e2c88a8f8df2e523397bf34b040edd468a2ac73bbce4a839b50ad9fef553adf",
+      "bytes": 879,
+      "syntax": true
+    },
+    {
+      "name": "cc12-loader-vector.json",
+      "source": "Active/O8.14/CC-12-R2-10B/candidate/cc12-loader-vector.json",
+      "path": "Active/O8.14/CC-14-Candidate-Compilation/candidate/components/cc12-loader-vector.json",
+      "sha256": "f0da745830ed15909c1e54c66a9cdef9012fd18b7fdbe6b48aa1fe2940e9f9ef",
+      "bytes": 318,
+      "syntax": true
+    }
+  ],
+  "compatibilitySource": "Active/O8.14/CC-13-Pairwise/reports/cc13-verification.json",
+  "constraints": {
+    "newGlobals": 0,
+    "newRoutes": 0,
+    "dynamicCodeGeneration": false,
+    "secondVm": false,
+    "combinedCarmAndR2": false,
+    "liveEligible": false,
+    "promotionTarget": null
+  },
+  "frozenBaseline": "O8.13-r3",
+  "frozenExpected": {
+    "bundle": "604f4434955be18b49a746dcd9009537f00908189beb67a63653365b4a5086b2",
+    "cover": "3bbe73455937cdda43aed851734239646c55fde3010c072cd2febe230e96ffe9",
+    "runner": "d4de42af1a0f1ebe9a799eecc7ebe11847018103673975cd34a3996d83f4f26f",
+    "rotation": "5bc7746cd765be520a3810ad4e4e301e6af6530314a4cdd131dd6fc1da63745e"
+  },
+  "frozenActual": {
+    "bundle": "604f4434955be18b49a746dcd9009537f00908189beb67a63653365b4a5086b2",
+    "cover": "3bbe73455937cdda43aed851734239646c55fde3010c072cd2febe230e96ffe9",
+    "runner": "d4de42af1a0f1ebe9a799eecc7ebe11847018103673975cd34a3996d83f4f26f",
+    "rotation": "5bc7746cd765be520a3810ad4e4e301e6af6530314a4cdd131dd6fc1da63745e"
+  },
+  "gates": {
+    "cc13Pass": true,
+    "separateApprovals": true,
+    "profilesCopiedAndSyntaxChecked": true,
+    "componentsCopiedAndSyntaxChecked": true,
+    "approvedFaCsComplete": true,
+    "noNewRouteOrCapability": true,
+    "frozenO813Unchanged": true,
+    "rawCandidateOnly": true,
+    "proper14r1StillPending": true,
+    "noGoLive": true
+  }
+}

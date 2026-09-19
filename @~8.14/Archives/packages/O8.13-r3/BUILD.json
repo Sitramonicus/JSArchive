@@ -1,0 +1,87 @@
+{
+  "version": "O8.13",
+  "release": "O8.13-r3",
+  "freeze_status": "FROZEN",
+  "frozen_at": "2026-09-18",
+  "instance": "7e953faa",
+  "build_seed": "851b28e5",
+  "rotation": "o812",
+  "symbol": "_0xq7e953faa",
+  "codenames": ["owl", "elm", "quill", "prairie", "quartz", "birch", "umber"],
+  "cycleMs": 14000,
+  "go_live_dir_link": "Active/O8.13/live -> ../../Working-Stable/O8.13",
+  "cover": {
+    "file": "O8.13-cover-3bbe7345.bmp",
+    "compatibility_aliases": ["O8.12-cover.bmp", "O8.13-r3-cover-3bbe7345.bmp"],
+    "bytes": 2359350,
+    "sha256": "3bbe73455937cdda43aed851734239646c55fde3010c072cd2febe230e96ffe9",
+    "dims": "1024x768",
+    "bpp": 24,
+    "salt": "3f72a1ec",
+    "occupancy": "77.06%",
+    "slots": "1741740/2260322",
+    "decoy_seed": 52375,
+    "cover_slack_bytes": 574,
+    "strip_offset": 628,
+    "real_offset": 99028
+  },
+  "bundle": {
+    "file": "O8.13-bundle-604f4434.js",
+    "compatibility_aliases": ["O8.13-r3-bundle-604f4434.js", "O8.6-Final-final-bundle.js"],
+    "bytes": 2321708,
+    "sha256": "604f4434955be18b49a746dcd9009537f00908189beb67a63653365b4a5086b2",
+    "g8_pins": "b27f4d8f,7e277c9d,eabb8a67",
+    "scripted_chars": 118000,
+    "script_blocks": "20/20"
+  },
+  "runner": {
+    "file": "O8.13-runner-d4de42af.js",
+    "compatibility_aliases": ["O8.13-r3-runner-d4de42af.js", "O8.12-runner.js"],
+    "bytes": 3372856,
+    "sha256": "d4de42af1a0f1ebe9a799eecc7ebe11847018103673975cd34a3996d83f4f26f",
+    "loader_pins": "681f66ff,c755a5f8",
+    "board_blobs": "8/9/10/11 x 727",
+    "reel_tables": 7,
+    "tube_codes": 1191
+  },
+  "payloads": {
+    "real": {"file": "stego11p-real.min.js", "bytes": 2011232, "sha256": "24cbc077a1cae2520a5a9503c59e43f3e22cb08e65d53c86da69a8f717c11273", "gzip": 870819},
+    "decoy": {"file": "stego11p-decoy.min.js", "bytes": 3112, "sha256": "55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511", "gzip": 1658},
+    "honey": {"file": "stego11p-honey.min.js", "bytes": 1232, "sha256": "f84995d19017b7f6e0c3f4293f5f74b803d15ffb51af6c67e7cf1be8212182ae", "gzip": 727},
+    "tube": {"file": "stego11p-tube.min.js", "bytes": 2244, "sha256": "9dad7c20adbfae9e3b59213876ea08760a5dca0ca8a6497f8700a88d0b2cf689", "gzip": 1191}
+  },
+  "dictionaries": {
+    "jso": 340,
+    "5k": 6068,
+    "runner5k": 3920,
+    "total": 10328,
+    "unique": 9988,
+    "known_overlap": "jso is a 340-word subset of runner5k; 5k is disjoint from both"
+  },
+  "pipeline": [
+    "obf-strings-g7.js (R2-06+ 32 garden mirrors, avoid-last-8 + coldest + delete-after-3)",
+    "obf-v1-s3matrix.js (e 1196.6KB, a 23.6KB)",
+    "obf-minify-family.js (60/60)",
+    "obf-u-canon.js + obf-u-per-type.js",
+    "build-s4-final-package.js (frozen v2-m pin 7082ce98; Q guard; HNT-GREP)",
+    "build-stego12-r2.mjs (two-sided prefix handling, 4-bit carrier, 77.06% occupancy)"
+  ],
+  "landed_this_line": ["DS-3", "HNT-X", "HNT-Y", "HNT-W", "HNT-N/DS-2 cover slack", "DS-1 board blobs", "OTO-1 five pockets on v1", "A1 pocket live-reads", "Q guard", "L2 trace", "R2-02 two-sided prefix handling", "R2-06+ 32-way honey path", "dictionary rebalance 20/20 scripts", "HNT-GREP anti-grep noise"],
+  "frozen_pins": {
+    "s4_v2_m": "7082ce98adcef5df5a1a7d107bf8360908ac187ecbfcce059f3d159a62bed70f",
+    "fp_diverted": 0
+  },
+  "tests": {
+    "battery": "25/25",
+    "sixteen_point": "16/16 after manifest-count rebase; no payload change",
+    "tiers": "43 passed, 0 failed",
+    "sha256": "14/14 manifest entries in live and archive; all five release dirs checked",
+    "safe_s0": "ALL PASS; 7 simulated HTTP calls; 0 dispatches; 1 message handshake",
+    "gated_password_suite": "prior recorded 10/10; not rerun during freeze because credentials remain ephemeral",
+    "stock_g7_redteam": "not rerun; @babel/parser unavailable",
+    "live_client": "operator-confirmed live test; not independently replayed this turn"
+  },
+  "not_implemented": ["CAR-M 2-bit dither", "R2-08 extended modularization", "G5/G6 held CC", "TRP-E cross-pocket decoy", "W-full honey-count jitter", "H shard split", "D true 4-way", "DIC-E/F/G", "wasm (CSP-blocked)"],
+  "audit": "Handoff/R3-SECURITY-AUDIT-2026-09-18.md",
+  "r4_plan": "Active/O8.13/CAR-M-R2-08-R4-PLAN.md"
+}

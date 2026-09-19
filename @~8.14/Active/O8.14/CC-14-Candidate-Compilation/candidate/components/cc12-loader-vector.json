@@ -1,0 +1,12 @@
+{
+  "routePolicy": "caller-supplied allowlist only",
+  "lanes": [
+    "R9R0",
+    "R9R1",
+    "R9R2",
+    "R9R3"
+  ],
+  "envelopeBytes": 64118,
+  "encodedSha256": "11ac3a5a05e7bd3eee81c9e5459abc34e5e2c285dc01e4c2e2d67a40a8b9c64e",
+  "recordSha256": "99b76b0ebd5dcc1f8e1b592a5f36c22b0c80e0faf2294ae46d120c109c0b655e"
+}
