@@ -1,0 +1,10 @@
+Archives/packages/O8.13-r2-candidate
+Archives/packages/O8.13-r2-candidate/O8.12-cover.bmp
+Archives/packages/O8.13-r2-candidate/O8.12-runner.js
+Archives/packages/O8.13-r2-candidate/O8.6-Final-final-bundle.js
+Archives/packages/O8.13-r2-candidate/SHA256SUMS.txt
+Archives/packages/O8.13-r2-candidate/rotation.json
+Archives/packages/O8.13-r2-candidate/stego11p-decoy.min.js
+Archives/packages/O8.13-r2-candidate/stego11p-honey.min.js
+Archives/packages/O8.13-r2-candidate/stego11p-real.min.js
+Archives/packages/O8.13-r2-candidate/stego11p-tube.min.js

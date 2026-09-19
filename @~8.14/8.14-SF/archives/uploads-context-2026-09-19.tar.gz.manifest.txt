@@ -1,0 +1,6 @@
+Uploads/REPORT (7).md.gz
+Uploads/image_2026-09-12_054222307+(1) - Copy.txt.gz
+Uploads/obfuscated.js.gz
+Uploads/stego2-cover-source.png
+Uploads/stego2-cover.bmp
+Uploads/TRACE.md
