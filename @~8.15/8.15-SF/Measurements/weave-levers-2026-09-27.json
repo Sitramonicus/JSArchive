@@ -1,0 +1,636 @@
+{
+ "date": "2026-09-27",
+ "subject": "S1 residue + S2 Shard Rebalance: four weave levers, the metric decomposed, two new levers (2026-09-27, pass 2)",
+ "input": {
+  "pre": "/tmp/cc34-weave-in.js (2,253,885 chars, SPLIT_PASSES=1 + deep weave + arrays-i)",
+  "seed": 2648369387
+ },
+ "target": {
+  "metric": "worst 10%-window single-origin share",
+  "acceptance": 0.25,
+  "landed": 0.434
+ },
+ "configurations": [
+  {
+   "name": "landed (all flags off)",
+   "fine_run": 25910,
+   "fine_share": 0.434,
+   "intact_run": 22678,
+   "groups_dealt": 37,
+   "note": "best cost; output byte-identical to the landed payload"
+  },
+  {
+   "name": "literal-call purity alone",
+   "fine_run": 96311,
+   "fine_share": 0.434,
+   "intact_run": 42385,
+   "groups_dealt": 39
+  },
+  {
+   "name": "purity + index-free + decl relocation",
+   "fine_run": 27537,
+   "fine_share": 0.434,
+   "intact_run": 22678,
+   "groups_dealt": 49
+  }
+ ],
+ "flags": {
+  "WEAVE_PURE_LITERAL_CALLS": "literal-method calls (receiver is a literal, whitelisted non-mutating builtin) count as pure values",
+  "WEAVE_INDEX_FREE": "pure index-form members become individually placeable (requires WEAVE_DECL_RELOC=1)",
+  "WEAVE_DECL_RELOC": "a run group's declaration may be relocated earlier under the no-reaching-read rule, widening its reader window"
+ },
+ "reader_map": "readsName: a mention is a READ unless it is the object of an assignment target (X[i]=v, X.p=v) or the receiver of push/unshift",
+ "verified_before_landing": "no '…prototype.<name> =' assignment exists anywhere in the 2.2 MB payload; the whitelisted builtins cannot have been patched",
+ "clump": {
+  "binding": "Fびήぜ137",
+  "member_writes": 123,
+  "member_bytes": 82246,
+  "pure_members": {
+   "count": 80,
+   "bytes": 25646
+  },
+  "literal_call_members": {
+   "count": 43,
+   "bytes": 56600,
+   "shape": "T[i] = \"…\".split(\" \")"
+  },
+  "reader_window_bytes": 89886,
+  "window_after_relocation_bytes": 1046000
+ },
+ "regression_caught": "the first refusal-test rewrite refused all 25 push groups unconditionally (freeSet.size===0 replaced the all-pure test): group count 37 -> 12, refusals 68 -> 93, with all four self-checks still green — caught by the census, fixed, back to 49 groups",
+ "new_wall": {
+  "worst_window_at": 1556433,
+  "dominant_bucket_bytes": 97987,
+  "dominant_material": "declarations the weave has no movable class for",
+  "examples_bytes": [
+   16800,
+   14796,
+   12956,
+   9808
+  ],
+  "next_lever": "give declaration material a movable form: split a declaration's literal into per-key/per-index runs (runOf already deals those) or lift the declaration into a built-once function (LIFT class)"
+ },
+ "metric_decomposition": {
+  "fine_share_identity": "worst-10%-window single-bucket share ; bucket = preLen/23 ; window = 0.10*postLen ; postLen ~= preLen  =>  bucket/window = 1/2.3 = 0.4348",
+  "meaning": "0.434 is the metric CEILING: it is what the number reads whenever one whole bucket still fits inside one window. Identity, landed and every gated config read 0.434 at four different window positions.",
+  "floor": "0.043 (perfectly spread: each bucket contributes ~1/23 of a window)",
+  "acceptance": "0.25 <=> no bucket may hold more than ~56,393 B inside any window"
+ },
+ "per_bucket_concentration": {
+  "instrument": "node /tmp/conc.mjs map:post:label (23 buckets, worst 10%-window; counts buckets >=90 % / >=75 % inside one window)",
+  "configurations": [
+   {
+    "name": "landed (all flags off)",
+    "max_share": 0.434,
+    "buckets_90pct": 16,
+    "buckets_75pct": 18,
+    "set_90pct": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22
+    ]
+   },
+   {
+    "name": "WEAVE_SEQ_SPLIT=1",
+    "max_share": 0.434,
+    "buckets_90pct": 16,
+    "buckets_75pct": 18,
+    "set_90pct": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22
+    ]
+   },
+   {
+    "name": "purity + index-free + decl-reloc (D)",
+    "max_share": 0.434,
+    "buckets_90pct": 6,
+    "buckets_75pct": 17,
+    "set_90pct": [
+     5,
+     12,
+     13,
+     14,
+     20,
+     22
+    ]
+   },
+   {
+    "name": "D + index-deal (E)",
+    "max_share": 0.434,
+    "buckets_90pct": 4,
+    "buckets_75pct": 14,
+    "set_90pct": [
+     12,
+     13,
+     14,
+     15
+    ]
+   }
+  ],
+  "finding": "the gated levers are NOT share-neutral in structure: 16 concentrated buckets -> 6 (D) -> 4 (E). The acceptance number stays at its ceiling only because the remaining buckets are each still whole; it falls off the ceiling the moment the last one is broken."
+ },
+ "window_anatomy_explain_mjs": {
+  "pair": "/tmp/map2.json + /tmp/w2-post.js (pass-2 chain; pre = /tmp/cc34-weave-in.js)",
+  "window_at": 721824,
+  "share": 0.434,
+  "bucket_composition": "b10 97,995 B (0.434) + b9 53,939 + b11 19,326 + b3 17,887 + b0 15,973 + b1 11,620",
+  "dominant_material": "the Fびήぜ137 string table and its index writes",
+  "top_items": [
+   {
+    "bytes": 17733,
+    "origin": 1009669,
+    "text": "Fびήぜ137[44]=[\"Kpa2ZS9l5SASkQeoMMtMNrgnp/qmcX2h7PwGMRqEMgrOsW…"
+   },
+   {
+    "bytes": 12530,
+    "origin": 986932,
+    "text": "Fびήぜ137[11]=\"X4UI3H8xDQDL9W7RP1QhMoaOxNMX1r4NKNU5aEZe3CfZNM8…"
+   },
+   {
+    "bytes": 12489,
+    "origin": 1059896,
+    "text": "Fびήぜ137[114]=\"I5amZWZl9SASkQaoacsTNrontvqwcWOhpPxAMQCEZgqRsS…"
+   },
+   {
+    "bytes": 10207,
+    "origin": 999462,
+    "text": "Fびήぜ137[30]=[\"J5a3ZXZl4iAEkU6oa8tZNrcnpvqscTSh7vwVMVuEOwrFsW…"
+   },
+   {
+    "bytes": 5298,
+    "origin": 981634,
+    "text": "var Fびήぜ137=[];Fびήぜ137[0]=[\"J5a3ZXZl4iAEkU6oa8tZNrcnpvqscTSh…"
+   }
+  ],
+  "placement_in_window": "fixed 538 stmts / 154,808 B · run 142 stmts / 51,032 B · fn 21 stmts / 19,712 B · largest intact span 17,733 B",
+  "surviving_concentrated_buckets": "12,13,14,15 = source ~1,077,950..1,566,000 = the e-shard region (e1..e4)",
+  "e_shard_shape": "bucket 12 = 175,426 B inside ONE comma-sequence statement whose first part is a 172,924 B function expression — a single statement is the deal’s atom"
+ },
+ "new_levers": [
+  {
+   "flag": "WEAVE_SEQ_SPLIT=1",
+   "what": "split comma-sequence statements into their parts as separate statements (evaluation order identical)",
+   "measured": "136 sequences -> 594 statements (399 KB of formerly atomic material); fine_run 25,910 -> 25,094; intact_run 22,678 -> 25,469 (worse); share and concentration unchanged",
+   "status": "gated, default OFF",
+   "refinement_not_built": "parts that may not begin a statement (function(){…}(), {…}) currently refuse the whole statement; joining such a part to the previous one would let the two giant tail sequences (175,426 B, 20,867 B) split too"
+  },
+  {
+   "flag": "WEAVE_RUN_EXPORT=1",
+   "what": "lift maximal runs of pure writes out of a nested body into a hoisted helper declared in the parent, called from the exact position the run occupied (text move, not a timing change)",
+   "safety": "no locals of the body, no this/arguments/super/new.target, call replaces the run in place (write order untouched), post-plan assertion refuses the build if a helper lands in a body the arrangement never plans",
+   "measured": "0 runs qualified on this payload — the pure local-free runs the census predicted do not exist inside the nested bodies",
+   "status": "gated, default OFF; prerequisite for the next lever (relaxing purity for writes whose reads are provably stable)"
+  },
+  {
+   "flag": "WEAVE_DISSOLVE=1",
+   "what": "inline IIFE shells (!function(p){body}(arg)) into the enclosing statement as `var p = arg;` + body statements, deepest-first; refuses async/generator callees, own-level return / this / arguments / yield / await, directive prologues, mismatched params, and name capture",
+   "measured": {
+    "shells_inlined": 95,
+    "atom_bytes": 299000,
+    "sequences_split": 157,
+    "statements_placed": 1467,
+    "bytes_delta": "+1,026",
+    "own_metric_longest_run": "107,394 -> 77,268 B",
+    "own_metric_window": "0.476 -> 0.440",
+    "ruler": {
+     "fine_run": 23688,
+     "fine_run_at": 1882811,
+     "fine_share": 0.434,
+     "fine_share_at": 1939214,
+     "intact_run": 22629
+    },
+    "landed_reference": {
+     "fine_run": 25910,
+     "fine_share": 0.434,
+     "intact_run": 22678
+    }
+   },
+   "verdict": "makes material splittable, not movable: cost improves slightly, share stays the ceiling. Not a landing by itself. Landed path with all flags OFF is byte-identical (/tmp/w_off.js).",
+   "refused_atoms_ge_20KB": [
+    {
+     "len": 172924,
+     "at": 1184757,
+     "reason": "returns",
+     "prefix_before_first_return": 46620,
+     "rest_behind_it": 126272,
+     "notable_in_rest": [
+      "86,714 B async arrow statement",
+      "31,015 B statement"
+     ]
+    },
+    {
+     "len": 24035,
+     "at": 860251,
+     "reason": "returns",
+     "prefix_before_first_return": 3979,
+     "rest_behind_it": 20024
+    },
+    {
+     "len": 22629,
+     "at": 479107,
+     "reason": "returns",
+     "prefix_before_first_return": 1351,
+     "rest_behind_it": 21242
+    }
+   ]
+  },
+  {
+   "flag": "WEAVE_FN_HOIST=1",
+   "what": "give a large function VALUE a declaration in the same scope (`X.y = async a => {BODY}` -> `async function NAME(a){BODY}` + `X.y = NAME;`), so the body becomes a placeable declaration with its own weave plan; comma sequences are split first when a part qualifies; `.bind(this)` used when the body reads `this` (an arrow's lexical this, reproduced exactly)",
+   "measured": {
+    "hoisted": 6,
+    "bytes": 343000,
+    "bound_this": 1,
+    "refused": {
+     "small": 950,
+     "this": 0,
+     "args": 0,
+     "super": 0,
+     "newTarget": 0,
+     "named": 0
+    }
+   },
+   "ruler": {
+    "fine_run": 23635,
+    "fine_share": 0.434,
+    "intact_run": 22629
+   },
+   "concentrated_buckets": {
+    "landed": 16,
+    "after_dissolve": 15,
+    "after_dissolve_hoist": 11,
+    "after_full_stack": 6,
+    "remaining": [
+     5,
+     9,
+     12,
+     13,
+     20,
+     22
+    ],
+    "full_stack_fine_run": 17391
+   },
+   "verdict": "a strict improvement in concentration (16 -> 11 alone, 6 with the other levers) but not a landing: the two remaining atoms (173,114 B return-bearing shell; ~86 KB async body) are bigger than a window's 25 % allowance, and MOVING an atom does not help — only splitting it does"
+  },
+  {
+   "flag": "WEAVE_SHELL_LABEL=1",
+   "what": "a shell refused for `returns` is lifted as a LABELLED BLOCK instead: `!function(p){A;if(x)return;B;return v;C}(arg)` -> `L:{var p=arg;A;if(x)break L;B;(v);break L;C}`. Legal because the dissolve pass only rewrites ExpressionStatement roots, so the shell's value is discarded by construction; `return v` becomes `(v);break L` (v still evaluated for its effects), and the label encloses the whole body so every break lands where its return did. Implemented as a text-edit splice in the emitter (registerEdit/slicePush) over the return's own span.",
+   "measured": {
+    "shells_inlined": 99,
+    "atom_bytes": 311000,
+    "labelled": 10,
+    "statements_placed": 1559,
+    "returns_refusals": "12 -> 0",
+    "content_conservation": "0 holes / 0 B duplicated",
+    "worst_window": {
+     "fixed": "137,415 -> 135,780 B",
+     "run": "70,425 -> 26,768 B",
+     "fn": "14,182 -> 59,361 B",
+     "largest_intact_span": "22,554 -> 4,422 B"
+    },
+    "sweep": {
+     "mean_max_share": "0.3689",
+     "excess_over_0_25": 8.737,
+     "windows_above_target": "72/73"
+    }
+   },
+   "gate": "all five checks green; flags OFF is byte-identical to the baseline (cmp-verified)"
+  },
+  {
+   "flag": "WEAVE_FN_HOIST=1 (buckets 5,9,12,13,20,22 -> see sweep)",
+   "what": "see §21.6; re-measured on the pinned input this pass",
+   "measured": {
+    "sweep_mean_max_share": 0.3828,
+    "excess_over_0_25": 9.698,
+    "worst_window_after_full_stack": {
+     "fn": "59,361 B / 96 stmts",
+     "run": "26,768 B / 87 stmts",
+     "fixed": "135,780 B / 1,271 stmts"
+    }
+   },
+   "verdict": "converts material between movable classes and shatters intact runs, but does not shrink the fixed class — which is what holds the share at the ceiling"
+  },
+  {
+   "flag": "WEAVE_SCOPED=1",
+   "what": "scoped-name dissolve: instead of introducing a shell's names into the enclosing scope (which privacy refuses), bind them inside the block it becomes — params as `let` (with fresh-temporary argument spill for self-named args), own-level `var`s converted to `let` via a 3-char keyword edit (refused per name when read textually before declaration or inside its own initialiser), inner-block vars left as `var` and required not to collide, `function` declarations still refuse (Annex B)",
+   "measured": {
+    "shells_inlined": 116,
+    "atom_bytes": 382000,
+    "scoped_shells": 17,
+    "privacy_refusals": "43 -> 26",
+    "gates": "green, 0 holes / 0 B duplicated",
+    "constraint_pass": "5/5 PASS, movable 1,134,196 B = 51.1%",
+    "flags_off_regression": "byte-identical to the pinned landed output"
+   },
+   "ab_on_chain_A": {
+    "mean_max_share": {
+     "off": 0.4095,
+     "stack_without_scoped": 0.3695,
+     "stack_with_scoped": 0.3719
+    },
+    "excess": {
+     "off": 11.641,
+     "without": 8.737,
+     "with": 8.897
+    },
+    "windows_above_0_25": {
+     "off": "73/73",
+     "without": "72/73",
+     "with": "73/73"
+    },
+    "buckets_ge_90": {
+     "off": 15,
+     "without": 10,
+     "with": 13
+    }
+   },
+   "verdict": "MECHANISM WIN, METRIC LOSS: dissolving 17 more shells costs ~0.0024 mean and one concentrated bucket. Dissolution changes the SHAPE of atoms, not the POSITION of mass — a dissolved shell becomes fixed statements in place. Kept default OFF, recorded as measured-not-a-landing.",
+   "remaining_refusal": {
+    "bytes": 169612,
+    "at": 1166721,
+    "reason": "privacy on FUNCTION declarations the shell introduces (scoping cannot take function decls — Annex B); the next step for this atom is renaming, not scoping"
+   }
+  },
+  {
+   "flag": "WEAVE_RUN_WRAP=1 (chunk WEAVE_RUN_WRAP_KB, default 24 KB)",
+   "what": "generalized RUN_EXPORT: a run of consecutive statements is replaced by a helper CALL, the statements go inside a hoisted helper declaration in the same body. A function declaration is what the deal already scatters, so the run's bytes leave the window; the call is ~10 B at the run's position. Per-statement + per-run eligibility: no own-level return / this / arguments / super / new.target; no bound name referenced outside the run's span; slice-safe only (no synthetic text, no text edit, textually adjacent to the previous member); material the deal can already place is left alone.",
+   "measured": {
+    "stack": "RUN_WRAP + DISSOLVE(labelled+scoped+renamed) + FN_HOIST + PURE_LITERAL_CALLS + INDEX_FREE + DECL_RELOC",
+    "windows_above_0_25": "73/73 -> 46/73",
+    "mean_max_share": "0.4095 -> 0.2765",
+    "excess_over_0_25": "11.641 -> 3.213",
+    "worst": "0.4344 -> 0.4312 (bucket 12)",
+    "buckets_ge_90": "15 -> 2 (buckets 12, 13)",
+    "statement_text_kept": "2,214,022 B of 2,217,022 · holes 0 · duplicated 0",
+    "constraint_pass": "5/5, movable 1,414,570 B = 63.6 %",
+    "flags_off_regression": "byte-identical to the pinned landed output",
+    "chunk_sweep": "16 KB 52/73 · 24 KB 53/73 · 48 KB 55/73; wrapping dealable material too: 64/73"
+   },
+   "defects_found": [
+    "dropped-wrapper slicing: a run may not span text dissolution deleted (fixed by slice-safety + adjacency)",
+    "a comma-sequence shell is inlined twice because the dissolvedNodes guard has no statement node to mark (fixed by an identity guard + conflict-as-refusal)"
+   ],
+   "verdict": "LANDING LEVER — the first mechanism that moves the acceptance number rather than its preconditions."
+  },
+  {
+   "flag": "WEAVE_RUN_WRAP_HOISTVAR=1",
+   "what": "let a `var X = …;` barrier into the run by hoisting the declaration out: the binding stays at body level, the helper only assigns, the four bytes of the keyword are deleted",
+   "measured": {
+    "semantic_gates": "pass",
+    "content_conservation": "REFUSED — 1,094 spans / 4,442 B of statement text dropped",
+    "wrapped_total": "3,703 -> 3,726 statements (nothing material lost)"
+   },
+   "verdict": "INADMISSIBLE under the standing D5 ruling (fix the instrument, never relax the gate). Flag kept, default OFF."
+  }
+ ],
+ "remaining_target": {
+  "acceptance": "fine_share <= 0.25",
+  "standing": 0.434,
+  "arithmetic": "bucket 97,995 B / window 225,574 B = 0.434 — any single bucket kept contiguous inside a window reads the ceiling; splitting without moving changes nothing",
+  "next": [
+   "read/span-decidable purity relaxation for run groups: deal a member when every binding it reads is not written in the span it would cross",
+   "partial dissolve for return-bearing shells (46,620 B of the 172,924 B atom)",
+   "hoist giant async arrow bodies (86,714 B) into async function helpers",
+   "Segment 2 Shard Rebalance: break the e-shard region's fixed statements (buckets 12-15) at source level"
+  ],
+  "best_2026_09_28": "mean 0.2765 · excess 3.213 · windows_above_target 46/73 · worst 0.4312 (bucket 12)"
+ },
+ "self_gate_replacement": {
+  "removed_under_dissolve": "every body keeps its statement count (split-aware) — demoted to a diagnostic because dissolution invalidates its 1:1 body premise by design",
+  "added": "content conservation on emitted chunks: every pre-transform statement span covered byte for byte exactly once; holes legal only inside a recorded rewritten span (inlined shell wrapper bytes, split-sequence commas); every coordinate-carrying chunk asserted to be an exact source slice",
+  "green_run": {
+   "original_statements": 29697,
+   "statement_text_kept_bytes": 2252158,
+   "holes": 0,
+   "duplicated": 0
+  },
+  "falsification": "a /tmp copy with one statement skipped reports 52 B dropped over 2 spans and refuses to write"
+ },
+ "instrument_note": "progress toward <=0.25 is tracked by PER-BUCKET CONCENTRATION, not the saturated max: purity + index-free + decl-reloc take the >=90 %-concentrated bucket count from 16 to 5 (12, 22, 5, 13, 20) at fine_run 17,302, while fine_share stays 0.434 because each surviving whole bucket alone saturates a window",
+ "remaining_mechanism": {
+  "requirement": "arithmetic: no contiguous piece from one bucket may exceed ~56 KB, and pieces must be separated by other buckets' material",
+  "mechanism": "run-wrap splitting of large function bodies: wrap a run of consecutive statements in a helper declared at the same scope and call it at exactly the run's position (async + await when the run contains await)",
+  "legality": [
+   "no return/break/continue transferring out of the run",
+   "no name the run declares (var/let/const/function/class) used after the run — a helper's declarations do not escape it",
+   "no this/arguments/new.target at the run's own level",
+   "no labels crossing the boundary"
+  ],
+  "why_it_is_the_last_one": "it is the only rule that turns a 126 KB flow into placeable 10-40 KB declarations; purity is NOT required because the call site preserves evaluation order",
+  "status_2026_09_28": "confirmed twice: ~136 KB of the worst window is fixed in every configuration; only converting fixed->dealable can move the acceptance number (span-decidable purity first, run-wrap second)",
+  "leads_2026_09_28": [
+   "the 169,612 B bucket-12 atom is now refused for an EDIT CONFLICT (two shell inlines claim the same `return`), not for privacy — resolving that reachability dissolves it into ~216 statements which the run wrap then spreads",
+   "barriers (5,632 statements) are the remaining fixed mass: they bind names read elsewhere; the hoist route is gate-refused, so the admissible route is a reader-window argument inside the deal itself"
+  ]
+ },
+ "instrument_share_sweep": {
+  "tool": "tools/recon/share-sweep.mjs",
+  "why": "fine_share is a threshold maximum that saturates at the ceiling while any window holds a whole origin bucket; the sweep reports the distribution behind it (worst ten window shares, windows above 0.25, mean max-share, total excess over 0.25) so progress is visible and 'windows above 0.25 == 0' is exactly the acceptance test",
+  "ladder": {
+   "flags_OFF": {
+    "mean": 0.4095,
+    "excess": 11.641,
+    "above": "73/73"
+   },
+   "+dissolve": {
+    "mean": 0.3973,
+    "excess": 10.754,
+    "above": "73/73"
+   },
+   "+dissolve+hoist": {
+    "mean": 0.3828,
+    "excess": 9.698,
+    "above": "73/73"
+   },
+   "+full stack": {
+    "mean": 0.3689,
+    "excess": 8.7,
+    "above": "71/73"
+   },
+   "+label": {
+    "mean": 0.3943,
+    "excess": 10.533,
+    "above": "73/73"
+   },
+   "+label+hoist": {
+    "mean": 0.3871,
+    "excess": 10.011,
+    "above": "73/73"
+   },
+   "+label+full stack": {
+    "mean": 0.3695,
+    "excess": 8.737,
+    "above": "72/73"
+   }
+  }
+ },
+ "movable_class_finding": {
+  "classes_the_deal_can_move": [
+   "function declarations (fns)",
+   "run-group members (pure writes / index-form writes)",
+   "relocated declarations"
+  ],
+  "constant_across_configurations": "fixed mass in the worst window ~136-150 KB of ~222 KB",
+  "consequence": "the acceptance number cannot fall until fixed statements become movable",
+  "next": [
+   "(a) span-decidable purity relaxation for run members (cheap, first)",
+   "(b) run-wrap splitting of fixed control-flow runs into same-scope helpers called at the same position (order-preserving, can reach the 136 KB)"
+  ]
+ },
+ "chain_pin": {
+  "sha256": "bf5f21163727850c…",
+  "path": "/tmp/cc34-weave-in.js",
+  "bytes": 2535176,
+  "chain": "A (the documented one)",
+  "built_by": "EXTRACT_ONLY=<13 names> DEEPWEAVE=1 SPLIT_EXTRA=1 SPLIT_OBJECTS=1 SPLIT_ARRAYS_I=1 OUT=/tmp/deep/landA bash tools/cc34-build.sh carrier",
+  "notes": [
+   "EXTRACT_ONLY is NOT a no-op: without it the build yields (chain B, 7e4c28a0…) an input of the same length that differs from char 510; the two read 12,948 vs 12,961 region statements at flags OFF",
+   "the pass-27 mixed-chain scare was caught by the routine flags-OFF cmp check; re-derived on chain A, flags-OFF is byte-identical to the baseline (no code regression from any pass-27 patch) and all sweep rows reproduce exactly",
+   "absolute numbers still moved vs the earlier session's tables (fine_run 25,910 -> 26,014; intact 22,678 -> 27,866) because intermediate stages changed since those tables were taken; every pass-27 comparison is within this derivation"
+  ],
+  "path_in_workspace": "Active/O8.15/pinned/weave-in-chainA.js (pinned so /tmp wipes stop costing a rebuild)"
+ },
+ "blocker_dissection": {
+  "atom": {
+   "bytes": 169612,
+   "at": 939092,
+   "shape": "!function(Cinde826){ …216 stmts… }(Cinde826), first part of a 3-part comma sequence"
+  },
+  "reason": "privacy — 20 of the 119 names it declares appear elsewhere in the enclosing master body (8,621 stmts / 2.2 MB)",
+  "refusal_classes": {
+   "shape": 9774,
+   "privacy": 43,
+   "async": 3,
+   "returns": 0
+  },
+  "fix_design": {
+   "principle": "do not introduce the shell's names into the enclosing scope — bind them block-scoped inside the labelled block",
+   "steps": [
+    "parameters bound with `let` inside the block",
+    "own-level `var` declarations converted to `let` inside the block (legal because a var `var` read before its declaration yields undefined; refuse any name used textually before its declaration)",
+    "`function` declarations need renaming or stay refused (Annex B gives them a function-level binding)",
+    "refuse the whole shell if it contains eval/with"
+   ],
+   "trap": "self-named argument: `!function(Cinde826){…}(Cinde826)` — the binding statement must spill the argument to a fresh temporary first (`var <fresh> = <arg>; let p = <fresh>;`), otherwise with `let` the initializer hits its own TDZ and with `var` it silently aliases"
+  },
+  "next_fixed_atoms_reached_by_the_same_change": [
+   86681,
+   62682,
+   60679,
+   52046
+  ]
+ },
+ "post_verification_2026_09_28": {
+  "identity_guard": "source-range key start:end; stable on full re-run",
+  "best_stack": {
+   "shells": 124,
+   "atom_bytes": "451 KB",
+   "privacy": 17,
+   "scoped": 21,
+   "renamed": 28,
+   "runwrap_helpers": 34,
+   "runwrap_statements": 3703,
+   "runwrap_bytes": "290 KB",
+   "gates": "5/5 PASS",
+   "conservation": "0 holes / 0 duplicated",
+   "constraint": "5/5 PASS",
+   "movable": "1,414,570 B = 63.6%",
+   "windows_above_target": "46/73",
+   "mean_max_share": 0.2765,
+   "excess": 3.213,
+   "worst": 0.4312,
+   "concentrated_buckets": [
+    12,
+    13
+   ]
+  },
+  "worst_window": {
+   "window_bytes": 222261,
+   "fixed_bytes": 175892,
+   "bucket12_bytes": 95837,
+   "bucket13_bytes": 61746,
+   "largest_fixed_same_bucket": 24754,
+   "dominant_stmt": 3632
+  }
+ },
+ "chunk_sweep_2026_09_28": {
+  "8": {
+   "windows": "49/73",
+   "mean": 0.2889,
+   "excess": 4.094
+  },
+  "12": {
+   "windows": "51/73",
+   "mean": 0.2817,
+   "excess": 3.552
+  },
+  "20": {
+   "windows": "46/73",
+   "mean": 0.2765,
+   "excess": 3.213
+  },
+  "24": {
+   "windows": "46/73",
+   "mean": 0.2765,
+   "excess": 3.213
+  },
+  "28": {
+   "windows": "45/73",
+   "mean": 0.2792,
+   "excess": 3.415
+  },
+  "32": {
+   "windows": "45/73",
+   "mean": 0.2792,
+   "excess": 3.415
+  },
+  "36": {
+   "windows": "45/73",
+   "mean": 0.2792,
+   "excess": 3.415
+  },
+  "40": {
+   "windows": "45/73",
+   "mean": 0.2792,
+   "excess": 3.415
+  },
+  "48": {
+   "windows": "45/73",
+   "mean": 0.2792,
+   "excess": 3.415
+  },
+  "64": {
+   "windows": "45/73",
+   "mean": 0.2792,
+   "excess": 3.415
+  },
+  "verdict": "28–64 KB gives the best windows-above-target result; 20–24 KB gives the best mean/excess. No landing selected yet."
+ }
+}
