@@ -1,0 +1,49 @@
+{
+ "tag": "o814",
+ "prev": "o814",
+ "date": "2026-09-22",
+ "version": {
+  "old": "8.14",
+  "new": "8.14"
+ },
+ "instance": {
+  "old": "06118ef1",
+  "new": "06118ef1"
+ },
+ "symbol": {
+  "old": "_0xq06118ef1",
+  "new": "_0xq06118ef1"
+ },
+ "codenames": {
+  "old": [
+   "onyx",
+   "flint",
+   "aspen",
+   "robin",
+   "tern",
+   "lotus",
+   "swift"
+  ],
+  "new": [
+   "juniper",
+   "lark",
+   "kelp",
+   "fjord",
+   "brook",
+   "pine",
+   "willow"
+  ]
+ },
+ "cycleMs": {
+  "old": 15000,
+  "new": 15000
+ },
+ "files": [
+  "shards/shard-a.js",
+  "shards/shard-e1.js",
+  "shards/shard-e2.js",
+  "shards/shard-e3.js",
+  "shards/shard-e4.js"
+ ],
+ "note": "reversible: substitutions are exact old->new pairs above"
+}

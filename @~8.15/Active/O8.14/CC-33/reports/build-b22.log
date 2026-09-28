@@ -1,0 +1,482 @@
+== CC-33 build: seed=851b28e5 tag=o814 version=8.14 ==
+[engines] installing (node_modules absent or incomplete)…
+[engines] ready (139 packages)
+[dict-gen] invisible-block ingredient: 2 non-leading characters (U+200C U+200D)
+[gen  ] identifiers-dictionary-5k.csv          5706 words  56 KB  unique=true idStart=true scripts=665 stems=2417 shapes=2336/1163/2207  rejected={"bad":0,"dup":51,"banned":43,"reserved":8,"collision":0}
+[gen  ] identifiers-dictionary-jso.csv         335 words  3 KB  unique=true idStart=true scripts=145 stems=143 shapes=138/74/123  rejected={"bad":0,"dup":0,"banned":8,"reserved":1,"collision":0}
+[gen  ] identifiers-dictionary-runner-5k.csv   3859 words  37 KB  unique=true idStart=true scripts=591 stems=1577 shapes=1685/739/1435  rejected={"bad":0,"dup":21,"banned":24,"reserved":8,"collision":0}
+=== 11 identifier-safe blocks from unicode_list.csv · active alphabet 297 chars · shape ref 29/12/22/24/12/1 % · 1920 ms total -> oto/generated/ ===
+[dict] CC33_DICT_DIR=/home/user/Active/O8.14/CC-33/oto/generated  seed=851b28e5
+tag=o814 (prev=o814) apply=true
+version: 8.14 -> 8.14
+instance/symbol: 06118ef1 -> 06118ef1
+codenames: juniper,lark,kelp,fjord,brook,pine,willow -> onyx,flint,aspen,robin,tern,lotus,swift
+cycleMs: 15000 -> 15000
+  check a:SUITE_VERSION: found=1 want=1
+  check a:INSTANCE_ID: found=1 want=1
+  check e:Symbol: found=1 want=1
+  check e:cycle: found=1 want=1
+  check e:names-line: found=1 want=1
+  check e:key:juniper: found=1 want>=1
+  check e:key:lark: found=1 want>=1
+  check e:key:kelp: found=1 want>=1
+  check e:key:fjord: found=1 want>=1
+  check e:key:brook: found=1 want>=1
+  check e:key:pine: found=1 want>=1
+  check e:key:willow: found=1 want>=1
+applied (shard-e1.js). manifest: Active/O8.6/oto/rotation.json
+[HNT-W] ripcord window 60000 -> 62800 ms (jitter 2800)
+shard-a: 64 sites (65 units) -> 46.0KB  [self-test 15 round-trips OK]
+shard-c: 4 sites (4 units) -> 15.4KB  [self-test 1 round-trips OK]
+shard-h: 25 sites (25 units) -> 17.5KB  [self-test 8 round-trips OK]
+shard-l: 7 sites (7 units) -> 13.5KB  [self-test 2 round-trips OK]
+shard-m-str: 0 sites (0 units) -> 20.6KB  [self-test 0 round-trips OK]
+shard-m1: 11 sites (11 units) -> 18.4KB  [self-test 1 round-trips OK]
+shard-m2: 9 sites (9 units) -> 18.8KB  [self-test 1 round-trips OK]
+shard-n1: 13 sites (13 units) -> 25.0KB  [self-test 4 round-trips OK]
+shard-e-str1: 278 sites (278 units) -> 101.9KB  [self-test 25 round-trips OK]
+shard-e-str2: 277 sites (277 units) -> 102.9KB  [self-test 25 round-trips OK]
+shard-e1: 147 sites (147 units) -> 68.3KB  [self-test 25 round-trips OK]
+shard-e2: 30 sites (30 units) -> 37.9KB  [self-test 7 round-trips OK]
+shard-e3: 28 sites (29 units) -> 34.1KB  [self-test 6 round-trips OK]
+shard-e4: 100 sites (105 units) -> 53.5KB  [self-test 23 round-trips OK]
+shard-n2: 13 sites (13 units) -> 24.0KB  [self-test 3 round-trips OK]
+shard-aux1: 6 sites (6 units) -> 27.6KB  [self-test 2 round-trips OK]
+shard-aux2: 57 sites (57 units) -> 31.2KB  [self-test 20 round-trips OK]
+shard-u: 15 sites (15 units) -> 18.1KB  [self-test 5 round-trips OK]
+shard-p-telegram: 35 sites (35 units) -> 21.2KB  [self-test 15 round-trips OK]
+shard-p-teams: 41 sites (41 units) -> 20.3KB  [self-test 10 round-trips OK]
+shard-p-zoom: 112 sites (112 units) -> 38.8KB  [self-test 25 round-trips OK]
+shard-p-slack: 35 sites (35 units) -> 20.8KB  [self-test 9 round-trips OK]
+shard-p-discord: 31 sites (31 units) -> 19.1KB  [self-test 11 round-trips OK]
+census: 1221 measurable plaintexts, 323 fiction hashes -> /home/user/Active/O8.14/CC-33/oto/g7-strings/census.json
+g7-strings done -> /home/user/Active/O8.14/CC-33/oto/g7-strings
+shard-a: 46.0KB -> 47.4KB  (0.7s)  [mangled-shuffled]
+shard-m: 27.5KB -> 105.2KB  (0.6s)  [hexadecimal]
+shard-n1: 25.0KB -> 217.7KB  (1.0s)  [dictionary]
+shard-e1: 68.3KB -> 362.6KB  (1.2s)  [dictionary]
+shard-n2: 24.0KB -> 108.8KB  (0.5s)  [dictionary]
+shard-aux: 48.9KB -> 97.8KB  (0.8s)  [mangled]
+shard-c: 15.4KB -> 105.4KB  (0.4s)  [dictionary]
+shard-h: 17.5KB -> 110.5KB  (0.3s)  [dictionary]
+shard-l: 13.5KB -> 21.1KB  (0.1s)  [mangled-shuffled]
+shard-m-str: 20.6KB -> 58.7KB  (0.1s)  [hexadecimal]
+shard-e-str1: 101.9KB -> 154.9KB  (0.3s)  [mangled-shuffled]
+shard-p-telegram: 21.2KB -> 115.7KB  (0.3s)  [dictionary]
+shard-p-zoom: 38.8KB -> 191.4KB  (0.5s)  [dictionary]
+shard-p-slack: 20.8KB -> 109.4KB  (0.5s)  [dictionary]
+shard-p-discord: 19.1KB -> 140.3KB  (0.4s)  [dictionary]
+shard-p-teams: 20.3KB -> 147.7KB  (0.4s)  [dictionary]
+v1 done -> /home/user/Active/O8.14/CC-33/oto/v1-jso-s3matrix
+
+=== v4-closure ===
+  [OK ] shard-a: 46.0KB -> 29.2KB | marker 2 | RLO 1 ZWJ 6 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-c: 15.4KB -> 11.7KB | marker 0 | RLO 1 ZWJ 7 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-h: 17.5KB -> 14.5KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-l: 13.5KB -> 11.1KB | marker 0 | RLO 1 ZWJ 7 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-m-str: 20.6KB -> 18.6KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-m1: 18.4KB -> 16.0KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-m2: 18.8KB -> 14.0KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-n1: 25.0KB -> 17.5KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-e-str1: 101.9KB -> 98.1KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-e-str2: 102.9KB -> 98.8KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-e1: 68.3KB -> 56.2KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-e2: 37.9KB -> 30.7KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-e3: 34.1KB -> 25.8KB | marker 0 | RLO 1 ZWJ 7 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-e4: 53.5KB -> 42.8KB | marker 0 | RLO 1 ZWJ 7 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-n2: 24.0KB -> 16.7KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-aux1: 27.6KB -> 23.7KB | marker 0 | RLO 1 ZWJ 7 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-aux2: 31.2KB -> 25.8KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-u: 18.1KB -> 13.4KB | marker 1 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-p-telegram: 21.2KB -> 17.8KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-p-teams: 20.3KB -> 16.9KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+  [OK ] shard-p-zoom: 38.8KB -> 31.8KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-p-slack: 20.8KB -> 17.5KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 6 | terms 0 | syntax true
+  [OK ] shard-p-discord: 19.1KB -> 15.6KB | marker 0 | RLO 1 ZWJ 6 ZWNJ 5 | terms 0 | syntax true
+
+=== v5-terser ===
+  [OK ] shard-a: 46.0KB -> 30.3KB | marker 2 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-c: 15.4KB -> 12.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-h: 17.5KB -> 15.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-l: 13.5KB -> 11.6KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m-str: 20.6KB -> 19.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m1: 18.4KB -> 14.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m2: 18.8KB -> 15.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-n1: 25.0KB -> 19.1KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e-str1: 101.9KB -> 99.1KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e-str2: 102.9KB -> 99.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e1: 68.3KB -> 55.2KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e2: 37.9KB -> 28.5KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e3: 34.1KB -> 26.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e4: 53.5KB -> 41.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-n2: 24.0KB -> 18.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-aux1: 27.6KB -> 25.4KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-aux2: 31.2KB -> 26.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-u: 18.1KB -> 14.1KB | marker 1 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-telegram: 21.2KB -> 18.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-teams: 20.3KB -> 17.5KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-zoom: 38.8KB -> 32.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-slack: 20.8KB -> 18.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-discord: 19.1KB -> 16.2KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+
+=== v6-esbuild ===
+  [OK ] shard-a: 46.0KB -> 34.8KB | marker 2 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-c: 15.4KB -> 14.6KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-h: 17.5KB -> 16.7KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-l: 13.5KB -> 12.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m-str: 20.6KB -> 19.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m1: 18.4KB -> 17.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m2: 18.8KB -> 18.1KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-n1: 25.0KB -> 24.1KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e-str1: 101.9KB -> 101.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e-str2: 102.9KB -> 101.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e1: 68.3KB -> 64.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e2: 37.9KB -> 34.4KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e3: 34.1KB -> 32.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e4: 53.5KB -> 48.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-n2: 24.0KB -> 23.1KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-aux1: 27.6KB -> 26.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-aux2: 31.2KB -> 30.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-u: 18.1KB -> 16.2KB | marker 1 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-telegram: 21.2KB -> 20.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-teams: 20.3KB -> 19.1KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-zoom: 38.8KB -> 36.6KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-slack: 20.8KB -> 19.6KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-discord: 19.1KB -> 17.7KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+
+=== v7-swc ===
+  [OK ] shard-a: 46.0KB -> 31.3KB | marker 2 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-c: 15.4KB -> 12.6KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-h: 17.5KB -> 15.4KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-l: 13.5KB -> 11.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m-str: 20.6KB -> 19.2KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m1: 18.4KB -> 14.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m2: 18.8KB -> 15.5KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-n1: 25.0KB -> 19.7KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e-str1: 101.9KB -> 100.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e-str2: 102.9KB -> 100.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e1: 68.3KB -> 56.6KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e2: 37.9KB -> 29.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e3: 34.1KB -> 27.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e4: 53.5KB -> 42.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-n2: 24.0KB -> 18.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-aux1: 27.6KB -> 25.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-aux2: 31.2KB -> 27.6KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-u: 18.1KB -> 14.5KB | marker 1 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-telegram: 21.2KB -> 18.7KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-teams: 20.3KB -> 17.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-zoom: 38.8KB -> 33.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-slack: 20.8KB -> 18.4KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-discord: 19.1KB -> 16.5KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+
+=== v8-uglify ===
+  [OK ] shard-a: 46.0KB -> 29.9KB | marker 2 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-c: 15.4KB -> 12.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-h: 17.5KB -> 15.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-l: 13.5KB -> 11.6KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m-str: 20.6KB -> 19.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m1: 18.4KB -> 14.1KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-m2: 18.8KB -> 14.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-n1: 25.0KB -> 18.7KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e-str1: 101.9KB -> 99.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e-str2: 102.9KB -> 99.7KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e1: 68.3KB -> 54.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e2: 37.9KB -> 27.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e3: 34.1KB -> 25.0KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-e4: 53.5KB -> 39.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-n2: 24.0KB -> 17.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-aux1: 27.6KB -> 25.3KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-aux2: 31.2KB -> 26.7KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-u: 18.1KB -> 14.0KB | marker 1 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-telegram: 21.2KB -> 18.2KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-teams: 20.3KB -> 17.4KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-zoom: 38.8KB -> 32.8KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-slack: 20.8KB -> 17.9KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+  [OK ] shard-p-discord: 19.1KB -> 16.1KB | marker 0 | RLO 1 ZWJ 11 ZWNJ 10 | terms 0 | syntax true
+
+115/115 outputs OK
+shard-u: 18.1KB -> 22.5KB
+marker searchable (佐藤): true | (結衣): true
+conspicuous-term hits in output: none
+polynomial bridge synthesizer present: false
+u done -> /home/user/Active/O8.14/CC-33/oto/u/shard-u-out.js
+shard-a: 46.0KB -> 100.2KB  (1.0s)  [mangled]
+shard-m1: 18.4KB -> 78.6KB  (0.8s)  [hexadecimal]
+shard-n1: 25.0KB -> 90.4KB  (1.0s)  [randomized]
+shard-e: 128.8KB -> 235.1KB  (2.5s)  [randomized]
+shard-n2: 24.0KB -> 74.6KB  (1.3s)  [zeroWidth]
+shard-aux: 48.9KB -> 125.6KB  (1.2s)  [randomized]
+shard-p-zoom: 38.8KB -> 157.7KB  (1.5s)  [randomized]
+v2 done -> /home/user/Active/O8.14/CC-33/oto/v2-jsc
+[pin] EXPECTED_V2_M re-pinned to 4f5a3c4cc9002608398f5ca2f65b7ed9c67db68fd3a5c762408db29ea273dc85
+shard-e2: 29.3KB -> 96.6KB  (x3.29)  [jso-light 96.6KB | 0.8s]
+shard-e3: 26.3KB -> 93.0KB  (x3.53)  [jso-light 93.0KB | 0.5s]
+shard-e4: 42.8KB -> 116.5KB  (x2.72)  [jso-light 116.5KB | 0.5s]
+mound-e done -> /home/user/Active/O8.14/CC-33/oto/mound-e
+=== Building O8.13 S6 Deliverables (12 shards, 6 uniform) ===
+[S4] single-lane selection: 23 pieces, 23 with alternates available (shipping 1 each: a/7 l/6 m-str/6 m1/6 m2/5 n1/7 c/6 h/6 e-str1/6 e-str2/5 e1/6 e2/6 e3/6 e4/6 n2/7 aux1/5 aux2/5 u/6 p-telegram/6 p-teams/6 p-zoom/7 p-slack/6 p-discord/6)
+[S4] lane map (seed 851b28e5): a->v1-jso-s3matrix l->v1-jso-s3matrix m-str->v1-jso-s3matrix m1->v2-jsc m2->v5-terser n1->v6-esbuild c->v1-jso-s3matrix h->v1-jso-s3matrix e-str1->v1-jso-s3matrix e-str2->v4-closure e1->v1-jso-s3matrix e2->mound-e e3->mound-e e4->mound-e n2->v7-swc aux1->v8-uglify aux2->v4-closure u->u p-telegram->v1-jso-s3matrix p-teams->v1-jso-s3matrix p-zoom->v1-jso-s3matrix p-slack->v1-jso-s3matrix p-discord->v1-jso-s3matrix
+[Copied] shard-a-v1.js (47.4 KB)
+[Copied] shard-l-v1.js (21.1 KB)
+[Copied] shard-m-str-v1.js (58.7 KB)
+[Copied] shard-m1-v2.js (78.6 KB)
+[Copied] shard-m2-v5.js (15.0 KB)
+[Copied] shard-n1-v6.js (24.1 KB)
+[Copied] shard-c-v1.js (105.4 KB)
+[Copied] shard-h-v1.js (110.5 KB)
+[Copied] shard-e-str1-v1.js (154.9 KB)
+[Copied] shard-e-str2-v4.js (98.8 KB)
+[Copied] shard-e1-v1.js (362.6 KB)
+[Copied] shard-e2-mound.js (96.6 KB)
+[Copied] shard-e3-mound.js (93.0 KB)
+[Copied] shard-e4-mound.js (116.5 KB)
+[Copied] shard-n2-v7.js (18.9 KB)
+[Copied] shard-aux1-v8.js (25.3 KB)
+[Copied] shard-aux2-v4.js (25.8 KB)
+[Copied] shard-u-v4.js (22.5 KB)
+[Copied] shard-p-telegram-v1.js (115.7 KB)
+[Copied] shard-p-teams-v1.js (147.7 KB)
+[Copied] shard-p-zoom-v1.js (191.4 KB)
+[Copied] shard-p-slack-v1.js (109.4 KB)
+[Copied] shard-p-discord-v1.js (140.3 KB)
+[Stitched] Raw bundle size: 2180.4 KB
+[Shim] 1 error-path name(s) declared as no-ops: lattice500
+[Obfuscating Bundle] Using 5k dictionary (5706 words)...
+[Fix] return<->space inserted: 2409431 -> 2409559
+[Q guard] level-2 log cap installed (+500 B)
+[L2 trace] 'oto1-a1e2f3' lanes {"pk01":"v1-jso-s3matrix","pk02":"v1-jso-s3matrix","pk03":"v1-jso-s3matrix","pk04":"v2-jsc","pk05":"v5-terser","pk06":"v6-esbuild","pk07":"v1-jso-s3matrix","pk08":"v1-jso-s3matrix","pk09":"v1-jso-s3matrix","pk10":"v4-closure","pk11":"v1-jso-s3matrix","pk12":"mound-e","pk13":"mound-e","pk14":"mound-e","pk15":"v7-swc","pk16":"v8-uglify","pk17":"v4-closure","pk18":"u","pk19":"v1-jso-s3matrix","pk20":"v1-jso-s3matrix","pk21":"v1-jso-s3matrix","pk22":"v1-jso-s3matrix","pk23":"v1-jso-s3matrix"}
+[HNT-GREP] 338 object keys in the shards, 40 survived into the bundle: totalCandidateStores, recheckWindowSeconds, enableTranscription, v814harborjza373il, v814sproutpz454il, v814chainpxf202in, v814emberwvp130il, breakoutScenarios, v814ledgerak794a, v814crestgyn48il, participantState, definitionCount, applicationsUrl, activeTaskCount, enableRecording, maxParticipants, managedStorage, pocketsMissing, v814havenxn43a, enableBreakout, videoProgress, reactionTypes, meetingNumber, isPushReturn, isChunkArray, applications, milliseconds, configurable, taskConfigV1, pollInterval, participants, processName, storeHandle, enablePolls, cacheCount, cacheDelta, dispatcher, globalThis, enumerable, isLauncher
+[HNT-GREP] 180 noise strings from 40 surviving tokens (+2738 B) + sidecar grep-noise.json
+[Single-name] bundle written once: /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js
+[Shim-final] clean — no error-path dangling names in the finished bundle
+[Final Bundle] Written to /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js (2353.0 KB in 30.0s)
+[G8] pins appended: d16d07a2,c45edb66,5008fe5d
+[Compressed] Gzip: 1385.5 KB base64 | DeflateRaw: 1385.5 KB base64
+[Deliverable] O8.6-Final-compressed-gzip.js: 1386.5 KB
+[Deliverable] O8.6-Final-compressed-deflateraw.js: 1386.5 KB
+SHA256 (O8.6-Final-compressed-gzip.js): 31456dd6206ca1288726d9fb2fdf12446674b63da6bcdc11e5520d8dba98744d
+SHA256 (O8.6-Final-compressed-deflateraw.js): e2cef53d00efcb193b93de5eb11b93078da0d9ea8cf14745e4f607151fa77ba5
+SHA256 (O8.14-CC-33-final-bundle.js): 99327099d6f787fe2a75784e5c18d407380b0065a729fec0331d19ccfa9dbffe
+=== Build Finished Successfully ===
+[lint] dangling-reference scan over the 23 shipped pieces
+  [lint] registry-keymap contributes 55 injected names
+  [lint] cross-piece union: 15058 declared names over 23 pieces
+dangling-refs: final-package/selected-shards/shard-a-v1.js  (47.5 KB, 253 declared, 249 referenced)
+   => PASS — 1 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: final-package/selected-shards/shard-a-v1.js  (47.5 KB, 253 declared, 249 referenced)
+   dangling  名  x5  line(s) 1,1,1
+      …5d69)),console['log'](textCacheA[ES(0x12d)](0x13085d40)+String(typeof 名===textCacheA[ES(0x12d)](0x13085d70)?EV…
+   => FAIL — 1 undeclared reference(s) would throw ReferenceError at runtime
+dangling-refs: final-package/selected-shards/shard-aux1-v8.js  (25.3 KB, 34 declared, 47 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-aux1-v8.js  (25.3 KB, 34 declared, 47 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-aux2-v4.js  (25.8 KB, 32 declared, 47 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-aux2-v4.js  (25.8 KB, 32 declared, 47 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-c-v1.js  (120.5 KB, 1041 declared, 1021 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-c-v1.js  (120.5 KB, 1041 declared, 1021 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e-str1-v1.js  (154.9 KB, 245 declared, 240 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e-str1-v1.js  (154.9 KB, 245 declared, 240 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e-str2-v4.js  (98.9 KB, 23 declared, 34 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e-str2-v4.js  (98.9 KB, 23 declared, 34 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e1-v1.js  (414.4 KB, 3237 declared, 3072 referenced)
+   DANGLING-IN-CATCH  lattice500  x1  line(s) 1
+      …hzgVEct532.LAtticeӧҩӓң755,'0xb60')]=m썚dul긍뮶576[eN퀼횧362('SO0i',0xb03)](lattice500[b떚Ine262(grprphzgVEct532.CAणई…
+   => FAIL — 4 dangling name(s) total, 1 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+  [lint] error-path dangling (piece scope): shard-e1-v1.js
+dangling-refs: final-package/selected-shards/shard-e1-v1.js  (414.4 KB, 3237 declared, 3072 referenced)
+   dangling  prairie떚ӥ춃836  x1  line(s) 1
+      …)+H뾃llow쫛퀼뒜591[eN300(grprphzgPもAiriばчぢ945.VIv789,'0xaa3')]+Qァartz866):prairie떚ӥ춃836[g‌Rovヂヹグ855('Vh(S',0x64a)]…
+   dangling  Gじo855  x1  line(s) 1
+      …,grprphzgMOs212.P‌Rгѓόο312)]?.[pRairie862(0xa31,'8ZzW')]?.();else try{Gじo855['_e'][lAttice921('0xbe6',grprphzg…
+   DANGLING-IN-CATCH  lattice500  x1  line(s) 1
+      …hzgVEct532.LAtticeӧҩӓң755,'0xb60')]=m썚dul긍뮶576[eN퀼횧362('SO0i',0xb03)](lattice500[b떚Ine262(grprphzgVEct532.CAणई…
+   dangling  B얓갥956  x1  line(s) 1
+      …[mAr904('0x4fc','nF5i')]){const M‍o뮶ϣω498=[Ma450[dE825(0x690,'ER7m')](B얓갥956[dE825(grprphzgseҖ췈856.h냢ҵЀ312,grp…
+   => FAIL — 4 undeclared reference(s) would throw ReferenceError at runtime
+dangling-refs: final-package/selected-shards/shard-e2-mound.js  (108.1 KB, 878 declared, 877 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e2-mound.js  (108.1 KB, 878 declared, 877 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e3-mound.js  (104.7 KB, 869 declared, 849 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e3-mound.js  (104.7 KB, 869 declared, 849 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e4-mound.js  (133.1 KB, 983 declared, 952 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-e4-mound.js  (133.1 KB, 983 declared, 952 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-h-v1.js  (126.8 KB, 900 declared, 908 referenced)
+   => PASS — 19 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: final-package/selected-shards/shard-h-v1.js  (126.8 KB, 900 declared, 908 referenced)
+   dangling  DOMException  x2  line(s) 1,1
+      …])return ke솛끸448[summit9801(gfruzktjPr634.Plasχ137,'[Pu*')](pi425,new DOMException(textCacheH[vector727(gfruzk…
+   dangling  prairie쉃췈҇383  x1  line(s) 1
+      …](0xe6098eb1))||!brinѡͼ떚9131||lattice꼒235['JexaH'](typeof brinѡͼ떚9131,prairie쉃췈҇383[prairiϵҗ와6795(gfruzktjF얓re…
+   dangling  o썖рמ196  x1  line(s) 1
+      …res묶280.Lattice761)](0xe6098ea2)))return fli668[plu840('IKqx',0x349)](o썖рמ196[prairiϵҗ와6795(gfruzktjF얓res묶280.…
+   dangling  moss109  x1  line(s) 1
+      …vector727(summitׁ֪֜ϗ496,foresบั757- -gfruzktjL蟈tticӎ斟828.P떗asmaͱ708);}moss109[plu840(gfruzktjF얓res묶280.Spωﾎｴﾫ2…
+   dangling  prairie530  x1  line(s) 1
+      …ss109[plu840(gfruzktjF얓res묶280.Spωﾎｴﾫ207,gfruzktjF얓res묶280.Grove390)](prairie530['d3'](0x3afa2845,0xf40ca403,0…
+   dangling  birchά떚֝790  x1  line(s) 1
+      …tjB灎rӗ儅541.M‌odul옑ү697)])return ke솛끸448[prairiӟ떗핵3341('0x11','ckdx')](birchά떚֝790,new riϸに゚ט724(s烋r膫ф221[ve178…
+   dangling  riϸに゚ט724  x1  line(s) 1
+      …l옑ү697)])return ke솛끸448[prairiӟ떗핵3341('0x11','ckdx')](birchά떚֝790,new riϸに゚ט724(s烋r膫ф221[ve178(gfruzktjB灎rӗ儅54…
+   dangling  s烋r膫ф221  x1  line(s) 1
+      …eturn ke솛끸448[prairiӟ떗핵3341('0x11','ckdx')](birchά떚֝790,new riϸに゚ט724(s烋r膫ф221[ve178(gfruzktjB灎rӗ儅541.B鐦rӗζ威17…
+   dangling  lattice309  x1  line(s) 1
+      …rairiӟ떗핵3341(-gfruzktjB灎rӗ儅541.P떗춃678,gfruzktjB灎rӗ儅541.Mo땇췈뒜973)](0x0,lattice309[ve178('ud(T',0x479)](0x1388,k…
+   dangling  ci177  x1  line(s) 1
+      …,0x479)](0x1388,ke솛끸448[quϻж613('0x3f6',gfruzktjB灎rӗ儅541.Plasmaч625)](ci177,plasma226)||0x0));let sedge569=ke솛…
+   dangling  plasma226  x1  line(s) 1
+      …)](0x1388,ke솛끸448[quϻж613('0x3f6',gfruzktjB灎rӗ儅541.Plasmaч625)](ci177,plasma226)||0x0));let sedge569=ke솛끸448[l…
+   dangling  lattice炤י蟈830  x1  line(s) 1
+      …368')](pｦairieｂｴ844,()=>{var gfruzktjLattice342={Pָairie692:0x33d};if(lattice炤י蟈830)lattice651[r॑e॓1689(-gfruz…
+   dangling  lattice651  x1  line(s) 1
+      …ｂｴ844,()=>{var gfruzktjLattice342={Pָairie692:0x33d};if(lattice炤י蟈830)lattice651[r॑e॓1689(-gfruzktjV떚cto쐸춃꼒403…
+   dangling  delニホҟワ694  x1  line(s) 1
+      …689(-gfruzktjV떚cto쐸춃꼒4038.Shroud5938,gfruzktjV떚cto쐸춃꼒4038.Hoई१दऄ562)](delニホҟワ694[r॑e॓1689(0x8e,gfruzktjV떚cto쐸춃…
+   dangling  d떗l947  x1  line(s) 1
+      … l떗ttice뾓떚369(deϻ423,en555){return prairiӟ떗핵3341(en555-0x22c,deϻ423);}d떗l947();},h‌냢lloז185);const grϓѳ梥ӭ866=(…
+   dangling  m뒜dule288  x1  line(s) 1
+      …3341(en555-0x22c,deϻ423);}d떗l947();},h‌냢lloז185);const grϓѳ梥ӭ866=()=>{m뒜dule288(sedge569);function vectorҳ묶핵54…
+   dangling  h虣venъף486  x1  line(s) 1
+      …,plӧ536){return prairiӟ떗핵3341(fli485-'0x27c',plӧ536);}re212(new la844(h虣venъף486[prairieॉफ़α962(0xbd,gfruzktjLa…
+   dangling  lϧtticeц542  x1  line(s) 1
+      …8(gfruzktjB灎rӗ儅541.Fo925,gfruzktjB灎rӗ儅541.Quόוｴ332)]=!![];if(rणeδ8174)lϧtticeц542[quϻж613('0x4c6',gfruzktjB灎rӗ…
+   dangling  p냢um938  x1  line(s) 1
+      …!![];if(rणeδ8174)lϧtticeц542[quϻж613('0x4c6',gfruzktjB灎rӗ儅541.Ke585)](p냢um938[em444(gfruzktjB灎rӗ儅541.Plasmaч62…
+   => FAIL — 19 undeclared reference(s) would throw ReferenceError at runtime
+dangling-refs: final-package/selected-shards/shard-l-v1.js  (21.1 KB, 108 declared, 119 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-l-v1.js  (21.1 KB, 108 declared, 119 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-m-str-v1.js  (58.7 KB, 254 declared, 252 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-m-str-v1.js  (58.7 KB, 254 declared, 252 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-m1-v2.js  (78.6 KB, 62 declared, 79 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-m1-v2.js  (78.6 KB, 62 declared, 79 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-m2-v5.js  (15.1 KB, 38 declared, 47 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-m2-v5.js  (15.1 KB, 38 declared, 47 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-n1-v6.js  (24.1 KB, 210 declared, 215 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-n1-v6.js  (24.1 KB, 210 declared, 215 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-n2-v7.js  (18.9 KB, 37 declared, 48 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-n2-v7.js  (18.9 KB, 37 declared, 48 referenced)
+   clean — every referenced name is declared or a known runtime global
+dangling-refs: final-package/selected-shards/shard-p-discord-v1.js  (160.2 KB, 1016 declared, 1011 referenced)
+   => PASS — 2 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: final-package/selected-shards/shard-p-discord-v1.js  (160.2 KB, 1016 declared, 1011 referenced)
+   dangling  _scratch320  x2  line(s) 1,1
+      …썚609);}const prairiыϋ핵2334=vָviוך4645[har쉃911('0x761','sT1o')](typeof _scratch320,textCacheP_DISCORD[plasmaь38…
+   dangling  signal9108  x1  line(s) 1
+      …wϔイデ386[se132(gswtuydiO‍じεあӻ750.Su냢ѹ129,gswtuydiO‍じεあӻ750.Prט҆у֧498)]+signal9108,owϔイデ386[se떗377(0x19f,gswtuyd…
+   => FAIL — 2 undeclared reference(s) would throw ReferenceError at runtime
+dangling-refs: final-package/selected-shards/shard-p-slack-v1.js  (125.6 KB, 627 declared, 619 referenced)
+   => PASS — 1 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: final-package/selected-shards/shard-p-slack-v1.js  (125.6 KB, 627 declared, 619 referenced)
+   dangling  _scratch320  x2  line(s) 1,1
+      …gurigpjglattice677.p묶asmбы냢629,mar횧조ר6195);}const latticeкή570=typeof _scratch320!==textCacheP_SLACK['d2'](0xf…
+   => FAIL — 1 undeclared reference(s) would throw ReferenceError at runtime
+dangling-refs: final-package/selected-shards/shard-p-teams-v1.js  (170.2 KB, 1075 declared, 1066 referenced)
+   => PASS — 7 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: final-package/selected-shards/shard-p-teams-v1.js  (170.2 KB, 1075 declared, 1066 referenced)
+   dangling  _scratch320  x2  line(s) 1,1
+      …summү煜5819);}const eѓњеώ980=su枚欞抾146[m‍ҩб҆263('0x28f','#$@v')](typeof _scratch320,textCacheP_TEAMS['d1'](0x18b…
+   dangling  l葾ttice樕梥791  x1  line(s) 1
+      …984,gesdkucjprairie횧ӌ췈268.prairie937)];module횧ї조н493++){hollowӊҫҍ435^=l葾ttice樕梥791[pl592('k72B',gesdkucjprairi…
+   dangling  s조826  x1  line(s) 1
+      …ӏ췈508[latticeк511('0x462','BRq5')](lattice뜣640,p떚um877);lattice뜣640++)s조826[ve500('0x6c5','RI[D')][lattice뜣640…
+   dangling  q긍ill댦θ577  x1  line(s) 1
+      …0x609,gesdkucjprairie횧ӌ췈268.p威asmaϥ614)](lattice뜣640)&&(prairie랒өҗ635=q긍ill댦θ577[qua534('lZoX','0x108')][latti…
+   dangling  sedge524  x1  line(s) 1
+      …236)]||l॑ttice666[re395('0x19a',gesdkucjmarͼ뾃5750.s‍ummit춃떚뜣냢θ8006)]||sedge524[lattice涒樕ж威868(0x1d8,')Ub6')];i…
+   dangling  lattice윍488  x1  line(s) 1
+      …1[plasma꼒236(gesdkucjF威151.Prairie956,gesdkucjF威151.B떚oomͽ854)](pi476^lattice윍488,p썖umeӌ253>>>0xd)>>>0x0,0xc63…
+   dangling  s뜣reף630  x1  line(s) 1
+      …),0x0),lattice785=hollo끸췈231[har281(gesdkucjF威151.Harboﾢӯ848,'U00w')](s뜣reף630^hollo끸췈231[engi긍ѷ117(gesdkucjF威…
+   => FAIL — 7 undeclared reference(s) would throw ReferenceError at runtime
+dangling-refs: final-package/selected-shards/shard-p-telegram-v1.js  (130.1 KB, 713 declared, 697 referenced)
+   => PASS — 1 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: final-package/selected-shards/shard-p-telegram-v1.js  (130.1 KB, 713 declared, 697 referenced)
+   dangling  _scratch320  x2  line(s) 1,1
+      …KVIgF':ember194('0x45a',grgtmmuePla4782.Owҩӳ555)};const h欞ѕ141=typeof _scratch320!==textCacheP_TELEGRAM['d2'](…
+   => FAIL — 1 undeclared reference(s) would throw ReferenceError at runtime
+dangling-refs: final-package/selected-shards/shard-p-zoom-v1.js  (219.2 KB, 1286 declared, 1251 referenced)
+   => PASS — 2 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: final-package/selected-shards/shard-p-zoom-v1.js  (219.2 KB, 1286 declared, 1251 referenced)
+   dangling  o긍237  x1  line(s) 1
+      …sma묶832[modul405('mjl7',gncpdnhnPrairie200.Qu509)];if(mo띇췈195&&typeof o긍237!==modu156[pi233('7!5p',gncpdnhnPra…
+   dangling  mar614  x1  line(s) 1
+      …ncpdnhnRidgךϧ3836.Pஹairie355,gncpdnhnRidgךϧ3836.Sザireϒѩ412)]=flint624,mar614[Owl2204(gncpdnhnRidgךϧ3836.Shϰќ90…
+   => FAIL — 2 undeclared reference(s) would throw ReferenceError at runtime
+dangling-refs: final-package/selected-shards/shard-u-v4.js  (22.5 KB, 181 declared, 183 referenced)
+   => PASS — 1 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: final-package/selected-shards/shard-u-v4.js  (22.5 KB, 181 declared, 183 referenced)
+   dangling  名  x2  line(s) 1,1
+      …7f0c=!![]),_0x4d7f0c;}function _0x1093ab(){try{const _0x3209fb=typeof 名!==textCacheU['pcache'](0xb7ad5015)?名:t…
+   => FAIL — 1 undeclared reference(s) would throw ReferenceError at runtime
+  [lint] piece-scope error-path danglers: 1 (must be 0 in the ASSEMBLED payload, checked below)
+tools/cc33-build.sh: line 102: echo "$SHIPPED" | wc -l: command not found
+  [lint] pieces with non-error-path danglers (informational): 9/
+  [lint] pieces with any non-error-path danglers (informational): 9
+[gate] error-path reference check (danglers inside catch blocks must be zero)
+dangling-refs: /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js  (2668.0 KB, 17846 declared, 16885 referenced)
+   => PASS — 29 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+[gate] full-wire venue probe (must complete; a hang here is the freeze bug)
+ran 2413455 B in 1311 ms, logs=2 ["CLEAR","dbg:[01:15:14.239 +0.0s] [Host 8.14] initialized — worker instance 06118ef"]
+google* globals on sandbox: ["GoogleUblock","GoogleVault"]
+=== [1] Cover (+ house salt) ===
+[+] cover OK 1024x768x24 salt=0x3f72a1ec
+=== [2] Payloads (minify -> gzip) ===
+[HNT-GREP] re-appended 180 noise strings after terser (+2738 B) from Active/O8.14/CC-33/oto/grep-noise.json
+[G8] repinned for minReal: 504ee703,72130ab5,9493d0c7
+[WARN] minReal 2089381 != 1626945 (r3, was 1626945)
+[WARN] gzReal 992431 != 743751 (r3)
+[+] real: min 2089381 -> gzip 992431
+[+] decoy: min 3066 -> gzip 1658
+[WARN] minHoney 1182 != 1184 (r3)
+[WARN] gzHoney 726 != 727 (r3)
+[+] honey: min 1182 -> gzip 726
+[WARN] minTube 2194 != 2196 (r3)
+[WARN] gzTube 1189 != 1191 (r3)
+[+] tube: min 2194 -> gzip 1189
+=== [3] Real embed (carrier=r31) ===
+[+] seed=0x6d7f0c87 (canon bits 7)
+[+] round-trip OK: real 992431 B, decoy 1658 B, grain 112390 B (gap 20642 B)
+[+] decoy strip keystream seed 52375 from 1024x768x24 (loader recomputes the same)
+[+] cover slack 574 B -> strip @628, channel base @99028 (loader + reels recompute from the header)
+[+] tail grain reel0: 254692 slots (63673 B equivalent) — 0 payload bytes
+[+] tail grain reel1: 254421 slots (63605 B equivalent) — 0 payload bytes
+[+] tail grain total: 509113 slots
+[+] carrier r31 reel0 (pixel bits 0-1) RS=119670 R_LEN=2239680 need=1984988 slots occ=88.63% headroom=63673 B
+[+] carrier r31 reel1 (pixel bits 2-3) RS=119941 R_LEN=2239409 need=1984988 slots occ=88.64% headroom=63605 B
+[+] carrier r31 (2-bit x 2 reels) total 3969976 slots, decoy 6652/98400 symbols, grained 112390 B
+=== [4] Runner ===
+[+] carrier=r31 real reel source stego10-legacyreel-src-v31.js (2817 chars)
+[+] reel tables: 7 (real=2817, honey~1951)
+[+] board blobs: 8/9/10/11 x 726 codes (uniform courtesy dispatch, DS-1)
+[+] tube blob: 1189 codes
+[+] loader pins: ca14794d,2181860f
+[+] line1 variant 0: "var 会員 = 2; var 名 = \"佐藤 結衣\"; console.clear(); "
+[+] O8.12-cover.bmp: 2359350 B sha=ed7e150bd242a0bb25c23f135e164f634ea4ee80eb19882138f38f08369856f0
+[+] O8.12-runner.js: 3375548 chars sha=81b936abfdeacd68221b94681ef30579bc48c02d995b750063f0f5617bd6f6ad
+[✓] Stego-11p build complete: /home/user/Active/O8.14/CC-33/stego-build
+== CC-33 build complete ==
+EXIT=0

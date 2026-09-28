@@ -1,0 +1,44 @@
+[0.0s start] paste 1 …
+[1.0s paste1] entry published: false
+[9.0s settle] entry after the chain has had time to stand down: true
+
+[13.0s clear] === console cleared (page keeps everything) ===
+[13.0s clear] entry before: true
+[13.0s clear] globals left by paste 1 (9): ["lexFnvL","lexProbeL1","lexProbeL2","lexVerifyL","会員","名","lexMode","lexPinsB","pgs30c2c3c9"]
+[13.0s paste2] paste 2 …
+[15.4s paste2] entry published by paste 2: true
+
+[33.0s mid] === 33s in ===
+[33.0s mid] entry now: true
+[33.0s mid] globals now (14): ["lexFnvL","lexProbeL1","lexProbeL2","lexVerifyL","会員","名","lexMode","lexPinsB","pgs30c2c3c9","lexProbeA","lexSetPins","GoogleVault","lexProbeX","lexProbeU"]
+[33.0s mid] paste-2 console lines so far:
+        <cleared>
+        <cleared>
+        [09:32:39.072 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+        Pixel Garden Player v3.3.2 — Welcome back.
+        Continue with profile 佐藤 結衣, or log in as a different gardener: set the profile name at the top of the file and run it a
+
+[ASSERT] entry published by paste 1 .......... yes
+[ASSERT] entry survived the stand-down ...... PASS
+[ASSERT] paste 2 published its own entry .... PASS
+[ASSERT] exactly one garden (no stale one) .. PASS
+[ASSERT] garden printed once at the window .. PASS
+
+[151.0s end] === end of run ===
+[151.0s end] entry: false
+[151.0s end] entry-point events: ["1.1s set function","1.9s present","13.9s set function","134.1s GONE"]
+[151.0s end] globals added by paste 2 that paste 1 did not leave: ["lexProbeA","lexSetPins","GoogleVault","lexProbeX","lexProbeU"]
+[151.0s end] paste-2 console lines (tail):
+        gen 10 — 58 sprouts
+        gen 11 — 59 sprouts
+        gen 12 — 61 sprouts
+        gen 13 — 58 sprouts
+        gen 14 — 69 sprouts
+        gen 15 — 54 sprouts:
+......................##......
+.....................###...#..
+..##.................#..#...#.
+.#.#..
+        Plot journal: peak 131 sprouts, 596 births over 16 generations.
+        Garden settled. (30x14, 16 generations)
+EXIT=0

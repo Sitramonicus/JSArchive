@@ -1,0 +1,67 @@
+{
+  "postLen": 2222628,
+  "preLen": 2219300,
+  "bucket": 4096,
+  "pieces": 7696,
+  "pieceLens": {
+    "p50": 69,
+    "p90": 374,
+    "max": 27261
+  },
+  "interleaving": 16.183560418371478,
+  "giftCoverage": 0.2821014983685715,
+  "largestPiece": {
+    "len": 27261,
+    "at": 97296,
+    "bucket": 221
+  },
+  "bucketsSeen": 451,
+  "bucketsTotal": 542,
+  "seams": 4923,
+  "continuationBreaks": 2735,
+  "auc": {
+    "dPal": 0.70895625,
+    "dLen": 0.7175625,
+    "dUni": 0.62143125,
+    "dDig": 0.5372,
+    "dUw": 0.42801875
+  },
+  "aucCombined": 0.6908375,
+  "mostFragmented": [
+    {
+      "b": 492,
+      "pieces": 138,
+      "bytes": 4098,
+      "largest": 53,
+      "largestAt": 589998
+    },
+    {
+      "b": 415,
+      "pieces": 137,
+      "bytes": 4112,
+      "largest": 63,
+      "largestAt": 1221458
+    },
+    {
+      "b": 416,
+      "pieces": 137,
+      "bytes": 4085,
+      "largest": 67,
+      "largestAt": 1337966
+    },
+    {
+      "b": 494,
+      "pieces": 137,
+      "bytes": 4103,
+      "largest": 59,
+      "largestAt": 1732398
+    },
+    {
+      "b": 493,
+      "pieces": 135,
+      "bytes": 4092,
+      "largest": 57,
+      "largestAt": 1340020
+    }
+  ]
+}

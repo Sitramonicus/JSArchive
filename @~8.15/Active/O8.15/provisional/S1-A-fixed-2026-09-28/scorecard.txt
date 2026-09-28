@@ -1,0 +1,29 @@
+===== WEAVE SCORECARD =====
+map provisional/S1-A-fixed-2026-09-28/weave-map.json
+post provisional/S1-A-fixed-2026-09-28/weave-out-S1-A-fixed.js  (2222628 chars, 2171 KB)  vs pre 2219300 chars
+
+-- A. RECOVERY COST (source buckets of 4096 B) --
+  pieces (contiguous source runs in the output) : 7696
+  piece size  p50 69 B · p90 374 B · max 27261 B
+  interleaving index   (pieces per bucket)      : 16.18   [pre-weave baseline 1.00]
+  gift coverage        (bytes in pieces >= 4 KB): 28.2 %   [pre-weave baseline 100 %]
+  largest single piece                          : 27261 B @97296 (source bucket 221)
+  source buckets present in the output          : 451 / 542 (83.2 %)
+  most-fragmented buckets: #492 138 pc/4.0 KB, biggest 53 B  |  #415 137 pc/4.0 KB, biggest 63 B  |  #416 137 pc/4.0 KB, biggest 67 B  |  #494 137 pc/4.0 KB, biggest 59 B  |  #493 135 pc/4.0 KB, biggest 57 B
+
+-- B. SEAM DETECTABILITY (true seam vs continuation break, +-2048 chars) --
+  true seams (bucket changes)                   : 4923
+  continuation breaks (same bucket resumes)     : 2735
+  sampled for scoring                           : 400 seams vs 400 continuations
+  AUC palette shift          : 0.709   (mean shift: seam 0.9454 vs continuation 0.9185)
+  AUC token-length shift     : 0.718   (mean shift: seam 7.2064 vs continuation 2.0817)
+  AUC unicode-share shift    : 0.621   (mean shift: seam 0.1522 vs continuation 0.0934)
+  AUC digit-share shift      : 0.537   (mean shift: seam 0.0784 vs continuation 0.0737)
+  AUC zero-width shift       : 0.428   (mean shift: seam 0.0016 vs continuation 0.0016)
+  best single feature                          : palette shift, catching 37.8 % of true seams at a 10 % false-positive rate (combined score: 33.3 %)
+  AUC combined score                            : 0.691
+  verdict                                       : seams are separable from continuation breaks (AUC 0.69) — a boundary-finder could exploit this
+
+-- summary --
+  interleaving 16.18 · gift coverage 28.2 % · largest piece 27261 B · seam-vs-continuation AUC 0.691
+[scorecard] json -> provisional/S1-A-fixed-2026-09-28/scorecard.json

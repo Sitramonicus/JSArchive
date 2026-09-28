@@ -1,0 +1,31 @@
+
+---- shipped-bundle: 17 payload line(s)
+   --clear--
+   [11:08:47.900 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+   Pixel Garden Player v3.3.2 — Welcome back.
+   Continue with profile 佐藤 結衣, or log in as a different gardener: set the profile name at the top of the file and run it again.
+   [11:08:50.162 +2.3s] [Google diag] Host config {"scope":"payload","flags":32319,"profile":90,"limit":50,"rev":134}
+   [11:08:50.162 +2.3s] [Google diag] Store check {"scope":"payload","unit":"m","stores":2,"packed":true,"exports":0,"sample":true,"retained":0}
+   … 11 more
+
+---- raw-stitch: 17 payload line(s)
+   --clear--
+   [11:08:50.784 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+   Pixel Garden Player v3.3.2 — Welcome back.
+   Continue with profile 佐藤 結衣, or log in as a different gardener: set the profile name at the top of the file and run it again.
+   [11:08:51.714 +0.9s] [Google diag] Host config {"scope":"payload","flags":32319,"profile":90,"limit":50,"rev":134}
+   [11:08:51.714 +0.9s] [Google diag] Store check {"scope":"payload","unit":"m","stores":2,"packed":true,"exports":0,"sample":true,"retained":0}
+   … 11 more
+
+---- debug-runner: 17 payload line(s)
+   --clear--
+   [11:08:52.339 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+   Pixel Garden Player v3.3.2 — Welcome back.
+   Continue with profile 佐藤 結衣, or log in as a different gardener: set the profile name at the top of the file and run it again.
+   [11:08:53.271 +0.9s] [Google diag] Host config {"scope":"payload","flags":32319,"profile":90,"limit":50,"rev":134}
+   [11:08:53.271 +0.9s] [Google diag] Store check {"scope":"payload","unit":"m","stores":2,"packed":true,"exports":0,"sample":true,"retained":0}
+   … 11 more
+
+===== verdicts =====
+B raw-stitch vs C debug-runner : IDENTICAL payload output (17 lines)
+A shipped vs B raw-stitch     : IDENTICAL payload output (17 lines)

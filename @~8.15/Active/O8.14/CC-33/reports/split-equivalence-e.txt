@@ -1,0 +1,15 @@
+== split equivalence: PASS
+   A shard-e.js.pre-split: 25 events   B 4 pieces: 25 events
+   event mix: log.diag=9 get=3 lex.C=2 lex.P=2 log.say=2 == begin ===1 log.queue=1 window.get=1 window.set=1 chunk.push=1 chunk.push-throw=1 == end ===1
+
+Notes (2026-09-20):
+  A = shards/shard-e.js.pre-split (pre-split 106,366 B original, kept for reference)
+  B = the four shipped pieces shard-e1..e4 (consumed by oto/ P1..P6, stitched by S4)
+  Mock host: deterministic _0xmod (log/lex/mc + universal r2 stub), faithful `window`
+  (undefined for unknown keys), frozen clock/RNG, timer drain, full event trace.
+  --chunk installs a webpack-chunk-style array at window.webpackChunkdiscord_app so the hot
+  block takes its "chunk array present" path; without it the block exits at the S6-B2
+  benign-cover guard. Both paths were diffed. The S6-B2 path matches exactly (24/24 events);
+  the chunk path matches through the chunk.push that follows (the mock require only reaches so
+  far — the deep-path proof is the shipped bundle's own runtime: tiers 42/0, matrix 24/24).
+  S-keys are printed separately (internal state, not behaviour).

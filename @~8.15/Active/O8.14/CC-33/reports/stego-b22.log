@@ -1,0 +1,37 @@
+=== [1] Cover (+ house salt) ===
+[+] cover OK 1024x768x24 salt=0x3f72a1ec
+=== [2] Payloads (minify -> gzip) ===
+[gate] error-path dangle repair: declared 1 name(s): vecto615
+[HNT-GREP] re-appended 180 noise strings after terser (+2738 B) from Active/O8.14/CC-33/oto/grep-noise.json
+[G8] repinned for minReal: 504ee703,72130ab5,9493d0c7
+[WARN] minReal 2089394 != 1626945 (r3, was 1626945)
+[WARN] gzReal 992435 != 743751 (r3)
+[+] real: min 2089394 -> gzip 992435
+[+] decoy: min 3066 -> gzip 1658
+[WARN] minHoney 1182 != 1184 (r3)
+[WARN] gzHoney 726 != 727 (r3)
+[+] honey: min 1182 -> gzip 726
+[WARN] minTube 2194 != 2196 (r3)
+[WARN] gzTube 1189 != 1191 (r3)
+[+] tube: min 2194 -> gzip 1189
+=== [3] Real embed (carrier=r31) ===
+[+] seed=0x6d7f0c87 (canon bits 7)
+[+] round-trip OK: real 992435 B, decoy 1658 B, grain 112390 B (gap 20642 B)
+[+] decoy strip keystream seed 52375 from 1024x768x24 (loader recomputes the same)
+[+] cover slack 574 B -> strip @628, channel base @99028 (loader + reels recompute from the header)
+[+] tail grain reel0: 254684 slots (63671 B equivalent) — 0 payload bytes
+[+] tail grain reel1: 254413 slots (63603 B equivalent) — 0 payload bytes
+[+] tail grain total: 509097 slots
+[+] carrier r31 reel0 (pixel bits 0-1) RS=119670 R_LEN=2239680 need=1984996 slots occ=88.63% headroom=63671 B
+[+] carrier r31 reel1 (pixel bits 2-3) RS=119941 R_LEN=2239409 need=1984996 slots occ=88.64% headroom=63603 B
+[+] carrier r31 (2-bit x 2 reels) total 3969992 slots, decoy 6652/98400 symbols, grained 112390 B
+=== [4] Runner ===
+[+] carrier=r31 real reel source stego10-legacyreel-src-v31.js (2817 chars)
+[+] reel tables: 7 (real=2817, honey~1951)
+[+] board blobs: 8/9/10/11 x 726 codes (uniform courtesy dispatch, DS-1)
+[+] tube blob: 1189 codes
+[+] loader pins: ca14794d,2181860f
+[+] line1 variant 0: "var 会員 = 2; var 名 = \"佐藤 結衣\"; console.clear(); "
+[+] O8.12-cover.bmp: 2359350 B sha=d1c3ce21ba6ade83e079bfb029adecf55d11989f447c04e282649c6f00f33d1b
+[+] O8.12-runner.js: 3375548 chars sha=71b73a157522cfdd7c88aefacc018d5cafd38d05d686de7b2da13b49d4dfb9b1
+[✓] Stego-11p build complete: /home/user/Active/O8.14/CC-33/stego-build

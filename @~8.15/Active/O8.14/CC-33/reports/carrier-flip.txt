@@ -1,0 +1,17 @@
+== r3.1 carrier flip check: O8.12-cover.bmp
+   cover 2359350 B  sha256=3588c89b06c1f8ab
+   payload gz=1005750 B  strip@628 (slack 574)  base=99028  RS0=119670 RS1=119941  fh=1064477164
+  PASS F1-shipped-reel round-trips the payload  [reel=1005750 gz=1005750]
+  PASS F1b-codec mirror decodes both reels  [reel0=502895 reel1=502894]
+  PASS F2-RS is jittered off the fixed base  [base=99028 RS0=119670 (+20642) RS1=119941 (+20913)]
+  PASS F2b-old P3 header absent at the fixed base  [probed base=99028]
+  PASS F3-reel0 touches bits 0-1 only  [reel0-only slips=0 hi-nibble slips=0 (n=204726)]
+  PASS F3-reel1 touches bits 2-3 only  [reel1-only slips=0 hi-nibble slips=0 (n=204722)]
+  PASS F3-reels overlap as designed  [both=1806902 only0=204726 only1=204722]
+  INFO planes: reel0 slots=2011628 reel1 slots=2011624 union=2216350
+  PASS F4-grain covers strip tail + gap  [range=[7280,119670) n=112390 maxZeroRun=7 zeros=24.8%]
+  PASS F4-grain entropy ~2.0 bits over 4 symbols  [H=2.0000 syms=27928/28231/28052/28179]
+  PASS F4-grain is not the clean cover's LSBs  [matchClean=24.8%]
+  PASS F4-plaque bits 2-7 preserved under grain  [slips=0]
+  PASS F5-PG3 garden decoy intact  [decoy=1658B gz=1658B]
+== 12 passed, 0 failed

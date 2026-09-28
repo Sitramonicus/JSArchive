@@ -1,0 +1,1 @@
+{"name":"engines","version":"1.0.0","private":true,"dependencies":{"@swc/core":"^1.16.2","esbuild":"^0.28.2","google-closure-compiler":"^20260907.0.0","google-closure-compiler-java":"^20231112.0.0","google-closure-compiler-linux":"^20260907.0.0","terser":"^5.51.2","uglify-js":"^3.19.3"}}

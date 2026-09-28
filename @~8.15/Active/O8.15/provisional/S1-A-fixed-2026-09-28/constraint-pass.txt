@@ -1,0 +1,8 @@
+== constraint pass (step 4) on weave-out-S1-A-fixed.js — 2222628 chars
+   PASS  C1-same-name-decls     3663 function bodies scanned, 0 carry a duplicated declaration name — nothing for an arrangement to reorder
+   PASS  C2-private-windows     21 run group(s) / 88 push statement(s); statements INSIDE a run window that cannot reach a read of it: 25320 (placed freely); violations: 0; trailing pushes on the same binding: 0; hoisted declarations dealt inside a run (transparent, expected): 4180
+   PASS  C3-registration-order  movable statements executing at their position checked for 21 API names: 0 hit(s)
+   PASS  C4-shared-root-writes  run group(s) whose write shape is not exactly one declaration + pushes: 0
+   PASS  C5-array-content-order 39 binding(s) with >=2 pushes compared pre/post; mismatched: 0
+   movable set: 1856 statement(s) = 1115998 B (50.2% of the file)
+   => PASS — 5/5 checks green; the movable set survives the pass unchanged

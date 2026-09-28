@@ -1,0 +1,9 @@
+{
+ "stage": "dict-augment-v1",
+ "added": 780,
+ "plan": [
+  "Georgian U+10A0-10FF",
+  "Katakana U+30A0-30FF",
+  "homoglyph U+0456/0269/0455"
+ ]
+}

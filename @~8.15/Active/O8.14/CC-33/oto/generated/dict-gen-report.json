@@ -1,0 +1,71 @@
+{
+ "seed": "851b28e5",
+ "generatedAt": "2026-09-22T02:55:08.549Z",
+ "blocks": 11,
+ "pools": {
+  "identifiers-dictionary-5k.csv": {
+   "words": 5706,
+   "unique": true,
+   "idStartOk": true,
+   "scripts": 665,
+   "bytes": 56859,
+   "rejected": {
+    "bad": 0,
+    "dup": 51,
+    "banned": 43,
+    "reserved": 8,
+    "collision": 0
+   },
+   "stems": 2417,
+   "shapes": {
+    "one": 2336,
+    "two": 1163,
+    "three": 2207
+   },
+   "ms": 1020
+  },
+  "identifiers-dictionary-jso.csv": {
+   "words": 335,
+   "unique": true,
+   "idStartOk": true,
+   "scripts": 145,
+   "bytes": 3445,
+   "rejected": {
+    "bad": 0,
+    "dup": 0,
+    "banned": 8,
+    "reserved": 1,
+    "collision": 0
+   },
+   "stems": 143,
+   "shapes": {
+    "one": 138,
+    "two": 74,
+    "three": 123
+   },
+   "ms": 1083
+  },
+  "identifiers-dictionary-runner-5k.csv": {
+   "words": 3859,
+   "unique": true,
+   "idStartOk": true,
+   "scripts": 591,
+   "bytes": 38000,
+   "rejected": {
+    "bad": 0,
+    "dup": 21,
+    "banned": 24,
+    "reserved": 8,
+    "collision": 0
+   },
+   "stems": 1577,
+   "shapes": {
+    "one": 1685,
+    "two": 739,
+    "three": 1435
+   },
+   "ms": 1762
+  }
+ },
+ "totalMs": 1762
+}

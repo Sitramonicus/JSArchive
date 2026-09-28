@@ -1,0 +1,47 @@
+{
+ "tool": "split-equivalence golden trace",
+ "pieces": [
+  "final-package/selected-shards/shard-e1-v1.js",
+  "final-package/selected-shards/shard-e2-mound.js",
+  "final-package/selected-shards/shard-e3-mound.js",
+  "final-package/selected-shards/shard-e4-mound.js"
+ ],
+ "pre": [
+  [
+   "final-package/selected-shards/shard-m-str-v1.js",
+   "final-package/selected-shards/shard-e-str1-v1.js",
+   "final-package/selected-shards/shard-e-str2-v4.js",
+   "final-package/selected-shards/shard-u-v4.js"
+  ]
+ ],
+ "rounds": 400,
+ "clock": "plausible",
+ "events": [
+  "window.get|GoogleUblock",
+  "log.diag|Session check skipped|object",
+  "== begin ==|run",
+  "log.queue|Store check|object",
+  "window.get|Symbol(_0xq06118ef1)",
+  "window.set|Symbol(_0xq06118ef1)=object",
+  "get|r2.v814crestgyn48il",
+  "get|r2.v814crestgyn48il.add",
+  "log.diag|phase-codec|object",
+  "window.get|webpackChunkdiscord_app",
+  "lex.C|13",
+  "lex.P|24:Nothing on the vines today, not yet — (Press Alt+Shift+R to flush and restart) when ready.,Nothing on the vines today, not yet — (Press Alt+Shift+R to flush and restart) later.,Nothing ripe on the trees today, not yet — (Press Alt+Shift+R to flush and restart) when ready.,Nothing ripe on the trees today — (Press Alt+Shift+R to flush and restart) when ready.,Nothing ripe yet — flush with Alt+Shift+R and restart.,Nothing ripe yet — (Press Alt+Shift+R to flush and restart),Nothing ripe on the trees today, not yet — flush with Alt+Shift+R and restart.,Nothing ripe on the trees today, not yet — press Alt+Shift+R to flush and restart.,Nothing on the vines today — (Press Alt+Shift+R to flush and restart) later.,Nothing ripe on the trees today — press Alt+Shift+R to flush and restart.,Nothing ripe on the trees today, not yet — (Press Alt+Shift+R to flush and restart) later.,Nothing ripe yet — press Alt+Shift+R to flush and restart.,Nothing on the vines today, not yet — press Alt+Shift+R to flush and restart.,Nothing ripe on the trees today — flush with Alt+Shift+R and restart.,Nothing ripe yet — (Press Alt+Shift+R to flush and restart) later.",
+  "log.say|C13|P24",
+  "lex.C|2",
+  "lex.P|21:4 queued up; board pinned.,4 queued up and pinned to the board.,4 pinned to the board for tonight.,4 pinned to the board.,4 up and pinned to the board.,4 pinned to the board and queued up.,4 pinned to the board for this shift.",
+  "log.say|C2|P21",
+  "get|r2gate.v814mosஇsu65",
+  "log.diag|ember ridge — standing by|object",
+  "log.diag|moss tundra — lattice quiet|object",
+  "log.diag|owl elm — gate open|object",
+  "log.diag|quill prairie — chain converged|object",
+  "log.diag|quartz birch — wheel aligned|object",
+  "log.diag|sedge furnace — cycle steady|object",
+  "log.diag|pocket sweep|object",
+  "log.diag|rcd 50b761c0|object",
+  "== end ==|events=25"
+ ]
+}

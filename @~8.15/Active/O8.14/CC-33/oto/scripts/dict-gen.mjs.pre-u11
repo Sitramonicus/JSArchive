@@ -1,0 +1,122 @@
+// dict-gen.mjs — CC-33 feasibility prototype (2026-09-20): GENERATE the identifier pools per build
+// seed instead of curating CSVs on disk. Writes a parallel artifact (never touches the curated
+// originals) so an A/B run is possible:
+//     oto/generated/identifiers-dictionary-5k.csv
+//     oto/generated/identifiers-dictionary-jso.csv
+//     oto/generated/identifiers-dictionary-runner-5k.csv
+//
+// Inputs: BUILD-SEED.txt (seed), Uploads/unicode_list.csv (the operator's 20-script inventory),
+//         the shard sources (collision check), the curated pools (shape + size reference).
+//
+// Hard constraints encoded here (each one cost a build failure at some point):
+//   * every word must be a valid JS identifier  [\p{ID_Start}_$][\p{ID_Continue}$]*      (JSO schema)
+//   * no leading supplementary-plane character   (breaks JSO/S4 — see noSupLead)
+//   * elements must be UNIQUE per list           (JSO: "All identifiersDictionary's elements must be unique")
+//   * no release-surface vocabulary              (tools/leakcensus.mjs G3 + dict-scrub)
+//   * no reserved names / no token that already exists in the shard sources
+//   * deterministic: same seed => byte-identical pools
+//
+// Usage: node oto/scripts/dict-gen.mjs [--check] [--seed=X] [--report]
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const OTO = path.resolve(HERE, '..');
+const ROOT = path.resolve(OTO, '..', '..', '..', '..');  // /home/user
+const OUT = path.join(OTO, 'generated');
+const CHECK = process.argv.includes('--check');
+const REPORT = process.argv.includes('--report');
+const seedArg = (process.argv.find((a) => a.startsWith('--seed=')) || '').split('=')[1];
+const SEED = seedArg || String(fs.readFileSync(path.join(OTO, '..', 'BUILD-SEED.txt'), 'utf8')).trim();
+
+// ---- 1. seed → deterministic stream -------------------------------------------------------------
+const fnv = (s) => { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; } return h >>> 0; };
+function rng(seedStr) {                     // splitmix32: same shape the cascade already uses
+  let s = fnv(seedStr) >>> 0;
+  return () => { s = (s + 0x9e3779b9) >>> 0; let t = Math.imul(s ^ (s >>> 16), 0x21f0aaad) >>> 0; t = Math.imul(t ^ (t >>> 15), 0x735a2d97) >>> 0; return ((t ^ (t >>> 15)) >>> 0) / 4294967296; };
+}
+
+// ---- 2. script inventory from the operator's own list -------------------------------------------
+const csv = fs.readFileSync(path.join(ROOT, 'Uploads', 'unicode_list.csv'), 'utf8').split(/\r?\n/).slice(1);
+const IS_START = /^[\p{ID_Start}_$]$/u, IS_CONT = /^[\p{ID_Continue}$]$/u;
+const blocks = new Map();
+for (const line of csv) {
+  const m = line.match(/^([^,]*),([^,]*),(U\+[0-9A-Fa-f]{4,6})$/);
+  if (!m) continue;
+  const [, block, ch, hex] = m;
+  const cp = parseInt(hex.slice(2), 16);
+  if (cp < 0x80 || cp > 0xffff) continue;                       // BMP only: noSupLead rule
+  const c = ch || String.fromCharCode(cp);
+  if (!IS_CONT.test(c)) continue;
+  if (!blocks.has(block)) blocks.set(block, { start: [], cont: [] });
+  const b = blocks.get(block);
+  (IS_START.test(c) ? b.start : b.cont).push(c);
+  if (IS_START.test(c)) b.cont.push(c);
+}
+const usable = [...blocks.entries()].filter(([, b]) => b.start.length >= 8)
+  .map(([name, b]) => ({ name, start: [...new Set(b.start)], cont: [...new Set(b.cont)] }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+// ---- 3. generators ---------------------------------------------------------------------------------
+const FRAG = ['birch', 'plot', 'quill', 'owl', 'ridge', 'kelp', 'sedge', 'onyx', 'cairn', 'pine', 'moss',
+  'ember', 'lattice', 'prairie', 'quartz', 'shroud', 'reel', 'spire', 'hollow', 'brine', 'cinder', 'delta',
+  'flint', 'grove', 'marsh', 'nexus', 'orbit', 'plume', 'quay', 'harbor', 'summit', 'crest', 'vivid',
+  'pixel', 'matrix', 'vector', 'plasma', 'engine', 'signal', 'module', 'stream', 'bloom', 'haven', 'forest'];
+const BAN = ['transport', 'scheduler', 'cleanup', 'telemetry', 'honey', 'carrier', 'pockets', 'dispatch',
+  'probe', 'harvest', 'quest', 'running', 'stream', 'native', 'hook', 'vault', 'gate', 'shift', 'leases',
+  'budget', 'store', 'host', 'relay', 'flush'];
+const RESERVED = ['会員', 'lexMode', 'lexProbeA', 'lexProbeU', 'lexProbeX', 'lexSetPins'];
+
+function generate({ tag, count, lanes, seedStr }) {
+  const r = rng(seedStr);
+  const sources = fs.readdirSync(path.join(ROOT, 'Active', 'O8.14', 'CC-33', 'shards'))
+    .filter((f) => f.endsWith('.js')).map((f) => fs.readFileSync(path.join(ROOT, 'Active', 'O8.14', 'CC-33', 'shards', f), 'utf8')).join('\n');
+  const out = new Set(), rejected = { bad: 0, dup: 0, banned: 0, reserved: 0, collision: 0 };
+  let guard = 0;
+  while (out.size < count && guard++ < count * 60) {
+    const b = usable[Math.floor(r() * usable.length)];
+    const k = 1 + Math.floor(r() * 3);                                  // 1-3 script chars, matching the curated shape
+    let w = FRAG[Math.floor(r() * FRAG.length)];
+    const lane = lanes[Math.floor(r() * lanes.length)];
+    if (r() < lane.mix) w = w.slice(0, 1) + b.cont[Math.floor(r() * b.cont.length)] + w.slice(2); // intra-word mix
+    for (let i = 0; i < k; i++) w += (i === 0 && r() < 0.5 ? b.start : b.cont)[Math.floor(r() * b.cont.length)] ?? '';
+    w += String(100 + Math.floor(r() * 9899));
+    if (w.length < 7 || w.length > 24) { rejected.bad++; continue; }
+    if (!IS_START.test(w[0]) || ![...w].every((c) => IS_CONT.test(c)) || /^[\p{ID_Continue}]*$/u.test(w) === false) { rejected.bad++; continue; }
+    if (RESERVED.includes(w)) { rejected.reserved++; continue; }
+    const low = w.toLowerCase();
+    if (BAN.some((x) => low.includes(x))) { rejected.banned++; continue; }
+    if (out.has(w)) { rejected.dup++; continue; }
+    if (sources.includes(w)) { rejected.collision++; continue; }
+    out.add(w);
+  }
+  return { words: [...out], rejected, scripts: [...new Set([...out].map((w) => [...w].find((c) => c.charCodeAt(0) > 127) || ''))].filter(Boolean).length };
+}
+
+const PLAN = {
+  'identifiers-dictionary-5k.csv': { count: 5706, tag: 'main' },
+  'identifiers-dictionary-jso.csv': { count: 335, tag: 'jso' },
+  'identifiers-dictionary-runner-5k.csv': { count: 3859, tag: 'runner' },
+};
+const LANES = [
+  { name: 'none', mix: 0 }, { name: 'mixed', mix: 0.55 }, { name: 'exclusive', mix: 0.85 },
+];
+
+const t0 = Date.now();
+if (!CHECK) fs.mkdirSync(OUT, { recursive: true });
+const report = { seed: SEED, generatedAt: new Date().toISOString(), blocks: usable.length, pools: {} };
+for (const [file, plan] of Object.entries(PLAN)) {
+  const res = generate({ count: plan.count, lanes: LANES, seedStr: `${SEED}:${plan.tag}` });
+  const csvOut = res.words.join(',') + '\n';
+  if (!CHECK) fs.writeFileSync(path.join(OUT, file), csvOut);
+  const uniq = new Set(res.words).size === res.words.length;
+  const startOk = res.words.every((w) => IS_START.test([...w][0]));
+  report.pools[file] = { words: res.words.length, unique: uniq, idStartOk: startOk, scripts: res.scripts,
+    bytes: csvOut.length, rejected: res.rejected, ms: Date.now() - t0 };
+  console.log(`[${CHECK ? 'check' : 'gen  '}] ${file.padEnd(38)} ${res.words.length} words  ${(csvOut.length / 1024).toFixed(0)} KB  unique=${uniq} idStart=${startOk} scripts=${res.scripts}  rejected=${JSON.stringify(res.rejected)}`);
+}
+report.totalMs = Date.now() - t0;
+console.log(`=== ${usable.length} identifier-safe blocks from unicode_list.csv · ${report.totalMs} ms total${CHECK ? ' (no writes)' : ' -> oto/generated/'} ===`);
+if (REPORT) console.log(JSON.stringify(report, null, 1));
+if (!CHECK) fs.writeFileSync(path.join(OUT, 'dict-gen-report.json'), JSON.stringify(report, null, 1) + '\n');

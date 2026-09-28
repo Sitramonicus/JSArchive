@@ -1,0 +1,342 @@
+== CC-33 board — b23 — 2026-09-22T03:00:09Z ==
+== bytes ==
+   ad898afb  O8.12-runner.js
+   3bf21868  O8.12-cover.bmp
+   28d36d97  stego11p-real.min.js
+   55895e58  stego11p-decoy.min.js
+   820f06c2  O8.14-CC-33-final-bundle.js
+
+gate-replay --spec  — operator acceptance table (2026-09-21 scenario)
+
+  PASS  S1   名=staff, no unlock → welcome during, cover+garden at 120 s, identity silent
+  PASS  S1b     …and the diag sink is closed after the flip
+  PASS  S1c     …and the entry point is off `window` (teardown ran)
+  PASS  S2   名=pwdRcd (pre-set) → no cover; level 1; sink OPEN
+  PASS  S3   名=pwdDbg (pre-set) → no cover; level 2; sink OPEN
+  PASS  S4   名=pwdAK → cover (verbs never unlock)
+  PASS  S5   unlock at 119 s → no cover at 121 s
+  PASS  S6   unlock at 121 s → entry gone (torn down), cover shown
+  PASS  S7   pre-set pwdDbg → res/ak/view all true
+  PASS  S8   会員=0 → total silence (no cover, no tags)
+  PASS  S9   claimed session at 300 s → alive (level/sink/tags/entry) + verbs work
+  PASS  S10  unclaimed: welcome + Host banner, no machinery during the window, garden after
+  PASS  S10c allowlist: Host + MemberCount pass the stall, machinery tags do not
+  PASS  S11  work hold: venue calls blocked exactly while unclaimed
+  PASS  S12a benign stand-down keeps the entry point (claim surface lives with the window)
+  PASS  S12b a superseded session neither deletes a newer entry point nor paints its garden
+  PASS  S10b unclaimed end: entry point off window (machinery torn down)
+
+17/17 checks pass
+[gate --spec     ] 17/17 checks pass
+gate-replay  — real shard-u + shard-a, virtual clock
+slot     FNV-1a     FNV slot consumed by _0xcheckMain
+pwdRcd   b5546f18   rcd  (_0xRcdHash)
+pwdDbg   e79dbcf6   dbg  (_0xDbgHash)
+pwdRes   1e3c87b4   -    (not an FNV slot; SHA-256 poly path only)
+pwdAK    5f6b62a2   -    (not an FNV slot; SHA-256 poly path only)
+pwdView  01c6cbfb   -    (not an FNV slot; SHA-256 poly path only)
+
+  t(s)  slot     returned  level  dbgOK  rcdOK   diag-sink  tag
+    5   pwdRcd   true      1      false  true   OPEN       shown 
+    5   pwdDbg   true      2      true   false  OPEN       shown 
+    5   pwdRes   false     0      false  false  closed     hidden 
+    5   pwdAK    false     0      false  false  closed     hidden 
+    5   pwdView  false     0      false  false  closed     hidden 
+  180   pwdRcd   null      0      false  false  closed     hidden   ERR:i.sandbox.window.GoogleUblock is not a function
+  180   pwdDbg   null      0      false  false  closed     hidden   ERR:i.sandbox.window.GoogleUblock is not a function
+  180   pwdRes   null      0      false  false  closed     hidden   ERR:i.sandbox.window.GoogleUblock is not a function
+  180   pwdAK    null      0      false  false  closed     hidden   ERR:i.sandbox.window.GoogleUblock is not a function
+  180   pwdView  null      0      false  false  closed     hidden   ERR:i.sandbox.window.GoogleUblock is not a function
+
+legend: diag-sink = [Google diag] lines reach the console (会員>=2 && _0xopen && face up);
+        tag = [Google <channel>] line from Log.say. Past the 2-minute window an unlocked-nothing
+        session flips to the cover face and both go quiet by design.
+[gate matrix     ] 5 rows at t=5, unlocks 2/2, verbs rejected 3/3; post-window torn down 5/5
+== Stego-9 matrix: O8.12-runner.js
+  PASS anchor /*R9F*/ x1
+  PASS anchor /*R9R*/ x1
+  PASS anchor /*R9B*/ x1
+  PASS anchor /*R9T*/ x1
+  PASS FRAG 4-way groups well-formed
+   FRAG layout: 4-way  N=18185
+  PASS FRAG order is permutation
+  PASS FRAG joins to cover b64
+  PASS FRAG chunks < 200
+  PASS FRAG splits BM anchor
+  PASS REELS parses to 8 slots
+  PASS G4-reel/b1 plausible+parses
+  PASS G4-reel/b2 plausible+parses
+  PASS G4-reel/b3 plausible+parses
+  PASS G4-reel/b4 plausible+parses
+  PASS G4-reel/b5 plausible+parses
+  PASS G4-reel/b6 plausible+parses
+  PASS G4-reel/b7 plausible+parses
+  PASS G4-printability indistinguishable (range<0.15)
+  PASS BOARD8 gunzips to minHoney
+  PASS MINREAL probe pins verify (G8 repin)
+  PASS TUBE gunzips to minTube
+  PASS P-pocket telegram printability (<0.15)
+  PASS P-pocket teams printability (<0.15)
+  PASS P-pocket zoom printability (<0.15)
+  PASS P-pocket slack printability (<0.15)
+== 25 passed, 0 failed
+[stego matrix    ] 25 passed, 0 failed
+== Stego-3 tiers: O8.12-runner.js (full)
+  PASS T0-bare silent exit-0
+  [run] ms=2515 cap=NONE
+  PASS T0-thin/no-document silent
+  [run] ms=2510 cap=NONE
+  PASS T0-thin/no-atob silent
+  [run] ms=452 cap=3066B sha8=55895e58
+  PASS T1-default garden byte-exact
+  PASS T1-loader silent
+  PASS T1-garden runs
+  PASS Line-1 searchable
+  [run] ms=452 cap=3066B sha8=72079943
+  PASS T1-rename garden+name
+  [run] ms=452 cap=2103894B sha8=28d36d97
+  PASS T2-default bundle byte-exact
+  PASS T2-not-garden
+  [run] ms=453 cap=2103894B sha8=83c11a75
+  PASS T2-kaiin1 byte-exact
+  [run] ms=452 cap=3066B sha8=72079943
+  PASS T2-rename degrades to garden
+  SKIP T2-debugname (needs --debug-name=...)
+  [run] ms=452 cap=3066B sha8=55895e58
+  PASS T2-bitflip/noreel degrades to garden
+  [run] ms=452 cap=3066B sha8=55895e58
+  PASS T2-bitflip/nonative degrades to garden
+  [run] ms=452 cap=3066B sha8=55895e58
+  PASS T2-bitflip/novenue degrades to garden
+  [run] ms=454 cap=3066B sha8=55895e58
+  PASS T2-bits1 honey-reel degrades to garden
+  [run] ms=452 cap=3066B sha8=55895e58
+  PASS T2-bits2 honey-reel degrades to garden
+  [run] ms=451 cap=3066B sha8=55895e58
+  PASS T2-bits4 honey-reel degrades to garden
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-dead/tg yields honey
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-dead/teams yields honey
+  [run] ms=453 cap=1182B sha8=88397e56
+  PASS T2-dead/zoom yields honey
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-dead/slack yields honey
+  [run] ms=1895 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+tg still bundle
+  [run] ms=1908 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+teams still bundle
+  [run] ms=2041 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+zoom still bundle
+  [run] ms=1925 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+slack still bundle
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-deadhost/telegram yields honey
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-deadhost/teams yields honey
+  [run] ms=2116 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+all-dead still bundle
+  [run] ms=453 cap=1182B sha8=88397e56
+  PASS T2-honey runs fiction
+  PASS PG3-doc yields garden
+  PASS HNT-N cover slack shifts strip
+  PASS BMP valid
+  PASS banner brands player
+  PASS G2-no-long-b64-run
+  PASS G2-no-bm-anchor
+  PASS G3-narrative-mangled
+  PASS PSNR/grain pinned
+  PASS P-pocket telegram api present (G7)
+  PASS P-pocket teams api present (G7)
+  PASS P-pocket zoom api present (G7)
+  PASS P-pocket slack api present (G7)
+== 42 passed, 0 failed (1 skipped)
+[tiers           ] 42 passed, 0 failed (1 skipped
+== Stego-3 tiers: O8.12-runner.js (full)
+  PASS T0-bare silent exit-0
+  [run] ms=2519 cap=NONE
+  PASS T0-thin/no-document silent
+  [run] ms=2512 cap=NONE
+  PASS T0-thin/no-atob silent
+  [run] ms=453 cap=3066B sha8=55895e58
+  PASS T1-default garden byte-exact
+  PASS T1-loader silent
+  PASS T1-garden runs
+  PASS Line-1 searchable
+  [run] ms=452 cap=3066B sha8=72079943
+  PASS T1-rename garden+name
+  [run] ms=452 cap=2103894B sha8=28d36d97
+  PASS T2-default bundle byte-exact
+  PASS T2-not-garden
+  [run] ms=451 cap=2103894B sha8=83c11a75
+  PASS T2-kaiin1 byte-exact
+  [run] ms=451 cap=3066B sha8=72079943
+  PASS T2-rename degrades to garden
+  [run] ms=453 cap=3070B sha8=673d73e8
+  FAIL T2-debugname bundle byte-exact (len=3070 sha8=673d73e8) want (len=2103900 sha8=396b4697)
+  [run] ms=453 cap=3066B sha8=55895e58
+  PASS T2-bitflip/noreel degrades to garden
+  [run] ms=453 cap=3066B sha8=55895e58
+  PASS T2-bitflip/nonative degrades to garden
+  [run] ms=452 cap=3066B sha8=55895e58
+  PASS T2-bitflip/novenue degrades to garden
+  [run] ms=453 cap=3066B sha8=55895e58
+  PASS T2-bits1 honey-reel degrades to garden
+  [run] ms=453 cap=3066B sha8=55895e58
+  PASS T2-bits2 honey-reel degrades to garden
+  [run] ms=452 cap=3066B sha8=55895e58
+  PASS T2-bits4 honey-reel degrades to garden
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-dead/tg yields honey
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-dead/teams yields honey
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-dead/zoom yields honey
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-dead/slack yields honey
+  [run] ms=1954 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+tg still bundle
+  [run] ms=1922 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+teams still bundle
+  [run] ms=1908 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+zoom still bundle
+  [run] ms=1938 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+slack still bundle
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-deadhost/telegram yields honey
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-deadhost/teams yields honey
+  [run] ms=1882 cap=2103894B sha8=28d36d97
+  PASS T2-mask/7+all-dead still bundle
+  [run] ms=452 cap=1182B sha8=88397e56
+  PASS T2-honey runs fiction
+  PASS PG3-doc yields garden
+  PASS HNT-N cover slack shifts strip
+  PASS BMP valid
+  PASS banner brands player
+  PASS G2-no-long-b64-run
+  PASS G2-no-bm-anchor
+  PASS G3-narrative-mangled
+  PASS PSNR/grain pinned
+  PASS P-pocket telegram api present (G7)
+  PASS P-pocket teams api present (G7)
+  PASS P-pocket zoom api present (G7)
+  PASS P-pocket slack api present (G7)
+== 42 passed, 1 failed
+[tiers --debug-name] 42 passed, 1 failed (expect 1 = T2 fail-closed)
+== hold check on stego11p-real.min.js + O8.12-runner.js
+   PASS  H1  shard-a publishes the hold key from the stall closure  [`_stallHeld` + `_stallLift` both exposed]
+   PASS  H2  shard-a no longer writes the stall flag from outside the closure  [entry-point claims go through `_0xmod._stallLift`]
+   PASS  H3  shard-e2 holds every venue call while unclaimed  [one wrapper (`GoogleCall`) feeds both `pk34` and `pk35`]
+   FAIL  H4  the obfuscated entry piece still publishes the whole hold + stand-down surface  [built piece:true hold block:520 chars · runtime holdKey=undefined lift=undefined standDown=undefined reason=undefined entryRef=undefined]
+   PASS  H5  the shipped payload carries the hold guard  [payload literal:true/true · runtime: holdKey=undefined lift=undefined]
+   FAIL  H6  the shipped payload carries the stand-down hook  [payload literal: _standDown=false reason=false _entry=true · runtime reason=undefined standDown=undefined entryRef=undefined]
+   PASS  H7  a cold venue no longer kills the chain (no fatal STOP; arm/seed/begin hooks published)  [e1:true e2seed:true e4begin:true]
+   PASS  H8  a claim revives the chain, and session end keeps the venue handles  [shard-a revive:true claimed flag:true teardown keeps handles:true]
+   FAIL  H9  the shipped payload carries the revive surface  [_0xarm:literal _0xchain:literal _0xclaimed:literal _0xseed:encoded · runtime: seed=undefined begin=undefined chain=null]
+
+   semantics (all four states) belong to gate-replay: tools/gate-replay.mjs <slots…> --spec  (S11)
+== hold check: FAIL
+[hold-check      ] hold check: FAIL (6/9 rows)
+== r3.1 carrier flip check: O8.12-cover.bmp
+   cover 2359350 B  sha256=3bf2186880839552
+   payload gz=994234 B  strip@628 (slack 574)  base=99028  RS0=119670 RS1=119941  fh=1064477164
+  PASS F1-shipped-reel round-trips the payload  [reel=994234 gz=994234]
+  PASS F4b-reel0 tail is grained (no written/unwritten edge)  [written n=1988516 H=2.00000 | tail n=251164 H=2.00000 | z(sym0)=0.01 (threshold 3.0)]
+  PASS F4b-reel1 tail is grained (no written/unwritten edge)  [written n=1988516 H=1.99999 | tail n=250893 H=2.00000 | z(sym0)=1.31 (threshold 3.0)]
+  PASS F1b-codec mirror decodes both reels  [reel0=497137 reel1=497136]
+  PASS F2-RS is jittered off the fixed base  [base=99028 RS0=119670 (+20642) RS1=119941 (+20913)]
+  PASS F2b-old P3 header absent at the fixed base  [probed base=99028]
+  PASS F3-reel0 touches bits 0-1 only  [slips=0 hi-nibble slips=0 (positions=2239680)]
+  PASS F3-reel1 touches bits 2-3 only  [slips=0 (positions=2239409)]
+  PASS F3-reels overlap as designed  [both=1988592 only0=251088 only1=251060]
+  INFO planes: reel0 slots=2239680 reel1 slots=2239409 union=2239680
+  PASS F4-grain covers strip tail + gap  [range=[7280,119670) n=112390 maxZeroRun=7 zeros=24.8%]
+  PASS F4-grain entropy ~2.0 bits over 4 symbols  [H=2.0000 syms=27928/28231/28052/28179]
+  PASS F4-grain is not the clean cover's LSBs  [matchClean=24.8%]
+  PASS F4-plaque bits 2-7 preserved under grain  [slips=0]
+  PASS F5-PG3 garden decoy intact  [decoy=1658B gz=1658B]
+== 14 passed, 0 failed
+[carrier-flip    ] 14 passed, 0 failed
+== detector replay: /home/user/Active/O8.14/CC-33/stego-build/stego11p-real.min.js (2384572 bytes)
+   P1 fold      28 foldable strings, 36 decoded blobs -> opaque
+      vocab=- roadmap=-
+   P2 globals   5 published (0 outside the loader contract) -> clean
+   P3 host      limited (Math[dのltゅϙ481(...)] is not a function)
+   P4 modules   0 registry objects, 0 named keys -> opaque
+   => PASS
+[detector        ] PASS
+netwatch: 2433594 B, 1233 ms, verdict=ran, logs=2
+our log lines (first 8):
+   CLEAR
+   dbg:[03:01:22.251 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+after init: network-primitive calls=0 {}
+   no URLs attempted
+[netwatch bundle ] network-primitive calls=0 / no URLs attempted
+netwatch: 2103894 B, 1112 ms, verdict=ran, logs=2
+our log lines (first 8):
+   CLEAR
+   dbg:[03:03:22.446 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+after init: network-primitive calls=0 {}
+   no URLs attempted
+[netwatch payload] network-primitive calls=0 / no URLs attempted
+dangling-refs: /home/user/Active/O8.14/CC-33/stego-build/stego11p-real.min.js  (2328.7 KB, 14609 declared, 14233 referenced)
+   => PASS — 61 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+[dangling payload] PASS — 61 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+dangling-refs: /home/user/Active/O8.14/CC-33/stego-build/O8.12-runner.js  (3296.5 KB, 102 declared, 110 referenced)
+   clean — every referenced name is declared or a known runtime global
+[dangling runner ] clean — every referenced name is declared or a known runtime global
+dangling-refs: /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js  (2699.3 KB, 18079 declared, 17118 referenced)
+   => PASS — 36 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+[dangling bundle ] PASS — 36 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+== decoy parity: stego11p-real.min.js vs stego11p-decoy.min.js
+   profile="佐藤 結衣"  会員=0
+   real:  0 garden line(s)  [(no header)]
+   decoy: 0 garden line(s)  [(no header)]
+   PASS — the fallback garden and the decoy artifact print the identical output
+[decoy-parity k=0] PASS — the fallback garden and the decoy artifact print the identical output
+== decoy parity: stego11p-real.min.js vs stego11p-decoy.min.js
+   profile="佐藤 結衣"  会員=1
+   real:  13 garden line(s)  [Pixel Garden v2.0 — tended by 佐藤 結衣]
+   decoy: 13 garden line(s)  [Pixel Garden v2.0 — tended by 佐藤 結衣]
+   PASS — the fallback garden and the decoy artifact print the identical output
+[decoy-parity k=1] PASS — the fallback garden and the decoy artifact print the identical output
+== decoy parity: stego11p-real.min.js vs stego11p-decoy.min.js
+   profile="佐藤 結衣"  会員=2
+   real:  19 garden line(s)  [Pixel Garden v2.0 — tended by 佐藤 結衣]
+   decoy: 19 garden line(s)  [Pixel Garden v2.0 — tended by 佐藤 結衣]
+   PASS — the fallback garden and the decoy artifact print the identical output
+[decoy-parity k=2] PASS — the fallback garden and the decoy artifact print the identical output
+== leak census (v2, classified): /home/user/Active/O8.14/CC-33/stego-build/stego11p-real.min.js
+   payload bytes          2384572
+   G1 registry exports    (none)
+   G2 module names        (none)
+   G3 vocabulary          every hit classified as deliberate:
+      pockets     x2    UNEXPLAINED:1 mock-api:1                   e.g. UNEXPLAINED, mock-api
+      dispatch    x4    venue-property:1 UNEXPLAINED:1 mock-api:1 noise-decoy:1 e.g. venue-property, UNEXPLAINED, mock-api
+      probe       x9    loader-contract:8 mock-api:1               e.g. loader-contract, loader-contract, loader-contract
+      quest       x1    mock-api:1                                 e.g. mock-api
+      stream      x1    venue-property:1                           e.g. venue-property
+      native      x3    regex-literal:1 UNEXPLAINED:2              e.g. regex-literal, UNEXPLAINED, UNEXPLAINED
+      vault       x8    noise-decoy:6 encoded-blob:2               e.g. noise-decoy, noise-decoy, noise-decoy
+      gate        x7    loader-contract:7                          e.g. loader-contract, loader-contract, loader-contract
+      shift       x43   js-builtin:38 encoded-blob:4 venue-property:1 e.g. js-builtin, js-builtin, js-builtin
+      store       x8    own-telemetry:3 mock-api:2 encoded-blob:2 noise-decoy:1 e.g. own-telemetry, mock-api, mock-api
+      host        x1    encoded-blob:1                             e.g. encoded-blob
+      flush       x4    mock-api:4                                 e.g. mock-api, mock-api, mock-api
+      UNEXPLAINED:
+        - pockets: 9(moλϔѩ464.U)](lattice933._0xpocketsMissing)?lattice933[b௭rc
+        - dispatch: 묶ύ핵256"])](typeof Emb냢핵퀼250.dispatch,summit涒蒮722[V썚ctor꼒뮶214
+        - native: 1348,1417)]||mod264.IS_SYMBOL_NATIVE,mod264[f얓restѝ360(1613,
+        - native: Attќ֛휔퀼7848]=mod264.IS_SYMBOL_NATIVE?mod264[hA508(838,734)][
+   G4 reading cost        3392 functions, 0 case, mean ident 18.48
+   G5 dormant roadmap     (none)
+   G6 foldable constants  GoogleUblock | e5beb09c5ac4c02c | 2f14d6c0 | af167c44c78443ec | cf4ff1ae | JV~~v}t1}tuvtcL1 | 851b28e5 | :rcd- | :decoy | GoogleVault | webpackChunkdiscord_app | webpackChunktelegram_app | webpackChunkteams_app | webpackChunkslack_app | DiscordNative | DiscordSentry | __discord_app_state | Telegram | TeamsSDK | ZoomSDK | SlackSDK
+   => FAIL — G3 unexplained vocabulary (4): pockets: 9(moλϔѩ464.U)](lattice933._0xpocketsMissing)?lattice933[b௭rc | dispatch: 묶ύ핵256"])](typeof Emb냢핵퀼250.dispatch,summit涒蒮722[V썚ctor꼒뮶214 | native: 1348,1417)]||mod264.IS_SYMBOL_NATIVE,mod264[f얓restѝ360(1613, | native: Attќ֛휔퀼7848]=mod264.IS_SYMBOL_NATIVE?mod264[hA508(838,734)][
+[leakcensus      ] payload: G3 unexplained vocabulary (4); bundle: 1 clean
+== split equivalence vs golden trace: PASS
+   ref split-equivalence-e-golden.json: 25 events   this run: 25 events
+   event mix: log.diag=10 window.get=3 get=2 lex.C=2 lex.P=2 log.say=2 == begin ===1 log.queue=1 window.set=1 == end ===1
+[golden trace    ] PASS 25 events 
+
+== board complete — b23 ==

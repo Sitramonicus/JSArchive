@@ -1,0 +1,39 @@
+== PLAN-H split equivalence — re-run after the 2026-09-20 stitch-prefix fix
+
+--- shard-e (pre-split source vs the four e pieces) ---
+== split equivalence: FAIL (BASELINE STALE — not a defect signal)
+   A shard-e.js.pre-split: 24 events   B 4 pieces: 15 events
+   delta = exactly 9 events, all in A's prologue: `log.diag|phase-codec`, the string-table
+   registration pairs (`lex.C|13`+`lex.P|24`+`log.say|C13|P24`, `lex.C|2`+`lex.P|21`+`log.say|C2|P21`)
+   and `get|r2gate.v814mosஇsu65`. Both sides emit the identical 8 chain diagnostics in the identical
+   order ("ember ridge — standing by" … "rcd 50b761c0") and the identical preamble.
+   Why it is stale: the pre-split source still *inlines* the micro-linear codec bootstrap
+   (`phase-codec`) and the string-table registration, while in the shipped assembly those are carried
+   by the `m-str`, `e-str` and `u` pieces. Adding `m-str` (B 15→17) does not close the gap: the
+   registration itself belongs to the string layer, which is not part of this family's baseline.
+   => The e family has no 1:1 pre-split baseline any more. Shipped behaviour is covered by the
+      full-wire venue probe (payload 485 ms, bundle 498 ms, Discord-faithful host 1169 ms) plus
+      matrix 24/24 and tiers 42/42. Recorded as an open item.
+
+--- shard-m ---
+== split equivalence: PASS
+   A shards/retired/shard-m.js: 9 events   B 2 pieces: 9 events
+   event mix: log.diag=6 == begin ===1 log.queue=1 == end ===1
+
+--- shard-aux ---
+== split equivalence: PASS
+   A shards/retired/shard-aux.js: 38 events   B 2 pieces: 38 events
+   event mix: window.get=28 log.diag=6 == begin ===1 log.queue=1 window.set=1 == end ===1
+
+--- shard-e-str (chunk-table pair) ---
+== split equivalence: PASS
+   A shards/retired/shard-e-str.js: 2 events   B 2 pieces: 2 events
+   event mix: == begin ===1 == end ===1
+
+Harness fidelity work this pass (needed to run the e family at all):
+  * `_0xmod._e` host table restored (eb = packed table, ed = decoder, plus the chain's state slots
+    `v/S/STOP/lat/latV/now/release/signal/controller/tasks/track/flag/boot`). Without it both sides
+    died on their first statement and the trace proved nothing.
+  * mock `_0xmod.log` now strips the SKEY prefix like the shipped string layer does, otherwise every
+    post-chunk piece looks different from its pre-chunk original.
+  * `--clock=plausible|frozen|absurd` unchanged from the R2-05a work.

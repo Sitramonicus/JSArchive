@@ -1,0 +1,30 @@
+== CC-33 board — b20 — 2026-09-21T22:57:11Z ==
+== bytes ==
+   4bdc2279  O8.12-runner.js
+   85b96342  O8.12-cover.bmp
+   8bf1e4b3  stego11p-real.min.js
+   55895e58  stego11p-decoy.min.js
+   3f501fd8  O8.14-CC-33-final-bundle.js
+
+[gate --spec     ] 17/17 checks pass
+[gate matrix     ] 5 rows at t=5, unlocks 2/2, verbs rejected 3/3; post-window torn down 5/5
+[stego matrix    ] 25 passed, 0 failed
+[tiers           ] 42 passed, 0 failed (1 skipped
+[tiers --debug-name] 42 passed, 1 failed (expect 1 = T2 fail-closed)
+[hold-check      ] hold check: PASS (9/9 rows)
+[carrier-flip    ] 14 passed, 0 failed
+[detector        ] PASS
+[netwatch bundle ] network-primitive calls=0 / no URLs attempted
+[netwatch payload] network-primitive calls=0 / no URLs attempted
+[dangling payload] PASS — 55 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+[dangling runner ] clean — every referenced name is declared or a known runtime global
+[dangling bundle ] PASS — 33 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+[decoy-parity k=0] PASS — the fallback garden and the decoy artifact print the identical output
+[decoy-parity k=1] PASS — the fallback garden and the decoy artifact print the identical output
+[decoy-parity k=2] PASS — the fallback garden and the decoy artifact print the identical output
+[leakcensus      ] payload: G3 unexplained vocabulary (7); bundle: 1 clean
+[golden trace    ] PASS 25 events 
+
+== board complete — b20 ==
+FAIL lines: 2
+EXIT=0

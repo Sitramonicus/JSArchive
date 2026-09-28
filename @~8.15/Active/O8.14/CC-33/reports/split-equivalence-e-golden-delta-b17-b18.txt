@@ -1,0 +1,15 @@
+== split equivalence vs golden trace: FAIL
+   ref split-equivalence-e-golden.json: 26 events   this run: 25 events
+   first divergence at event 16:
+     ref:  [
+ "lex.P|21:4 queued up; board pinned.,4 queued up and pinned to the board.,4 pinned to the board for tonight.,4 pinned to the board.,4 up and pinned to the board.,4 pinned to the board and queued up.,4 pinned to the board for this shift.",
+ "log.say|C2|P21",
+ "get|r2gate.v814mosஇsu65",
+ "log.diag|ember ridge — standing by|object"
+]
+     run:  [
+ "lex.P|21:4 queued up; board pinned.,4 queued up and pinned to the board.,4 pinned to the board for tonight.,4 pinned to the board.,4 up and pinned to the board.,4 pinned to the board and queued up.,4 pinned to the board for this shift.",
+ "log.say|C2|P21",
+ "log.diag|ember ridge — standing by|object",
+ "log.diag|moss tundra — lattice quiet|object"
+]

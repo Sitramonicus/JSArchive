@@ -1,0 +1,10 @@
+== leak census: Working-Stable/O8.14/stego11p-real.min.js
+   payload bytes          232051
+   G1 registry exports    _testMod
+   G2 module names        log, host, _anteMix, _m, _wipeTables, mc, lex, timings, _carrier, r2, _e, shift, leases, _rcdGate, pockets
+   G3 vocabulary          transport, scheduler, cleanup, telemetry, honey, carrier, pockets, dispatch, probe, harvest, quest, running, stream, native, hook, vault, gate, shift, leases, budget, store, host, flush
+   G4 reading cost        102 functions, 0 case, mean ident 5.82
+      r3 baseline         2997 functions, 0 case, mean ident 20.28
+   G5 dormant roadmap     parseBrowser, twoBitFits, embed2, extract2, embed4, cssom, xslt, webgl, r2-08
+   G6 foldable constants  3e5d7144aa933681 | e5beb09c5ac4c02c | 2f14d6c0 | GoogleUblock | 6b9501b476e92408 | 6fc42452150b9089 | 7492f5a7 | d9287e39e9b7bcb1 | af167c44c78443ec | 8b252c4f9bf8679b | 145891c57797e80a | cf4ff1ae | 851b28e5 | :rcd- | :decoy | push | GoogleVault | [Google ledger]  | Guild
+   => FAIL — G1 registry export(s): _testMod ; G3 vocabulary budget: transport, scheduler, cleanup, telemetry, honey, carrier, pockets, dispatch, probe, harvest, quest, running, stream, native, hook, vault, gate, shift, leases, budget, store, host, flush ; G5 dormant roadmap: parseBrowser, twoBitFits, embed2, extract2, embed4, cssom, xslt, webgl, r2-08 ; G4 reading cost below r3 baseline: 102 vs 2997 functions

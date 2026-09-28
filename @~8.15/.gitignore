@@ -1,0 +1,24 @@
+# --- Build dependencies (not source; reinstalled on demand by tools/cc33-build.sh) ---
+node_modules/
+Active/engines/node_modules/
+
+# --- Sandbox / tool caches: never part of the pack ---
+.arena/
+.cache/
+.local/
+.npm/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# --- Editor / OS noise ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*.orig.bak
+
+# --- Transient output (evidence logs under reports/ ARE tracked, deliberately) ---
+*.tmp
+*.tmp.*

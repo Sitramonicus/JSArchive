@@ -1,0 +1,9 @@
+== leak census: Active/Stego/output-stego12/stego11p-real.min.js
+   payload bytes          2011232
+   G1 registry exports    (none)
+   G2 module names        (none)
+   G3 vocabulary          pockets, probe, quest, native, vault, gate, shift, store, host, flush
+   G4 reading cost        2997 functions, 0 case, mean ident 20.28
+   G5 dormant roadmap     (none)
+   G6 foldable constants  GoogleUblock | 6fc42452150b9089 | d9287e39e9b7bcb1 | af167c44c78443ec | 8b252c4f9bf8679b | cf4ff1ae | :rcd- | :decoy | GoogleVault
+   => FAIL — G3 vocabulary budget: pockets, probe, quest, native, vault, gate, shift, store, host, flush

@@ -1,0 +1,43 @@
+profile tag in the file set to the supplied slot value (60 chars)
+
+--- during the window (9 s in, 12 console calls so far) ---
+   +0.0s  <console.clear()>
+   +1.0s  <console.clear()>
+   +1.0s  [09:35:11.781 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Host config {"flags":32319,"profile":90,"limit":50,"rev":134}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"m","stores":2,"packed":true,"exports":0,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"e","stores":1,"packed":true,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"aux","stores":1,"packed":true,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk4","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk3","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk5","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk2","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk1","apis":6,"packed":true}
+
+--- just before the window closes (119 s in, 12 console calls so far) ---
+   +0.0s  <console.clear()>
+   +1.0s  <console.clear()>
+   +1.0s  [09:35:11.781 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Host config {"flags":32319,"profile":90,"limit":50,"rev":134}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"m","stores":2,"packed":true,"exports":0,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"e","stores":1,"packed":true,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"aux","stores":1,"packed":true,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk4","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk3","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk5","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk2","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk1","apis":6,"packed":true}
+
+--- just after the window (127 s in, 12 console calls so far) ---
+   +0.0s  <console.clear()>
+   +1.0s  <console.clear()>
+   +1.0s  [09:35:11.781 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Host config {"flags":32319,"profile":90,"limit":50,"rev":134}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"m","stores":2,"packed":true,"exports":0,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"e","stores":1,"packed":true,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Store check {"unit":"aux","stores":1,"packed":true,"sample":true,"retained":0}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk4","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk3","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk5","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk2","apis":6,"packed":true}
+   +1.9s  [09:35:12.603 +0.8s] [Google diag] Pocket check {"unit":"pk1","apis":6,"packed":true}

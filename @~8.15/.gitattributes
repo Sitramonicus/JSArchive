@@ -1,0 +1,12 @@
+* text=auto eol=lf
+
+# Stego carriers and engine binaries: never line-ending-normalised, never diffed as text
+*.bmp binary
+*.png binary
+*.jar binary
+*.node binary
+
+# Minified payloads and the self-embedding runners are single-line blobs — diffs are useless noise
+*.min.js -diff -text
+O8.13-runner-*.js -diff -text
+O8.14-runner-*.js -diff -text

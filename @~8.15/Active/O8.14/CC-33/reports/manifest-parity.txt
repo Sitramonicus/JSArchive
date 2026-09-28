@@ -1,0 +1,154 @@
+== manifest parity: CC-33 pack vs r3 generated-output inventory
+   cc33 files: 309   r3 inventory entries: 150
+
+-- r3 tree kinds (first two path segments) vs CC-33 --
+   BUILD-SEED.txt                             r3:   0  cc33:   1  cc33-only
+   CARRIER-FLIP-DESIGN.md                     r3:   0  cc33:   1  cc33-only
+   DYNAMIC-DICTS-FEASIBILITY.md               r3:   0  cc33:   1  cc33-only
+   E-PIECE-PROTECTION-REVIEW.md               r3:   0  cc33:   1  cc33-only
+   R3-TO-8.14-REALIGNMENT.md                  r3:   0  cc33:   1  cc33-only
+   final-package                              r3:   1  cc33:   0  r3-only
+   final-package/O8.12-r2-Final-bundle.js.gz  r3:   1  cc33:   0  r3-only
+   final-package/O8.12-r2-Final-deflateraw.js.gz r3:   1  cc33:   0  r3-only
+   final-package/O8.12-r2-Final-gzip.js.gz    r3:   1  cc33:   0  r3-only
+   final-package/O8.13-r3-bundle-4d4c876a-gzip.js r3:   1  cc33:   0  r3-only
+   final-package/O8.13-r3-bundle-4d887795-deflateraw.js r3:   1  cc33:   0  r3-only
+   final-package/O8.13-r3-bundle-604f4434.js  r3:   1  cc33:   0  r3-only
+   final-package/O8.14-CC-33-final-bundle.js  r3:   0  cc33:   1  cc33-only
+   final-package/O8.6-Final-compressed-deflateraw.js r3:   0  cc33:   1  cc33-only
+   final-package/O8.6-Final-compressed-gzip.js r3:   0  cc33:   1  cc33-only
+   final-package/SHA256SUMS.r4-superseded.txt r3:   1  cc33:   0  r3-only
+   final-package/SHA256SUMS.sizes.txt         r3:   1  cc33:   0  r3-only
+   final-package/SHA256SUMS.txt               r3:   1  cc33:   1  matched
+   final-package/selected-shards              r3:  25  cc33:  23  matched
+   oto/.pre-split                             r3:   0  cc33:   7  cc33-only
+   oto/g7-strings                             r3:  26  cc33:  28  matched
+   oto/generated                              r3:   0  cc33:   4  cc33-only
+   oto/grep-noise.json                        r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.augment.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.csv          r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.csv.scrapped.csv r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.csv.stage.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.scrub.json   r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-jso.csv         r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-jso.csv.scrapped.csv r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-jso.csv.stage.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.augment.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.csv   r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.csv.scrapped.csv r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.csv.stage.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.scrub.json r3:   0  cc33:   1  cc33-only
+   oto/lanes-2026-09-20.tar.gz                r3:   0  cc33:   1  cc33-only
+   oto/mound-e                                r3:   0  cc33:   3  cc33-only
+   oto/registry-keymap.json                   r3:   0  cc33:   1  cc33-only
+   oto/rotation.json                          r3:   0  cc33:   1  cc33-only
+   oto/scripts                                r3:   0  cc33:  14  cc33-only
+   oto/u                                      r3:   2  cc33:   1  matched
+   oto/v1-jso-s3matrix                        r3:  13  cc33:  17  matched
+   oto/v2-jsc                                 r3:   9  cc33:   8  matched
+   oto/v4-closure                             r3:  13  cc33:  26  matched
+   oto/v5-terser                              r3:  13  cc33:  26  matched
+   oto/v6-esbuild                             r3:  13  cc33:  26  matched
+   oto/v7-swc                                 r3:  13  cc33:  26  matched
+   oto/v8-uglify                              r3:  13  cc33:  26  matched
+   reports/BUILD-STATUS-2026-09-20.md         r3:   0  cc33:   1  cc33-only
+   reports/CARRIER-KEYSTREAM-NOTE.md          r3:   0  cc33:   1  cc33-only
+   reports/carrier-flip.txt                   r3:   0  cc33:   1  cc33-only
+   reports/manifest-parity.txt                r3:   0  cc33:   1  cc33-only
+   reports/r3-gen-manifest.txt                r3:   0  cc33:   1  cc33-only
+   reports/split-equivalence-all.txt          r3:   0  cc33:   1  cc33-only
+   reports/split-equivalence-e.txt            r3:   0  cc33:   1  cc33-only
+   shards/retired                             r3:   0  cc33:   4  cc33-only
+   shards/shard-a.js                          r3:   0  cc33:   1  cc33-only
+   shards/shard-a.js.orig                     r3:   0  cc33:   1  cc33-only
+   shards/shard-aux1.js                       r3:   0  cc33:   1  cc33-only
+   shards/shard-aux2.js                       r3:   0  cc33:   1  cc33-only
+   shards/shard-c.js                          r3:   0  cc33:   1  cc33-only
+   shards/shard-c.js.orig                     r3:   0  cc33:   1  cc33-only
+   shards/shard-e-str1.js                     r3:   0  cc33:   1  cc33-only
+   shards/shard-e-str2.js                     r3:   0  cc33:   1  cc33-only
+   shards/shard-e.js.orig                     r3:   0  cc33:   1  cc33-only
+   shards/shard-e.js.pre-split                r3:   0  cc33:   1  cc33-only
+   shards/shard-e1.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-e2.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-e3.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-e4.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-h.js                          r3:   0  cc33:   1  cc33-only
+   shards/shard-h.js.orig                     r3:   0  cc33:   1  cc33-only
+   shards/shard-l.js                          r3:   0  cc33:   1  cc33-only
+   shards/shard-m-str.js                      r3:   0  cc33:   1  cc33-only
+   shards/shard-m1.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-m2.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-n1.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-n2.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-p-discord.js                  r3:   0  cc33:   1  cc33-only
+   shards/shard-p-slack.js                    r3:   0  cc33:   1  cc33-only
+   shards/shard-p-teams.js                    r3:   0  cc33:   1  cc33-only
+   shards/shard-p-telegram.js                 r3:   0  cc33:   1  cc33-only
+   shards/shard-p-zoom.js                     r3:   0  cc33:   1  cc33-only
+   shards/shard-u.js                          r3:   0  cc33:   1  cc33-only
+   stego-build/O8.12-cover.bmp                r3:   0  cc33:   1  cc33-only
+   stego-build/O8.12-runner.js                r3:   0  cc33:   1  cc33-only
+   stego-build/rotation.json                  r3:   0  cc33:   1  cc33-only
+   stego-build/stego11p-decoy.min.js          r3:   0  cc33:   1  cc33-only
+   stego-build/stego11p-honey.min.js          r3:   0  cc33:   1  cc33-only
+   stego-build/stego11p-real.min.js           r3:   0  cc33:   1  cc33-only
+   stego-build/stego11p-tube.min.js           r3:   0  cc33:   1  cc33-only
+   tools/cc33-build.sh                        r3:   0  cc33:   1  cc33-only
+   tools/stitch-o85.py                        r3:   0  cc33:   1  cc33-only
+
+-- intentional differences (asserted, not assumed) --
+   1. shard set 12 -> 17 (c, h, l, e-str, m-str added)  => g7/v1/minify/s4 counts scale x17
+   2. lane archives are tarred (oto/lanes-*.tar.gz) to keep the workspace under the snapshot cap
+   3. stego outputs live in stego-build/ and the frozen r3 copies are NOT duplicated here
+   4. FaC-36 seal: no `_testMod` shard export exists in CC-33 (r3 had one)
+   5. dictionaries are scrubbed + augmented and carry stage sidecars (*.scrub.json / *.augment.json)
+
+-- CC-33 files by stage --
+   oto                   229 files  14197 KB
+   shards                 32 files  671 KB
+   final-package          27 files  8073 KB
+   reports                 7 files  66 KB
+   stego-build             7 files  7948 KB
+   tools                   2 files  5 KB
+   BUILD-SEED.txt          1 files  0 KB
+   CARRIER-FLIP-DESIGN.md    1 files  9 KB
+   DYNAMIC-DICTS-FEASIBILITY.md    1 files  5 KB
+   E-PIECE-PROTECTION-REVIEW.md    1 files  15 KB
+   R3-TO-8.14-REALIGNMENT.md    1 files  12 KB
+
+-- checksum manifest (release-path files) --
+6bb0c03018d9bd9a85ccdc22a4257faf043504af4207cda6d87041c06f8fc45d  final-package/O8.14-CC-33-final-bundle.js  2779778
+11fada90ccddf1e6dd7d39b2d0b7926ffe042c1644ae6559c979696c02263d3b  final-package/O8.6-Final-compressed-deflateraw.js  1466893
+cb403e341f9d9d187ef57ea09f2b6d8bfdff2740466aa5659cc206f2cde3b2dd  final-package/O8.6-Final-compressed-gzip.js  1466969
+b881b95146f71193196c83bdd3a69da1d292d11fb293f1ee664d471eeced5a60  final-package/selected-shards/shard-a-v1.js  36156
+a1605ee5bdfe5102b6449a11b1aec28c6a2b8a94022f7188e081166ed82c2d8a  final-package/selected-shards/shard-aux1-v8.js  25590
+2f9cc7c1a04991720d9bcb96488b98802754e0d51e56037df3dec8f1abe2e71e  final-package/selected-shards/shard-aux2-v4.js  25910
+2602ffcb03a950731ce7d61e6b8c6c9d5dfe9b90e119c57d3f3699f1b2970d67  final-package/selected-shards/shard-c-v1.js  130152
+f3f1b6017fd40e082c109247f86afddef266a3a6be10a4cd95e25db664c74aaa  final-package/selected-shards/shard-e-str1-v1.js  162310
+37cffc1f7d0fb0a07da42bde0a737e2a749d82128fa217ce676864cbe411c6f1  final-package/selected-shards/shard-e-str2-v4.js  101241
+0059585a5c3f93188b7c45042d41e528e39d38e556f63307e095bf07eb8e153d  final-package/selected-shards/shard-e1-v1.js  388282
+1235fb8de06177c553a140490a8df9d8b00fb1b2d0fbb7c3be957f40aa8c4ec5  final-package/selected-shards/shard-e2-mound.js  107175
+95599b1e4ab3d7892db053c6f5031ba23c56889e8f2d25cfa7c78ece4abafd8e  final-package/selected-shards/shard-e3-mound.js  251763
+d63e20c37927d7ef7f118b95a7b376656738542dda42f0851c7bb2589a5000ca  final-package/selected-shards/shard-e4-mound.js  116553
+dc93614841203d077d7b673fb0fbcbb2714c36473f62d47ef2f4506474fccc0e  final-package/selected-shards/shard-h-v1.js  130499
+7cd315f53a956a7e7b2fab7c1bd77a598b03dc6f308040a5446b3055a8aff542  final-package/selected-shards/shard-l-v1.js  21475
+59aeeb3c2e3d5e577198b0bcabf87634e805cda49ec3c578580c6f408723162e  final-package/selected-shards/shard-m-str-v1.js  60265
+67ba3b65652aa8a7b712f17c19ae9ce9bef0f7952fd1afa72f0e1dfa74db9599  final-package/selected-shards/shard-m1-v2.js  78534
+1781439cd803e1c1ef2167662cd7c165cbd8f96b89d3c03bf9f066e00fb3b315  final-package/selected-shards/shard-m2-v5.js  15408
+36eb6b416bb3d5aa4388198688e018615f57dcb73317218a8902561384a0a094  final-package/selected-shards/shard-n1-v6.js  24662
+cba6b7058356a9bcf5e3f39dbe1f74b8eaab7f100b645d724f2ca8886b70dea3  final-package/selected-shards/shard-n2-v7.js  19325
+10dca4f9213b80d6349046be69a6266ef87683c19539dcad478a76cc99c99374  final-package/selected-shards/shard-p-discord-v1.js  172478
+29f3802b94157f04950b4f2e8f09d491c397215a194639900839d0ed7177e03d  final-package/selected-shards/shard-p-slack-v1.js  125723
+a36f847fb64b06f1a372fd26392fc954da9f35d09e928b6654d2ae7f6d57e8f3  final-package/selected-shards/shard-p-teams-v1.js  180311
+149c43f22c010182b01d53e57750d2ac5fc40d39bb981d2512360f6bf52a19a0  final-package/selected-shards/shard-p-telegram-v1.js  141443
+495a5ce766ea8a244baf60715cb13d0c529f66f974d994119767efe11ef29359  final-package/selected-shards/shard-p-zoom-v1.js  215478
+c6cfd9997bb0a1d25946dca045d8ed4d3d17355e85d4d93b43c8e2a1b5d42c43  final-package/selected-shards/shard-u-v4.js  22279
+b30064e30190531291388b8f255d5c0a054dcdec03e104681e64412c2cb4a1a2  final-package/SHA256SUMS.txt  292
+bd3461aabfd37a46668a6c084b20eee53798c6cac3d62f3b8c4028acc25aef0a  stego-build/O8.12-cover.bmp  2359350
+bd53be4ff6b722ddfc20db42cbdfe01f3743347ce96e3b43c97a8136263a3954  stego-build/O8.12-runner.js  3374325
+5bc7746cd765be520a3810ad4e4e301e6af6530314a4cdd131dd6fc1da63745e  stego-build/rotation.json  629
+55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511  stego-build/stego11p-decoy.min.js  3112
+f84995d19017b7f6e0c3f4293f5f74b803d15ffb51af6c67e7cf1be8212182ae  stego-build/stego11p-honey.min.js  1232
+1c3f3a203ba84bf5d0fcb2e0f795c337228ccb52509eda0e1309afcde7af3bff  stego-build/stego11p-real.min.js  2397910
+9dad7c20adbfae9e3b59213876ea08760a5dca0ca8a6497f8700a88d0b2cf689  stego-build/stego11p-tube.min.js  2244

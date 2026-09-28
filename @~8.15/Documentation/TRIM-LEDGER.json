@@ -1,0 +1,148 @@
+{
+ "policy": "evidence > space — every removal has a recover command or a byte-identical twin",
+ "entries": [
+  {
+   "removed": "Active/Stego/output-stego12/O8.13-r3-runner-d4de42af.js",
+   "bytes": 3372856,
+   "why": "byte-identical to the frozen archive copy (sha verified)",
+   "recover": "Archives/packages/O8.13-r3/O8.13-r3-runner-d4de42af.js"
+  },
+  {
+   "removed": "Active/Stego/output-stego12/O8.13-r3-cover-3bbe7345.bmp",
+   "bytes": 2359350,
+   "why": "byte-identical to the frozen archive copy (sha verified)",
+   "recover": "Archives/packages/O8.13-r3/O8.13-r3-cover-3bbe7345.bmp"
+  },
+  {
+   "removed": "Active/Stego/output-stego12/stego11p-real.min.js",
+   "bytes": 2011232,
+   "why": "byte-identical to the frozen archive copy (sha verified)",
+   "recover": "Archives/packages/O8.13-r3/stego11p-real.min.js"
+  },
+  {
+   "removed": "Active/O8.14/CC-32/candidate/stego/O8.12-runner.js",
+   "bytes": 3372856,
+   "why": "byte-identical to the go-live copy (sha verified)",
+   "recover": "Working-Stable/O8.14/O8.14-runner-8963dc92.js / Archives/packages/O8.14/"
+  },
+  {
+   "removed": "Active/O8.14/CC-32/candidate/stego/O8.12-cover.bmp",
+   "bytes": 2359350,
+   "why": "byte-identical to the go-live copy (sha verified)",
+   "recover": "Working-Stable/O8.14/O8.14-cover-24b6826a.bmp / Archives/packages/O8.14/"
+  },
+  {
+   "removed": "Active/O8.14/CC-10-CAR-M/candidate/cc10-carm-expanded-cover.bmp",
+   "bytes": 4718646,
+   "why": "deterministic laboratory fixture",
+   "recover": "node Active/O8.14/CC-10-CAR-M/tools/run-cc10.mjs"
+  },
+  {
+   "compressed": "Analysis/redteam/digest-A.txt",
+   "bytes": 1230053,
+   "why": "derived digest summary of the sibling trace",
+   "recover": "gunzip digest-A.txt.gz"
+  },
+  {
+   "compressed": "Analysis/redteam/digest-B.txt",
+   "bytes": 523302,
+   "why": "derived digest summary of the sibling trace",
+   "recover": "gunzip digest-B.txt.gz"
+  },
+  {
+   "compressed": "Analysis/redteam/digest-C.txt",
+   "bytes": 1552682,
+   "why": "derived digest summary of the sibling trace",
+   "recover": "gunzip digest-C.txt.gz"
+  },
+  {
+   "compressed": "Analysis/redteam/digest-D.txt",
+   "bytes": 704088,
+   "why": "derived digest summary of the sibling trace",
+   "recover": "gunzip digest-D.txt.gz"
+  },
+  {
+   "compressed": "CC-33/oto/{v1-jso-s3matrix,v2-jsc,v4-closure,v5-terser,v6-esbuild,v7-swc,v8-uglify}",
+   "bytes": 5600000,
+   "why": "per-lane cascade evidence, regenerable in ~60 s",
+   "recover": "tar xzf Active/O8.14/CC-33/oto/lanes-2026-09-20.tar.gz -C Active/O8.14/CC-33/oto/  (or bash tools/cc33-build.sh)"
+  },
+  {
+   "removed": "Active/O8.14/CC-33/stego-build/.tmp + oto/.pre-split stale lanes (kept, see note)",
+   "bytes": 0,
+   "why": "NOT REMOVED — reviewed this pass and deliberately kept: pre-split lane outputs are the bisect evidence for the G8 lexProbeX regression, and stego-build/* is the current verified carrier",
+   "recover": "n/a"
+  },
+  {
+   "removed": "Active/O8.14/CC-33/stego-build/O8.12-runner.js",
+   "bytes": 3375606,
+   "why": "byte-identical twin of the frozen go-live copy (sha verified at removal time)",
+   "recover": "cp Working-Stable/O8.14/O8.14-runner-ad898afb.js Active/O8.14/CC-33/stego-build/O8.12-runner.js"
+  },
+  {
+   "removed": "Active/O8.14/CC-33/stego-build/stego11p-real.min.js",
+   "bytes": 2384572,
+   "why": "byte-identical twin of the frozen go-live copy (sha verified at removal time)",
+   "recover": "cp Working-Stable/O8.14/stego11p-real.min.js Active/O8.14/CC-33/stego-build/stego11p-real.min.js"
+  },
+  {
+   "removed": "Active/O8.14/CC-33/stego-build/O8.12-cover.bmp",
+   "bytes": 2359350,
+   "why": "byte-identical twin of the frozen go-live copy (sha verified at removal time)",
+   "recover": "cp Working-Stable/O8.14/O8.14-cover-3bf21868.bmp Active/O8.14/CC-33/stego-build/O8.12-cover.bmp"
+  },
+  {
+   "compressed": "Analysis/redteam/trace-A.md",
+   "bytes": 1163834,
+   "why": "prose/log trace, lossless gzip (round-trip sha verified); saves 0.75 MB",
+   "recover": "gunzip Analysis/redteam/trace-A.md.gz"
+  },
+  {
+   "compressed": "Analysis/redteam/trace-B.md",
+   "bytes": 508225,
+   "why": "prose/log trace, lossless gzip (round-trip sha verified); saves 0.35 MB",
+   "recover": "gunzip Analysis/redteam/trace-B.md.gz"
+  },
+  {
+   "compressed": "Analysis/redteam/trace-C.md",
+   "bytes": 1450344,
+   "why": "prose/log trace, lossless gzip (round-trip sha verified); saves 0.89 MB",
+   "recover": "gunzip Analysis/redteam/trace-C.md.gz"
+  },
+  {
+   "compressed": "Analysis/redteam/trace-D.md",
+   "bytes": 661077,
+   "why": "prose/log trace, lossless gzip (round-trip sha verified); saves 0.43 MB",
+   "recover": "gunzip Analysis/redteam/trace-D.md.gz"
+  },
+  {
+   "compressed": "uploads/lmarena_fully_sanitized_agent_run_1789827630147.txt",
+   "bytes": 3758060,
+   "why": "prose/log trace, lossless gzip (round-trip sha verified); saves 2.55 MB",
+   "recover": "gunzip uploads/lmarena_fully_sanitized_agent_run_1789827630147.txt.gz"
+  },
+  {
+   "removed": "Active/O8.15/pinned/measurements/best-output.js + best-map.json + derived chunk candidates/maps/logs",
+   "bytes": 0,
+   "why": "derived, reproducible measurement artifacts removed to stay below the workspace snapshot limit; canonical chain-A pins and measurement results remain",
+   "recover": "re-run the full-stack command recorded in Active/O8.15/pinned/README.md and the report §26"
+  },
+  {
+   "compressed": "Active/O8.14 historical candidate labs (19 superseded CC/candidate directories)",
+   "bytes": 0,
+   "why": "losslessly compressed into the move-ready 8.15-SF archive; not current inputs; saves active workspace clutter while preserving recovery",
+   "recover": "sha256sum -c 8.15-SF/archives/O8.14-historical-candidate-labs-2026-09-28.tar.gz.sha256 && tar xzf 8.15-SF/archives/O8.14-historical-candidate-labs-2026-09-28.tar.gz -C /tmp/o814-labs"
+  },
+  {
+   "compressed": "Active/O8.14/CC-33 historical evidence tree",
+   "bytes": 0,
+   "why": "superseded generated/evidence tree compressed into move-ready 8.15-SF; frozen O8.14 mirrors and O8.15 source remain active",
+   "recover": "sha256sum -c 8.15-SF/archives/O8.14-CC33-historical-evidence-2026-09-28.tar.gz.sha256 && tar xzf 8.15-SF/archives/O8.14-CC33-historical-evidence-2026-09-28.tar.gz -C /tmp/o814-cc33"
+  }
+ ],
+ "totals": {
+  "snapshot_mib": 114,
+  "files": 866,
+  "note": "measured 2026-09-28 after the runner-folder move and trim: 7.7 MB of twin-verified build output removed, ~5 MB of traces/logs gzipped with verified round-trips; excludes node_modules/caches per snapshot rules. Deliberately KEPT and re-verified this pass: the oto lane directories (their 2026-09-20 tarball is a DIFFERENT, older snapshot — 0 identical files — so the live dirs are post-split evidence, not duplicates), the fidelity gate's bundle input (Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js), the frozen CC-33/shards, and all of Working-Stable + Archives. Derived measurement outputs/maps were removed 2026-09-28 after the snapshot exceeded 128 MiB; canonical pins and textual results retained."
+ }
+}
