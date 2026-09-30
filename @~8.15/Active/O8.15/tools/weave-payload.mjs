@@ -108,6 +108,22 @@ walk(ast, (n) => {
   if (n.type === 'FunctionDeclaration' && n.id && n.id.type === 'Identifier') namedFuncs.set(n.id.name, n);
   if (n.type === 'VariableDeclarator' && n.id.type === 'Identifier' && n.init && (n.init.type === 'FunctionExpression')) namedFuncs.set(n.id.name, n.init);
 });
+// Function aliases (bug fixed 2026-09-28): `var p = de812; … p()` — the textual graph only knew direct
+// function bindings, so a table consumed through an alias kept its dealable members past the consumer and
+// a rotation loop span (measured via tools/boot-smoke.mjs + CPU profile). Aliases inherit their target's
+// reads: register `id = <known function>` (declarators and assignments) transitively.
+{
+  let grew = true;
+  while (grew) {
+    grew = false;
+    walk(ast, (n) => {
+      if (n.type === 'VariableDeclarator' && n.id.type === 'Identifier' && n.init && n.init.type === 'Identifier' &&
+          namedFuncs.has(n.init.name) && !namedFuncs.has(n.id.name)) { namedFuncs.set(n.id.name, namedFuncs.get(n.init.name)); grew = true; }
+      if (n.type === 'AssignmentExpression' && n.operator === '=' && n.left.type === 'Identifier' && n.right.type === 'Identifier' &&
+          namedFuncs.has(n.right.name) && !namedFuncs.has(n.left.name)) { namedFuncs.set(n.left.name, namedFuncs.get(n.right.name)); grew = true; }
+    });
+  }
+}
 const mentionsName = (node, name) => { let hit = false; walk(node, (n) => { if (n.type === 'Identifier' && n.name === name) hit = true; }); return hit; };
 // ---- readsName (landed 2026-09-27) ------------------------------------------------------------------
 // The window rule asked "can this statement reach a MENTION of the binding?", and a mention includes a
@@ -156,7 +172,66 @@ const readsName = (node, name) => {
   return hit;
 };
 
-const callsOf = (node) => { const out = new Set(); walk(node, (n) => { if (n.type === 'CallExpression' && n.callee.type === 'Identifier') out.add(n.callee.name); }); return out; };
+// Property-method aliasing (bug fixed 2026-09-28): `de688.mFsRen = Quill…; … de688.mFsRen(x)` and
+// `obj = { pcache: function… }` then `obj.pcache(…)` — the textual callee graph skipped MemberExpression
+// callees ENTIRELY, so the reader map let decoder/recovery tables be dealt past their consumers and a
+// string-recovery loop span forever (measured via tools/boot-smoke.mjs + a CPU profile: the spinner was
+// the aliased recovery function `Quillѡ120`). Every function assigned to a property (directly or as an
+// object-literal member, named or anonymous) is registered; a property call counts as a call to all of
+// them. Computed property calls are conservative: they count as a call to every property-assigned
+// function. (Residual risk, recorded in S1-D-DEAL-SOUNDNESS: aliases through plain variables
+// `var p = fn; p()` are still invisible to the textual graph.)
+const propFns = new Map();
+{
+  let anon = 0;
+  const addProp = (prop, token) => {
+    let s = propFns.get(prop);
+    if (!s) { s = new Set(); propFns.set(prop, s); }
+    s.add(token);
+  };
+  const regVal = (prop, v) => {
+    if (!v) return;
+    if (v.type === 'Identifier' && namedFuncs.has(v.name)) addProp(prop, v.name);
+    else if (v.type === 'FunctionExpression' || v.type === 'ArrowFunctionExpression') {
+      const token = '@prop:' + prop + ':' + (anon++);
+      namedFuncs.set(token, v);
+      addProp(prop, token);
+    }
+  };
+  walk(ast, (n) => {
+    if (n.type === 'AssignmentExpression' && n.operator === '=' && n.left.type === 'MemberExpression') {
+      if (!n.left.computed && n.left.property.type === 'Identifier') regVal(n.left.property.name, n.right);
+      else regVal('*', n.right);
+    }
+    if (n.type === 'ObjectExpression') {
+      for (const p of n.properties) {
+        if (!p || (p.type !== 'ObjectProperty' && p.type !== 'Property')) continue;
+        const key = !p.computed && p.key.type === 'Identifier' ? p.key.name
+          : (!p.computed && p.key.type === 'StringLiteral' ? p.key.value : '*');
+        regVal(key, p.value);
+      }
+    }
+    if (n.type === 'VariableDeclarator' && n.id.type === 'Identifier' && n.init &&
+        (n.init.type === 'FunctionExpression' || n.init.type === 'ArrowFunctionExpression') && !namedFuncs.has(n.id.name)) {
+      namedFuncs.set(n.id.name, n.init);
+    }
+  });
+}
+const callsOf = (node) => {
+  const out = new Set();
+  walk(node, (n) => {
+    if (n.type !== 'CallExpression') return;
+    if (n.callee.type === 'Identifier') out.add(n.callee.name);
+    if (n.callee.type === 'MemberExpression') {
+      const prop = (!n.callee.computed && n.callee.property.type === 'Identifier') ? n.callee.property.name : '*';
+      const set = propFns.get(prop);
+      if (set) for (const f of set) out.add(f);
+      if (n.callee.computed) for (const s of propFns.values()) for (const f of s) out.add(f);
+    }
+    for (const a of n.arguments || []) if (a.type === 'Identifier' && namedFuncs.has(a.name)) out.add(a.name);
+  });
+  return out;
+};
 const readerCache = new Map();
 function readerFns(name) {
   if (readerCache.has(name)) return readerCache.get(name);
@@ -175,6 +250,24 @@ function reachesRead(S, name) {
   const readers = readerFns(name);
   for (const c of callsOf(S)) if (readers.has(c)) return true;
   return false;
+}
+// does S ACCESSE the binding `name` at its position — a read OR a member write (`X.p=v`, `X[i]=v`)?
+// Bug fixed 2026-09-28: declaration relocation used reachesRead as the forward blocker, and `X.p=v` is
+// deliberately not a READ (the run deal needs it that way), so `const X={}` could be relocated PAST its own
+// fixed member writes — a TDZ ReferenceError at load (let/const) or a TypeError on undefined (var). Measured
+// via tools/decoy-parity.mjs's VM harness: the woven payload threw before printing anything. Member writes
+// are accesses: they need the binding to exist. Conservative (counts nested mentions too) — shrinks the
+// relocatable set, never widens it.
+function accessesName(S, name) {
+  if (S.type === 'FunctionDeclaration') return false;
+  let hit = false;
+  walk(S, (n) => {
+    if (hit) return;
+    if (n.type === 'MemberExpression' && n.object.type === 'Identifier' && n.object.name === name) hit = true;
+    if (n.type === 'AssignmentExpression' && n.left.type === 'Identifier' && n.left.name === name) hit = true;
+    if (n.type === 'UpdateExpression' && n.argument.type === 'Identifier' && n.argument.name === name) hit = true;
+  });
+  return hit || reachesRead(S, name);
 }
 
 function windowEnd(region, start, name, runIdx) {
@@ -233,6 +326,157 @@ function pureRunStmt(stmt) {
   if (e.type === 'AssignmentExpression' && e.operator === '=' && e.left.type === 'MemberExpression') return pureValue(e.right);
   if (e.type === 'AssignmentExpression' && e.operator === '+=' && e.right.type === 'StringLiteral') return true;
   return false;
+}
+// ---- control-flow / this-binding hazards, relative to the body a statement lives in -------------------
+// Shared by run-wrap and body-run-export: a statement that moves into a helper function must not depend on
+// anything the helper changes — the enclosing function's return/this/arguments, the enclosing generator's
+// yield, the enclosing async function's await, or a label outside the statement. Await inside an arrow is
+// bound by that arrow (arrows with await are async), and non-arrow function boundaries are opaque.
+const wrapHazard = (st) => {
+  let hz = false;
+  const rec = (n, top, inArrow) => {
+    if (hz || !n || typeof n.type !== 'string') return;
+    const boundary = !top && (isFn(n) || n.type === 'ObjectMethod' || n.type === 'ClassMethod' || n.type === 'ClassPrivateMethod' || n.type === 'StaticBlock');
+    if (boundary) {
+      if (n.type !== 'ArrowFunctionExpression') return;             // its own this/arguments/return: opaque
+      for (const k of Object.keys(n)) {                            // an arrow keeps the RUN's this/arguments
+        if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+        const v = n[k];
+        if (Array.isArray(v)) { for (const c of v) if (c && typeof c.type === 'string') rec(c, true, true); }
+        else if (v && typeof v.type === 'string') rec(v, true, true);
+      }
+      return;
+    }
+    const t = n.type;
+    if (t === 'ReturnStatement' && !inArrow && !top) { hz = true; return; }   // returns from the BODY
+    if (t === 'ThisExpression' || t === 'Super' || t === 'MetaProperty') { hz = true; return; }
+    if (t === 'Identifier' && n.name === 'arguments') { hz = true; return; }
+    if (t === 'AwaitExpression' && !inArrow) { hz = true; return; }
+    if (t === 'YieldExpression') { hz = true; return; }
+    if ((t === 'BreakStatement' || t === 'ContinueStatement') && n.label) { hz = true; return; }
+    for (const k of Object.keys(n)) {
+      if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+      const v = n[k];
+      if (Array.isArray(v)) { for (const c of v) if (c && typeof c.type === 'string') rec(c, false, inArrow); }
+      else if (v && typeof v.type === 'string') rec(v, false, inArrow);
+    }
+  };
+  // statement root: a bare `return X;` IS a hazard, so start it as if inside
+  if (st.type === 'ReturnStatement') return true;
+  rec(st, true, false);
+  return hz;
+};
+// a statement is movable into a helper only while its text is still a raw source slice
+const rawStmt = (st) => !st.__text && !st.__textParts && !st.__wrap;
+// REFERENCE identifiers only: excludes non-computed member properties, non-computed property/method keys,
+// labels, and a nested function's own parameter names. The obfuscated payload writes `{A:535,c:…,T:…}`
+// objects where the keys collide with real local names — counting property text as references refused
+// every chunk (measured 2026-09-28: 0 exports with the naive walk).
+function refIdents(node, out) {
+  const rec2 = (n, isProp) => {
+    if (!n || typeof n.type !== 'string') return;
+    const boundary = n !== node && (isFn(n) || n.type === 'ObjectMethod' || n.type === 'ClassMethod' || n.type === 'ClassPrivateMethod' || n.type === 'StaticBlock');
+    if (n.type === 'Identifier' && n.name && !isProp) out.add(n.name);
+    for (const k of Object.keys(n)) {
+      if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+      if (k === 'label') continue;
+      if (boundary && k === 'params') continue;
+      const v = n[k];
+      const prop = (n.type === 'MemberExpression' && k === 'property' && !n.computed) ||
+        ((n.type === 'ObjectProperty' || n.type === 'ObjectMethod' || n.type === 'ClassProperty' || n.type === 'ClassMethod' ||
+          n.type === 'ClassPrivateProperty' || n.type === 'ClassPrivateMethod' || n.type === 'PropertyDefinition') && k === 'key' && !n.computed);
+      if (Array.isArray(v)) { for (const c of v) rec2(c, false); }
+      else if (v && typeof v.type === 'string') rec2(v, prop);
+    }
+  };
+  rec2(node, false);
+  return out;
+}
+
+// ---- span-decidable relaxation predicates (WEAVE_RELAX_SPAN) ---------------------------------------
+// call-free value: no Call/New/Update/Assign/Await/Yield/TaggedTemplate anywhere in the expression. Such a
+// value only READS; its write (the member slot) is the run's own effect.
+function callFreeValue(node) {
+  if (!node || typeof node.type !== 'string') return false;
+  let ok = true;
+  const rec = (n) => {
+    if (!ok || !n || typeof n.type !== 'string') return;
+    const t = n.type;
+    if (t === 'CallExpression' || t === 'NewExpression' || t === 'UpdateExpression' || t === 'AssignmentExpression' ||
+      t === 'AwaitExpression' || t === 'YieldExpression' || t === 'TaggedTemplateExpression') { ok = false; return; }
+    for (const k of Object.keys(n)) {
+      if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+      const v = n[k];
+      if (Array.isArray(v)) { for (const c of v) rec(c); }
+      else if (v && typeof v.type === 'string') rec(v);
+    }
+  };
+  rec(node);
+  return ok;
+}
+function callFreeRunStmt(stmt) {
+  const e = stmt.expression;
+  if (!e) return false;
+  if (e.type === 'CallExpression' && e.callee.type === 'MemberExpression' && e.callee.property && e.callee.property.name === 'push') {
+    return e.arguments.every((a) => (a.type === 'SpreadElement' ? callFreeValue(a.argument) : callFreeValue(a)));
+  }
+  if (e.type === 'AssignmentExpression' && e.operator === '=' && e.left.type === 'MemberExpression') return callFreeValue(e.right);
+  return false;
+}
+// names a run member READS (excluding the binding itself and non-computed property names). Returns null
+// when the member reads its own group binding — a half-built table would be observable.
+function runReadNames(stmt, binding) {
+  const s = new Set();
+  let selfRead = false;
+  const rec = (n, isProp) => {
+    if (!n || typeof n.type !== 'string') return;
+    if (n.type === 'Identifier' && n.name && !isProp) {
+      if (n.name === binding) selfRead = true;
+      else s.add(n.name);
+    }
+    for (const k of Object.keys(n)) {
+      if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+      const v = n[k];
+      const prop = (n.type === 'MemberExpression' && k === 'property' && !n.computed);
+      if (Array.isArray(v)) { for (const c of v) rec(c, false); }
+      else if (v && typeof v.type === 'string') rec(v, prop);
+    }
+  };
+  const e = stmt.expression;
+  if (e.type === 'CallExpression') {
+    for (const a of e.arguments) rec(a.type === 'SpreadElement' ? a.argument : a, false);
+  } else if (e.type === 'AssignmentExpression') {
+    rec(e.right, false);
+    if (e.left && e.left.computed) rec(e.left.property, false);   // `T[expr] = v` reads expr
+    // the write target's object (the binding) is not a read of its content
+  }
+  return selfRead ? null : s;
+}
+// conservative write test: does this statement WRITE `name` (assignment/update target, declaration, any
+// method call on it, or a delete)? Over-approximation is safe — it only shrinks the relaxation.
+function writesName(st, name) {
+  let hit = false;
+  const rec = (n) => {
+    if (hit || !n || typeof n.type !== 'string') return;
+    if (n.type === 'VariableDeclarator') { const t = new Set(); patternNames(n.id, t); if (t.has(name)) hit = true; }
+    if ((n.type === 'FunctionDeclaration' || n.type === 'ClassDeclaration') && n.id && n.id.name === name) hit = true;
+    if (n.type === 'AssignmentExpression' || n.type === 'UpdateExpression') {
+      let t = n.type === 'UpdateExpression' ? n.argument : n.left;
+      while (t && t.type === 'MemberExpression') t = t.object;
+      if (t && t.type === 'Identifier' && t.name === name) hit = true;
+    }
+    if (n.type === 'CallExpression' && n.callee && n.callee.type === 'MemberExpression' &&
+      n.callee.object.type === 'Identifier' && n.callee.object.name === name) hit = true;
+    if (n.type === 'UnaryExpression' && n.operator === 'delete') hit = true;
+    for (const k of Object.keys(n)) {
+      if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+      const v = n[k];
+      if (Array.isArray(v)) { for (const c of v) rec(c); }
+      else if (v && typeof v.type === 'string') rec(v);
+    }
+  };
+  rec(st);
+  return hit;
 }
 
 // ---- SEQUENCE SPLIT (WEAVE_SEQ_SPLIT=1) ------------------------------------------------------------
@@ -371,59 +615,272 @@ function ownWalk(node, cb) {
 }
 
 const exportedHelpers = [];                 // {parent, ownerStmt, node} — checked after the plan exists
-if (process.env.WEAVE_RUN_EXPORT === '1' || process.env.WEAVE_BODY_CHUNK === '1') {
+function runExportPass() {
+  if (!(process.env.WEAVE_RUN_EXPORT === '1' || process.env.WEAVE_BODY_CHUNK === '1')) return;
   const rand = rng((SEED ^ 0x5f3759d) >>> 0);
-  const MIN_RUN_STMTS = 2, MIN_RUN_BYTES = 2048;
+  const MIN_RUN_STMTS = 1, MIN_RUN_BYTES = Number(process.env.WEAVE_RUN_EXPORT_MINB || 2048);   // bounded-search: split boundary
+  const MIN_BODY_BYTES = Number(process.env.WEAVE_RUN_EXPORT_MINBODY || 8192);                  // bounded-search: giant-only floor
+  const MIN_PARENT_SPAN = Number(process.env.WEAVE_RUN_EXPORT_MINPARENT || 32768);              // bounded-search: parent roominess
+  const nonDirOf = (list) => list.reduce((a, st) => a + (!(st.type === 'ExpressionStatement' && st.directive) ? 1 : 0), 0);
   for (const B of bodyList) {
     const info = bodyInfo.get(B);
     // the helpers are declared in the parent, so the parent must be a body the arrangement will actually
-    // plan (a body that is emitted verbatim could not carry a synthetic declaration); 20 statements is a
-    // generous threshold, and the post-plan assertion below refuses the build if the assumption ever fails
-    if (!info || !info.parentBody || !info.ownerStmt || info.parentBody.body.length < 20) { exportStats.noParent++; continue; }
+    // plan: the planner's minimum is 5 statements total and 4 non-directive, and one helper (itself a
+    // function-declaration unit) lifts a 4/3 parent over both. The OWNER body must reach a plan too — an
+    // unplanned body is emitted verbatim from its source slice, so an exported chunk inside it would be
+    // emitted twice — and it must STAY planned after the chunk shrinks to a call statement (the shrink
+    // below enforces exactly that). This pass runs BEFORE shell dissolution / sequence splitting mutate
+    // the statement lists (measured 2026-09-28: after them, ownerStmt is no longer a list member).
+    if (!info || !info.parentBody || !info.ownerStmt || info.parentBody.body.length < 3 || nonDirOf(info.parentBody.body) < 2) { exportStats.noParent++; continue; }
+    // SIZE FLOORS (measured 2026-09-28): exporting from small bodies added movable units that shuffle
+    // inside a range smaller than one metric bucket — noise with no dilution (windows_above_target went
+    // 48 -> 51 when the 256 B floor admitted them). A chunk only dilutes when its helper can travel across
+    // a bucket boundary inside the parent, so keep the giants: owner body >= 8 KB of statements, parent
+    // span >= one bucket (32 KB).
+    if (B.body.reduce((a, st) => a + (st.end - st.start), 0) < MIN_BODY_BYTES || (info.parentBody.end - info.parentBody.start) < MIN_PARENT_SPAN) { exportStats.smallBody = (exportStats.smallBody || 0) + 1; continue; }
     const stmts = B.body;
     let d = 0;
     while (d < stmts.length && stmts[d].type === 'ExpressionStatement' && stmts[d].directive) d++;
-    const locals = new Set();
-    for (const prm of info.ownerFn.params || []) patternNames(prm, locals);
+    const paramNames = new Set();
+    for (const prm of info.ownerFn.params || []) patternNames(prm, paramNames);
+    const locals = new Set(paramNames);
     for (let k = d; k < stmts.length; k++) ownWalk(stmts[k], (n) => {
       if (n.type === 'VariableDeclarator') patternNames(n.id, locals);
       else if ((n.type === 'FunctionDeclaration' || n.type === 'ClassDeclaration') && n.id) locals.add(n.id.name);
     });
+    // names bound AT THE STATEMENTS' OWN LEVEL (exact: not through function boundaries — a nested
+    // function's internals are its own scope; its NAME hoists to this level)
+    const declOf = new Map();
+    for (const st of stmts) {
+      const s = new Set();
+      const rec = (n) => {
+        if (!n || typeof n.type !== 'string') return;
+        if (isFn(n) || n.type === 'ObjectMethod' || n.type === 'ClassMethod' || n.type === 'ClassPrivateMethod' || n.type === 'StaticBlock') {
+          if (n.type === 'FunctionDeclaration' && n.id) s.add(n.id.name);   // Annex B: the name hoists up
+          return;
+        }
+        if (n.type === 'VariableDeclarator') patternNames(n.id, s);
+        else if (n.type === 'ClassDeclaration' && n.id) s.add(n.id.name);
+        for (const k of Object.keys(n)) {
+          if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+          const v = n[k];
+          if (Array.isArray(v)) { for (const c of v) rec(c); }
+          else if (v && typeof v.type === 'string') rec(v);
+        }
+      };
+      rec(st);
+      declOf.set(st, s);
+    }
+    // chunk-local names: declared by the chunk and bound nowhere else at this level (a `var` that shares
+    // its binding with a param or an outside declaration is NOT chunk-local — the helper would split it)
+    const chunkLocalOf = (arr) => {
+      const inside = new Set(arr);
+      const outsideDecls = new Set();
+      for (const st of stmts) if (!inside.has(st)) for (const nm of declOf.get(st)) outsideDecls.add(nm);
+      const s = new Set();
+      for (const st of arr) for (const nm of declOf.get(st)) if (!paramNames.has(nm) && !outsideDecls.has(nm)) s.add(nm);
+      return s;
+    };
+    // a statement may join a chunk when its text is raw, it has no escaping control flow, and every name it
+    // touches either is bound by the chunk itself or resolves outside this function — the helper is declared
+    // at the parent level, where it sees exactly the outside and nothing else
+    const stmtOk = (st, chunkLocal) => {
+      if (!rawStmt(st) || wrapHazard(st)) return false;
+      let ok = true;
+      refIdents(st, new Set()).forEach((nm) => {
+        if (locals.has(nm) && !chunkLocal.has(nm)) ok = false;
+      });
+      return ok;
+    };
+    // escape set: chunk-bound names that also occur outside the chunk in this body (anywhere — a nested
+    // closure outside the chunk counts). Zero escapes = a plain helper call. Exactly one escape T = the
+    // helper RETURNS T and the call site re-declares/assigns it: the value later statements see is the
+    // same object, assigned at the same point. That pattern is only sound while the chunk is CALL-FREE —
+    // a call could run a closure that reads this body's T mid-chunk and would then see the old value —
+    // and while nothing outside writes T afterwards (a closure made inside the chunk would lag).
+    const escapesOf = (arr, chunkLocal) => {
+      const inside = new Set(arr);
+      const esc = new Set();
+      for (const st of stmts) {
+        if (inside.has(st)) continue;
+        refIdents(st, new Set()).forEach((nm) => { if (chunkLocal.has(nm)) esc.add(nm); });
+      }
+      return [...esc];
+    };
+    const callFreeStmt = (st) => {
+      // CALL-FREE AT THE CHUNK'S OWN LEVEL: calls inside a nested function/arrow body do not run while the
+      // chunk executes — they are dormant text. A level call could invoke a closure that reads this body's
+      // T mid-chunk, so the single-escape pattern refuses any level Call/New (and await/yield/tagged).
+      let ok = true;
+      const rec = (n) => {
+        if (!ok || !n || typeof n.type !== 'string') return;
+        if (n !== st && (isFn(n) || n.type === 'ObjectMethod' || n.type === 'ClassMethod' || n.type === 'ClassPrivateMethod' || n.type === 'StaticBlock')) return;
+        const t = n.type;
+        if (t === 'CallExpression' || t === 'NewExpression' || t === 'AwaitExpression' || t === 'YieldExpression' || t === 'TaggedTemplateExpression') { ok = false; return; }
+        for (const k of Object.keys(n)) {
+          if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+          const v = n[k];
+          if (Array.isArray(v)) { for (const c of v) rec(c); }
+          else if (v && typeof v.type === 'string') rec(v);
+        }
+      };
+      rec(st);
+      return ok;
+    };
+    const declKindOf = (arr, name) => {
+      let kind = null;
+      for (const st of arr) {
+        if (st.type !== 'VariableDeclaration') continue;
+        walk(st, (n) => {
+          if (n.type === 'VariableDeclarator') { const t = new Set(); patternNames(n.id, t); if (t.has(name)) kind = kind || st.kind; }
+        });
+      }
+      return kind;   // null = declared only as a function/class — not admissible as a returned binding
+    };
+    // BINDING-level writes only: `T.x = 5` mutates the shared object and is identical through the helper's
+    // copy and the body's copy; only REBINDING T (`T = …`, `T++`, a second declaration) would make a
+    // closure created inside the chunk see a different value than the body's later statements.
+    const rebindsName = (st, name) => {
+      let hit = false;
+      const rec = (n) => {
+        if (hit || !n || typeof n.type !== 'string') return;
+        if (n.type === 'VariableDeclarator') { const t = new Set(); patternNames(n.id, t); if (t.has(name)) hit = true; }
+        if ((n.type === 'FunctionDeclaration' || n.type === 'ClassDeclaration') && n.id && n.id.name === name) hit = true;
+        if (n.type === 'AssignmentExpression') {
+          let t = n.left;
+          while (t && t.type === 'MemberExpression') t = t.object;
+          if (t && t.type === 'Identifier' && t.name === name) hit = true;
+          if (t && (t.type === 'ArrayPattern' || t.type === 'ObjectPattern')) { const s = new Set(); patternNames(t, s); if (s.has(name)) hit = true; }
+        }
+        if (n.type === 'UpdateExpression') {
+          let t = n.argument;
+          while (t && t.type === 'MemberExpression') t = t.object;
+          if (t && t.type === 'Identifier' && t.name === name) hit = true;
+        }
+        for (const k of Object.keys(n)) {
+          if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
+          const v = n[k];
+          if (Array.isArray(v)) { for (const c of v) rec(c); }
+          else if (v && typeof v.type === 'string') rec(v);
+        }
+      };
+      rec(st);
+      return hit;
+    };
+    const writesOutside = (arr, name) => {
+      const inside = new Set(arr);
+      for (const st of stmts) { if (!inside.has(st) && rebindsName(st, name)) return true; }
+      return false;
+    };
     const runs = [];
     let cur = [];
-    const flush = () => { if (cur.length >= MIN_RUN_STMTS && cur.reduce((a, st) => a + (st.end - st.start), 0) >= MIN_RUN_BYTES) runs.push(cur); cur = []; };
+    // chunk admissibility. Zero escapes: a plain helper call — nothing outside can observe the chunk's
+    // own bindings. Escaping names: the helper RETURNS them and the call site re-declares/assigns them
+    // (`var T=w7();`, or `var [T,U]=w7();` for several) — the values later statements see are the same
+    // objects, assigned at the same point. Only sound while the chunk is CALL-FREE AT ITS OWN LEVEL (a
+    // call could run a closure that reads this body's T mid-chunk) and while nothing outside REBINDS an
+    // escaping name afterwards (a closure created inside the chunk would lag). All escaping names must be
+    // variable-bound with ONE declaration kind so the call site can mirror them.
+    const okChunk = (a) => {
+      const c = chunkLocalOf(a);
+      const e = escapesOf(a, c);
+      if (e.length === 0) return { arr: a, esc: null };
+      if (!a.every(callFreeStmt)) return null;
+      if (e.some((x) => writesOutside(a, x))) return null;
+      const kinds = e.map((x) => declKindOf(a, x));
+      if (!kinds.every((k) => k) || !kinds.every((k) => k === kinds[0])) return null;
+      return { arr: a, esc: e };
+    };
+    const flush = () => {
+      if (cur.length >= MIN_RUN_STMTS && cur.reduce((a, st) => a + (st.end - st.start), 0) >= MIN_RUN_BYTES) {
+        let arr = cur;
+        let got = okChunk(arr);
+        // inadmissible as a whole: shrink from the tail (dropping a rebind or a level call can only help
+        // a shorter chunk) — but re-validate the scope gate at every step
+        while (!got && arr.length > MIN_RUN_STMTS) {
+          arr = arr.slice(0, arr.length - 1);
+          if (!arr.every((st) => stmtOk(st, chunkLocalOf(arr)))) break;
+          got = okChunk(arr);
+        }
+        if (got) runs.push(got);
+        else exportStats.dropEsc = (exportStats.dropEsc || 0) + 1;
+      } else if (cur.length) {
+        exportStats.dropSmall = (exportStats.dropSmall || 0) + 1;
+      }
+      cur = [];
+    };
     for (let k = d; k < stmts.length; k++) {
       const st = stmts[k];
-      let ok = pureRunStmt(st);
-      if (ok) walk(st, (n) => {
-        if (n.type === 'Identifier' && locals.has(n.name)) ok = false;
-        if (n.type === 'ThisExpression' || n.type === 'Super' || n.type === 'MetaProperty') ok = false;
-        if (n.type === 'Identifier' && n.name === 'arguments') ok = false;
-      });
-      if (ok) cur.push(st); else flush();
+      const cand = cur.concat([st]);
+      if (stmtOk(st, chunkLocalOf(cand))) cur.push(st);
+      else { flush(); if (stmtOk(st, chunkLocalOf([st]))) cur = [st]; }
     }
     flush();
     if (!runs.length) continue;
+    // the owner body must still reach a plan after the export: the arrangement's own gates are 3 statements
+    // and 3 non-directive (post seq-split) plus at least one movable unit — a named function declaration
+    // (accepted unconditionally) or a run family (table pushes/assignments, subject to purity). Each exported
+    // chunk of L statements shrinks to exactly 1 call statement. Shrink the export from the tail until the
+    // counts hold; the unit is guaranteed below with a synthetic empty function declaration when the kept
+    // statements lack one. (Grow-only afterwards: dissolution adds statements, and this pass runs before it.)
+    {
+      const plannable = () => {
+        let removed = 0;
+        for (const { arr } of runs) removed += arr.length - 1;
+        return nonDirOf(stmts) - removed >= 3;
+      };
+      while (runs.length && !plannable()) runs.pop();
+      if (!runs.length) { exportStats.dropOwner++; continue; }
+    }
     const helpers = [];
-    for (const run of runs) {
+    for (const { arr, esc } of runs) {
       const name = freshName(rand);
-      const first = run[0], last = run[run.length - 1];
-      const node = { type: 'FunctionDeclaration', id: { type: 'Identifier', name }, params: [], start: first.start, end: last.end, __wrap: { pre: `function ${name}(){`, post: '}' } };
-      const call = { type: 'ExpressionStatement', expression: { type: 'CallExpression', callee: { type: 'Identifier', name }, arguments: [] }, start: first.start, end: last.end, __text: `${name}();` };
+      const first = arr[0], last = arr[arr.length - 1];
+      let post = '}', callText = name + '();';
+      if (esc && esc.length === 1) {
+        post = 'return ' + esc[0] + ';}';
+        callText = declKindOf(arr, esc[0]) + ' ' + esc[0] + '=' + name + '();';
+      } else if (esc) {
+        post = 'return [' + esc.join(',') + '];}';
+        callText = declKindOf(arr, esc[0]) + ' [' + esc.join(',') + ']=' + name + '();';
+      }
+      const node = { type: 'FunctionDeclaration', id: { type: 'Identifier', name }, params: [], start: first.start, end: last.end, __wrap: { pre: `function ${name}(){`, post } };
+      // Synthetic helper is invisible to the AST walks — register it so its reads count as reachable
+      // (bug fixed 2026-09-28: `w()` calls were not barriers, so a relocated declaration could move past
+      // its own wrapped member writes — "Cannot set properties of undefined", tools/boot-smoke.mjs).
+      namedFuncs.set(name, { type: 'FunctionDeclaration', id: { type: 'Identifier', name }, params: [], body: { type: 'BlockStatement', body: arr } });
+      const call = { type: 'ExpressionStatement', expression: { type: 'CallExpression', callee: { type: 'Identifier', name }, arguments: [] }, start: first.start, end: last.end, __text: callText };
       const at = stmts.indexOf(first);
-      stmts.splice(at, run.length, call);
-      helpers.push(node);
-      helperCounts.push(run.length);
-      exportStats.runs++; exportStats.statements += run.length;
-      exportStats.bytes += run.reduce((a, st) => a + (st.end - st.start), 0);
+      stmts.splice(at, arr.length, call);
+      helpers.push({ node, call });
+      helperCounts.push(arr.length);
+      exportStats.runs++; exportStats.statements += arr.length;
+      exportStats.bytes += arr.reduce((a, st) => a + (st.end - st.start), 0);
+    }
+    // the plan needs at least one MOVABLE unit in the owner body: a named function declaration is accepted
+    // unconditionally by the planner (run families can still be refused on purity), so when the kept
+    // statements carry none, plant a synthetic empty one next to the calls. Synthetic text — no source
+    // bytes — so conservation is untouched; it only guarantees the body reaches a plan, which is what
+    // keeps the exported chunk from being emitted verbatim twice.
+    const kept = new Set();
+    for (const { arr } of runs) for (const st of arr) kept.add(st);
+    const hasFnUnit = stmts.some((st) => !kept.has(st) && st.type === 'FunctionDeclaration' && st.id && st.id.name);
+    if (!hasFnUnit) {
+      const nm = freshName(rand);
+      stmts.splice(d, 0, {
+        type: 'FunctionDeclaration', id: { type: 'Identifier', name: nm }, params: [],
+        body: { type: 'BlockStatement', body: [] }, start: stmts[0] ? stmts[0].start : 0, end: stmts[0] ? stmts[0].start : 0,
+        __text: `function ${nm}(){}`,
+      });
     }
     const pat = info.parentBody.body.indexOf(info.ownerStmt);
     if (pat < 0) throw new Error('RUN EXPORT: owning statement not found in the parent body');
-    info.parentBody.body.splice(pat, 0, ...helpers);
-    for (const h of helpers) exportedHelpers.push({ parent: info.parentBody, ownerStmt: info.ownerStmt, node: h });
+    info.parentBody.body.splice(pat, 0, ...helpers.map((h) => h.node));
+    for (const h of helpers) exportedHelpers.push({ parent: info.parentBody, ownerStmt: info.ownerStmt, ownerBody: B, node: h.node, call: h.call });
     exportStats.bodies++;
   }
 }
+runExportPass();   // before shell dissolution mutates the statement lists (the pass needs intact ownerStmt membership)
 
 // ---- SHELL DISSOLUTION (WEAVE_DISSOLVE=1) ----------------------------------------------------------
 // THE MEASUREMENT THAT FORCED THIS LEVER (2026-09-27, report §20d). The master body's 11,520 statements
@@ -781,14 +1238,28 @@ function inlineShell(shape, others, at) {
     const parts = [{ t: 'var ' }];
     const temps = params.map(() => freshName(labelRand));
     params.forEach((nm, k) => { parts.push({ t: (k ? ',' : '') + temps[k] + '=' }, { t: src.slice(args[k].start, args[k].end), o0: args[k].start, o1: args[k].end }); });
-    if (scoped) {
-      // spill the arguments first, then bind: `!function(X){...}(X)` would otherwise make a `let X = X` binding
-      // read itself
-      parts.push({ t: ';let ' });
-      params.forEach((nm, k) => { parts.push({ t: (k ? ',' : '') + nm + '=' + temps[k] }); });
-    }
+    // Synthetic bindings are invisible to the AST walks, so register the param→arg function alias here
+    // (bug fixed 2026-09-28: the reader map never learned `param()` could call the argument's function, the
+    // barrier for the callee's tables fell short, and a rotation loop span on incomplete tables).
+    params.forEach((nm, k) => {
+      const a = args[k];
+      if (a && a.type === 'Identifier' && namedFuncs.has(a.name)) {
+        namedFuncs.set(nm, namedFuncs.get(a.name));
+        namedFuncs.set(temps[k], namedFuncs.get(a.name));
+      }
+    });
+    // ALWAYS re-bind the parameter names to the spilled temps (bug fixed 2026-09-28: this step used to run
+    // only for scoped shells, so every plain dissolved shell left its parameter names dangling — measured
+    // by tools/dangling-refs.mjs: weave-in 61/0 → weave-out 92/1, the 1 firing in catch paths = a
+    // ReferenceError the moment an unrelated throw happens). `var` in the plain path (the privacy gate has
+    // already proved the name is unmentioned anywhere else at this level); `let` in the scoped path, where
+    // the label block is the scope and the shell's own-level vars were rewritten to `let` as well.
+    parts.push({ t: scoped ? ';let ' : ';var ' });
+    params.forEach((nm, k) => { parts.push({ t: (k ? ',' : '') + nm + '=' + temps[k] }); });
     parts.push({ t: ';' });
-    out.push({ type: 'VariableDeclaration', kind: 'var', declarations: [], start: call.start, end: call.end, __textParts: parts, __noReloc: true });
+    const bindStmt = { type: 'VariableDeclaration', kind: 'var', declarations: [], start: call.start, end: call.end, __textParts: parts, __noReloc: true };
+    bindStmt.__shellFrozen = true;   // travels in the same atom as the body it binds (see closedGaps)
+    out.push(bindStmt);
   }
   // a scoped shell's own-level `var`s become block-scoped `let`s (the keyword edit is the same width, so the
   // content-conservation coverage is unchanged)
@@ -800,7 +1271,19 @@ function inlineShell(shape, others, at) {
       registerEdit(v.declStart, v.declStart + 3, 'let');
     }
   }
-  for (const bs of body) out.push(bs);
+  // Freeze EVERY dissolved shell body as one contiguous ordered run (bug fixed 2026-09-28). Scattering
+  // the body statements as free region items broke the payload in four measured ways, all caught by the
+  // decoy-parity VM harness: (1) labelled bodies escaped their `L:{ … break L; }` fences; (2) block-level
+  // `function` declarations separated from their callers ("pL210 is not a function"); (3) a body statement
+  // could be dealt BEFORE the shell's own `var p=arg` binding (param uses and argument side effects must
+  // run first); (4) cross-binding value order. The body now replaces the call in place, in source order,
+  // directly after its binding statement. The dissolve still earns its bytes (wrapper + return machinery
+  // removed, parameters become plain declarations, the top-level function declarations it exposes stay
+  // dealable via the fn-hoist lever); what is given up is the scattering of the body's inner statements.
+  for (const bs of body) {
+    bs.__shellFrozen = true;
+    out.push(bs);
+  }
   if (labelName) out.push({ type: 'ExpressionStatement', start: call.start, end: call.end, __text: 'break ' + labelName + ';}', __noReloc: true });
   if (out.length && body.length) { out[0] = Object.assign({}, out[0], { __shellBody: true, __shellBodyCount: body.filter((x) => x.type !== 'EmptyStatement').length }); }
   return out;
@@ -922,6 +1405,9 @@ function makeHelper(fn) {
   const params = [];                                  // textual span of the parameter list, if any
   if (fn.params && fn.params.length) params.push(src.slice(fn.params[0].start, fn.params[fn.params.length - 1].end));
   const pre = (fn.async ? 'async ' : '') + 'function ' + name + '(' + (params[0] || '') + '){';
+  // Synthetic helper — register its reads (bug fixed 2026-09-28; synthetic nodes are invisible to the
+  // AST walks, so calls to it were not barriers and relocated declarations moved past them).
+  namedFuncs.set(name, fn);
   return { node: { type: 'FunctionDeclaration', id: { type: 'Identifier', name }, params: [], start: fn.start, end: fn.end, __wrap: { pre, post: '}' } },
     name, paramsText: params[0] || '' };
 }
@@ -1062,38 +1548,7 @@ if (process.env.WEAVE_RUN_WRAP === '1') {
     rec(st, true);
     return out;
   };
-  // control-flow / this-binding hazards, relative to the body the run lives in
-  const wrapHazard = (st) => {
-    let hz = false;
-    const rec = (n, top, inArrow) => {
-      if (hz || !n || typeof n.type !== 'string') return;
-      const boundary = !top && (isFn(n) || n.type === 'ObjectMethod' || n.type === 'ClassMethod' || n.type === 'ClassPrivateMethod' || n.type === 'StaticBlock');
-      if (boundary) {
-        if (n.type !== 'ArrowFunctionExpression') return;             // its own this/arguments/return: opaque
-        for (const k of Object.keys(n)) {                            // an arrow keeps the RUN's this/arguments
-          if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
-          const v = n[k];
-          if (Array.isArray(v)) { for (const c of v) if (c && typeof c.type === 'string') rec(c, true, true); }
-          else if (v && typeof v.type === 'string') rec(v, true, true);
-        }
-        return;
-      }
-      const t = n.type;
-      if (t === 'ReturnStatement' && !inArrow && !top) { hz = true; return; }   // returns from the BODY
-      if (t === 'ThisExpression' || t === 'Super' || t === 'MetaProperty') { hz = true; return; }
-      if (t === 'Identifier' && n.name === 'arguments') { hz = true; return; }
-      for (const k of Object.keys(n)) {
-        if (k === 'loc' || k === 'start' || k === 'end' || k === 'leadingComments' || k === 'trailingComments') continue;
-        const v = n[k];
-        if (Array.isArray(v)) { for (const c of v) if (c && typeof c.type === 'string') rec(c, false, inArrow); }
-        else if (v && typeof v.type === 'string') rec(v, false, inArrow);
-      }
-    };
-    // statement root: a bare `return X;` IS a hazard, so start it as if inside
-    if (st.type === 'ReturnStatement') return true;
-    rec(st, true, false);
-    return hz;
-  };
+  // control-flow / this-binding hazards: `wrapHazard` is module-level now (shared with body-run-export)
   for (const block of bodyList.slice()) {
     const stmts = block.body;
     if (stmts.length < MIN_STMTS + 1) continue;
@@ -1125,10 +1580,17 @@ if (process.env.WEAVE_RUN_WRAP === '1') {
     const flush = () => {
       if (!cur.length) return;
       const bytes = cur.reduce((s, st) => s + (st.end - st.start), 0);
-      if (cur.length >= MIN_STMTS && bytes >= MIN_BYTES) {
+      // SOLO MODE (WEAVE_RUN_WRAP_SOLO=1): the landed minimum (4 statements) never wrapped lone statements,
+      // but the S1-B fixed-item inventory (2026-09-28) shows intact wrap-admissible statements of 1-3 KB
+      // staying fixed for that reason alone. A solo statement at or above the byte minimum is a legal
+      // one-statement helper: same scope, same position, same safety predicates.
+      const soloOk = process.env.WEAVE_RUN_WRAP_SOLO === '1' && cur.length === 1 && bytes >= MIN_BYTES;
+      if ((cur.length >= MIN_STMTS || soloOk) && bytes >= MIN_BYTES) {
         const name = freshName(wrapRand);
         const first = cur[0], last = cur[cur.length - 1];
         const node = { type: 'FunctionDeclaration', id: { type: 'Identifier', name }, params: [], start: first.start, end: last.end, __wrap: { pre: `function ${name}(){`, post: '}' } };
+        // Synthetic helper — register its reads (bug fixed 2026-09-28; see the export-site note).
+        namedFuncs.set(name, { type: 'FunctionDeclaration', id: { type: 'Identifier', name }, params: [], body: { type: 'BlockStatement', body: cur } });
         const hoisted = [];
         for (const nm of cur.__hoisted || []) hoisted.push(nm);
         const callText = (hoisted.length ? 'var ' + hoisted.join(',') + ';' : '') + name + '();';
@@ -1213,6 +1675,7 @@ for (const block of bodyList) {
   const fns = [];
   const runsBy = new Map();
   region.forEach((s, i) => {
+    if (s.__shellFrozen) return;                    // labelled-shell body: stays contiguous and in order
     if (s.type === 'FunctionDeclaration' && s.id && s.id.name) { fns.push(i); return; }
     const r = runOf(s);
     if (r) { if (!runsBy.has(r.name)) runsBy.set(r.name, []); runsBy.get(r.name).push(i); }
@@ -1265,13 +1728,42 @@ for (const block of bodyList) {
     const indexFreeOn = process.env.WEAVE_INDEX_FREE === '1';
     const relocOn = process.env.WEAVE_DECL_RELOC === '1';
     if (indexForm && indexFreeOn && relocOn) list.forEach((i) => { if (pureRunStmt(region[i])) freeSet.add(i); });
+    // ---- SPAN-DECIDABLE PURITY RELAXATION (WEAVE_RELAX_SPAN=1) --------------------------------------
+    // The purity gate refuses any member whose value READS another binding (`T[i] = X[j] + 1`) even though
+    // a read-only value commutes with everything except a write to what it reads. This relaxation admits a
+    // member when (a) its value is call-free (no Call/New/Update/Assign/Await/Yield anywhere — a call's
+    // timing relative to crossed statements' effects is observable and stays refused), (b) it does not read
+    // the group's own binding (a half-built table is observable), and (c) no non-member statement in the
+    // reader window writes any name the member reads or the binding itself (the span it could cross). The
+    // S1-B fixed-item inventory classed 1,431 fixed rows / 607 KB of window weight as this class.
+    const relaxOn = process.env.WEAVE_RELAX_SPAN === '1';
+    const relaxSet = new Set();
+    if (relaxOn) {
+      const members = new Set(list);
+      for (const i of list) {
+        if (!callFreeRunStmt(region[i])) continue;
+        const reads = runReadNames(region[i], name);
+        if (reads === null) continue;                       // reads the binding itself — refused
+        let bad = false;
+        for (let j = lo; j < barrier && !bad; j++) {
+          if (members.has(j)) continue;
+          for (const nm of reads) if (writesName(region[j], nm)) { bad = true; break; }
+          if (!bad && writesName(region[j], name)) bad = true;
+        }
+        if (!bad) relaxSet.add(i);
+      }
+      // index-form content is order-free per slot: relaxed members may be freed like pure ones
+      if (indexForm) for (const i of relaxSet) freeSet.add(i);
+    }
+    const allDealt = list.every((i) => pureRunStmt(region[i]) || relaxSet.has(i));
     // Refuse only when the old rule refuses AND no index-free rescue exists. (The first version of this
     // block wrote `freeSet.size === 0` in place of the all-pure test — since freeSet only fills for
     // index-form groups, that unconditionally refused all 25 push groups; caught by the group count falling
     // 37 -> 12 with 68 -> 93 refusals, all four levers green. Keep the all-pure term explicit.)
-    if ((!indexForm || !indexDeal) && !allPure && freeSet.size === 0) { stats.impure++; continue; }
+    if ((!indexForm || !indexDeal) && !allPure && !(relaxOn && allDealt) && freeSet.size === 0) { stats.impure++; continue; }
     if (indexForm && indexDeal) stats.indexGroups = (stats.indexGroups || 0) + 1;
     if (freeSet.size) stats.indexFree = (stats.indexFree || 0) + freeSet.size;
+    if (relaxSet.size) stats.relaxed = (stats.relaxed || 0) + relaxSet.size;
     groups.push({ name, runs: list, lo, hi: barrier, declIdx: declIdx >= 0 ? declIdx : null, free: freeSet.size ? freeSet : null });
     if (process.env.WEAVE_DEBUG === '1') console.error(`   [group] ${name}: ${list.length} runs, window gaps ${barrier - lo}, window bytes ${(region[Math.min(barrier, region.length) - 1] || region[region.length - 1]).end - region[lo].start}`);
     stats.groups++;
@@ -1304,7 +1796,7 @@ for (const block of bodyList) {
 function declRelocatable(region, declIdx) {
   const st = region[declIdx];
   if (!st || st.type !== 'VariableDeclaration') return null;
-  if (st.__noReloc || st.__text) return null;      // synthetic (dissolved shell bindings) never move: moving one would move when its ARGUMENT is evaluated
+  if (st.__noReloc || st.__text || st.__shellFrozen) return null;      // synthetic (dissolved shell bindings) never move: moving one would move when its ARGUMENT is evaluated
   // Every declarator must be a plain binding whose initialiser is a pure value: a literal, an empty
   // array/object, or a literal-method call. Measured 2026-09-27: the four tables that stay perfectly clumped
   // (`ci852`, `onyx751`, `l끸ttice끸낥322`, `M鷑υ枚158` — 300-803 members at 85-100 % density in the output) all
@@ -1328,7 +1820,7 @@ function declRelocatable(region, declIdx) {
   // the earliest position this declaration may move to: just after the LAST statement before it that can
   // reach a read of ANY of the names it declares (or the body start if there is none)
   let lastTouch = -1;
-  for (let i = 0; i < declIdx; i++) for (const n of names) if (reachesRead(region[i], n)) { lastTouch = i; break; }
+  for (let i = 0; i < declIdx; i++) for (const n of names) if (accessesName(region[i], n)) { lastTouch = i; break; }
   return { names, lastTouch, blocker: lastTouch >= 0 ? region[lastTouch] : null };
 }
 
@@ -1354,6 +1846,35 @@ for (const [block, p] of plans) {
       g.reloc = { from: g.declIdx, to: rel.lastTouch + 1, oldWindow, newWindow, names: rel.names };
       movable.add(g.declIdx);                      // the declaration becomes a placed item
     }
+  }
+  // ---- STANDALONE DECLARATION RELOCATION (WEAVE_DECL_RELOC_ALL=1) ---------------------------------
+  // The landed relocation only moves a group's OWN declaration. The S1-B fixed-item inventory classes 222
+  // fixed rows as `movable:decl-reloc`: pure-value declarations that no accepted group owns (their groups
+  // were refused, or no writes follow them). A pure-value declaration assigns constants; moving it anywhere
+  // between the last statement that can reach a read of its names and the first reader after it is not
+  // observable, so each such declaration is itself a placed item with that legal range. Byte-preserving:
+  // the statement is emitted whole from its original coordinates.
+  const standaloneReloc = [];
+  if (process.env.WEAVE_DECL_RELOC_ALL === '1') {
+    const taken = new Set();
+    for (const g of p.groups) if (g.reloc) taken.add(g.reloc.from);
+    for (const g of p.groups) if (g.declIdx != null) taken.add(g.declIdx);
+    p.region.forEach((st, i) => {
+      if (taken.has(i) || movable.has(i)) return;
+      const rel = declRelocatable(p.region, i);
+      if (!rel) return;
+      let firstRead = p.region.length;
+      for (let j = i + 1; j < p.region.length; j++) {
+        let hit = false;
+        for (const nm of rel.names) if (accessesName(p.region[j], nm)) { hit = true; break; }
+        if (hit) { firstRead = j; break; }
+      }
+      const loIdx = rel.lastTouch + 1, hiIdx = firstRead;
+      if (hiIdx <= loIdx) return;                  // no legal range — stays fixed
+      movable.add(i);
+      standaloneReloc.push({ idx: i, from: i, to: loIdx, loIdx, hiIdx, names: rel.names });
+    });
+    p.standaloneReloc = standaloneReloc;
   }
   p.movableAll = movable;                     // the check below must see exactly this set (relocations included)
   const fixed = p.region.map((_, i) => i).filter((i) => !movable.has(i));
@@ -1381,46 +1902,145 @@ for (const [block, p] of plans) {
     }
     return out;
   };
+  // gap index of a region index = how many FIXED statements precede it (monotone, and defined even
+  // when the bound itself is a movable statement — which is what the old slotOf lookup got wrong).
+  const gapOf = (regionIdx) => { let n = 0; for (const f of fixed) { if (f < regionIdx) n++; else break; } return n; };
+  // Closed gaps (bug fixed 2026-09-28): a labelled shell's fences `L:{ … break L; }` form a block with
+  // early exits (`break L` from converted returns). NO foreign item may be dealt inside: a declaration
+  // changes scope there (measured: `function de812` dealt between the fences became block-scoped and an
+  // external caller saw the uninitialized Annex-B binding — "de812 is not a function"), and any statement
+  // placed after an early `break L` would silently never execute (measured as a load-time spin). Interior
+  // gaps of every fence block are closed; items shift to the nearest OPEN gap, preferring the left side
+  // (monotone, so run-group order survives), falling back to the item's original gap.
+  const closedGaps = new Set();
+  {
+    const stack = [];
+    p.region.forEach((s, i) => {
+      if (!s.__text) return;
+      if (s.__text.endsWith(':{')) { stack.push([s.__text.slice(0, -2), i]); return; }
+      if (s.__text.startsWith('break ') && s.__text.endsWith(';}')) {
+        const label = s.__text.slice(6, -2);
+        for (let k = stack.length - 1; k >= 0; k--) {
+          if (stack[k][0] === label) {
+            const openIdx = stack[k][1];
+            for (const f of fixed) if (f > openIdx && f <= i) closedGaps.add(gapOf(f));
+            stack.length = k;
+            break;
+          }
+        }
+      }
+    });
+    // A plain (unlabelled) dissolved body is an ATOM too: consecutive frozen statements (its `var p=arg`
+    // binding plus the inlined body) must not admit foreign items in their middle. Measured 2026-09-28
+    // (bug): a foreign statement dealt between the body's table setup and its consumer loop left the
+    // decoder rotation reading an incomplete table — the payload span (tools/boot-smoke.mjs, dissolve-only).
+    for (let i = 0; i < p.region.length; i++) {
+      if (!p.region[i].__shellFrozen) continue;
+      let j = i;
+      while (j + 1 < p.region.length && p.region[j + 1].__shellFrozen) j++;
+      if (j > i) for (const f of fixed) if (f > i && f <= j) closedGaps.add(gapOf(f));
+      i = j;
+    }
+  }
+  const openGap = (g, lo, hi, fallback) => {
+    if (!closedGaps.has(g)) return g;
+    for (let h = g; h >= lo; h--) if (!closedGaps.has(h)) return h;
+    for (let h = g + 1; h <= hi; h++) if (!closedGaps.has(h)) return h;
+    return fallback;
+  };
   const fnGaps = placeEven(p.fns.length, minGap, gaps - 1);
   p.fns.forEach((fidx, k) => {
     const st = p.stmts[fidx] || p.region[fidx];
     const name = (st && st.id && st.id.name) || null;
     const pos = name ? (seenName.get(name) || 0) : 0;
     if (name) seenName.set(name, pos + 1);
-    items[fnGaps[k]].push({ idx: fidx, key: name ? 'fn@' + name : 'fn#' + fidx, pos });
+    items[openGap(fnGaps[k], minGap, gaps - 1, gapOf(fidx))].push({ idx: fidx, key: name ? 'fn@' + name : 'fn#' + fidx, pos });
   });
-  // gap index of a region index = how many FIXED statements precede it (monotone, and defined even
-  // when the bound itself is a movable statement — which is what the old slotOf lookup got wrong).
-  const gapOf = (regionIdx) => { let n = 0; for (const f of fixed) { if (f < regionIdx) n++; else break; } return n; };
+  // Crash-class placement bound (bug fixed 2026-09-28): a movable item must not execute before the
+  // declaration of any binding it ACCESSES (member write or reachable read). `T.x = U.y` placed before
+  // `const U = …` is a TDZ ReferenceError at load (measured in the decoy-parity VM harness); `T.x = U.y`
+  // before `var U = …` is a TypeError on undefined. The reader window models the item's OWN binding
+  // only; this closes the cross-binding case.
+  const declIdxOf = new Map();
+  p.region.forEach((s, i) => {
+    if (s.type !== 'VariableDeclaration' || s.__text) return;
+    for (const d of s.declarations) if (d.id && d.id.type === 'Identifier' && !declIdxOf.has(d.id.name)) declIdxOf.set(d.id.name, i);
+  });
+  const minGapOf = (idx) => {
+    const st = p.region[idx];
+    let g = 0;
+    walk(st, (n) => {
+      if (n.type !== 'Identifier') return;
+      const di = declIdxOf.get(n.name);
+      if (di != null && di < idx) { const gg = gapOf(di + 1); if (gg > g) g = gg; }
+    });
+    return g;
+  };
   for (const g of p.groups) {
     let loGap = gapOf(g.lo);
+    const hiGap = Math.max(loGap, gapOf(g.hi));
     if (g.reloc) {
       // the declaration now sits immediately after the last statement that can touch the binding, so the
       // window opens there — as early as the no-touch rule allows
       const declGap = gapOf(g.reloc.to);
       loGap = Math.min(loGap, declGap);
-      items[declGap].push({ idx: g.reloc.from, key: 'decl@' + g.name, pos: 0 });
+      items[openGap(declGap, declGap, hiGap, gapOf(g.reloc.from))].push({ idx: g.reloc.from, key: 'decl@' + g.name, pos: 0 });
       relocations.push({ body: block.start, name: g.name, from: g.reloc.from, to: g.reloc.to, oldWindow: g.reloc.oldWindow, newWindow: g.reloc.newWindow });
     }
-    const hiGap = Math.max(loGap, gapOf(g.hi));
     // Runs of one binding keep their relative order but take the WHOLE window: each push gets its own
     // slice, so a 20-push table spreads across its full room instead of clustering at the barrier.
     const ordered = g.free ? g.runs.filter((ri) => !g.free.has(ri)) : g.runs;
     const freeRuns = g.free ? g.runs.filter((ri) => g.free.has(ri)) : [];
     const gapsForRuns = placeEven(ordered.length, loGap, hiGap);
-    ordered.forEach((ri, k) => { items[gapsForRuns[k]].push({ idx: ri, key: g.name, pos: k }); });
+    let prevG = loGap;
+    ordered.forEach((ri, k) => {
+      const mg = minGapOf(ri);
+      let gg = mg > hiGap ? gapOf(ri) : Math.max(gapsForRuns[k], mg, prevG);
+      gg = Math.max(prevG, Math.min(hiGap, gg));
+      gg = openGap(gg, Math.max(prevG, loGap), hiGap, gapOf(ri));
+      prevG = gg;
+      items[gg].push({ idx: ri, key: g.name, pos: k });
+    });
     if (freeRuns.length) {
       const gapsForFree = placeEven(freeRuns.length, loGap, hiGap);
-      freeRuns.forEach((ri, k) => { items[gapsForFree[k]].push({ idx: ri, key: g.name + '\u0000' + ri, pos: 0 }); });
+      freeRuns.forEach((ri, k) => {
+        const mg = minGapOf(ri);
+        let gg = mg > hiGap ? gapOf(ri) : Math.max(gapsForFree[k], mg);
+        gg = Math.max(loGap, Math.min(hiGap, gg));
+        gg = openGap(gg, loGap, hiGap, gapOf(ri));
+        items[gg].push({ idx: ri, key: g.name + '\u0000' + ri, pos: 0 });
+      });
     }
   }
+  // standalone relocated declarations: one placed item each, inside its own legal range
+  for (const r of (p.standaloneReloc || [])) {
+    const gLo = gapOf(r.loIdx), gHi = gapOf(r.hiIdx);
+    if (gHi < gLo) continue;
+    const g = openGap(placeEven(1, gLo, gHi)[0], gLo, gHi, gapOf(r.idx));
+    items[g].push({ idx: r.idx, key: 'decl@' + r.names.join('+'), pos: 0 });
+    relocations.push({ body: block.start, name: r.names.join('+'), from: r.from, to: r.to, oldWindow: 0, newWindow: 0, standalone: true });
+  }
   // Within a gap: shuffle the GROUPS (so different origins stop sitting next to each other) but never
-  // the order inside one group — a run group's order is what keeps its binding correct.
+  // the order inside one group — a run group's order is what keeps its binding correct. A relocated
+  // declaration is the HEAD of its own chain: it must execute before any member write of its binding in
+  // the same gap (bug fixed 2026-09-28: the decl and its members carried different keys, so the gap
+  // shuffle could emit `T.p=v; const T={}` — TDZ ReferenceError at load, measured via the decoy-parity
+  // VM harness). The comparator only constrains decl-vs-own-members; everything else shuffles as before.
   for (const list of items) {
     const keys = [...new Set(list.map((x) => x.key))];
     for (let i = keys.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [keys[i], keys[j]] = [keys[j], keys[i]]; }
     const rank = new Map(keys.map((k, i) => [k, i]));
-    list.sort((a, b) => (rank.get(a.key) - rank.get(b.key)) || (a.pos - b.pos));
+    // a relocated declaration sorts at its binding's chain rank minus half a step: strictly before every
+    // member of that chain, inside the shuffled order. (A pairwise comparator with forced pairs is not
+    // transitive and TimSort silently drops it — measured: the TDZ case survived the pairwise version.)
+    const effRank = (x) => {
+      if (x.key.startsWith('decl@')) {
+        const nm = x.key.slice(5);
+        for (const k of keys) if (k === nm || k.startsWith(nm + '\u0000')) return rank.get(k) - 0.5;
+      }
+      return rank.get(x.key);
+    };
+    list.sort((a, b) => (effRank(a) - effRank(b)) || (a.pos - b.pos));
   }
   let order = [];
   for (let g = 0; g < gaps; g++) { for (const it of items[g]) order.push(it.idx); if (g < fixed.length) order.push(fixed[g]); }
@@ -1459,6 +2079,8 @@ for (const [block, p] of plans) {
   p.kindOf = kindOf;
 }
 
+// ---- BODY RUN EXPORT driver moved above (invoked before dissolution); nothing to run here.
+
 // ---- diagnostics: what the weave CANNOT move (WEAVE_DEBUG=2) ----
 if (debug) {
   const fixedRows = [];
@@ -1491,7 +2113,7 @@ if (debug) {
   console.error(`   [dissolve] ${dissolveStats.shells} shell(s) inlined (${(dissolveStats.bytes / 1024).toFixed(0)} KB of atom), ${dissolveStats.seqs} sequence(s) split into ${dissolveStats.parts} parts, ${dissolveStats.statements} statements placed; refused shape=${R.shape} returns=${R.returns} this/args=${R.thisArgs} async=${R.async || 0} labelled=${dissolveStats.labelled} scoped=${dissolveStats.scoped} renamed=${dissolveStats.renamed} directive=${R.directive} params=${R.params} privacy=${R.privacy}`);
   }
   if (process.env.WEAVE_RUN_EXPORT === '1' || process.env.WEAVE_BODY_CHUNK === '1') {
-    console.error(`   [export] ${exportStats.runs} pure run(s) lifted out of ${exportStats.bodies} body(ies) into helpers: ${exportStats.statements} statements, ${(exportStats.bytes / 1024).toFixed(0)} KB (no parent to host them: ${exportStats.noParent})`);
+    console.error(`   [export] ${exportStats.runs} chunk(s) lifted out of ${exportStats.bodies} body(ies) into parent-level helpers: ${exportStats.statements} statements, ${(exportStats.bytes / 1024).toFixed(0)} KB (no parent to host them: ${exportStats.noParent})${process.env.WEAVE_DEBUG === '1' ? ` · drops: small ${exportStats.dropSmall || 0} · escapes ${exportStats.dropEsc || 0} (call ${exportStats.dropCall || 0} · rebind ${exportStats.dropRebind || 0} · kind ${exportStats.dropKind || 0} · shrinkStuck ${exportStats.shrinkStuck || 0})` : ''}`);
   }
   if (seqStats.stmts) console.error(`   [seq] ${seqStats.stmts} comma-sequences split into ${seqStats.parts} statements (${(seqStats.bytes / 1024).toFixed(0)} KB of formerly atomic material)`);
   console.error(`   [mass] woven bodies cover ${inBodies} B of ${src.length} B (${(100 * inBodies / src.length).toFixed(1)}%); the rest is top-level code and non-woven function bodies`);
@@ -1619,9 +2241,20 @@ const out = chunks.map((c) => c.text).join('');
 // A helper is a synthetic declaration; a parent body that never reaches a plan is emitted verbatim, and the
 // helper's text would simply not exist in the output while its call still pointed at it. Refuse the build
 // instead of shipping that (the flag is off by default, so this can only fire in an experiment).
+// Symmetrically, the OWNER body must reach a plan: an unplanned body is emitted as its ORIGINAL source
+// slice — with the exported run still inside it — so the helper's bytes would appear twice (the content
+// check would catch it as duplication; refusing here names the cause instead).
 if (exportedHelpers.length) {
-  const homeless = exportedHelpers.filter((h) => !plans.has(h.parent));
-  if (homeless.length) throw new Error(`RUN EXPORT: ${homeless.length} helper(s) were declared in a body the arrangement never planned`);
+  // dissolution-proof placement check: every exported node (the helper declaration and its call) must
+  // be a member of some planned region by the time the plan is complete — dissolution/seq-splitting may
+  // have moved them up an ancestor body, which is fine as long as SOME plan places them. An unplaced call
+  // would be emitted verbatim from its source slice while the helper carried the same bytes: duplication.
+  const placed = new Set();
+  for (const p of plans.values()) for (const st of p.region) placed.add(st);
+  for (const h of exportedHelpers) {
+    if (!placed.has(h.node)) throw new Error(`RUN EXPORT: helper ${h.node.id.name} never placed in a planned body`);
+    if (!placed.has(h.call)) throw new Error(`RUN EXPORT: exported call for ${h.node.id.name} never placed (the run's bytes would be emitted twice) · owner planned ${plans.has(h.ownerBody)} · call still in ownerBody ${h.ownerBody.body.includes(h.call)} · parent planned ${plans.has(h.parent)} · owner stmts ${h.ownerBody.body.map((st) => st.type + (st.directive ? '/D' : '')).join(',')}`);
+  }
 }
 
 // ---- [debug] optional chunk map dump (WEAVE_MAP=path): {o0,o1,out,len} per chunk -----
@@ -1786,6 +2419,13 @@ let expectedCounts = bodyList.map((b, i) => {
       for (const nm of (g.reloc.names || [g.name])) if (reachesRead(p.region[i], nm)) {
         relocOk = false;
         if (debug) console.error(`   [reloc] body@${block.start} ${g.name}: statement ${i} can reach a read of ${nm} inside the widened span`);
+      }
+    }
+    for (const r of (p.standaloneReloc || [])) for (const nm of r.names) for (let i = r.loIdx; i < r.hiIdx; i++) {
+      if (i === r.from) continue;
+      if (reachesRead(p.region[i], nm)) {
+        relocOk = false;
+        if (debug) console.error(`   [reloc] body@${block.start} decl ${nm}: statement ${i} can reach a read inside its legal range`);
       }
     }
     const beforeFixed = p.region.map((_, i) => i).filter((i) => !movable.has(i)).join(',');

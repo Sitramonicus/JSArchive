@@ -1,0 +1,36 @@
+   boot: entry installed = true · GDBG = true · boot lines = 85
+
+================ CLEAN PAGE (no worker token) ================
+guard verdict      : dispatch
+guard why          : no worker token on the page when this paste started — the e-piece registers normally (the healthy path) · confirmed: the
+entry probe calls  : 2
+matrix: entry      : live · flag knob: live (2) · gate: live
+matrix: sink       : live · stall: open · e-piece: live · chain: no-chain · ledger: null
+GDBG lines captured: 87 · held by stall: 85
+  call             : pwdDbg(ret=true, chain no-chain (unchanged), level 0 -> 2)
+  call             : res/ak/view-or-other(ret=true, chain no-chain (unchanged), level 2 -> 2)
+  claim-surface    : 5 line(s) (verb receipts / view prints / walk notices)
+    | %c[GDBG] [21:43:13.904 +0.0s] [dropped-by-stall] [diag] early-stop {"step":1,"attempt":1,"released":true} color:#a60
+    | %c[GDBG] [21:43:13.904 +0.0s] [dropped-by-stall] [info] [walk] early-stop at step1 — no re-arm after release color:#a60
+    | [21:43:14.611 +0.7s] view: no roster hook and no ledger — the walk stopped before step4, or no session is behind this page
+    | %c[GDBG] [21:43:14.611 +0.7s] [diag] receipt {"verb":"view","hook":"fallback","note":"reason","ledger":"absent","ts":1790718194611} color:#0a7
+    | [21:43:14.611 +0.7s] [Google diag] receipt {"verb":"view","hook":"fallback","note":"reason","ledger":"absent","ts":1790718194611}
+   boot: entry installed = true · GDBG = true · boot lines = 73
+
+================ DIRTY PAGE (leftover worker token) ================
+guard verdict      : dispatch (token was pre-existing)
+guard why          : a token was already on the page when this paste started (unreleased), yet the session controller was created — the guard
+entry probe calls  : 2
+matrix: entry      : live · flag knob: live (2) · gate: live
+matrix: sink       : live · stall: open · e-piece: live · chain: no-chain · ledger: null
+GDBG lines captured: 75 · held by stall: 73
+  call             : pwdDbg(ret=true, chain no-chain (unchanged), level 0 -> 2)
+  call             : res/ak/view-or-other(ret=true, chain no-chain (unchanged), level 2 -> 2)
+  claim-surface    : 3 line(s) (verb receipts / view prints / walk notices)
+    | %c[GDBG] [21:43:15.635 +0.7s] [diag] receipt {"verb":"view","hook":"hook","note":"hook printed","ledger":"absent","ts":1790718195635} color:#0a7
+    | [21:43:15.635 +0.7s] [Google diag] receipt {"verb":"view","hook":"hook","note":"hook printed","ledger":"absent","ts":1790718195635}
+    | [21:43:15.635 +0.7s] view: no roster hook and no ledger — the walk stopped before step4, or no session is behind this page
+
+=== deliverable check ===
+report() renders  : yes (audit ok)
+clean vs dirty differ on the guard: true

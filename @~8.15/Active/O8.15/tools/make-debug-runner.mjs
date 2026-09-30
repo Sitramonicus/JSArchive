@@ -145,6 +145,7 @@ console.clear();
       if (err) throw err;
       return r;
     };
+    try { if (fn.__s3fb) wrapped.__s3fb = true; } catch (e) {}   // S3: preserve the fallback marker through the probe wrap
     G.hooks[h] = { state: 'attached' };
     return wrapped;
   };
@@ -241,6 +242,27 @@ const HARNESS_TAIL = `
   };
   const gate = () => { try { return _0xmod._rcdGate || null; } catch (e) { return null; } };
   const gateFlags = () => { const g = gate(); return g ? { dbg: !!g.dbgOK, rcd: !!g.rcdOK, level: g.level() } : { dbg: null, rcd: null, level: null }; };
+
+  // ---- residual audit (S3): token / pins / lex mode / level — read-only introspection, no persistent
+  // writes anywhere. The lexSetPins wrap forwards 1:1 and only records what the payload set.
+  let _pinsSeen = null;
+  try {
+    if (typeof globalThis.lexSetPins === 'function' && !globalThis.lexSetPins.__gdbgW) {
+      const _orig = globalThis.lexSetPins;
+      const _w = function (a) { try { _pinsSeen = Array.isArray(a) ? a.map(function (x) { return typeof x === 'number' ? x : String(x).slice(0, 24); }) : String(a).slice(0, 60); } catch (e) {} return _orig.apply(this, arguments); };
+      _w.__gdbgW = true;
+      globalThis.lexSetPins = _w;
+    }
+  } catch (e) {}
+  const residual = () => {
+    const tok = G.token();
+    return {
+      token: tok.present ? (tok.released ? 'present (released — stale)' : 'present (live)') : 'absent',
+      pins: _pinsSeen === null ? (typeof globalThis.lexSetPins === 'function' ? 'never-set (hook present)' : 'no lexSetPins hook') : _pinsSeen,
+      lexMode: (function () { try { return typeof globalThis.lexMode === 'undefined' ? 'unset' : String(globalThis.lexMode); } catch (e) { return 'err'; } })(),
+      level: gateFlags().level
+    };
+  };
 
   // guard verdict: the exact branch shard-e1 takes at boot
   const guardVerdict = () => {
@@ -354,7 +376,10 @@ const HARNESS_TAIL = `
     console.debug('%c[GDBG] ' + gv.branch + ': ' + gv.why, 'color:' + (gv.branch === 'STAND-DOWN' ? '#c00' : '#0a7'));
     const held = G.lines.filter((l) => l.stall === true && l.kind !== 'queue').length;
     if (held) console.debug('%c[GDBG] ' + held + ' line(s) in this capture were emitted while the stall was CLOSED — the shipped sink returns before emitting, so it DROPS them: they never enter the bounded buffer and no later flush can recover them.', 'color:#a60');
-    G.probe = { rows, guard: gv, held };
+    const res = residual();
+    console.debug('%c[GDBG] ===== residual =====', 'color:#06c;font-weight:bold');
+    console.debug('%c[GDBG] token ' + res.token + '  ·  pins ' + (Array.isArray(res.pins) ? res.pins.length + ' set' : res.pins) + '  ·  lexMode ' + res.lexMode + '  ·  level ' + res.level, 'color:#06c');
+    G.probe = { rows, guard: gv, held, residual: res };
     return G.probe;
   };
 
@@ -372,6 +397,9 @@ const HARNESS_TAIL = `
     p(''); p('-- chain walk (step1 -> step4; the worker and the begin/extend/roster fallbacks live inside step4) --');
     if (G.walk && G.walk.steps.length) { for (const x of G.walk.steps) p('  ' + x.name + '() -> ' + x.returned + ' (' + x.ms + ' ms)'); p('  verdict: ' + (G.walk.stopped ? ('walk STOPPED at ' + G.walk.stopped + ' — no later step ran') : 'walk reached step4')); }
     else p('  (no step logged — the walk had not started, or the e-piece never registered)');
+    p(''); p('-- residual (read-only) --');
+    { const res = (G.probe && G.probe.residual) ? G.probe.residual : residual();
+      p('  token ' + res.token + '  ·  pins ' + (Array.isArray(res.pins) ? res.pins.length + ' set' : res.pins) + '  ·  lexMode ' + res.lexMode + '  ·  level ' + res.level); }
     p(''); p('-- entry calls --');
     for (const e of G.events.filter((x) => x.kind === 'call')) p('  +' + (e.at / 1000).toFixed(1) + 's ' + JSON.stringify(e.detail) + (e.detail.settled ? '' : '   <-- NEVER SETTLED'));
     if (!G.events.some((x) => x.kind === 'call')) p('  (none — no passphrase was entered in this capture)');

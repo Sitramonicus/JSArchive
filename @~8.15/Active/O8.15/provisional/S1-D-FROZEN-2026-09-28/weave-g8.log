@@ -1,0 +1,14 @@
+   [count] (diagnostic, not gated under dissolution) body-count sets differ
+weave     : provisional/S1-A-fixed-2026-09-28/weave-in-chainA.js seed=2648369387
+bodies    : 392 woven of 3784 function bodies (11500 statements)
+moved     : 2258 hoisted functions · 6297 split runs over 139 groups (44 group(s) had no private window, 63 group(s) carry a call/read and stayed put)
+woven mass: 2168236 B = 97.7% of the file changed position
+bytes     : 2219300 -> 2224818 (+5518)
+metric    : longest single-origin run  before 110910 B  after 48575 B
+            worst 10%-window single-origin share  before 0.499  after 0.413
+   PASS  no statement text is dropped or duplicated (content conservation)
+   PASS  output re-parses
+   PASS  the same statements are present (permutation only)
+   PASS  fixed statements and every run group keep their relative order
+   PASS  relocated declarations widen the window without crossing a reachable read (304 relocated)
+weave     : written /var/tmp/s1b2/grid/g8-all3Exp.js

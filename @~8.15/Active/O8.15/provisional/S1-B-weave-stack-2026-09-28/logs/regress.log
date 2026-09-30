@@ -1,0 +1,157 @@
+   [shell-overlap] source=1198507:1198768 enclosing=1166740:1336322 enclosingCall=1166722:1336333 prior=1198507:1198768 — nested return already owned; excluding from enclosing return set
+   [shell-overlap] source=1198785:1198793 enclosing=1166740:1336322 enclosingCall=1166722:1336333 prior=1198785:1198793 — nested return already owned; excluding from enclosing return set
+   [hoist] 8 function value(s) given a declaration (473 KB), refused {"this":0,"args":0,"super":0,"newTarget":0,"named":0,"shape":0,"small":1152}
+   [runwrap] 33 run(s) wrapped in 1 body(ies) — 3703 statements, 290 KB moved into helpers; chunk 28 KB; barriers 6043 (of which not slice-safe 320); declarations hoisted out 0
+   [group] PLasmaь386: 8 runs, window gaps 5836, window bytes 2100463
+   [group] BI713: 8 runs, window gaps 5267, window bytes 1982921
+   [group] ON333: 13 runs, window gaps 5125, window bytes 1828836
+   [group] cAirn6045: 8 runs, window gaps 4931, window bytes 1677345
+   [group] cInde826: 8 runs, window gaps 4337, window bytes 1553551
+   [group] m濎Ssё虣虣1073: 7 runs, window gaps 3940, window bytes 1327410
+   [group] oRbit824: 4 runs, window gaps 3449, window bytes 1223034
+   [group] S欞roudқ103: 4 runs, window gaps 2886, window bytes 1125001
+   [group] P磆airie悚492: 20 runs, window gaps 2289, window bytes 842126
+   [group] Vi떚톚780: 24 runs, window gaps 6430, window bytes 1915274
+   [group] maシワザ911: 7 runs, window gaps 1388, window bytes 403083
+   [group] bloom398: 5 runs, window gaps 636, window bytes 293287
+   [group] prairieѧ떚뾃728: 3 runs, window gaps 371, window bytes 102474
+   [group] fﾎﾽﾜｸ744: 2 runs, window gaps 358, window bytes 88756
+   [group] m‍ҩб҆263: 12 runs, window gaps 6378, window bytes 1762682
+   [group] ci852: 300 runs, window gaps 300, window bytes 9443
+   [group] prairieツѽ105: 1 runs, window gaps 2, window bytes 375
+   [group] p핵257: 342 runs, window gaps 358, window bytes 11892
+   [group] har281: 147 runs, window gaps 150, window bytes 15679
+   [group] l끸ttice끸낥322: 184 runs, window gaps 187, window bytes 17675
+   [group] M갥du떗떚721: 300 runs, window gaps 300, window bytes 11876
+   [group] Fびήぜ137: 123 runs, window gaps 124, window bytes 89886
+   [group] Eng790: 2 runs, window gaps 2, window bytes 122
+   [group] Lattice婡ѽ樕854: 3 runs, window gaps 4, window bytes 156
+   [group] Pra957: 3 runs, window gaps 7, window bytes 382
+   [group] Prairieѽљ얓881: 3 runs, window gaps 5, window bytes 267
+   [group] Pi631: 3 runs, window gaps 7, window bytes 511
+   [group] Q鷑artzү590: 3 runs, window gaps 6, window bytes 266
+   [group] S륜gnal777: 3 runs, window gaps 8, window bytes 484
+   [group] Lみtticт822: 1 runs, window gaps 5, window bytes 487
+   [group] Pヹairieニゥ257: 300 runs, window gaps 300, window bytes 11456
+   [group] Grove701: 71 runs, window gaps 73, window bytes 5293
+   [group] p‌갥Airieӣ976: 300 runs, window gaps 300, window bytes 12000
+   [group] gRoуѓ냢466: 5 runs, window gaps 7, window bytes 5938
+   [group] pLasm휔떚ѻκ117: 3 runs, window gaps 2301, window bytes 601244
+   [group] vEctoћ393: 2 runs, window gaps 2, window bytes 6307
+   [group] pｦAirieｂｴ844: 2 runs, window gaps 2, window bytes 6199
+   [group] mAtrவϩஈ824: 457 runs, window gaps 466, window bytes 16791
+   [group] r륜Eӽ썚ӡ292: 6 runs, window gaps 6, window bytes 258
+   [group] VIvҝүέ460: 2 runs, window gaps 3, window bytes 302
+   [group] DElニホҟワ694: 479 runs, window gaps 482, window bytes 16643
+   [group] F떗Resҳ뾃2919: 537 runs, window gaps 544, window bytes 21217
+   [group] latt700: 4 runs, window gaps 4, window bytes 12406
+   [group] onyx751: 300 runs, window gaps 300, window bytes 9493
+   [group] ridgҫӟ儅521: 3 runs, window gaps 4, window bytes 218
+   [group] bけineみ784: 300 runs, window gaps 300, window bytes 12362
+   [group] prairieツѽ105: 1 runs, window gaps 2, window bytes 375
+   [group] lโtticeӻ968: 2 runs, window gaps 2, window bytes 6294
+   [group] emλ횧т836: 2 runs, window gaps 2, window bytes 6223
+   [group] shroud뜣낥496: 4 runs, window gaps 6, window bytes 366
+   [group] O끸yx585: 1 runs, window gaps 1, window bytes 86
+   [group] Eng790: 2 runs, window gaps 2, window bytes 122
+   [group] Lattice婡ѽ樕854: 3 runs, window gaps 4, window bytes 156
+   [group] Pra957: 3 runs, window gaps 7, window bytes 382
+   [group] Prairieѽљ얓881: 3 runs, window gaps 5, window bytes 267
+   [group] Pi631: 3 runs, window gaps 7, window bytes 511
+   [group] Q鷑artzү590: 3 runs, window gaps 6, window bytes 266
+   [group] S륜gnal777: 3 runs, window gaps 8, window bytes 484
+   [group] Lみtticт822: 1 runs, window gaps 5, window bytes 487
+   [group] Lattice婡ѽ樕854: 3 runs, window gaps 4, window bytes 156
+   [group] Pra957: 3 runs, window gaps 7, window bytes 382
+   [group] Prairieѽљ얓881: 3 runs, window gaps 5, window bytes 267
+   [group] Veв906: 1 runs, window gaps 3, window bytes 312
+   [group] Q鷑artzү590: 3 runs, window gaps 6, window bytes 266
+   [group] S륜gnal777: 3 runs, window gaps 8, window bytes 484
+   [group] Lみtticт822: 1 runs, window gaps 5, window bytes 487
+   [group] Prairieёҕҹӭ556: 2 runs, window gaps 8, window bytes 765
+   [group] Grove701: 71 runs, window gaps 73, window bytes 5293
+   [group] oN끸썚횧509: 48 runs, window gaps 53, window bytes 5560
+   [group] bL185: 1 runs, window gaps 2, window bytes 140
+   [group] bRi낥떗ַѐ528: 3 runs, window gaps 5, window bytes 421
+   [group] nE692: 2 runs, window gaps 5, window bytes 406
+   [group] pRairieѣ118: 2 runs, window gaps 2, window bytes 6337
+   [group] eM欞膫儅ְ468: 26 runs, window gaps 27, window bytes 13946
+   [group] r륜Eӽ썚ӡ292: 6 runs, window gaps 6, window bytes 258
+   [group] VIvҝүέ460: 2 runs, window gaps 3, window bytes 302
+   [group] STr728: 1 runs, window gaps 1, window bytes 72
+   [group] STr728: 1 runs, window gaps 1, window bytes 72
+   [group] P뾃Xelн춃511: 2 runs, window gaps 2, window bytes 239
+   [reloc-block] PLasmaь386: window 2051 KB, would be 1605 KB — blocked by "(none)"
+   [reloc-block] BI713: window 1936 KB, would be 1520 KB — blocked by "(none)"
+   [reloc-block] ON333: window 1786 KB, would be 1399 KB — blocked by "(none)"
+   [reloc-block] cAirn6045: window 1638 KB, would be 1301 KB — blocked by "(none)"
+   [reloc-block] cInde826: window 1517 KB, would be 1210 KB — blocked by "(none)"
+   [reloc-block] m濎Ssё虣虣1073: window 1296 KB, would be 1019 KB — blocked by "(none)"
+   [reloc-block] oRbit824: window 1194 KB, would be 941 KB — blocked by "(none)"
+   [reloc-block] S欞roudқ103: window 1099 KB, would be 860 KB — blocked by "(none)"
+   [reloc-block] P磆airie悚492: window 822 KB, would be 598 KB — blocked by "(none)"
+   [reloc-block] Vi떚톚780: window 1870 KB, would be 1720 KB — blocked by "(none)"
+   [reloc-block] maシワザ911: window 394 KB, would be 332 KB — blocked by "(none)"
+   [reloc-block] bloom398: window 286 KB, would be 249 KB — blocked by "(none)"
+   [reloc-block] prairieѧ떚뾃728: window 100 KB, would be 80 KB — blocked by "(none)"
+   [reloc-block] fﾎﾽﾜｸ744: window 87 KB, would be 77 KB — blocked by "(none)"
+   [reloc-block] m‍ҩб҆263: window 1721 KB, would be 1720 KB — blocked by "(none)"
+   [reloc-block] latt700: window 12 KB, would be 12 KB — blocked by "(none)"
+   [reloc-block] Grove701: window 5 KB, would be 5 KB — blocked by "(none)"
+   [reloc-block] oN끸썚횧509: window 5 KB, would be 5 KB — blocked by "(none)"
+   [reloc-block] bL185: window 0 KB, would be 0 KB — blocked by "(none)"
+   [reloc-block] bRi낥떗ַѐ528: window 0 KB, would be 1 KB — blocked by "(none)"
+   [reloc-block] nE692: window 0 KB, would be 0 KB — blocked by "(none)"
+   [reloc-block] eM欞膫儅ְ468: window 14 KB, would be 16 KB — blocked by "(none)"
+   [dissolve] biggest atoms left behind by a refusal (3 >= 20 KB):
+        32286 B @539952  privacy    "function(){var spϳ灎ω572={_0x29471f:\"0x278\",_0x4e5342:\"0x21e\""
+        24035 B @856135  privacy    "!function(s핵ro랒975){var flint6564={\"Latticeҥ얓ј썚588\":\"W2ng\",\""
+        22629 B @479107  privacy    "(function(sभreӈ३प3364){const sp419={A:259,c:130,T:399,S:242,"
+   [dissolve] 125 shell(s) inlined (616 KB of atom), 157 sequence(s) split into 681 parts, 2360 statements placed; refused shape=9774 returns=0 this/args=0 async=3 labelled=10 scoped=21 renamed=28 directive=0 params=0 privacy=17
+   [mass] woven bodies cover 2218741 B of 2219300 B (100.0%); the rest is top-level code and non-woven function bodies
+   [mass] movable inside those bodies 2022026 B; fixed inside them 196715 B
+   [reloc] 26 declaration(s) moved earlier: window widened by 14650 KB total (biggest 1720 KB)
+     F떗Resҳ뾃2919: window 21 KB -> 1626 KB
+     DElニホҟワ694: window 16 KB -> 1537 KB
+     VIvҝүέ460: window 0 KB -> 1518 KB
+     r륜Eӽ썚ӡ292: window 0 KB -> 1482 KB
+     mAtrவϩஈ824: window 16 KB -> 1228 KB
+   [fixed] biggest statements the weave leaves in place:
+      169611 B @1166722  function(Cinde826){var P떗asmaҍӷ851={"prAirieぢҳ834":324};const Vector94
+      169611 B @1166722  function(Cinde826){var P떗asmaҍӷ851={"prAirieぢҳ834":324};const Vector94
+      169611 B @1166722  function(Cinde826){var P떗asmaҍӷ851={"prAirieぢҳ834":324};const Vector94
+       86681 B @1217159  Cinde826._e[Streӟϟぢ995("0x1e2","0B^2")]=async Fみも゚510=>{const St402={"
+       86681 B @1217159  Cinde826._e[Streӟϟぢ995("0x1e2","0B^2")]=async Fみも゚510=>{const St402={"
+       62682 B @1527208  function(cגNde5164){var qUill807={qBApw:function(qUa580,vI꼒썖456){retur
+       60679 B @1529199  cגNde5164._e[sU썖뒜459(21,-89)]=async pRairie773=>{var h와Llo조ҙֵ253={};h와
+       60679 B @1529199  cגNde5164._e[sU썖뒜459(21,-89)]=async pRairie773=>{var h와Llo조ҙֵ253={};h와
+   [content] original statements 26527 · 2215543 B of statement text kept · merged chunks 741 · holes 0/0 B · duplicated 0 B
+   [count] output bodies 3703, expected 3703
+   [count] first divergence at #2935: output 1 vs expected 2
+   [count] terms: bodies_in_ast 3784 · stmts_in_ast 16149 · of which planned 11423 · helpers 33/3703 · splitExtra 0 · dissolveDelta 2195 · dissolvedShells 156 · chains 125
+   [count] statement totals: output 17263 vs expected 18621
+   [count] histogram diff (count: out/exp): 1:2923/2919 · 3:131/130 · 4:64/63 · 5:55/54 · 6:56/57 · 7:34/33 · 9:18/15 · 10:12/13 · 11:16/15 · 12:10/12 · 14:8/7 · 15:8/9 · 16:4/0 · 18:2/7 · 20:4/3 · 21:1/2 · 31:0/1 · 33:1/2 · 38:0/1 · 40:0/1 · 46:0/1 · 49:0/1 · 80:0/1 · 217:1/0 · 481:0/1 · 5783:1/0 · 6553:0/1
+   [count] (diagnostic, not gated under dissolution) body-count sets differ
+   [run] in@386549 len=115187 origin-bucket=4
+   [run] in@1640909 len=110910 origin-bucket=17
+   [run] in@967249 len=102374 origin-bucket=10
+   [run] in@582391 len=99851 origin-bucket=6
+   [run] in@96952 len=98953 origin-bucket=1
+   [run] out@1573977 len=48434 origin-bucket=15  src~1447365
+   [run] out@1476506 len=46663 origin-bucket=14  src~1350874
+   [run] out@1661907 len=45507 origin-bucket=16  src~1543856
+   [run] out@1249124 len=37051 origin-bucket=12  src~1157892
+   [run] out@1301689 len=34229 origin-bucket=13  src~1254383
+weave     : provisional/S1-A-fixed-2026-09-28/weave-in-chainA.js seed=2648369387
+bodies    : 369 woven of 3784 function bodies (11423 statements)
+moved     : 2229 hoisted functions · 6460 split runs over 79 groups (43 group(s) had no private window, 127 group(s) carry a call/read and stayed put)
+woven mass: 2022026 B = 91.1% of the file changed position
+bytes     : 2219300 -> 2222628 (+3328)
+metric    : longest single-origin run  before 115187 B  after 48434 B
+            worst 10%-window single-origin share  before 0.519  after 0.405
+   PASS  no statement text is dropped or duplicated (content conservation)
+   PASS  output re-parses
+   PASS  the same statements are present (permutation only)
+   PASS  fixed statements and every run group keep their relative order
+   PASS  relocated declarations widen the window without crossing a reachable read (26 relocated)
+weave     : written /tmp/s1b/regress.js

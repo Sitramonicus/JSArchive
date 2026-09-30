@@ -1,0 +1,170 @@
+== manifest parity: CC-33 pack vs r3 generated-output inventory
+   cc33 files: 328   r3 inventory entries: 150
+
+-- r3 tree kinds (first two path segments) vs CC-33 --
+   BUILD-SEED.txt                             r3:   0  cc33:   1  cc33-only
+   CARRIER-FLIP-DESIGN.md                     r3:   0  cc33:   1  cc33-only
+   DYNAMIC-DICTS-FEASIBILITY.md               r3:   0  cc33:   1  cc33-only
+   E-PIECE-PROTECTION-REVIEW.md               r3:   0  cc33:   1  cc33-only
+   R3-TO-8.14-REALIGNMENT.md                  r3:   0  cc33:   1  cc33-only
+   final-package                              r3:   1  cc33:   0  r3-only
+   final-package/O8.12-r2-Final-bundle.js.gz  r3:   1  cc33:   0  r3-only
+   final-package/O8.12-r2-Final-deflateraw.js.gz r3:   1  cc33:   0  r3-only
+   final-package/O8.12-r2-Final-gzip.js.gz    r3:   1  cc33:   0  r3-only
+   final-package/O8.13-r3-bundle-4d4c876a-gzip.js r3:   1  cc33:   0  r3-only
+   final-package/O8.13-r3-bundle-4d887795-deflateraw.js r3:   1  cc33:   0  r3-only
+   final-package/O8.13-r3-bundle-604f4434.js  r3:   1  cc33:   0  r3-only
+   final-package/O8.14-CC-33-final-bundle.js  r3:   0  cc33:   1  cc33-only
+   final-package/O8.6-Final-compressed-deflateraw.js r3:   0  cc33:   1  cc33-only
+   final-package/O8.6-Final-compressed-gzip.js r3:   0  cc33:   1  cc33-only
+   final-package/SHA256SUMS.r4-superseded.txt r3:   1  cc33:   0  r3-only
+   final-package/SHA256SUMS.sizes.txt         r3:   1  cc33:   0  r3-only
+   final-package/SHA256SUMS.txt               r3:   1  cc33:   1  matched
+   final-package/selected-shards              r3:  25  cc33:  23  matched
+   oto/.pre-split                             r3:   0  cc33:   7  cc33-only
+   oto/g7-strings                             r3:  26  cc33:  28  matched
+   oto/generated                              r3:   0  cc33:   4  cc33-only
+   oto/grep-noise.json                        r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.augment.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.csv          r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.csv.scrapped.csv r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.csv.stage.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-5k.scrub.json   r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-jso.csv         r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-jso.csv.scrapped.csv r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-jso.csv.stage.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.augment.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.csv   r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.csv.scrapped.csv r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.csv.stage.json r3:   0  cc33:   1  cc33-only
+   oto/identifiers-dictionary-runner-5k.scrub.json r3:   0  cc33:   1  cc33-only
+   oto/lanes-2026-09-20.tar.gz                r3:   0  cc33:   1  cc33-only
+   oto/mound-e                                r3:   0  cc33:   3  cc33-only
+   oto/registry-keymap.json                   r3:   0  cc33:   1  cc33-only
+   oto/rotation.json                          r3:   0  cc33:   1  cc33-only
+   oto/scripts                                r3:   0  cc33:  15  cc33-only
+   oto/u                                      r3:   2  cc33:   1  matched
+   oto/v1-jso-s3matrix                        r3:  13  cc33:  17  matched
+   oto/v2-jsc                                 r3:   9  cc33:   8  matched
+   oto/v4-closure                             r3:  13  cc33:  26  matched
+   oto/v5-terser                              r3:  13  cc33:  26  matched
+   oto/v6-esbuild                             r3:  13  cc33:  26  matched
+   oto/v7-swc                                 r3:  13  cc33:  26  matched
+   oto/v8-uglify                              r3:  13  cc33:  26  matched
+   reports/BUILD-STATUS-2026-09-20.md         r3:   0  cc33:   1  cc33-only
+   reports/CARRIER-KEYSTREAM-NOTE.md          r3:   0  cc33:   1  cc33-only
+   reports/board-b18.log                      r3:   0  cc33:   1  cc33-only
+   reports/board-b19-iteration2.log           r3:   0  cc33:   1  cc33-only
+   reports/board-b19.log                      r3:   0  cc33:   1  cc33-only
+   reports/board-b20.log                      r3:   0  cc33:   1  cc33-only
+   reports/board-b21.log                      r3:   0  cc33:   1  cc33-only
+   reports/board-b22.log                      r3:   0  cc33:   1  cc33-only
+   reports/board-b22f.log                     r3:   0  cc33:   1  cc33-only
+   reports/board-b23.log                      r3:   0  cc33:   1  cc33-only
+   reports/board-b23b.log                     r3:   0  cc33:   1  cc33-only
+   reports/build-b19.log                      r3:   0  cc33:   1  cc33-only
+   reports/build-b20.log                      r3:   0  cc33:   1  cc33-only
+   reports/build-b22.log                      r3:   0  cc33:   1  cc33-only
+   reports/carrier-flip.txt                   r3:   0  cc33:   1  cc33-only
+   reports/manifest-parity.txt                r3:   0  cc33:   1  cc33-only
+   reports/r3-gen-manifest.txt                r3:   0  cc33:   1  cc33-only
+   reports/repaste-b18.log                    r3:   0  cc33:   1  cc33-only
+   reports/repaste-b19.log                    r3:   0  cc33:   1  cc33-only
+   reports/split-equivalence-all.txt          r3:   0  cc33:   1  cc33-only
+   reports/split-equivalence-e-golden-NOTE.md r3:   0  cc33:   1  cc33-only
+   reports/split-equivalence-e-golden-b17.json r3:   0  cc33:   1  cc33-only
+   reports/split-equivalence-e-golden-delta-b17-b18.txt r3:   0  cc33:   1  cc33-only
+   reports/split-equivalence-e-golden.json    r3:   0  cc33:   1  cc33-only
+   reports/split-equivalence-e.txt            r3:   0  cc33:   1  cc33-only
+   reports/stego-b22.log                      r3:   0  cc33:   1  cc33-only
+   reports/uptime-trace-b18.log               r3:   0  cc33:   1  cc33-only
+   shards/retired                             r3:   0  cc33:   4  cc33-only
+   shards/shard-a.js                          r3:   0  cc33:   1  cc33-only
+   shards/shard-a.js.orig                     r3:   0  cc33:   1  cc33-only
+   shards/shard-aux1.js                       r3:   0  cc33:   1  cc33-only
+   shards/shard-aux2.js                       r3:   0  cc33:   1  cc33-only
+   shards/shard-c.js                          r3:   0  cc33:   1  cc33-only
+   shards/shard-c.js.orig                     r3:   0  cc33:   1  cc33-only
+   shards/shard-e-str1.js                     r3:   0  cc33:   1  cc33-only
+   shards/shard-e-str2.js                     r3:   0  cc33:   1  cc33-only
+   shards/shard-e.js.orig                     r3:   0  cc33:   1  cc33-only
+   shards/shard-e.js.pre-split                r3:   0  cc33:   1  cc33-only
+   shards/shard-e1.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-e2.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-e3.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-e4.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-h.js                          r3:   0  cc33:   1  cc33-only
+   shards/shard-h.js.orig                     r3:   0  cc33:   1  cc33-only
+   shards/shard-l.js                          r3:   0  cc33:   1  cc33-only
+   shards/shard-m-str.js                      r3:   0  cc33:   1  cc33-only
+   shards/shard-m1.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-m2.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-n1.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-n2.js                         r3:   0  cc33:   1  cc33-only
+   shards/shard-p-discord.js                  r3:   0  cc33:   1  cc33-only
+   shards/shard-p-slack.js                    r3:   0  cc33:   1  cc33-only
+   shards/shard-p-teams.js                    r3:   0  cc33:   1  cc33-only
+   shards/shard-p-telegram.js                 r3:   0  cc33:   1  cc33-only
+   shards/shard-p-zoom.js                     r3:   0  cc33:   1  cc33-only
+   shards/shard-u.js                          r3:   0  cc33:   1  cc33-only
+   stego-build/README-REMOVED.md              r3:   0  cc33:   1  cc33-only
+   stego-build/rotation.json                  r3:   0  cc33:   1  cc33-only
+   stego-build/stego11p-decoy.min.js          r3:   0  cc33:   1  cc33-only
+   stego-build/stego11p-honey.min.js          r3:   0  cc33:   1  cc33-only
+   stego-build/stego11p-tube.min.js           r3:   0  cc33:   1  cc33-only
+   tools/cc33-build.sh                        r3:   0  cc33:   1  cc33-only
+   tools/stitch-o85.py                        r3:   0  cc33:   1  cc33-only
+
+-- intentional differences (asserted, not assumed) --
+   1. shard set 12 -> 17 (c, h, l, e-str, m-str added)  => g7/v1/minify/s4 counts scale x17
+   2. lane archives are tarred (oto/lanes-*.tar.gz) to keep the workspace under the snapshot cap
+   3. stego outputs live in stego-build/ and the frozen r3 copies are NOT duplicated here
+   4. FaC-36 seal: no `_testMod` shard export exists in CC-33 (r3 had one)
+   5. dictionaries are scrubbed + augmented and carry stage sidecars (*.scrub.json / *.augment.json)
+
+-- CC-33 files by stage --
+   oto                   230 files  14405 KB
+   shards                 32 files  713 KB
+   final-package          27 files  7915 KB
+   reports                27 files  308 KB
+   stego-build             5 files  8 KB
+   tools                   2 files  9 KB
+   BUILD-SEED.txt          1 files  0 KB
+   CARRIER-FLIP-DESIGN.md    1 files  9 KB
+   DYNAMIC-DICTS-FEASIBILITY.md    1 files  5 KB
+   E-PIECE-PROTECTION-REVIEW.md    1 files  15 KB
+   R3-TO-8.14-REALIGNMENT.md    1 files  12 KB
+
+-- checksum manifest (release-path files) --
+820f06c2953835d2c659580b84d77d92f087623737b4fbb2562b3ecb34948004  final-package/O8.14-CC-33-final-bundle.js  2764116
+e1b25f7209d1f2fee8e8d3d5579e71654dfba6defdb50f4a0aaec825e14c98f8  final-package/O8.6-Final-compressed-deflateraw.js  1430479
+a6cd95aa77a20159b48cc7f45cde191504512beb32d7969efe4eae4f4555592d  final-package/O8.6-Final-compressed-gzip.js  1430613
+997482b266bd2fc5b4a1e974032d19a2354b27b5392813bdb2af2d3b952be10e  final-package/selected-shards/shard-a-v1.js  49085
+0e97a1d0fd9402c68ab27591d7076da06bb0c95746cc30ff499a9af2cf294177  final-package/selected-shards/shard-aux1-v8.js  25940
+608f0360b5f5f6f95473f224ac1985f6853679f68f4906a72dda75f03031bcd9  final-package/selected-shards/shard-aux2-v4.js  26460
+a8fd8354f12cacabd2298acca8f7a604defb71335555c70926b71cf3334507da  final-package/selected-shards/shard-c-v1.js  123350
+9aa1a87a529ffa5b4cf37013f05dfea6ddb4ff644360f5a245c7a0837a222262  final-package/selected-shards/shard-e-str1-v1.js  158657
+6819a9aec27eba5a9bc797f8f1f62363ea66939cee25ea6c58e02c2c7ee17140  final-package/selected-shards/shard-e-str2-v4.js  101246
+6a19f3195fa719662a6f423587fc516c4f44169f958e034a76568b8978b8bf11  final-package/selected-shards/shard-e1-v1.js  440656
+1f6082bbb97fc1ccdf76dec9e5f076c6b9a0f7cfa05458a1393c78858b48a382  final-package/selected-shards/shard-e2-mound.js  110740
+8413a47c4ee0e7bb921b4c08d2a7f7fadcf560b8a86a68ce0aa9d8979a4ba03e  final-package/selected-shards/shard-e3-mound.js  107177
+bc516b0f422984b8527ca8e904c100dbf0b25d681d308e052bea8e7d551005e5  final-package/selected-shards/shard-e4-mound.js  135096
+9a0844fcdad23f12558c860bd20f8bda3c34cd5010f7fb93139396b91918acec  final-package/selected-shards/shard-h-v1.js  129856
+50ad1ad1af5fa41ff9084efea18b1b1ab98440eb12c2fecd8d98bc11dd143f2e  final-package/selected-shards/shard-l-v1.js  21622
+9f22c4d48351f496e374ff425ff3f71a16a30d1d580622cba02cf7d570a27014  final-package/selected-shards/shard-m-str-v1.js  60088
+1a74e89c09e60d9567dff4c05830584abce46a8982e909e3aa2c0ee50c82bf48  final-package/selected-shards/shard-m1-v2.js  81993
+e0aff07dc3c2279f43cf3cac310744b926fa949ad7e8f095ac0c44a4ba81781f  final-package/selected-shards/shard-m2-v5.js  15450
+3508673c87209bae899ef5e8b73491a558d2ac12005e7f4a30d0922f065c2c98  final-package/selected-shards/shard-n1-v6.js  24714
+7ea7f480bd2643651169508b574e0cc764167e36a7b1fe6af924de33fcc2faae  final-package/selected-shards/shard-n2-v7.js  19371
+3c8b970128a3da2d747117bc8c2c3d38f89af79ef8729edc6aa2d0ebf7676142  final-package/selected-shards/shard-p-discord-v1.js  164084
+403ee3c79651679936cfcb62a07564520490604a15df58aad86e662c7e749515  final-package/selected-shards/shard-p-slack-v1.js  128626
+aad75ce0bc63cefd29a373c54275b60776a37da3216b637aba1adf79d276628f  final-package/selected-shards/shard-p-teams-v1.js  174237
+9416e94ae3c64ce255ee3a7cdd8bf3cc4e96cc0076bea4c6c7ed38e728300c61  final-package/selected-shards/shard-p-telegram-v1.js  133217
+fb15a81d0e9a538b79529da328bf98f5a7ee08d3674d7aaf5740ad3202d6e492  final-package/selected-shards/shard-p-zoom-v1.js  224490
+aa7bb0c3d88e425d07153dfb8678b08268d7f04b4af2450245493eee7c64becb  final-package/selected-shards/shard-u-v4.js  23065
+2b93881587f2842bb787f1731fa859a86224d4ce839f1543e1e78d1499fc8627  final-package/SHA256SUMS.txt  292
+05957093c693e643b1d00a909d8de87a97c3b9a4f3e5f7d797e79e988d1b0b74  stego-build/README-REMOVED.md  1305
+5bc7746cd765be520a3810ad4e4e301e6af6530314a4cdd131dd6fc1da63745e  stego-build/rotation.json  629
+55895e58b97e600182d0ca474c35e09d12b906e5e57e76a402990f1cc7169511  stego-build/stego11p-decoy.min.js  3112
+88397e567aa68455dd6005369a5f6f1b2e2236a834f01b4c6157e80e5704797a  stego-build/stego11p-honey.min.js  1230
+ed0db1cdf524bc23057f681c1678c85ccbb664ef932440ee0f08db9866800676  stego-build/stego11p-tube.min.js  2242

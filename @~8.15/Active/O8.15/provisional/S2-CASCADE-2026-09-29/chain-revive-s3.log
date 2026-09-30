@@ -1,0 +1,31 @@
+== chain revive check (cold venue -> claim -> venue registers)
+   PASS  C1  the cold boot still publishes the chain surface (names + arm hook)
+           [names:true/7 missing:[] arm:function chain:"waiting-pockets"]
+   PASS  C2  a cold venue is recorded as a NAMED waiting state, not a silent stop
+           [_0xchain = "waiting-pockets"]
+   PASS  C3  a cold boot no longer loses the worker entry points (they used to be skipped)
+           [_0xseed:yes begin:yes extend:yes roster:yes]
+   PASS  C7  the shipped entry piece publishes the hold + stand-down surface at runtime
+           [holdKey:function lift:function standDown:function reason:string sinkOpen:function entryRef:function]
+   PASS  C4  a claim on a cold page is accepted and does not pretend work happened
+           [arm()=false (false is correct while the venue is cold)]
+   PASS  C5  once the venue registers, the same page arms again and the worker runs
+           [chain "live" / warm=true / new log lines: 2]
+   PASS  C6  ending a session does not throw the venue handles away (the old "store dead" cause)
+           [handles kept 9/9 · teardown ran:false · ledger closed:false · nine-slot nulling in e4:false · chain "live"]
+   PASS  C8  a claim through the shipped entry point drives the revival (both slots)
+           [published at boot:true · rcd: answer=true claimed=true arm=1 begin=1 · dbg: answer=true claimed=true arm=1 begin=1 · worker entered: rcd=true dbg=true]
+   PASS  C8b  a claim on a released page is accepted but starts nothing (no doomed run)
+           [answer=true claimed=true begin called=1 worker entered:false released flag:true]
+   PASS  C9  a finished session is not relaunched by the retry (the restart storm)
+           [worker starts after close: 0 · phase-st added: 0 · chain "closed"]
+   PASS  C10  a second claim while a session is live does not start another worker
+           [staged live session · second claim begin() calls:0 chain live:true]
+   PASS  C12  a vanished ledger stops the session loop cleanly (no null-ledger TypeError)
+           [entered the loop with a nulled ledger · threw:no · bad lines:0 · chain after "waiting-capability" · new lines:0]
+   PASS  C12s  the shipping piece only loops while the ledger is an array (guard present in shipped bytes)
+           [mounded: isArray looked up through the table]
+   PASS  C11  channel labels survive a table wipe (no more "[Google ]" blanks)
+           [wiped:true before:[C0,C6,C9] after:[C0,C6,C9]]
+
+== chain revive: PASS (14/14)

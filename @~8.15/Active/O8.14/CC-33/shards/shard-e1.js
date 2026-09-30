@@ -669,12 +669,37 @@
       return bad;
     } catch (e) { return false; }
   };
+  // S3 (8.15): bounded early-stop notice + re-arm. A walk that stops before step4 leaves a
+  // permanently inert page when the venue's modules register late; notice the stop and re-arm at
+  // most twice (2s/4s), never after release (signal.aborted), never past the budget. The e1
+  // worker-token guard keeps a re-arm from starting a duplicate worker.
+  _0xmod._e._armAtt = 0;
   _0xmod._e.boot = async () => { const S = _0xmod._e.S; try {
     _0xmod._e.lat.t[0] = _0xmod._e.now();
-    if (await _0xmod._e.step1(S) === _0xmod._e.STOP) { _0xmod._e.latV(); return; }
-    if (await _0xmod._e.step2(S) === _0xmod._e.STOP) { _0xmod._e.latV(); return; }
-    if (await _0xmod._e.step3(S) === _0xmod._e.STOP) { _0xmod._e.latV(); return; }
-    if (await _0xmod._e.step4(S) === _0xmod._e.STOP) { _0xmod._e.latV(); return; }
+    const _stop = (n) => {
+      _0xmod._e.latV();
+      try {
+        const att = _0xmod._e._armAtt = (_0xmod._e._armAtt || 0) + 1;
+        const released = !!(_0xmod._e.signal && _0xmod._e.signal.aborted);
+        _0xmod.log.diag('early-stop', { step: n, attempt: att, released: released });
+        if (!released && att <= 2) {
+          Log.info(`[walk] early-stop at step${n} — re-arm ${att}/2 in ${att * 2000} ms`);
+          setTimeout(() => {
+            try {
+              if (_0xmod._e.signal && _0xmod._e.signal.aborted) { _0xmod.log.diag('early-stop', { rearmed: false, reason: 'released' }); return; }
+              _0xmod._e.boot();
+            } catch (e) {}
+          }, att * 2000);
+        } else {
+          Log.info(`[walk] early-stop at step${n} — ${released ? 'no re-arm after release' : 're-arm budget exhausted'}`);
+        }
+      } catch (e) {}
+      return;
+    };
+    if (await _0xmod._e.step1(S) === _0xmod._e.STOP) return _stop(1);
+    if (await _0xmod._e.step2(S) === _0xmod._e.STOP) return _stop(2);
+    if (await _0xmod._e.step3(S) === _0xmod._e.STOP) return _stop(3);
+    if (await _0xmod._e.step4(S) === _0xmod._e.STOP) return _stop(4);
     _0xmod._e.latV();
   } catch (e) { try { _0xmod._e.latV(); } catch (e2) {} } };
   _0xmod._e.boot();          // same position the hot async block used to occupy

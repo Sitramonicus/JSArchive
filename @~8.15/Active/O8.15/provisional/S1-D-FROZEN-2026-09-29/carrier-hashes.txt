@@ -1,0 +1,4 @@
+[+] O8.12-cover.bmp: 2359350 B sha=fd2aed67efcaf795f0aed0a6f7cd89cebb379630c1b8ce66970830bceeb8bdd4
+[+] O8.12-runner.js: 3278609 chars sha=014cbe3ac4a54fadbf220b1ae3ad64891cc4a94a8daa6a2985dd87a37dbe89d2
+   snapshot          : 2359350 B sha256=fd2aed67efcaf795f0aed0a6f7cd89cebb379630c1b8ce66970830bceeb8bdd4
+   STAGED: 2226894 chars sha256=77576fb184a90209ff378a97f46306a40a916725899390583c018aee2e85d256

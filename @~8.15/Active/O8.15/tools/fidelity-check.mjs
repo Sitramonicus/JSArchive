@@ -85,7 +85,7 @@ const A = bundle ? await runOne('shipped-bundle', bundle) : { label: 'shipped-bu
 const B = await runOne('raw-stitch', stitch);
 const C = await runOne('debug-runner', runner);
 
-const norm = (l) => l.replace(/\d{2}:\d{2}:\d{2}\.\d{3}/g, 'TIME').replace(/\+\d+\.\d+s/g, '+Ts').replace(/\[MemberCount\][^"]*/g, '[MemberCount]');
+const norm = (l) => l.replace(/\d{2}:\d{2}:\d{2}\.\d{3}/g, 'TIME').replace(/\+\d+\.\d+s/g, '+Ts').replace(/\[MemberCount\][^"]*/g, '[MemberCount]').replace(/"ts":\d+/g, '"ts":T');
 const cmp = (x, y) => {
   const a = x.lines.map(norm), b = y.lines.map(norm);
   const n = Math.max(a.length, b.length);

@@ -60,6 +60,9 @@ async function run(label, { dirty }) {
     console.log('GDBG lines captured:', gdbg ? gdbg.lines.length : 0, '· held by stall:', gdbg ? gdbg.lines.filter((l) => l.stall === true).length : 0);
     const calls = (gdbg ? gdbg.events.filter((e) => e.kind === 'call') : []).map((e) => `${e.detail.slot}(ret=${e.detail.returned}, chain ${e.detail.chain}, level ${e.detail.level})`);
     for (const c of calls) console.log('  call             :', c);
+    const csLines = lines.filter((l) => /receipt|Ledger:|view:|early-stop|\[walk\]/.test(String(l)));
+    console.log('  claim-surface    :', csLines.length, 'line(s) (verb receipts / view prints / walk notices)');
+    for (const l of csLines.slice(0, 12)) console.log('    |', String(l).slice(0, 150));
     const guardLines = lines.filter((l) => /already on shift|standing down|spare/i.test(l));
     if (guardLines.length) console.log('  guard line seen  :', guardLines[0].slice(0, 130));
     return { lines, audit };

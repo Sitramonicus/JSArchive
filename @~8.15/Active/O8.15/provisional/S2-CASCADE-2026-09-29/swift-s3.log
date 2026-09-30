@@ -1,0 +1,12 @@
+== runner gates ==
+== 26 passed, 0 failed
+== 42 passed, 0 failed (1 skipped)
+== payload gates ==
+== hold check: PASS
+== 14 passed, 0 failed
+   => PASS
+   no URLs attempted
+   => PASS — 34 dangling name(s) total, 0 on an ERROR PATH (those are the ones that fire when an unrelated throw happens)
+   PASS — the fallback garden and the decoy artifact print the identical output
+   note: leakcensus stays a documented red (G3=4) until the D5 normaliser lands — see DECISIONS.md
+== done ==

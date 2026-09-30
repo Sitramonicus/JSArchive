@@ -1,0 +1,14 @@
+   [count] (diagnostic, not gated under dissolution) body-count sets differ
+weave     : /var/tmp/cc34-tmp/cc34-weave-in.js seed=2648369387
+bodies    : 369 woven of 3784 function bodies (11423 statements)
+moved     : 2229 hoisted functions · 6460 split runs over 79 groups (43 group(s) had no private window, 127 group(s) carry a call/read and stayed put)
+woven mass: 2022026 B = 91.1% of the file changed position
+bytes     : 2219300 -> 2222628 (+3328)
+metric    : longest single-origin run  before 115187 B  after 48434 B
+            worst 10%-window single-origin share  before 0.519  after 0.405
+   PASS  no statement text is dropped or duplicated (content conservation)
+   PASS  output re-parses
+   PASS  the same statements are present (permutation only)
+   PASS  fixed statements and every run group keep their relative order
+   PASS  relocated declarations widen the window without crossing a reachable read (26 relocated)
+weave     : written /var/tmp/cc34-repro/weave-out.js

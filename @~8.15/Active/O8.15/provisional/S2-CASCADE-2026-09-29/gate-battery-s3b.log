@@ -1,0 +1,63 @@
+===== stego11-matrix =====
+  PASS TUBE gunzips to minTube
+  PASS P-pocket telegram printability (<0.15)
+  PASS P-pocket teams printability (<0.15)
+  PASS P-pocket zoom printability (<0.15)
+  PASS P-pocket slack printability (<0.15)
+== 26 passed, 0 failed
+-- exit 0 --
+===== stego11-tiers =====
+  PASS PSNR/grain pinned
+  PASS P-pocket telegram api present (G7)
+  PASS P-pocket teams api present (G7)
+  PASS P-pocket zoom api present (G7)
+  PASS P-pocket slack api present (G7)
+== 42 passed, 0 failed (1 skipped)
+-- exit 0 --
+===== carrier-flip =====
+  PASS F4-grain covers strip tail + gap  [range=[7280,119670) n=112390 maxZeroRun=7 zeros=24.8%]
+  PASS F4-grain entropy ~2.0 bits over 4 symbols  [H=2.0000 syms=27928/28231/28052/28179]
+  PASS F4-grain is not the clean cover's LSBs  [matchClean=24.8%]
+  PASS F4-plaque bits 2-7 preserved under grain  [slips=0]
+  PASS F5-PG3 garden decoy intact  [decoy=1658B gz=1658B]
+== 12 passed, 2 failed
+-- exit 0 --
+===== repaste =====
+......................##......
+.....................###...#..
+..##.................#..#...#.
+.#.#..
+        Plot journal: peak 131 sprouts, 596 births over 16 generations.
+        Garden settled. (30x14, 16 generations)
+-- exit 0 --
+===== hold =====
+   PASS  H7  a cold venue no longer kills the chain (no fatal STOP; arm/seed/begin hooks published)  [e1:true e2seed:true e4begin:true]
+   PASS  H8  a claim revives the chain, and session end keeps the venue handles  [shard-a revive:true claimed flag:true teardown keeps handles:true]
+   PASS  H9  the shipped payload carries the revive surface  [_0xarm:literal _0xchain:literal _0xclaimed:encoded _0xseed:encoded · runtime: seed=true begin=true chain=waiting-capability]
+
+   semantics (all four states) belong to gate-replay: tools/gate-replay.mjs <slots…> --spec  (S11)
+== hold check: PASS
+-- exit 0 --
+===== decoy-parity =====
+== decoy parity: stego11p-real.min.js vs stego11p-decoy.min.js
+   profile="佐藤 結衣"  会員=2
+   real:  19 garden line(s)  [Pixel Garden v2.0 — tended by 佐藤 結衣]
+   decoy: 19 garden line(s)  [Pixel Garden v2.0 — tended by 佐藤 結衣]
+   PASS — the fallback garden and the decoy artifact print the identical output
+-- exit 0 --
+===== detector =====
+   P1 fold      27 foldable strings, 42 decoded blobs -> opaque
+      vocab=- roadmap=-
+   P2 globals   5 published (0 outside the loader contract) -> clean
+   P3 host      limited (Math[ember9757or(...)] is not a function)
+   P4 modules   0 registry objects, 0 named keys -> opaque
+   => PASS
+-- exit 0 --
+===== netwatch =====
+netwatch: 2134364 B, 1497 ms, verdict=ran, logs=2
+our log lines (first 8):
+   CLEAR
+   dbg:[22:19:49.206 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+after init: network-primitive calls=0 {}
+   no URLs attempted
+-- exit 0 --

@@ -1,0 +1,17 @@
+   parse error at 570763: 'await' is only allowed within async functions and at the top levels of modules. (1:570763)
+   … "L斟Tticeџ495(PRairie똛낥륜358[\"engineϊ륜х664\"],\"0x502\")](quӻｑﾫϱה403[L斟Tticeџ495(PRairie똛낥륜358[\"p조airieף갥ӈ697\"],PRairie똛낥륜358[\"prairieϣψӎϗ823\"])](1613248029),PLa113),await new Promise(S떚Gna떚ύ740=>setTimeout(S떚Gna떚ύ740,20));const Q֫Ҡџׂ755={channel"
+   wrote /tmp/s1b/solo.js.broken for inspection
+   [count] (diagnostic, not gated under dissolution) body-count sets differ
+weave     : provisional/S1-A-fixed-2026-09-28/weave-in-chainA.js seed=2648369387
+bodies    : 369 woven of 3784 function bodies (11444 statements)
+moved     : 2250 hoisted functions · 6460 split runs over 79 groups (43 group(s) had no private window, 127 group(s) carry a call/read and stayed put)
+woven mass: 2184761 B = 98.4% of the file changed position
+bytes     : 2219300 -> 2223440 (+4140)
+metric    : longest single-origin run  before 115187 B  after 48506 B
+            worst 10%-window single-origin share  before 0.519  after 0.409
+   PASS  no statement text is dropped or duplicated (content conservation)
+   FAIL  output re-parses
+   PASS  the same statements are present (permutation only)
+   PASS  fixed statements and every run group keep their relative order
+   PASS  relocated declarations widen the window without crossing a reachable read (26 relocated)
+REFUSING TO SHIP: a self-check failed — measurement copy written to /tmp/s1b/solo.js.broken (never a candidate)

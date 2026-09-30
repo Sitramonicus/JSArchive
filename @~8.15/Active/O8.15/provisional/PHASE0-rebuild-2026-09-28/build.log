@@ -1,0 +1,108 @@
+[engines] installing…
+== CC-34 build: bundle=O8.14-bundle-820f06c2.js cover=stego2-cover-1024-scaled.bmp split=on/4000 ==
+=== [1] Cover (+ house salt) ===
+[+] cover OK 1024x768x24 salt=0x3f72a1ec
+=== [2] Payloads (minify -> gzip) ===
+[gate] error-path dangle repair: nothing to declare
+[NORM] normalise : /var/tmp/cc34-tmp/cc34-norm-in.js (2101166) -> /var/tmp/cc34-tmp/cc34-norm-out.js (2101159, -7)
+[NORM] edits     : 6  {"ident":4,"dispatch":2}
+[NORM]    PASS  no bare `_0xpocketsMissing` left
+[NORM]    PASS  no bare `pocketsMissing` left
+[NORM]    PASS  no bare `IS_SYMBOL_NATIVE` left
+[NORM]    PASS  no `.dispatch` property access left
+[NORM]    PASS  runtime string "dispatch" still reachable (escaped form present)
+[NORM]    PASS  output re-parses
+[NORM] normalise : OK
+[SPLIT p1] applied     : 75 candidate(s), 8 skipped (under-run)
+[SPLIT p1] delta       : +118339 chars (5.63%)
+[SPLIT p1] literal seq : identical (76951 literals, same order) — gate PASS
+[SPLIT p1] written     : /var/tmp/cc34-tmp/cc34-split-out.js (2219498 chars)
+[SPLIT] minReal 2219498 chars after the split (-161950)
+[DEEP] [DISSOLVE] 21 of 31 shells dissolved — 884K moved into the flow
+[DEEP] [DISSOLVE] refused : async/generator=31K  mid-return=17K  multi-return=63K
+[DEEP] [LIFT]     0 declarations lifted — 0K
+[DEEP] [LIFT]     refused : free-name-not-at-master=40K  init-not-pure=1K
+[DEEP] [EXTRACT]  14 table runs moved to the master flow — 444K of pushes
+[DEEP] [GATES]
+[DEEP]    PASS  dissolved output re-parses
+[DEEP]    PASS  literal multiset identical (dissolution evaluates the same literals)  81703 literals
+[DEEP]    PASS  identifier multiset identical (no reference lost or invented)  100724 identifiers
+[DEEP]    PASS  lifted output re-parses
+[DEEP]    PASS  every lifted name has exactly one declaration  0 names
+[DEEP]    PASS  extracted output re-parses
+[DEEP]    PASS  extracted literal multiset identical  81703 literals
+[DEEP] written    : /var/tmp/cc34-tmp/cc34-deep-out.js (2219300 chars, -198)
+[WEAVE] weave     : /var/tmp/cc34-tmp/cc34-weave-in.js seed=2648369387
+[WEAVE] bodies    : 367 woven of 3784 function bodies (12948 statements)
+[WEAVE] moved     : 1741 hoisted functions · 9540 split runs over 32 groups (18 group(s) had no private window, 66 group(s) carry a call/read and stayed put)
+[WEAVE] woven mass: 987118 B = 44.5% of the file changed position
+[WEAVE] bytes     : 2219300 -> 2221162 (+1862)
+[WEAVE] metric    : longest single-origin run  before 115219 B  after 84877 B
+[WEAVE]             worst 10%-window single-origin share  before 0.519  after 0.461
+[WEAVE]    PASS  output re-parses
+[WEAVE]    PASS  every body keeps its statement count (split-aware)
+[WEAVE]    PASS  the same statements are present (permutation only)
+[WEAVE]    PASS  fixed statements and every run group keep their relative order
+[WEAVE]    PASS  relocated declarations widen the window without crossing a reachable read (0 relocated)
+[WEAVE] weave     : written /var/tmp/cc34-tmp/cc34-weave-out.js
+[WEAVE] seed=2648369387 (0x9ddae8eb)
+[CONSTR] == constraint pass (step 4) on cc34-weave-out.js — 2221162 chars
+[CONSTR]    PASS  C1-same-name-decls     3744 function bodies scanned, 0 carry a duplicated declaration name — nothing for an arrangement to reorder
+[CONSTR]    PASS  C2-private-windows     24 run group(s) / 172 push statement(s); statements INSIDE a run window that cannot reach a read of it: 55776 (placed freely); violations: 0; trailing pushes on the same binding: 0; hoisted declarations dealt inside a run (transparent, expected): 3816
+[CONSTR]    PASS  C3-registration-order  movable statements executing at their position checked for 21 API names: 0 hit(s)
+[CONSTR]    PASS  C4-shared-root-writes  run group(s) whose write shape is not exactly one declaration + pushes: 0
+[CONSTR]    PASS  C5-array-content-order 39 binding(s) with >=2 pushes compared pre/post; mismatched: 0
+[CONSTR]    movable set: 1998 statement(s) = 970662 B (43.7% of the file)
+[CONSTR]    => PASS — 5/5 checks green; the movable set survives the pass unchanged
+[HNT-GREP] re-appended 180 noise strings after terser (+2727 B) from Active/O8.14/CC-33/oto/grep-noise.json
+[G8] repinned for minReal: b38a596c,8a0a0d27,87a74bb2
+[WARN] minReal 2223890 != 1626945 (r3, was 1626945)
+[WARN] gzReal 1068628 != 743751 (r3)
+[+] real: min 2223890 -> gzip 1068628
+[+] decoy: min 3066 -> gzip 1658
+[WARN] minHoney 1182 != 1184 (r3)
+[WARN] gzHoney 726 != 727 (r3)
+[+] honey: min 1182 -> gzip 726
+[WARN] minTube 2194 != 2196 (r3)
+[WARN] gzTube 1189 != 1191 (r3)
+[+] tube: min 2194 -> gzip 1189
+=== [3] Real embed (carrier=r31) ===
+[+] seed=0x6d7f0c87 (canon bits 7)
+[+] round-trip OK: real 1068628 B, decoy 1658 B, grain 112390 B (gap 20642 B)
+[+] decoy strip keystream seed 52375 from 1024x768x24 (loader recomputes the same)
+[+] cover slack 574 B -> strip @628, channel base @99028 (loader + reels recompute from the header)
+[+] tail grain reel0: 102296 slots (25574 B equivalent) — 0 payload bytes
+[+] tail grain reel1: 102029 slots (25507 B equivalent) — 0 payload bytes
+[+] tail grain total: 204325 slots
+[+] carrier r31 reel0 (pixel bits 0-1) RS=119670 R_LEN=2239680 need=2137384 slots occ=95.43% headroom=25574 B
+[WARN] reel0 occupancy 95.4% > 92% — pair any further payload growth with a 3rd reel or a bigger cover
+[+] carrier r31 reel1 (pixel bits 2-3) RS=119941 R_LEN=2239409 need=2137380 slots occ=95.44% headroom=25507 B
+[WARN] reel1 occupancy 95.4% > 92% — pair any further payload growth with a 3rd reel or a bigger cover
+[+] carrier r31 (2-bit x 2 reels) total 4274764 slots, decoy 6652/98400 symbols, grained 112390 B
+=== [4] Runner ===
+[+] carrier=r31 real reel source stego10-legacyreel-src-v31.js (2817 chars)
+[+] reel tables: 7 (real=2817, honey~1951)
+[+] board blobs: 8/9/10/11 x 726 codes (uniform courtesy dispatch, DS-1)
+[+] tube blob: 1189 codes
+[+] loader pins: f74c6976,c463f5f2
+[ARM A] deal regenerated in the loader from s=0x252a0e63 — o0..o3 not published (98029 B dropped)
+[ARM A] runner carries no o0..o3 map (checked)
+[+] line1 variant 0: "var 会員 = 2; var 名 = \"佐藤 結衣\"; console.clear(); "
+[+] O8.12-cover.bmp: 2359350 B sha=2165b66c19c7fea37dfebbe856d54032832e2ad05b62d5219043015ce9051b1d
+[+] O8.12-runner.js: 3278609 chars sha=32bb37648c95cc5d42662125eaa99d4a015e3fcf936b76301e8bebac68215507
+[✓] Stego-11p build complete: /var/tmp/cc34-repro
+== artifacts ==
+32bb37648c95cc5d42662125eaa99d4a015e3fcf936b76301e8bebac68215507  O8.12-runner.js
+2165b66c19c7fea37dfebbe856d54032832e2ad05b62d5219043015ce9051b1d  O8.12-cover.bmp
+7be88098853bbf205b7480d364f7a30b0c5707c216e12fa8dcc7be818e66b1d3  stego11p-real.min.js
+== identity gates ==
+   runner            : /var/tmp/cc34-repro/O8.12-runner.js (3278609 chars)
+   published deal    : no — regenerated from s=0x252a0e63
+   chunks            : 18185
+   snapshot          : 2359350 B sha256=2165b66c19c7fea37dfebbe856d54032832e2ad05b62d5219043015ce9051b1d
+   STAGED: 2223890 chars sha256=7be88098853bbf205b7480d364f7a30b0c5707c216e12fa8dcc7be818e66b1d3
+   STAGED head: "console.clear(),(()=>{try{let _d=console.debug;console.debug=fun"
+   STAGED dumped -> /var/tmp/cc34-repro/.staged.js
+   google* globals: []
+   [gate] staged payload == shipped payload (byte-identical)
+== done ==

@@ -1,0 +1,62 @@
+shard-a: 56.1KB -> 59.4KB  (0.8s)  [mangled-shuffled]
+shard-m: 27.5KB -> 105.2KB  (0.8s)  [hexadecimal]
+shard-n1: 25.0KB -> 217.6KB  (1.2s)  [dictionary]
+shard-e1: 67.8KB -> 373.5KB  (1.8s)  [dictionary]
+shard-n2: 24.0KB -> 116.0KB  (0.6s)  [dictionary]
+shard-aux: 48.9KB -> 97.8KB  (0.9s)  [mangled]
+shard-c: 15.4KB -> 104.8KB  (0.6s)  [dictionary]
+shard-h: 17.5KB -> 106.8KB  (0.4s)  [dictionary]
+shard-l: 13.5KB -> 21.1KB  (0.2s)  [mangled-shuffled]
+shard-m-str: 20.6KB -> 58.7KB  (0.2s)  [hexadecimal]
+shard-e-str1: 101.9KB -> 154.9KB  (0.3s)  [mangled-shuffled]
+shard-p-telegram: 21.2KB -> 120.9KB  (0.4s)  [dictionary]
+shard-p-zoom: 38.8KB -> 184.4KB  (0.8s)  [dictionary]
+shard-p-slack: 20.8KB -> 110.5KB  (0.4s)  [dictionary]
+shard-p-discord: 19.1KB -> 137.2KB  (0.4s)  [dictionary]
+shard-p-teams: 20.3KB -> 152.7KB  (0.4s)  [dictionary]
+v1 done -> /home/user/Active/O8.14/CC-33/oto/v1-jso-s3matrix
+=== Building O8.13 S6 Deliverables (12 shards, 6 uniform) ===
+[S4] single-lane selection: 23 pieces, 23 with alternates available (shipping 1 each: a/7 l/6 m-str/6 m1/6 m2/5 n1/7 c/6 h/6 e-str1/6 e-str2/5 e1/6 e2/6 e3/6 e4/6 n2/7 aux1/5 aux2/5 u/6 p-telegram/6 p-teams/6 p-zoom/7 p-slack/6 p-discord/6)
+[S4] lane map (seed 851b28e5): a->v1-jso-s3matrix l->v1-jso-s3matrix m-str->v1-jso-s3matrix m1->v2-jsc m2->v5-terser n1->v6-esbuild c->v1-jso-s3matrix h->v1-jso-s3matrix e-str1->v1-jso-s3matrix e-str2->v4-closure e1->v1-jso-s3matrix e2->mound-e e3->mound-e e4->mound-e n2->v7-swc aux1->v8-uglify aux2->v4-closure u->u p-telegram->v1-jso-s3matrix p-teams->v1-jso-s3matrix p-zoom->v1-jso-s3matrix p-slack->v1-jso-s3matrix p-discord->v1-jso-s3matrix
+[Copied] shard-a-v1.js (59.4 KB)
+[Copied] shard-l-v1.js (21.1 KB)
+[Copied] shard-m-str-v1.js (58.7 KB)
+[Copied] shard-m1-v2.js (80.1 KB)
+[Copied] shard-m2-v5.js (15.0 KB)
+[Copied] shard-n1-v6.js (24.1 KB)
+[Copied] shard-c-v1.js (104.8 KB)
+[Copied] shard-h-v1.js (106.8 KB)
+[Copied] shard-e-str1-v1.js (154.9 KB)
+[Copied] shard-e-str2-v4.js (98.8 KB)
+[Copied] shard-e1-v1.js (373.5 KB)
+[Copied] shard-e2-mound.js (96.6 KB)
+[Copied] shard-e3-mound.js (93.0 KB)
+[Copied] shard-e4-mound.js (118.9 KB)
+[Copied] shard-n2-v7.js (18.9 KB)
+[Copied] shard-aux1-v8.js (25.3 KB)
+[Copied] shard-aux2-v4.js (25.8 KB)
+[Copied] shard-u-v4.js (22.5 KB)
+[Copied] shard-p-telegram-v1.js (120.9 KB)
+[Copied] shard-p-teams-v1.js (152.7 KB)
+[Copied] shard-p-zoom-v1.js (184.4 KB)
+[Copied] shard-p-slack-v1.js (110.5 KB)
+[Copied] shard-p-discord-v1.js (137.2 KB)
+[Stitched] Raw bundle size: 2203.8 KB
+[Shim] 4 error-path name(s) declared as no-ops: Chunk1957ex, Wஉசseed58, garden5422ex, shard2274il
+[Obfuscating Bundle] Using 5k dictionary (5587 words)...
+[Fix] return<->space inserted: 2473892 -> 2474025
+[Q guard] level-2 log cap installed (+500 B)
+[L2 trace] 'oto1-a1e2f3' lanes {"pk01":"v1-jso-s3matrix","pk02":"v1-jso-s3matrix","pk03":"v1-jso-s3matrix","pk04":"v2-jsc","pk05":"v5-terser","pk06":"v6-esbuild","pk07":"v1-jso-s3matrix","pk08":"v1-jso-s3matrix","pk09":"v1-jso-s3matrix","pk10":"v4-closure","pk11":"v1-jso-s3matrix","pk12":"mound-e","pk13":"mound-e","pk14":"mound-e","pk15":"v7-swc","pk16":"v8-uglify","pk17":"v4-closure","pk18":"u","pk19":"v1-jso-s3matrix","pk20":"v1-jso-s3matrix","pk21":"v1-jso-s3matrix","pk22":"v1-jso-s3matrix","pk23":"v1-jso-s3matrix"}
+[HNT-GREP] 349 object keys in the shards, 40 survived into the bundle: totalCandidateStores, recheckWindowSeconds, enableTranscription, v814harborjza373il, v814sproutpz454il, v814chainpxf202in, v814emberwvp130il, breakoutScenarios, v814ledgerak794a, v814crestgyn48il, participantState, definitionCount, applicationsUrl, activeTaskCount, enableRecording, maxParticipants, managedStorage, pocketsMissing, v814havenxn43a, enableBreakout, videoProgress, reactionTypes, meetingNumber, isPushReturn, isChunkArray, applications, milliseconds, configurable, taskConfigV1, pollInterval, participants, processName, storeHandle, enablePolls, cacheCount, dispatcher, globalThis, enumerable, isLauncher, sourceName
+[HNT-GREP] 179 noise strings from 40 surviving tokens (+2894 B) + sidecar grep-noise.json
+[Single-name] bundle written once: /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js
+[Shim-final] clean — no error-path dangling names in the finished bundle
+[Final Bundle] Written to /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js (2415.9 KB in 33.5s)
+[G8] pins appended: 8b4f368d,a28fc3ae,8608a92c
+[Compressed] Gzip: 1357.4 KB base64 | DeflateRaw: 1357.4 KB base64
+[Deliverable] O8.6-Final-compressed-gzip.js: 1358.5 KB
+[Deliverable] O8.6-Final-compressed-deflateraw.js: 1358.5 KB
+SHA256 (O8.6-Final-compressed-gzip.js): 30f2340184ad18cd3affc08ff7bff09512196df9ec46678dffafd3fea58157a2
+SHA256 (O8.6-Final-compressed-deflateraw.js): 6c8489a8ae5fae1f0848fe7efd1f9abdd33e86e4d53a2b0b252dd65269466592
+SHA256 (O8.14-CC-33-final-bundle.js): 70bcdff0453d7b923049c5e0cdeaa1e049c55451b660979d719566b80343ccac
+=== Build Finished Successfully ===

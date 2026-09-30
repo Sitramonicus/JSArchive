@@ -1,0 +1,430 @@
+===== chain-revive (shards) =====
+file:///home/user/tools/chain-revive-check.mjs:459
+const beginReal = mod.v814owlmpb782on.begin;
+                                      ^
+
+TypeError: Cannot read properties of undefined (reading 'begin')
+    at file:///home/user/tools/chain-revive-check.mjs:459:39
+
+Node.js v20.20.2
+-- exit 1 --
+===== hold-check (real+runner) =====
+== hold check on stego11p-real.min.js + O8.14-debug-runner.js
+   PASS  H1  shard-a publishes the hold key from the stall closure  [`_stallHeld` + `_stallLift` both exposed]
+   PASS  H2  shard-a no longer writes the stall flag from outside the closure  [entry-point claims go through `_0xmod._stallLift`]
+   PASS  H3  shard-e2 holds every venue call while unclaimed  [one wrapper (`GoogleCall`) feeds both `pk34` and `pk35`]
+   PASS  H4  the obfuscated entry piece still publishes the whole hold + stand-down surface  [built piece:true hold block:520 chars · runtime holdKey=function lift=function standDown=function reason=string entryRef=function]
+   PASS  H5  the shipped payload carries the hold guard  [payload literal:true/true · runtime: holdKey=function lift=function]
+   PASS  H6  the shipped payload carries the stand-down hook  [payload literal: _standDown=false reason=false _entry=true · runtime reason=string standDown=function entryRef=function]
+   PASS  H7  a cold venue no longer kills the chain (no fatal STOP; arm/seed/begin hooks published)  [e1:true e2seed:true e4begin:true]
+   PASS  H8  a claim revives the chain, and session end keeps the venue handles  [shard-a revive:true claimed flag:true teardown keeps handles:true]
+   PASS  H9  the shipped payload carries the revive surface  [_0xarm:literal _0xchain:literal _0xclaimed:literal _0xseed:encoded · runtime: seed=true begin=true chain=waiting-capability]
+
+   semantics (all four states) belong to gate-replay: tools/gate-replay.mjs <slots…> --spec  (S11)
+== hold check: PASS
+-- exit 0 --
+===== gate-replay --spec =====
+usage: node tools/gate-replay.mjs <pwdRcd> <pwdDbg> <pwdRes> <pwdAK> <pwdView> [--spec|--seq|--times 5,180]
+-- exit 2 --
+===== repaste-check (runner) =====
+[0.0s start] paste 1 …
+[0.0s paste1] entry published: true
+[8.0s settle] entry after the chain has had time to stand down: true
+
+[12.0s clear] === console cleared (page keeps everything) ===
+[12.0s clear] entry before: true
+[12.0s clear] globals left by paste 1 (8): ["__GDBG","会員","lexMode","lexProbeA","lexSetPins","GoogleVault","lexProbeX","lexProbeU"]
+[12.0s paste2] paste 2 …
+[13.6s paste2] entry published by paste 2: true
+
+[32.0s mid] === 32s in ===
+[32.0s mid] entry now: true
+[32.0s mid] globals now (8): ["__GDBG","会員","lexMode","lexProbeA","lexSetPins","GoogleVault","lexProbeX","lexProbeU"]
+[32.0s mid] paste-2 console lines so far:
+        <cleared>
+        %c[GDBG] [22:09:13.110 +0.0s] session controller created (v814owlmpb782on) — the e-piece got past its guard
+        %c[GDBG] [22:09:13.110 +0.0s] ctl hook attached late: roster — the session runner started
+        %c[GDBG] [22:09:13.110 +0.0s] ctl hook attached late: extend — the session runner started
+        %c[GDBG] [22:09:13.110 +0.0s] ctl hook attached late: close — the session runner started
+        %c[GDBG] [22:09:13.110 +0.0s] ctl hook attached late: begin — the session runner started
+        [22:09:13.110 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+        %c[GDBG] [22:09:13.111 +0.0s] [dropped-by-stall] [diag] JV~~v}t1}tuvtcL1ember ridge — standing by {"pocket":"a","idx":0}
+        %c[GDBG] [22:09:13.111 +0.0s] [dropped-by-stall] [diag] JV~~v}t1}tuvtcL1moss tundra — lattice quiet {"pocket":"a","idx":
+        %c[GDBG] [22:09:13.111 +0.0s] [dropped-by-stall] [diag] JV~~v}t1}tuvtcL1owl elm — gate open {"pocket":"a","idx":2}
+        %c[GDBG] [22:09:13.111 +0.0s] [dropped-by-stall] [diag] JV~~v}t1}tuvtcL1quill prairie — chain converged {"pocket":"a","i
+        %c[GDBG] [22:09:13.111 +0.0s] [dropped-by-stall] [diag] JV~~v}t1}tuvtcL1quartz birch — wheel aligned {"pocket":"a","idx"
+
+[ASSERT] entry published by paste 1 .......... yes
+[ASSERT] entry survived the stand-down ...... PASS
+[ASSERT] paste 2 published its own entry .... PASS
+[ASSERT] exactly one garden (no stale one) .. PASS
+[ASSERT] garden printed once at the window .. PASS
+
+[150.0s end] === end of run ===
+[150.0s end] entry: true
+[150.0s end] entry-point events: ["0.0s set function","0.0s set function","0.2s present","12.1s set function","12.1s set function"]
+[150.0s end] globals added by paste 2 that paste 1 did not leave: []
+[150.0s end] paste-2 console lines (tail):
+        %c[GDBG] [!] chain walk (step1..step4)              no step logged  — e1 runs boot() at load and stops the walk on the f
+        %c[GDBG] [!] line records captured                  73  — every payload line with its stall state
+        %c[GDBG] ===== guard verdict =====
+        %c[GDBG] dispatch (token was pre-existing): a token was already on the page when this paste started (unreleased), yet th
+        %c[GDBG] 65 line(s) in this capture were emitted while the stall was CLOSED — the shipped sink returns before emitting, 
+        %c[GDBG] ===== residual =====
+        %c[GDBG] token present (live)  ·  pins never-set (hook present)  ·  lexMode 0  ·  level 0
+        %c[GDBG] [22:09:14.633 +1.5s] capability matrix printed — __GDBG.report() for the copy-paste block
+-- exit 0 --
+===== stego11-matrix (runner+bmp) =====
+== Stego-9 matrix: O8.14-debug-runner.js
+  FAIL anchor /*R9F*/ x1 hits=0
+  FAIL anchor /*R9R*/ x1 hits=0
+  FAIL anchor /*R9B*/ x1 hits=0
+  FAIL anchor /*R9T*/ x1 hits=0
+  FAIL FRAG parses Expected property name or '}' in JSON at position 4
+  FAIL REELS parses to 8 slots 
+  FAIL G4-printability indistinguishable (range<0.15) range=9.000 n=0
+  FAIL BOARD8 gunzips to minHoney Unexpected token 'G', "[GDBG]" is not valid JSON
+  PASS MINREAL probe pins verify (G8 repin)
+  FAIL TUBE gunzips to minTube Unexpected token 'G', "[GDBG]" is not valid JSON
+  PASS P-pocket telegram printability (<0.15)
+  PASS P-pocket teams printability (<0.15)
+  PASS P-pocket zoom printability (<0.15)
+  PASS P-pocket slack printability (<0.15)
+== 5 passed, 9 failed
+-- exit 1 --
+===== stego11-tiers (runner+bmp+clean) =====
+== Stego-3 tiers: O8.14-debug-runner.js (full)
+  FAIL T0-bare silent exit-0 null
+runner.js:2204
+  const controller = new AbortController();
+                     ^
+
+ReferenceError: AbortController is not defined
+    at runner.js:2204:22
+    at runner.js:2901:3
+    at runner.js:5199:3
+    at Script.runInContext (node:vm:149:12)
+    at Object.runInContext (node:vm:301:6)
+    at runWindow (file:///home/user/Active/O8.15/carrier/test-stego11-tiers.mjs:143:6)
+    at file:///home/user/Active/O8.15/carrier/test-stego11-tiers.mjs:169:43
+    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v20.20.2
+-- exit 1 --
+===== carrier-flip (bmp clean real runner) =====
+== r3.1 carrier flip check: O8.14-cover-3bf21868.bmp
+   cover 2359350 B  sha256=3bf2186880839552
+   payload gz=994234 B  strip@628 (slack 574)  base=99028  RS0=119670 RS1=119941  fh=1064477164
+  FAIL F1-shipped-reel round-trips the payload  Unexpected token 'G', "[GDBG]" is not valid JSON
+  PASS F4b-reel0 tail is grained (no written/unwritten edge)  [written n=1988516 H=2.00000 | tail n=251164 H=2.00000 | z(sym0)=0.01 (threshold 3.0)]
+  PASS F4b-reel1 tail is grained (no written/unwritten edge)  [written n=1988516 H=1.99999 | tail n=250893 H=2.00000 | z(sym0)=1.31 (threshold 3.0)]
+  PASS F1b-codec mirror decodes both reels  [reel0=497137 reel1=497136]
+  PASS F2-RS is jittered off the fixed base  [base=99028 RS0=119670 (+20642) RS1=119941 (+20913)]
+  PASS F2b-old P3 header absent at the fixed base  [probed base=99028]
+  PASS F3-reel0 touches bits 0-1 only  [slips=0 hi-nibble slips=0 (positions=2239680)]
+  PASS F3-reel1 touches bits 2-3 only  [slips=0 (positions=2239409)]
+  PASS F3-reels overlap as designed  [both=1988592 only0=251088 only1=251060]
+  INFO planes: reel0 slots=2239680 reel1 slots=2239409 union=2239680
+  PASS F4-grain covers strip tail + gap  [range=[7280,119670) n=112390 maxZeroRun=7 zeros=24.8%]
+  PASS F4-grain entropy ~2.0 bits over 4 symbols  [H=2.0000 syms=27928/28231/28052/28179]
+  PASS F4-grain is not the clean cover's LSBs  [matchClean=24.8%]
+  PASS F4-plaque bits 2-7 preserved under grain  [slips=0]
+  PASS F5-PG3 garden decoy intact  [decoy=1658B gz=1658B]
+== 13 passed, 1 failed
+-- exit 1 --
+===== detector-replay (real) =====
+== detector replay: /home/user/Active/O8.15/Runners/stego11p-real.min.js (2384572 bytes)
+   P1 fold      28 foldable strings, 36 decoded blobs -> opaque
+      vocab=- roadmap=-
+   P2 globals   5 published (0 outside the loader contract) -> clean
+   P3 host      limited (Math[dのltゅϙ481(...)] is not a function)
+   P4 modules   0 registry objects, 0 named keys -> opaque
+   => PASS
+-- exit 0 --
+===== detector-replay (bundle) =====
+== detector replay: /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js (2740856 bytes)
+   P1 fold      0 foldable strings, 0 decoded blobs -> opaque
+      vocab=- roadmap=-
+   P2 globals   5 published (0 outside the loader contract) -> clean
+   P3 host      limited (Math[ember9757or(...)] is not a function)
+   P4 modules   0 registry objects, 0 named keys -> opaque
+   => PASS
+-- exit 0 --
+===== netwatch (real) =====
+netwatch: 2103894 B, 1330 ms, verdict=ran, logs=2
+our log lines (first 8):
+   CLEAR
+   dbg:[22:11:37.262 +0.0s] [Host 8.14] initialized — worker instance 06118ef1.
+after init: network-primitive calls=0 {}
+   no URLs attempted
+-- exit 0 --
+===== dangling-refs (real) =====
+dangling-refs: /home/user/Active/O8.15/Runners/stego11p-real.min.js  (2328.7 KB, 14609 declared, 14233 referenced)
+   dangling  _scratch320  x8  line(s) 1,1,1
+      …768,sHrouךї와793){return laホ633(lＷttiｃ֑768-"0x21a",sHrouךї와793)}typeof _scratch320!==blo597.d2(2811983356,30468…
+   dangling  名  x7  line(s) 1,1,1
+      …0823497,1)),console.log(f๕980.d2(2213518655,1554919465)+String(typeof 名===f๕980.pcache(3248557365)?"佐藤 結衣":名)+…
+   dangling  _0xk12  x2  line(s) 1,1
+      …膫蒮640(en124- -1105,owタヹヰ139)}neआ֞प263[vectג֑קע847]=l횧tticeҟ긍408.jFoWM(_0xk12[vectג֑קע847],240)|l횧tticeҟ긍408[n묶…
+   dangling  DOMException  x2  line(s) 1,1
+      …ϯ491[Mグrshϐピヿ461(cinder鐦֬煜ѐ214["Plasχ137"],"[Pu*")](L‌attice鎥֔767,new DOMException(summit涒蒮722[Piͱ֯ϵ785(cinder…
+   dangling  pイairieヴン561  x2  line(s) 1,1
+      …i")](Owl5707[Quおきゆ381("0x249","fhYb")],Pi횧끸끸585)))return Owl5707}else pイairieヴン561(ho갥낥썖뒜708.d3(721878182,2605…
+   dangling  s‌treよじё405  x1  line(s) 1
+      …oщ572("tEe7",latticeм븆퀼216.Prairie279)](ke쫛떚567,3);else{lattice윍븆231^=s‌treよじё405[viv846];for(let haӿѷ181=0;ha…
+   dangling  caқ끸ҁ752  x1  line(s) 1
+      …ҟ긍408[h뒜lloщ572(latticeм븆퀼216["Pixϕॊך794"],latticeм븆퀼216.Lattice284)](caқ끸ҁ752>>>1,3988292384)>>>0:l횧tticeҟ긍40…
+   dangling  vivid942  x1  line(s) 1
+      …>>>0:l횧tticeҟ긍408[prairie鷕鐦288("H#x1",-latticeм븆퀼216["P虣airieק722"])](vivid942,1)}}function m積r斟7295(qӌ706,grξ…
+   dangling  br254  x1  line(s) 1
+      …64)+Lattice356(h춃rborϯ핵988["P끸airie240"],h춃rborϯ핵988["Plasma갥핵3991"])+br254,Seο떗949("0x5cc",h춃rborϯ핵988["Latti…
+   dangling  prairie472  x1  line(s) 1
+      …"Plasma갥핵3991"])+br254,Seο떗949("0x5cc",h춃rborϯ핵988["Lattice와븆֨788"]))+prairie472)}catch(St676){}}function Latt…
+   dangling  prairieπг395  x1  line(s) 1
+      …E떚berз984;return Shroud8847=>{var La332={"Prairie끸낥ϳ913":"0x448"};if(!prairieπг395||Qua3815[Su냢ѹ129(Matrix1750…
+   dangling  p॓airieѭै293  x1  line(s) 1
+      …48"};if(!prairieπг395||Qua3815[Su냢ѹ129(Matrix1750.Mo574,1085)](typeof p॓airieѭै293[Su냢ѹ129(Matrix1750.Mo574,"0…
+   dangling  prairie쉃췈҇383  x1  line(s) 1
+      …171,-241)](3859386033))||!Shroud8847||Qua3815.JexaH(typeof Shroud8847,prairie쉃췈҇383[Hな102(Matrix1750.Module369…
+   dangling  lﾓtticeﾽҝ520  x1  line(s) 1
+      …207"],Matrix1750.Grove390)](prairie530.d3(989472837,4094469123,1),!0),lﾓtticeﾽҝ520[E핵ginӊ조533("x7l)","0x394")]…
+   dangling  birchά떚֝790  x1  line(s) 1
+      …roud8455["M‌odul옑ү697"])])return Oでbitϯ491[H뒜llo긍륜775("0x11","ckdx")](birchά떚֝790,new riϸに゚ט724(s烋r膫ф221[Prair…
+   dangling  riϸに゚ט724  x1  line(s) 1
+      …옑ү697"])])return Oでbitϯ491[H뒜llo긍륜775("0x11","ckdx")](birchά떚֝790,new riϸに゚ט724(s烋r膫ф221[Prairieなִ748(shroud84…
+   dangling  s烋r膫ф221  x1  line(s) 1
+      …return Oでbitϯ491[H뒜llo긍륜775("0x11","ckdx")](birchά떚֝790,new riϸに゚ט724(s烋r膫ф221[Prairieなִ748(shroud8455["B鐦rӗζ威…
+   dangling  fl771  x1  line(s) 1
+      …rieなִ748(shroud8455["B鐦rӗζ威172"],shroud8455["Q崘ҁ煜葾629"])](3859386038),fl771[Ri570("6uAq",-shroud8455["Signalҳθ…
+   dangling  lattice309  x1  line(s) 1
+      …=st抾崘膫334[H뒜llo긍륜775(-shroud8455["P떗춃678"],shroud8455["Mo땇췈뒜973"])](0,lattice309[Prairieなִ748("ud(T",1145)](5e…
+   dangling  plasma226  x1  line(s) 1
+      …5)](5e3,Oでbitϯ491[Cinde핵κ258("0x3f6",shroud8455["Plasmaч625"])](ci177,plasma226)||0));let Lattice330=Oでbitϯ491…
+   dangling  re212  x1  line(s) 1
+      …return H뒜llo긍륜775(Lザtticピ599-"0x27c",Vivѿъҡ735)}m뒜dule288(Lattice330),re212(new la844(h虣venъף486[Ca686(189,Re6…
+   dangling  h虣venъף486  x1  line(s) 1
+      …5(Lザtticピ599-"0x27c",Vivѿъҡ735)}m뒜dule288(Lattice330),re212(new la844(h虣venъף486[Ca686(189,Re614["Q긍떗묶638"])](…
+   dangling  rणeδ8174  x1  line(s) 1
+      …{};Grove878[Prairieなִ748(shroud8455.Fo925,shroud8455["Quόוｴ332"])]=!0,rणeδ8174&&lϧtticeц542[Cinde핵κ258("0x4c6"…
+   dangling  lϧtticeц542  x1  line(s) 1
+      …8[Prairieなִ748(shroud8455.Fo925,shroud8455["Quόוｴ332"])]=!0,rणeδ8174&&lϧtticeц542[Cinde핵κ258("0x4c6",shroud845…
+   dangling  Hollowצ핵얓741  x1  line(s) 1
+      …509(Bri290["H륜Llo367"],1010)]():P鐦airie鞢409[O॑l॓990("0x77c","Qm5z")]&&Hollowצ핵얓741[Mϋό376(Bri290["BIrch꼒ג륜825"…
+   dangling  lattice675  x1  line(s) 1
+      …ieω儅240"])][Latticeѻ븆840(Ma썚ю770["QU갥춃809"],Ma썚ю770["P뾃Airieҥ냢688"])](lattice675[Latticeѻ븆840("ou#e","0x856")]…
+   dangling  cinder2599  x1  line(s) 1
+      …"],Ma썚ю770["P뾃Airieҥ냢688"])](lattice675[Latticeѻ븆840("ou#e","0x856")][cinder2599]);return typeof Ma916===b묶rch…
+   dangling  ha275  x1  line(s) 1
+      …ю770["CRёк긍֝508"],2287)](Ma916[Nexӭけ905(Ma썚ю770["LAtticeκ446"],1479)](ha275[S륜g븆ϝ506(Ma썚ю770.PRairie306,"0x7e3…
+   dangling  praiַײ428  x1  line(s) 1
+      …บ871(Pͱairieп561["laTticeә煜378"],Pͱairieп561["l崘tTiceҡӆ479"])],153)&&(praiַײ428[Vivβͱλ726]=Birch랒끸ε298)}catch(…
+   dangling  m긍tri4835  x1  line(s) 1
+      …re726){const Harborҟ꼒5711={};return Harborҟ꼒5711[B썚ι367(2871,"io0J")]=m긍tri4835,o횧묶ҭ951[Vi637(Plo옑톚썚609["m긍sS갥…
+   dangling  pοϒ679  x1  line(s) 1
+      …5H)X")](300,1e3))}catch(Latticeυў蟈儅610){return!1}else{const Hollow769=pοϒ679[crest640];brin轿κў欞791[Hollow769]=…
+   dangling  ho갥낥썖뒜708  x1  line(s) 1
+      …Quおきゆ381("0x249","fhYb")],Pi횧끸끸585)))return Owl5707}else pイairieヴン561(ho갥낥썖뒜708.d3(721878182,260581889,3))}fun…
+   dangling  brin炤蟈ͼ欞320  x1  line(s) 1
+      …..Prairie699),Summit543={policy:Cr조η와316,managedStorage:!0,whitelist:[brin炤蟈ͼ欞320[M‍ַsϯ340("0x9c8","pyqf")](17…
+   dangling  flin낥ӱ900  x1  line(s) 1
+      …떗730]=vivid2834;return Lҵtticҹ֞9190[Owш316(1943,"pl^@")](Qu676,0)}try{flin낥ӱ900[Latticeழட௨927("ou#e",678)]()()…
+   dangling  Vectoї륜휔327  x1  line(s) 1
+      …P)1","0x1ef"))M樕rsh蟈966[0]=0;else{const Lattice922=H‌aҗッνボ536[Mod456];Vectoї륜휔327[Lattice922]=Prairie695[Prair…
+   dangling  Pஒairie870  x1  line(s) 1
+      …6)[Mo灎欞ҥ708(Pणairieΰ557["riDgҫӟ儅521"],Pणairieΰ557.quArtz3253)](8,"0")}Pஒairie870.q=P륜asma434[Mo灎欞ҥ708(Pणairieΰ…
+   dangling  Pi끸꼒υ952  x1  line(s) 1
+      …e456(Pणairieΰ557["veCto냢ҟφ830"],Pणairieΰ557.laTtice491)](Reelￔｐｗ592.q,Pi끸꼒υ952.p),65535)},Mar갥췈퀼\u05ef와8647=St…
+   dangling  lattice･ｓｘ378  x1  line(s) 1
+      …L145.fl860,"#$@v")]){let q븆Љכ795=2166136261;for(let mOdu613=0;mOdu613<lattice\uff65ｓｘ378[m륜Triҗ531(pL145["brin…
+   dangling  l葾ttice樕梥791  x1  line(s) 1
+      …[m륜Triҗ531(pL145["brin电ׅ鐦2984"],pL145.prairie937)];mOdu613++)q븆Љכ795^=l葾ttice樕梥791[cI500("k72B",pL145.pin4700)…
+   dangling  s조826  x1  line(s) 1
+      …륜Вщ172[d묶Ltϔ뒜ҡ966("0x462","BRq5")](sӐreamѱҽ200,p떚um877);sӐreamѱҽ200++)s조826[lAtticeゔόほ958("0x6c5","RI[D")][sӐr…
+   dangling  q긍ill댦θ577  x1  line(s) 1
+      …)][lAttice膫ѷ502(1545,pL145["p威asmaϥ614"])](sӐreamѱҽ200)&&(s֮Reamϊ֑319=q긍ill댦θ577[pRairie386("lZoX","0x108")][s…
+   dangling  l॑ttice666  x1  line(s) 1
+      …se{const cＶestӗ4251=latticeѯδ498[pI똛οн449(-79,dE632["prairie띇236"])]||l॑ttice666[pI똛οн449("0x19a",dE632["s‍umm…
+   dangling  ma246  x1  line(s) 1
+      …58(mAr250["Pஉairieәௗ221"],mAr250["P휔684"])](mAήஈμ345,15)),0);else try{ma246[s췈Roud6158(mAr250["Lattice묶҃얓у753"…
+   dangling  prairie췈낥621  x1  line(s) 1
+      …Harb353,"34a4")],mo506),h崘Rbor髣ӝю587(mAr250.La609,mAr250["H뮶븆븆289"])),prairie췈낥621),l륜Вщ172[s떚Mmit7071("uhQb",…
+   dangling  lattice윍488  x1  line(s) 1
+      …](pRairieкイガ533[eN158(qUi9591.Prairie956,qUi9591["B떚oomͽ854"])](pi476^lattice윍488,p썖umeӌ253>>>13)>>>0,33255318…
+   dangling  p썖umeӌ253  x1  line(s) 1
+      …533[eN158(qUi9591.Prairie956,qUi9591["B떚oomͽ854"])](pi476^lattice윍488,p썖umeӌ253>>>13)>>>0,3325531815),0),latti…
+   dangling  ri733  x1  line(s) 1
+      …4)]=qӑil2854,f와int와716[HOllow1329("HOrN",s‌鞢Re烋抾633["Gலove636"])](new ri733(prairi춃ю904,DE댦ҵ875));var KE817={}…
+   dangling  mϋό376  x1  line(s) 1
+      …[RIdg橋ׄ儅174(pRairieぢҳ834["Prairiыϋ핵2334"],pRairieぢҳ834.Ow607)](QUϊ117+mϋό376[ORbit랒742("]xSO",-317)](58,114,99…
+   dangling  mar614  x1  line(s) 1
+      …174(pRairieぢҳ834["Pஹairie355"],pRairieぢҳ834["Sザireϒѩ412"])]=VIนถ๙έ403,mar614[PR457(pRairieぢҳ834["Shϰќ902"],pRa…
+   dangling  quayￜ924  x1  line(s) 1
+      …ҳ834.Eng986)](oR834[PR457("Nzh#",1524)](oR834[ORbit랒742("FlGM",-215)](quayￜ924[O톚Ӕ썚694("RsD%",pRairieぢҳ834["B썚…
+   dangling  ma썚ӆ643  x1  line(s) 1
+      …B썚ι367"])](74,86,126,126,118,125,116,49,125,116,117,118,116,99,76,49),ma썚ӆ643.d2(858612397,3012236965)),P涒Airi…
+   dangling  pl402  x1  line(s) 1
+      …Mmit泥305["pΐairieξ785"],-5)](RE487,L‌蒮Ttice也נ741)),0)}{const HOllo469=pl402;if(CI599[V조Ctor591(-4,S涒Mmit泥305.g…
+   dangling  ri817  x1  line(s) 1
+      …llo469=pl402;if(CI599[V조Ctor591(-4,S涒Mmit泥305.gr435)](typeof HOllo469[ri817],birc썚834[V조Ctor591("0x210","mvG["…
+   dangling  ow981  x1  line(s) 1
+      …469[ri817],birc썚834[V조Ctor591("0x210","mvG[")](1926393188))&&HOllo469[ow981]){const LAttice449=CI599[PRairieӗ퀼…
+   dangling  quar327  x1  line(s) 1
+      …"r륜eӽ썚ӡ292"],380)]===reelзέ춃141.d3(2296491748,4230182475,2)?[HOllo469[quar327][V欞Cto蒮ӌ388(89,S涒Mmit泥305["cinde…
+   dangling  p븆ҫ֦뒜312  x1  line(s) 1
+      …Attice449[PRairieӗ퀼묶636(S涒Mmit泥305["qu떗꼒293"],S涒Mmit泥305.lattice675)],p븆ҫ֦뒜312[DE583(S涒Mmit泥305["o와춃ҷљ946"],-4…
+   dangling  ow轿584  x1  line(s) 1
+      …HW")])&&CI599[DE583(S涒Mmit泥305["h썖llowѥ102"],-S涒Mmit泥305["qu֕כ531"])](ow轿584[DE583(S涒Mmit泥305.cair837,402)],2)…
+   dangling  q얓똛퀼190  x1  line(s) 1
+      …("4^%s",500)](LAttice띇щ֫841[PRairѯ6822(SI778["prairie춃372"],"0x141")](q얓똛퀼190,qӌillҍѓ486[PRairie땇֨ѱ휔564(SI778[…
+   dangling  lattice樕儅涒478  x1  line(s) 1
+      …tice569)),lattice475[LAttice535("6*Pa",SI778["pixϫњж610"])](S‌णIrҋ292,lattice樕儅涒478))^pla3270[PRairѯ6822(SI778…
+   dangling  pla3270  x1  line(s) 1
+      …e475[LAttice535("6*Pa",SI778["pixϫњж610"])](S‌णIrҋ292,lattice樕儅涒478))^pla3270[PRairѯ6822(SI778.plasma1415,SI77…
+   dangling  orb춃967  x1  line(s) 1
+      …211(388,"HYAh")](MAר떚211(S조Rouג935["brinу765"],S조Rouג935["seϔϗϛ592"]),orb춃967),LAttice띇щ֫841[CInder2256("5*qG"…
+   => FAIL — 61 undeclared reference(s) would throw ReferenceError at runtime
+-- exit 1 --
+===== dangling-refs (bundle) =====
+dangling-refs: /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js  (2676.6 KB, 18164 declared, 17173 referenced)
+   dangling  _scratch320  x8  line(s) 1,1,1
+      …ገChain78- -մՍո908['Quayベスコ1695'],wአልGarden44);}const סתrIdge11=typeof _scratch320!==plumeჴგ1566['d2'](0xa79b75…
+   dangling  名  x7  line(s) 1,1,1
+      …a75ad)),console['log'](wｅｓchain91['pcache'](0xe9fa75b9)+String(typeof 名===wｅｓchain91['d1'](0xe9fa75d1)?'佐藤 結衣'…
+   dangling  _0xk12  x2  line(s) 1,1
+      …40'],'YKBL')](wｏｓchain29[ledger820or('TLIL',tundra4779ex['សPlot35'])](_0xk12[warm1894il],0xf0),wｏｓchain29[ｓ‌ｇｙ…
+   dangling  DOMException  x2  line(s) 1,1
+      …Pocketξψε38(Wordា19['Աշօ858'],Wordា19['Wheel275us'])](Pocketஎதோ11,new DOMException(umber3303il[Schedule7095or(…
+   dangling  ኘደደ517  x1  line(s) 1
+      …']!==հլ617(lark5648il['Pocketព34'],-'0x16d'))द‌पआ82(lattice3831us,0x8+ኘደደ517*0x2,warm5319[w種語garden26]>>>0x4),…
+   dangling  owlтшр80  x1  line(s) 1
+      …869'],'NOwp')](pocketητδ37,0x2),0x1),plot3753or[ןוט914(0x118,'n6^b')](owlтшр80[어라venue27],0xf));else{const sch…
+   dangling  wศรchain96  x1  line(s) 1
+      …],Warm6285or[圃試草Chain19(Owlฟ12['Ψρφζ56'],Owlฟ12['Birch8512us'])])){if(wศรchain96[圃試草Chain19('NBe3','0x185')]>=…
+   dangling  pocket3948us  x1  line(s) 1
+      …,Owlฟ12['Birch8512us'])])){if(wศรchain96[圃試草Chain19('NBe3','0x185')]>=pocket3948us)return ![];falcon5341il['br…
+   dangling  elm8186us  x1  line(s) 1
+      …ស្ួ540[Chainረራዘ39(Owlฟ12['Venue4823us'],Owlฟ12['Δή703'])](0xe6098eb2))elm8186us[圃試草Chain19(Owlฟ12['Falconん95']…
+   dangling  ridge9654a  x1  line(s) 1
+      …lotጨ37'])],pocket999ex[圃試草Chain19(Owlฟ12['Venue5119in'],0x243)](0x100,ridge9654a[Ɯɑnk672(Owlฟ12['Ꮃꭷꭼ62'],-Owlฟ…
+   dangling  ꮊ‍ꮀꮋ984  x1  line(s) 1
+      …x6af',Ｔｉ866['ՉՏօճ282']),Wራሠመchain59(Ｔｉ866['पLEdger48'],0x67f)))return ꮊ‍ꮀꮋ984(Umber7928il[Նզվ404(0x5c8,Ｔｉ866['…
+   dangling  втув812  x1  line(s) 1
+      …Lark2288ex[Shroud1561ex('0x51d',Ledgerޟ72['wธLEdger46'])](chunk9398or,втув812)^η‌μ711,0x0),Əæʃ32,Reel8644a;for…
+   dangling  w𐍂seed53  x1  line(s) 1
+      …chunk9398or,втув812)^η‌μ711,0x0),Əæʃ32,Reel8644a;for(Əæʃ32=0x0;Əæʃ32<(w𐍂seed53&0x7);Əæʃ32++){Reel8644a=Lark22…
+   dangling  ן‌שץ646  x1  line(s) 1
+      …pキヤウ630[Ꮝꭿ207(Garden8681in['plOt1558or'],'GSzA')]){const Wｖｉｌpocket38=ן‌שץ646[cedar5246or];wꭶꭴꮀplot76[Wｖｉｌpock…
+   dangling  lark7243in  x1  line(s) 1
+      …t89'])?(tɛʃ739[Plot8188in(0x885,Chain883or['LeDgerπκφ73'])]=wheel5527,lark7243in[Shard8345ex('0x64e','RSPJ')](…
+   dangling  falcon6943  x1  line(s) 1
+      …](Lark2288ex[Venue5424or('Ui8g',Wordޑާލ60['LaRk7021'])](lattice4734us,falcon6943[chunk8860]^פמו454[Lark2288ex[…
+   dangling  cedar7390ex  x1  line(s) 1
+      …edger25[ɨæəŋ825>>>0x0],ELm1935in,RIdge‍α22;continue;case'3':ELm1935in=cedar7390ex[SHard6979>>>0x8];continue;ca…
+   dangling  டவஏ447  x1  line(s) 1
+      …9458a('AW%[',TUndra5316a['Kelpіｃｏｏ1916'])];WऐुPocket51++){WHeel5169a^=டவஏ447[RIdgeჹჩა6557(TUndra5316a['Deltaხ7…
+   dangling  ηθγ130  x1  line(s) 1
+      …er7317or(WᎩꮋꮀpocket81['Birchіеｙе8830'],-'0xb6')])){const BRineѕср1159=ηθγ130;if(SChedule8671ex[FAlcon2452il('K…
+   dangling  groveグ2655  x1  line(s) 1
+      …edule8671ex[FAlcon2452il('Kl1J','0x212')](typeof BRineѕср1159[αδχυ27],groveグ2655[UMber7317or(WᎩꮋꮀpocket81['Hol…
+   dangling  ή‌ν413  x1  line(s) 1
+      …14),'v':WHeel1583il[MOss3716or(0x1c7,'PSey')](venueޝޘ78(),0xffff),'t':ή‌ν413[PLot6796or(WArm4542il['аОх429'],W…
+   dangling  ஆridge50  x1  line(s) 1
+      …61),WषषGarden63[MOss790il(OWlღუ5327['ศคพฌ823'],OWlღუ5327['նզվ404'])])+ஆridge50,WषषGarden63[SHard1584or('sU(o',…
+   dangling  wheel5398a  x1  line(s) 1
+      …(typeof SHroud2419ex[QUartz5231ex(CInderіｐρо1682['בכהל905'],'0x40f')],wheel5398a[FAlcon7995us(CInderіｐρо1682['…
+   dangling  նյո206  x1  line(s) 1
+      …^%s')])&&WषषGarden63[SEedฝสฏ84(CInderіｐρо1682['falcon928in'],'rztC')](նյո206[RIdge다34(-0xa0,CInderіｐρо1682['pr…
+   dangling  ꭿꮀꭿꭾ731  x1  line(s) 1
+      …ꮝꮂchain38'])](ՆՁ284[MArshჷუო2280(CInderіｐρо1682['քչ126'],0x127)],0x0))ꭿꮀꭿꭾ731[MArshჷუო2280(CInderіｐρо1682['ޚސ1…
+   dangling  moss1581or  x1  line(s) 1
+      …dgerงปก68'],'2!3$')](QUill2518in[ΖΩρε758('tI*Z','0x444')](umber3717in,moss1581or[QUartz8656ex('4^%s',-FLintヨァゲ…
+   dangling  testጨ44  x1  line(s) 1
+      …5)),园证汇验405[BIrch2524or('5*qG',FLintヨァゲ3234['Тдве101'])](MOssɩｘｏｃ4547,testጨ44)),ridge2859in[QUillშბქ8723('M2K2…
+   dangling  μ‍ωτγ44  x1  line(s) 1
+      …911[LAttice7949ex(SHroud8778in['Chunk8860'],0x7eb)][warm3146a],휘마어163=μ‍ωτγ44);}catch(PLumeვ3784){}}(plot3300i…
+   => FAIL — 28 undeclared reference(s) would throw ReferenceError at runtime
+-- exit 1 --
+===== dangling-refs (runner) =====
+dangling-refs: /home/user/Active/O8.15/Runners/O8.14-debug-runner.js  (379.9 KB, 1358 declared, 1376 referenced)
+   dangling  _scratch320  x8  line(s) 4555,4555,4628
+      … ===== */ (function (_0xmod) { const _scratch320_local = typeof _scratch320!=='undefined'?_scratch320:ne…
+   dangling  名  x7  line(s) 295,295,313
+      …back.'); console.log('Continue with profile ' + String(typeof 名 === 'undefined' ? '\u4f50\u85e4 \u7d50…
+   dangling  _0xk12  x2  line(s) 1593,1624
+      …rn out; } function carm4Put(_0xk13, pos, nibble) { _0xk13[pos] = (_0xk12[pos] & 0xf0) | (nibble & 0x0f); }…
+   dangling  DOMException  x2  line(s) 1746,1749
+      …(resolve, reject) => { if (signal?.aborted) return reject(new DOMException('Aborted', 'AbortError')); …
+   => FAIL — 4 undeclared reference(s) would throw ReferenceError at runtime
+-- exit 1 --
+===== decoy-parity (real vs decoy) =====
+== decoy parity: stego11p-real.min.js vs stego11p-decoy.min.js
+   profile="佐藤 結衣"  会員=2
+   real:  19 garden line(s)  [Pixel Garden v2.0 — tended by 佐藤 結衣]
+   decoy: 19 garden line(s)  [Pixel Garden v2.0 — tended by 佐藤 結衣]
+   PASS — the fallback garden and the decoy artifact print the identical output
+-- exit 0 --
+===== leakcensus (real) =====
+== leak census (v2, classified): /home/user/Active/O8.15/Runners/stego11p-real.min.js
+   payload bytes          2384572
+   G1 registry exports    (none)
+   G2 module names        (none)
+   G3 vocabulary          every hit classified as deliberate:
+      pockets     x2    UNEXPLAINED:1 mock-api:1                   e.g. UNEXPLAINED, mock-api
+      dispatch    x4    venue-property:1 UNEXPLAINED:1 mock-api:1 noise-decoy:1 e.g. venue-property, UNEXPLAINED, mock-api
+      probe       x9    loader-contract:8 mock-api:1               e.g. loader-contract, loader-contract, loader-contract
+      quest       x1    mock-api:1                                 e.g. mock-api
+      stream      x1    venue-property:1                           e.g. venue-property
+      native      x3    regex-literal:1 UNEXPLAINED:2              e.g. regex-literal, UNEXPLAINED, UNEXPLAINED
+      vault       x8    noise-decoy:6 encoded-blob:2               e.g. noise-decoy, noise-decoy, noise-decoy
+      gate        x7    loader-contract:7                          e.g. loader-contract, loader-contract, loader-contract
+      shift       x43   js-builtin:38 encoded-blob:4 venue-property:1 e.g. js-builtin, js-builtin, js-builtin
+      store       x8    own-telemetry:3 mock-api:2 encoded-blob:2 noise-decoy:1 e.g. own-telemetry, mock-api, mock-api
+      host        x1    encoded-blob:1                             e.g. encoded-blob
+      flush       x4    mock-api:4                                 e.g. mock-api, mock-api, mock-api
+      UNEXPLAINED:
+        - pockets: 9(moλϔѩ464.U)](lattice933._0xpocketsMissing)?lattice933[b௭rc
+        - dispatch: 묶ύ핵256"])](typeof Emb냢핵퀼250.dispatch,summit涒蒮722[V썚ctor꼒뮶214
+        - native: 1348,1417)]||mod264.IS_SYMBOL_NATIVE,mod264[f얓restѝ360(1613,
+        - native: Attќ֛휔퀼7848]=mod264.IS_SYMBOL_NATIVE?mod264[hA508(838,734)][
+   G4 reading cost        3392 functions, 0 case, mean ident 18.48
+   G5 dormant roadmap     (none)
+   G6 foldable constants  GoogleUblock | e5beb09c5ac4c02c | 2f14d6c0 | af167c44c78443ec | cf4ff1ae | JV~~v}t1}tuvtcL1 | 851b28e5 | :rcd- | :decoy | GoogleVault | webpackChunkdiscord_app | webpackChunktelegram_app | webpackChunkteams_app | webpackChunkslack_app | DiscordNative | DiscordSentry | __discord_app_state | Telegram | TeamsSDK | ZoomSDK | SlackSDK
+   => FAIL — G3 unexplained vocabulary (4): pockets: 9(moλϔѩ464.U)](lattice933._0xpocketsMissing)?lattice933[b௭rc | dispatch: 묶ύ핵256"])](typeof Emb냢핵퀼250.dispatch,summit涒蒮722[V썚ctor꼒뮶214 | native: 1348,1417)]||mod264.IS_SYMBOL_NATIVE,mod264[f얓restѝ360(1613, | native: Attќ֛휔퀼7848]=mod264.IS_SYMBOL_NATIVE?mod264[hA508(838,734)][
+-- exit 1 --
+===== leakcensus (bundle) =====
+== leak census (v2, classified): /home/user/Active/O8.14/CC-33/final-package/O8.14-CC-33-final-bundle.js
+   payload bytes          2740856
+   G1 registry exports    (none)
+   G2 module names        (none)
+   G3 vocabulary          every hit classified as deliberate:
+      pockets     x2    noise-decoy:2                              e.g. noise-decoy, noise-decoy
+      dispatch    x3    noise-decoy:3                              e.g. noise-decoy, noise-decoy, noise-decoy
+      probe       x9    loader-contract:8 noise-decoy:1            e.g. loader-contract, loader-contract, loader-contract
+      quest       x1    noise-decoy:1                              e.g. noise-decoy
+      stream      x1    noise-decoy:1                              e.g. noise-decoy
+      native      x3    regex-literal:1 noise-decoy:2              e.g. regex-literal, noise-decoy, noise-decoy
+      hook        x1    noise-decoy:1                              e.g. noise-decoy
+      vault       x7    encoded-blob:1 noise-decoy:6               e.g. encoded-blob, noise-decoy, noise-decoy
+      gate        x9    loader-contract:9                          e.g. loader-contract, loader-contract, loader-contract
+      shift       x41   noise-decoy:37 encoded-blob:4              e.g. noise-decoy, noise-decoy, noise-decoy
+      store       x8    encoded-blob:4 noise-decoy:4               e.g. encoded-blob, encoded-blob, noise-decoy
+      host        x3    noise-decoy:3                              e.g. noise-decoy, noise-decoy, noise-decoy
+      flush       x4    encoded-blob:1 noise-decoy:3               e.g. encoded-blob, noise-decoy, noise-decoy
+   G4 reading cost        3851 functions, 1 case, mean ident 16.97
+   G5 dormant roadmap     (none)
+   G6 foldable constants  (none)
+   => PASS
+-- exit 0 --
+===== constraint-pass (bundle) =====
+== constraint pass (step 4) on O8.14-CC-33-final-bundle.js — 2478077 chars
+   PASS  C1-same-name-decls     4246 function bodies scanned, 0 carry a duplicated declaration name — nothing for an arrangement to reorder
+   PASS  C2-private-windows     0 run group(s) / 0 push statement(s); statements INSIDE a run window that cannot reach a read of it: 0 (placed freely); violations: 0; trailing pushes on the same binding: 0; hoisted declarations dealt inside a run (transparent, expected): 0
+   PASS  C3-registration-order  movable statements executing at their position checked for 21 API names: 0 hit(s)
+   PASS  C4-shared-root-writes  run group(s) whose write shape is not exactly one declaration + pushes: 0
+   PASS  C5-array-content-order skipped — pass --pre=<pre-weave.js> to compare against the input
+   movable set: 2217 statement(s) = 957554 B (38.6% of the file)
+   => PASS — 5/5 checks green; the movable set survives the pass unchanged
+-- exit 0 --
+===== battery done =====

@@ -1,0 +1,29 @@
+===== dangling (payload) =====
+   dangling  μ‍ωτγ44  x1  line(s) 1
+      …ger6911[LAttice7949ex(SHroud8778in.Chunk8860,2027)][warm3146a],휘마어163=μ‍ωτγ44)}catch(PLumeვ3784){};function LA…
+   => FAIL — 37 undeclared reference(s) would throw ReferenceError at runtime
+===== dangling (bundle) =====
+   dangling  μ‍ωτγ44  x1  line(s) 1
+      …911[LAttice7949ex(SHroud8778in['Chunk8860'],0x7eb)][warm3146a],휘마어163=μ‍ωτγ44);}catch(PLumeვ3784){}}(plot3300i…
+   => FAIL — 28 undeclared reference(s) would throw ReferenceError at runtime
+===== dangling (runner) =====
+dangling-refs: /home/user/Active/O8.15/release-8.15/O8.12-runner.js  (3201.8 KB, 109 declared, 117 referenced)
+   clean — every referenced name is declared or a known runtime global
+===== leakcensus (payload) =====
+   G4 reading cost        3390 functions, 0 case, mean ident 18.71
+   G5 dormant roadmap     (none)
+   G6 foldable constants  GoogleUblock | e5beb09c5ac4c02c | 2f14d6c0 | d9287e39e9b7bcb1 | 8b252c4f9bf8679b | 145891c57797e80a | cf4ff1ae | :decoy | 851b28e5 | JV~~v}t1}tuvtcL1 | :rcd- | GoogleVault | webpackChunkdiscord_app | webpackChunktelegram_app | webpackChunkteams_app | webpackChunkslack_app | DiscordNative | DiscordSentry | __discord_app_state | Telegram | TeamsSDK | ZoomSDK | SlackSDK
+   => PASS
+===== chain-revive (shards) =====
+    at file:///home/user/tools/chain-revive-check.mjs:459:39
+
+Node.js v20.20.2
+===== gate-replay =====
+usage: node tools/gate-replay.mjs <pwdRcd> <pwdDbg> <pwdRes> <pwdAK> <pwdView> [--spec|--seq|--times 5,180]
+===== constraint-pass =====
+   PASS  C5-array-content-order skipped — pass --pre=<pre-weave.js> to compare against the input
+   movable set: 2217 statement(s) = 957554 B (38.6% of the file)
+   => PASS — 5/5 checks green; the movable set survives the pass unchanged
+===== netwatch (bundle) =====
+after init: network-primitive calls=0 {}
+   no URLs attempted

@@ -293,7 +293,7 @@
         // shared controller, one-shot) would be relaunched into an instant death -- the exact
         // restart storm of 2026-09-21. `_armed` false = the venue is not ready; the chain says
         // `waiting-*` and the retry starts work when it becomes ready.
-        try { if (_armed && !_liveSession) _0xmod.v814owlmpb782on?.begin?.(); } catch (e) {}
+        try { if (_armed && !_liveSession) { const _bh = !!(_0xmod.v814owlmpb782on && typeof _0xmod.v814owlmpb782on.begin === 'function'); _0xreceipt('begin', (_bh && !_0xmod.v814owlmpb782on.begin.__s3fb) ? 'hook' : 'fallback', _bh ? '' : 'no e4 hook'); _0xmod.v814owlmpb782on?.begin?.(); } } catch (e) {}
         try {
           const _S = _0xmod._e?.S || {};
           // Reported on EVERY accepted claim, not only the unhappy ones: after a page reload the
@@ -312,6 +312,29 @@
           });
         } catch (e) {}
       };
+      // S3 claim surface (8.15): Verb Receipts + no-blank-true + ledger fallback. Every claim-path
+      // verb leaves exactly one receipt on the diag channel; the view verb always prints the queue or
+      // exactly one reason; when the e4 roster hook is absent (walk stopped before step4), boot-time
+      // fallback verbs keep the claim surface observable. e4's worker versions replace these when it
+      // runs (it assigns unconditionally), so this is fallback-only by design.
+      const _0xledgerRead = () => { try { const b = _0xmod._e && _0xmod._e.S ? _0xmod._e.S._0xb : undefined; return Array.isArray(b) ? b.length : (b === null ? 'closed' : (b === undefined ? 'absent' : 'not-array')); } catch (e) { return 'err'; } };
+      const _0xreceipt = (verb, hook, note) => { try { _0xmod.log.diag('receipt', { verb: verb, hook: hook, note: note || '', ledger: _0xledgerRead(), ts: Date.now() }); } catch (e) {} };
+      const _0xviewLine = () => {
+        try {
+          const n = _0xledgerRead();
+          if (typeof n === 'number') { Log.info(`Ledger: ${n} queued.`); return 'queue'; }
+          if (n === 'closed') { Log.info('Ledger closed — that session has ended; a new claim reopens it.'); return 'closed'; }
+        } catch (e) {}
+        try { Log.info('view: no roster hook and no ledger — the walk stopped before step4, or no session is behind this page'); } catch (e) {}
+        return 'reason';
+      };
+      try {
+        const _0xverbs = _0xmod.v814owlmpb782on = _0xmod.v814owlmpb782on || {};
+        if (typeof _0xverbs.roster !== 'function') { const _r = () => _0xviewLine(); _r.__s3fb = true; _0xverbs.roster = _r; }
+        if (typeof _0xverbs.extend !== 'function') { const _x = () => false; _x.__s3fb = true; _0xverbs.extend = _x; }
+        if (typeof _0xverbs.close !== 'function') { const _c = () => false; _c.__s3fb = true; _0xverbs.close = _c; }
+        if (typeof _0xverbs.begin !== 'function') _0xverbs.begin = () => { try { if (_0xmod._e && _0xmod._e.signal && _0xmod._e.signal.aborted) return false; } catch (e) {} return false; };
+      } catch (e) {}
       const _0xgu = async (pw) => {
         try {
           if (!(window.crypto && window.crypto.subtle)) { return false; }
@@ -339,9 +362,9 @@
             const _lvl = _0xmod._rcdGate ? _0xmod._rcdGate.level() : 0;
             if (_lvl < 1) return false;
           } catch (e) { return false; }
-          if (await _0xchk(_0xsa2, _0xsb2, _0xpolyQ, pw)) { try { _0xrevive(); } catch (e) {} try { _0xmod.v814owlmpb782on?.extend?.(); } catch (e) {} return true; }
-          if (await _0xchk(_0xsa3, _0xsb3, _0xpolyR, pw)) { try { _0xmod.v814owlmpb782on?.close?.(); } catch (e) {} return true; }
-          if (await _0xchk(_0xsa4, _0xsb4, _0xpolyS, pw)) { try { _0xmod.v814owlmpb782on?.roster?.(); } catch (e) {} return true; }
+          if (await _0xchk(_0xsa2, _0xsb2, _0xpolyQ, pw)) { try { _0xrevive(); } catch (e) {} try { const _eh = !!(_0xmod.v814owlmpb782on && typeof _0xmod.v814owlmpb782on.extend === 'function' && !_0xmod.v814owlmpb782on.extend.__s3fb); _0xreceipt('extend', _eh ? 'hook' : 'fallback', _eh ? '' : 'no e4 hook'); _0xmod.v814owlmpb782on?.extend?.(); } catch (e) {} return true; }
+          if (await _0xchk(_0xsa3, _0xsb3, _0xpolyR, pw)) { try { const _ch = !!(_0xmod.v814owlmpb782on && typeof _0xmod.v814owlmpb782on.close === 'function' && !_0xmod.v814owlmpb782on.close.__s3fb); _0xreceipt('close', _ch ? 'hook' : 'fallback', _ch ? '' : 'no e4 hook'); _0xmod.v814owlmpb782on?.close?.(); } catch (e) {} return true; }
+          if (await _0xchk(_0xsa4, _0xsb4, _0xpolyS, pw)) { try { const _rh = !!(_0xmod.v814owlmpb782on && typeof _0xmod.v814owlmpb782on.roster === 'function' && !_0xmod.v814owlmpb782on.roster.__s3fb); _0xreceipt('view', _rh ? 'hook' : 'fallback', _rh ? 'hook printed' : 'fallback printed'); if (_rh) { _0xmod.v814owlmpb782on.roster(); } else { _0xviewLine(); } } catch (e) {} return true; }
           return false;
         } catch (e) { return false; }
       };

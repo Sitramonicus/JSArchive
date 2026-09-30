@@ -1,0 +1,3 @@
+44a8dc146cce9d7b20f314b9574e54ee5b9798b17b013751b30b87f2351122d3  provisional/S1-D-FROZEN-2026-09-28/weave-out-S1-D.js
+3fe9d1dd425c7a8392bad037aa2847941a9b07d975c2b978882247e33a2f6457  tools/weave-payload.mjs
+bf5f21163727850caa03ead3913f0f5f19da0e99a2797a7bebfb33d7093726d3  provisional/S1-A-fixed-2026-09-28/weave-in-chainA.js
